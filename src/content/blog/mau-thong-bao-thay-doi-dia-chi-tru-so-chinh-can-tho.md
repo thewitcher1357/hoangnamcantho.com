@@ -3,12 +3,12 @@ title: "Mẫu Thông Báo Thay Đổi Địa Chỉ Trụ Sở Chính Cần Thơ:
 date: 2026-03-31
 categories: 
   - "tin-tuc-vung-tau"
-coverImage: "mau-thong-bao-thay-doi-dia-chi-tru-so-chinh-can-tho.jpeg"
+coverImage: "/images/mau-thong-bao-thay-doi-dia-chi-tru-so-chinh-can-tho.jpeg"
 ---
 
 Doanh nghiệp của bạn ở Cần Thơ đang chuẩn bị dời "nhà"? Việc thay đổi địa chỉ trụ sở chính trong năm 2025 có nhiều điểm mới, đặc biệt là với việc sáp nhập phường xã gần đây. Bài viết này là la bàn cho bạn: cung cấp ngay **mẫu thông báo thay đổi địa chỉ trụ sở chính Cần Thơ**, tóm tắt thủ tục trong 5 phút đọc và hướng dẫn chi tiết từng bước để tránh mọi sai sót pháp lý. Cùng Hoàng Nam xem qua để quá trình chuyển đổi của bạn suôn sẻ như một chuyến ghe trên sông Hậu nhé!
 
-![Mẫu thông báo thay đổi địa chỉ trụ sở chính Cần Thơ](images/mau-thong-bao-thay-doi-dia-chi-tru-so-chinh-can-tho.jpeg)
+![Mẫu thông báo thay đổi địa chỉ trụ sở chính Cần Thơ](/images/mau-thong-bao-thay-doi-dia-chi-tru-so-chinh-can-tho.jpeg)
 
 ## Tải Ngay Mẫu Thông Báo Thay Đổi Địa Chỉ Trụ Sở Chính Cần Thơ 2025 & Xem Nhanh Quy Trình
 

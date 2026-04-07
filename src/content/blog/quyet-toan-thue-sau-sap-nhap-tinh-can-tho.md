@@ -3,12 +3,12 @@ title: "Quyết Toán Thuế Sau Sáp Nhập Tỉnh Cần Thơ: Hướng Dẫn C
 date: 2026-04-03
 categories: 
   - "tin-tuc-vung-tau"
-coverImage: "quyet-toan-thue-sau-sap-nhap-tinh-can-tho.jpeg"
+coverImage: "/images/quyet-toan-thue-sau-sap-nhap-tinh-can-tho.jpeg"
 ---
 
 Nếu bạn đang lo về **quyết toán thuế sau sáp nhập tỉnh Cần Thơ**, thì nỗi lo đó hoàn toàn dễ hiểu. Khi địa giới hành chính thay đổi, doanh nghiệp không chỉ quan tâm chuyện địa chỉ mới, mà còn phải xử lý **hồ sơ thuế, hóa đơn điện tử, cơ quan thuế quản lý, nợ thuế, khoản nộp thừa** và cả nghĩa vụ thuế của người lao động.
 
-![Quyết toán thuế sau sáp nhập tỉnh Cần Thơ](images/quyet-toan-thue-sau-sap-nhap-tinh-can-tho.jpeg)
+![Quyết toán thuế sau sáp nhập tỉnh Cần Thơ](/images/quyet-toan-thue-sau-sap-nhap-tinh-can-tho.jpeg)
 
 Từ góc nhìn thực tiễn của **Hoàng Nam Cần Thơ**, đây là giai đoạn mà **kế toán viên, kế toán trưởng, chủ doanh nghiệp** cần đi nhanh nhưng không được đi ẩu. Bài viết này tổng hợp theo các quy định còn hiệu lực như **Luật Quản lý thuế 2019, Nghị định 126/2020/NĐ-CP, Thông tư 80/2021/TT-BTC, Thông tư 86/2024/TT-BTC** và cập nhật thực tiễn quản lý thuế điện tử đến **tháng 4/2026**. (vbpl.vn)
 

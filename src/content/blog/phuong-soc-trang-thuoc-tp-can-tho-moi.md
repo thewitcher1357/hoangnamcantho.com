@@ -3,12 +3,12 @@ title: "Phường Sóc Trăng Thuộc TP Cần Thơ Mới: Giải Đáp Từ A-Z
 date: 2026-03-26
 categories: 
   - "tin-tuc-vung-tau"
-coverImage: "phuong-soc-trang-thuoc-tp-can-tho-moi.jpeg"
+coverImage: "/images/phuong-soc-trang-thuoc-tp-can-tho-moi.jpeg"
 ---
 
 Bạn đang hoang mang không biết địa chỉ nhà hay công ty mình sẽ thay đổi ra sao sau đại sáp nhập Đồng bằng sông Cửu Long? Bài viết này sẽ là nguồn thông tin A-Z, đáng tin cậy nhất dành cho người dân và doanh nghiệp về **Phường Sóc Trăng thuộc TP Cần Thơ mới**. Tại Hoàng Nam Cần Thơ, chúng tôi thấu hiểu những lo lắng của bạn trong giai đoạn giao thời này. Với tư cách là đơn vị tiên phong nắm bắt luật pháp địa phương, chúng tôi sẽ giúp bạn đi đúng đường, giải đáp tất cả thắc mắc pháp lý quan trọng: từ việc phường Sóc Trăng được sáp nhập từ đâu, trụ sở hành chính mới ở đâu, cho đến hướng dẫn chi tiết các thủ tục chuyển đổi giấy tờ một cách nhanh chóng và chính xác nhất theo Nghị quyết 202/2025/QH15.
 
-![Phường Sóc Trăng thuộc TP Cần Thơ mới](images/phuong-soc-trang-thuoc-tp-can-tho-moi.jpeg)
+![Phường Sóc Trăng thuộc TP Cần Thơ mới](/images/phuong-soc-trang-thuoc-tp-can-tho-moi.jpeg)
 
 ## Giải Đáp Nhanh Gọn Về Phường Sóc Trăng (TP. Cần Thơ Mới)
 
@@ -49,7 +49,7 @@ Cụ thể, Nghị quyết 202/2025/QH15 đã có hiệu lực từ ngày 12/06/
 
 ## Hướng Dẫn Chi Tiết Thủ Tục Hành Chính & Pháp Lý Cho Doanh Nghiệp
 
-![Hướng Dẫn Chi Tiết Thủ Tục Hành Chính & Pháp Lý Cho Doanh Nghiệp](images/phuong-soc-trang-thuoc-tp-can-tho-moi-2.jpeg)
+![Hướng Dẫn Chi Tiết Thủ Tục Hành Chính & Pháp Lý Cho Doanh Nghiệp](/images/phuong-soc-trang-thuoc-tp-can-tho-moi-2.jpeg)
 
 ### Quy trình chuyển đổi hồ sơ doanh nghiệp từ Sóc Trăng sang Cần Thơ
 

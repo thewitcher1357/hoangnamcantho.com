@@ -3,7 +3,7 @@ title: "Thông tin trường Đại học Cần Thơ"
 date: 2022-11-16
 categories: 
   - "tin-tuc-vung-tau"
-coverImage: "1920x1277_1481775202-dai-hoc-can-tho.jpg"
+coverImage: "/images/1920x1277_1481775202-dai-hoc-can-tho.jpg"
 ---
 
 \*\*\*Chương trình hành động “Giúp Một Triệu Học Viên Tự Tin Giao Tiếp Tiếng Anh.” Edu2Review phối hợp với hơn 150 trung tâm ngoại ngữ hàng đầu Việt Nam tài trợ 1 triệu voucher khuyến học trị giá tới 500.000 đồng. Nhận phiếu giảm giá của bạn tại đây\*\*\*

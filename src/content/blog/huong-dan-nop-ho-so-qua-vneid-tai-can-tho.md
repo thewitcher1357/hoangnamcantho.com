@@ -3,12 +3,12 @@ title: "Hướng Dẫn Nộp Hồ Sơ Qua VNeID Tại Cần Thơ: Trọn Gói Th
 date: 2026-04-01
 categories: 
   - "tin-tuc-vung-tau"
-coverImage: "huong-dan-nop-ho-so-qua-vneid-tai-can-tho.jpeg"
+coverImage: "/images/huong-dan-nop-ho-so-qua-vneid-tai-can-tho.jpeg"
 ---
 
 Nộp hồ sơ hành chính tại Cần Thơ qua VNeID đã không còn xa lạ, giúp bà con mình tiết kiệm thời gian, không cần đi lại nhiều. Bài viết này của Hoàng Nam sẽ hướng dẫn chi tiết **cách nộp hồ sơ qua VNeID tại Cần Thơ** từ A-Z các bước thực hiện trên Cổng Dịch vụ công, cách xử lý các lỗi thường gặp và những lưu ý "người trong ngành" để quá trình nộp hồ sơ từ đăng ký kinh doanh đến giấy tờ cá nhân đều suôn sẻ, nhanh gọn ngay tại nhà.
 
-![Hướng dẫn nộp hồ sơ qua VNeID tại Cần Thơ](images/huong-dan-nop-ho-so-qua-vneid-tai-can-tho.jpeg)
+![Hướng dẫn nộp hồ sơ qua VNeID tại Cần Thơ](/images/huong-dan-nop-ho-so-qua-vneid-tai-can-tho.jpeg)
 
 ## Giải Đáp Nhanh & Bảng Tóm Tắt Quy Trình Nộp Hồ Sơ VNeID Tại Cần Thơ
 

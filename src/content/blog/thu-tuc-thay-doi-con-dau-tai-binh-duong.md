@@ -3,7 +3,7 @@ title: "Thủ tục thay đổi con dấu tại Cần Thơ"
 date: 2021-04-02
 categories: 
   - "tin-tuc-vung-tau"
-coverImage: "thu-tuc-thay-doi-con-dau-binh-duong.png"
+coverImage: "/images/thu-tuc-thay-doi-con-dau-binh-duong.png"
 ---
 
 Trong quá trình hoạt động, do bất cẩn hoặc vì các lý do khác doanh nghiệp có thể làm mất, làm hư hỏng con dấu. Doanh nghiệp có cần có hướng giải quyết kịp thời tránh ảnh hưởng đến hoạt động của doanh nghiệp. Đến với Hoàng Nam doanh nghiệp sẽ được hỗ trợ làm thủ tục thay đổi mẫu dấu nhanh chóng nhất.

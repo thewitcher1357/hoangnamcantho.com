@@ -3,7 +3,7 @@ title: "Review trải nghiệm Cồn Ấu Cần Thơ của du khách lần đầ
 date: 2022-11-16
 categories: 
   - "tin-tuc-vung-tau"
-coverImage: "review-kinh-nghiem-di-con-au-can-tho-cho-nguoi-lan-dau-den-01-1649604987.jpg"
+coverImage: "/images/review-kinh-nghiem-di-con-au-can-tho-cho-nguoi-lan-dau-den-01-1649604987.jpg"
 ---
 
 ## 3Khu sinh thái Cồn Ấu có gì vui mà giới trẻ tứ phương đều yêu thích khi ghé đến?
@@ -16,7 +16,7 @@ Ngoài những trái cây tươi ngon của vùng đất phù sa màu mỡ, chú
 
 <figure>
 
-![review trải nghiệm Cồn Ấu Cần Thơ của du khách lần đầu](images/review-kinh-nghiem-di-con-au-can-tho-cho-nguoi-lan-dau-den-02-1649610547.jpg)
+![review trải nghiệm Cồn Ấu Cần Thơ của du khách lần đầu](/images/review-kinh-nghiem-di-con-au-can-tho-cho-nguoi-lan-dau-den-02-1649610547.jpg)
 
 <figcaption>
 
@@ -50,7 +50,7 @@ Cồn Ấu là điểm du lịch thiên nhiên, có bầu không khí trong làn
 
 <figure>
 
-![review trải nghiệm Cồn Ấu Cần Thơ của du khách lần đầu](images/review-kinh-nghiem-di-con-au-can-tho-cho-nguoi-lan-dau-den-01-16496049871.jpg)
+![review trải nghiệm Cồn Ấu Cần Thơ của du khách lần đầu](/images/review-kinh-nghiem-di-con-au-can-tho-cho-nguoi-lan-dau-den-01-16496049871.jpg)
 
 <figcaption>
 
@@ -80,7 +80,7 @@ Làng du lịch Tây Đô được mệnh danh là “hòn ngọc xanh”. Check
 
 <figure>
 
-![review trải nghiệm Cồn Ấu Cần Thơ của du khách lần đầu](images/review-kinh-nghiem-di-con-au-can-tho-cho-nguoi-lan-dau-den-03-1649610603.jpg)
+![review trải nghiệm Cồn Ấu Cần Thơ của du khách lần đầu](/images/review-kinh-nghiem-di-con-au-can-tho-cho-nguoi-lan-dau-den-03-1649610603.jpg)
 
 <figcaption>
 
@@ -96,7 +96,7 @@ Khu du lịch nằm ngay Cồn Ấu rất lý tưởng cho các hoạt động n
 
 <figure>
 
-![review trải nghiệm Cồn Ấu Cần Thơ của du khách lần đầu](images/review-kinh-nghiem-di-con-au-can-tho-cho-nguoi-lan-dau-den-04-1649610747.jpg)
+![review trải nghiệm Cồn Ấu Cần Thơ của du khách lần đầu](/images/review-kinh-nghiem-di-con-au-can-tho-cho-nguoi-lan-dau-den-04-1649610747.jpg)
 
 <figcaption>
 

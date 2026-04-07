@@ -3,12 +3,12 @@ title: "103 Xã Phường Mới: Bản Đồ Hành Chính TP Cần Thơ Mới Nh
 date: 2026-03-24
 categories: 
   - "tin-tuc-vung-tau"
-coverImage: "ban-do-hanh-chinh-tp-can-tho-moi-nhat-sau-sap-nhap.jpeg"
+coverImage: "/images/ban-do-hanh-chinh-tp-can-tho-moi-nhat-sau-sap-nhap.jpeg"
 ---
 
 Kể từ ngày 16/06/2025, **bản đồ hành chính TP Cần Thơ mới nhất sau sáp nhập** đã chính thức được áp dụng theo Nghị quyết 1668, đánh dấu cột mốc lịch sử khi hợp nhất cùng Hậu Giang và Sóc Trăng. Tính đến thời điểm hiện tại (tháng 3/2026), sự thay đổi quy mô lớn với 103 đơn vị hành chính cấp xã này vẫn đang khiến nhiều chủ doanh nghiệp và nhà đầu tư bối rối về việc xác định địa chỉ pháp lý chính xác. Tại Hoàng Nam Cần Thơ, chúng tôi hiểu rõ những khó khăn này. Bài viết dưới đây sẽ cung cấp cho bạn thông tin địa giới hành chính cập nhật nhất, cùng hướng dẫn chi tiết các bước thay đổi giấy phép kinh doanh để bạn luôn "đi đúng đường" và tuân thủ pháp luật.
 
-![Bản đồ hành chính TP Cần Thơ mới nhất sau sáp nhập](images/ban-do-hanh-chinh-tp-can-tho-moi-nhat-sau-sap-nhap.jpeg)
+![Bản đồ hành chính TP Cần Thơ mới nhất sau sáp nhập](/images/ban-do-hanh-chinh-tp-can-tho-moi-nhat-sau-sap-nhap.jpeg)
 
 ## Tổng quan nhanh sáp nhập Cần Thơ: Trả lời 5 câu hỏi cốt lõi (TL;DR)
 
@@ -43,7 +43,7 @@ Bảng dưới đây so sánh trực quan quy mô và số lượng các cấp h
 
 ## Bản đồ hành chính TP Cần Thơ mới nhất và danh sách chi tiết 103 xã phường
 
-![Bản đồ hành chính TP Cần Thơ mới nhất và danh sách chi tiết 103 xã phường](images/ban-do-hanh-chinh-tp-can-tho-moi-nhat-sau-sap-nhap-2.jpeg)
+![Bản đồ hành chính TP Cần Thơ mới nhất và danh sách chi tiết 103 xã phường](/images/ban-do-hanh-chinh-tp-can-tho-moi-nhat-sau-sap-nhap-2.jpeg)
 
 **Bản đồ Cần Thơ 2025 mới nhất** thể hiện rõ ranh giới của 103 xã phường sau khi sắp xếp, đặc biệt là sự thay đổi lớn tại các quận trung tâm như Ninh Kiều, Bình Thủy, Cái Răng nhằm đáp ứng tiêu chuẩn đô thị loại I.
 

@@ -3,12 +3,12 @@ title: "Danh Sách 103 Phường Xã Sáp Nhập Cần Thơ 2025 [Tên Mới, Đ
 date: 2026-03-24
 categories: 
   - "tin-tuc-vung-tau"
-coverImage: "danh-sach-phuong-xa-sap-nhap-can-tho-2025.jpeg"
+coverImage: "/images/danh-sach-phuong-xa-sap-nhap-can-tho-2025.jpeg"
 ---
 
 Từ ngày 1/7/2025, ranh giới hành chính miền Tây đã chứng kiến một sự thay đổi mang tính lịch sử. Việc tinh gọn từ 80 xuống 32 đơn vị cấp xã tại khu vực trung tâm, kết hợp mở rộng quy mô lên 103 đơn vị hành chính cấp xã mới (bao gồm cả các khu vực sáp nhập từ Hậu Giang, Sóc Trăng) khiến không ít người dân và chủ doanh nghiệp cảm thấy bối rối. Bài viết này sẽ cung cấp **danh sách phường xã sáp nhập Cần Thơ 2025** chi tiết và chính thức nhất. Tại Hoàng Nam Cần Thơ, chúng tôi đã tổng hợp đầy đủ tên gọi mới, địa chỉ trụ sở UBND và hướng dẫn các thủ tục pháp lý quan trọng để bạn an tâm giao dịch, tránh mọi sai sót không đáng có.
 
-![Danh sách phường xã sáp nhập Cần Thơ 2025](images/danh-sach-phuong-xa-sap-nhap-can-tho-2025.jpeg)
+![Danh sách phường xã sáp nhập Cần Thơ 2025](/images/danh-sach-phuong-xa-sap-nhap-can-tho-2025.jpeg)
 
 ## Bảng tra cứu nhanh: Danh sách 103 phường xã Cần Thơ sau sáp nhập 2025
 
@@ -65,7 +65,7 @@ Sáp nhập phường xã Cần Thơ từ ngày nào? Theo cập nhật mới nh
 
 ## Hướng dẫn chi tiết các thủ tục pháp lý bắt buộc phải thực hiện sau sáp nhập
 
-![Hướng dẫn chi tiết các thủ tục pháp lý bắt buộc phải thực hiện sau sáp nhập](images/danh-sach-phuong-xa-sap-nhap-can-tho-2025-2.jpeg)
+![Hướng dẫn chi tiết các thủ tục pháp lý bắt buộc phải thực hiện sau sáp nhập](/images/danh-sach-phuong-xa-sap-nhap-can-tho-2025-2.jpeg)
 
 Sau khi sáp nhập, người dân và doanh nghiệp cần chủ động cập nhật giấy tờ pháp lý như Giấy phép kinh doanh, Sổ đỏ và Căn cước công dân để tránh rủi ro khi thực hiện các giao dịch dân sự và thương mại.
 

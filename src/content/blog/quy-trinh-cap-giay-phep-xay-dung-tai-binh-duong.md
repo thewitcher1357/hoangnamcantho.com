@@ -3,7 +3,7 @@ title: "Quy trình cấp giấy phép xây dựng tại Cần Thơ"
 date: 2021-04-02
 categories: 
   - "tin-tuc-vung-tau"
-coverImage: "cap-giay-phep-xay-dung-binh-duong.png"
+coverImage: "/images/cap-giay-phep-xay-dung-binh-duong.png"
 ---
 
 Hoàng Nam là công ty hàng đầu trong dịch vụ tư vấn xin **Giấy Phép Xây dựng** tốt nhất cho quý doanh nghiệp tại Cần Thơ. Dịch vụ tư vấn xin giấy phép xây dựng của Hoàng Nam đảm bảo làm thủ tục nhanh chóng, chuẩn xác, đúng pháp luật với chi phí dịch vụ hợp lý nhất. 

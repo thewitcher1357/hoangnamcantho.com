@@ -3,7 +3,7 @@ title: "Thông tin chi tiết về giá vé Làng sinh thái Khu du lịch Ông 
 date: 2022-11-16
 categories: 
   - "tin-tuc-vung-tau"
-coverImage: "thumbnail-facebook-khu-du-lich-ong-de-can-tho.jpg"
+coverImage: "/images/thumbnail-facebook-khu-du-lich-ong-de-can-tho.jpg"
 ---
 
 Khu du lịch Ông Đề Cần Thơ được nhiều người biết đến với loại hình du lịch sinh thái. Có rất nhiều trò chơi dân gian thú vị cho các nhóm lớn. Hơn nữa, không gian xanh là một điểm cộng hấp dẫn. Đặc biệt có nhiều món ngon miệt vườn. Đây được coi là điểm du lịch không thể bỏ qua ở Cần Thơ. Hãy cùng chúng tôi tìm hiểu thêm về khu du lịch sinh thái Ông Đề nhé! Nhất là khi du lịch Ông Đề mở cửa trở lại vào năm 2022 sau dịch covid-19.

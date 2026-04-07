@@ -3,7 +3,7 @@ title: "Kinh Doanh Gì Ở Cần Thơ?"
 date: 2021-04-02
 categories: 
   - "tin-tuc-vung-tau"
-coverImage: "kinh-doanh-gi-o-binh-duong.png"
+coverImage: "/images/kinh-doanh-gi-o-binh-duong.png"
 ---
 
 Có thể nói hiện nay nền kinh tế ở Cần Thơ đang trên đà phát triển mạnh. Đây được xem như thủ phủ công nghiệp của cả nước. Cần Thơ tập trung số lượng lớn công nhân với mức thu nhập tương đối thấp nhưng lại có mức tiêu dùng rất cao.  Nếu ở Cần Thơ và bạn đang có ý định kinh doanh nhưng đang phân vân chưa biết kinh doanh ngành nghề nào ? 
