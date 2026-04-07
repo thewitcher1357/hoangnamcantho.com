@@ -15,10 +15,8 @@ const blog = defineCollection({
     description: z.string().optional(),
   }).transform((data) => ({
     ...data,
-    // Nếu template starter-pro của bạn cần biến 'image' hoặc 'pubDatetime'
-    // thì ta "ánh xạ" chúng sang tên mà template yêu cầu ở đây:
+    pubDate: data.date || new Date(), // Đổi từ pubDatetime thành pubDate
     image: data.coverImage,
-    pubDatetime: data.date,
   })),
 });
 

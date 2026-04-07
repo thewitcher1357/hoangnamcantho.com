@@ -1,7 +1,6 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import Schema from "@/components/seo/Schema.astro";
-
 import { getCollection, render } from "astro:content";
 
 export async function getStaticPaths() {
@@ -14,16 +13,21 @@ export async function getStaticPaths() {
 
 const { post } = Astro.props;
 const { Content, remarkPluginFrontmatter } = await render(post);
+
+// Lấy dữ liệu từ post.data
 const { title, description, pubDate, author, image } = post.data;
 
-const formattedDate = pubDate.toLocaleDateString("es-ES", {
+// Fix lỗi: Đảm bảo pubDate là một đối tượng Date hợp lệ trước khi gọi toLocaleDateString
+const dateObj = pubDate instanceof Date ? pubDate : new Date(pubDate || Date.now());
+
+const formattedDate = dateObj.toLocaleDateString("vi-VN", {
   year: "numeric",
   month: "long",
   day: "numeric",
 });
 
 const readingTime = remarkPluginFrontmatter?.minutesRead
-  ? `${Math.ceil(remarkPluginFrontmatter.minutesRead)} min de lectura`
+  ? `${Math.ceil(remarkPluginFrontmatter.minutesRead)} phút đọc`
   : "";
 
 const metadata = {
@@ -40,7 +44,7 @@ const metadata = {
       title,
       description,
       image,
-      pubDate,
+      pubDate: dateObj, // Dùng dateObj đã chuẩn hóa
       author,
       url: Astro.url.href,
     }}

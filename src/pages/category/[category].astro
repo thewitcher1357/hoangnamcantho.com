@@ -6,21 +6,27 @@ import PostItem from "@/components/blog/PostItem.astro";
 
 export async function getStaticPaths() {
   const allPosts = await getCollection("blog");
-  const posts = allPosts.filter((post) => post.data && post.data.pubDate); // Ensure published
+  
+  // Lọc bài viết có pubDate (đã sửa ở bước trước thành pubDate thay vì pubDatetime)
+  const posts = allPosts.filter((post) => post.data && post.data.pubDate);
 
-  const categories = new Set();
+  // Lấy tất cả các category từ mảng categories của từng bài viết
+  const categories = new Set<string>();
   posts.forEach((post) => {
-    if (post.data.category) {
-      categories.add(post.data.category);
+    if (post.data.categories && Array.isArray(post.data.categories)) {
+      post.data.categories.forEach((cat) => categories.add(cat));
     }
   });
 
   return Array.from(categories).map((category) => {
     return {
-      params: { category: category as string },
+      params: { category: category },
       props: {
         category,
-        posts: posts.filter((post) => post.data.category === category),
+        // Lọc những bài viết nào có chứa category này trong mảng categories
+        posts: posts.filter((post) => 
+          post.data.categories?.includes(category)
+        ),
       },
     };
   });
@@ -29,8 +35,8 @@ export async function getStaticPaths() {
 const { category, posts } = Astro.props;
 
 const metadata = {
-  title: `Category: ${category}`,
-  description: `Articles in the ${category} category.`,
+  title: `Chuyên mục: ${category}`,
+  description: `Các bài viết thuộc chuyên mục ${category}.`,
 };
 ---
 
@@ -38,19 +44,18 @@ const metadata = {
   <section class="relative px-4 py-24 sm:px-6 lg:px-8 md:py-32">
     <div class="relative mx-auto max-w-5xl">
       <Headline
-        tagline="Category"
+        tagline="Chuyên mục"
         title={category}
-        subtitle={`Showing ${posts.length} article${posts.length === 1 ? "" : "s"}.`}
+        subtitle={`Đang hiển thị ${posts.length} bài viết.`}
         classes={{
           container: "mb-12 text-center",
-          title:
-            "font-heading mb-4 text-4xl font-bold tracking-tight text-foreground md:text-6xl capitalized",
+          title: "font-heading mb-4 text-4xl font-bold tracking-tight text-foreground md:text-6xl capitalized",
           subtitle: "mx-auto max-w-3xl text-xl text-muted-foreground",
         }}
       />
 
       <div class="mb-8 text-center">
-        <a href="/blog" class="text-primary hover:underline">← Back to blog</a>
+        <a href="/" class="text-primary hover:underline">← Quay lại trang chủ</a>
       </div>
 
       <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
