@@ -1,0 +1,130 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { Image } from "astro:assets";
+import { siteConfig } from "@/config/site";
+import teamPhoto from "@/assets/images/team-photo.webp";
+import CTABanner from "@/components/homepage/CTABanner.astro";
+
+const metadata = {
+  title: "Giới Thiệu",
+  description:
+    "Với kinh nghiệm hơn 10 năm, Hoàng Nam Cần Thơ cung ứng dịch vụ chuyên nghiệp về thành lập doanh nghiệp, kế toán thuế, giúp khách hàng an tâm phát triển.",
+};
+
+const philosophies = [
+  {
+    title: "Chuyên nghiệp & Chính xác",
+    description:
+      "Mọi hồ sơ, thủ tục đều được xử lý bởi chuyên gia, đảm bảo tính chính xác và đúng pháp luật, giúp bạn hoàn toàn an tâm.",
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />`,
+  },
+  {
+    title: "Lắng nghe & Thấu hiểu",
+    description:
+      'Chúng tôi không cung cấp dịch vụ theo khuôn mẫu. Mỗi giải pháp đều được "may đo" dựa trên nhu cầu và mục tiêu riêng của doanh nghiệp bạn.',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2V4a2 2 0 012-2h8a2 2 0 012 2v4z" />`,
+  },
+  {
+    title: "Tận tâm & Trách nhiệm",
+    description:
+      "Cam kết đồng hành cùng bạn trong suốt quá trình, giải đáp mọi thắc mắc và hỗ trợ cho đến khi bạn nhận được kết quả cuối cùng.",
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.085a2 2 0 00-1.736.97l-2.714 4.224a2 2 0 00.175 2.325L7 20m7-10h-6" />`,
+  },
+];
+---
+
+<BaseLayout {metadata}>
+  <!-- Hero Banner -->
+  <section class="relative bg-gradient-to-r from-primary to-primary-light py-20 text-center text-white md:py-24">
+    <div class="relative z-10">
+      <h1 class="text-4xl font-bold drop-shadow-md md:text-5xl">Về Chúng Tôi</h1>
+      <p class="mt-4 text-lg text-white/90">
+        Hoàng Nam Cần Thơ - Đồng Hành Cùng Doanh Nghiệp
+      </p>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="bg-white py-16 md:py-24">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <div class="grid grid-cols-1 items-center gap-y-16 lg:grid-cols-12 lg:gap-x-20">
+        <!-- Image Column -->
+        <div class="relative lg:col-span-5">
+          <div class="absolute -left-4 -top-4 h-full w-full rounded-2xl bg-gradient-to-br from-primary to-primary-light opacity-10 blur-sm"></div>
+          <Image
+            src={teamPhoto}
+            alt="Đội ngũ Hoàng Nam Cần Thơ"
+            width={687}
+            height={1024}
+            class="relative w-full rounded-2xl shadow-2xl"
+            loading="lazy"
+          />
+        </div>
+        <!-- Content Column -->
+        <div class="lg:col-span-7">
+          <h2 class="text-3xl font-bold tracking-tight text-accent md:text-4xl">
+            HOÀNG NAM CẦN THƠ
+          </h2>
+          <p class="mt-6 text-lg leading-relaxed text-gray-700">
+            Hoàng Nam – CN Cần Thơ ra đời với sứ mệnh cung ứng dịch vụ chuyên
+            nghiệp tại thị trường Cần Thơ và ĐBSCL giúp khách hàng nhận được
+            cảm giác an tâm, gần gũi và tư vấn trực tiếp từ đội ngũ chuyên
+            viên tâm huyết và chuyên môn cao của Hoàng Nam.
+          </p>
+          <p class="mt-4 text-lg leading-relaxed text-gray-700">
+            Với kinh nghiệm hơn 10 năm triển khai và cung ứng các dịch vụ:
+            Thành lập doanh nghiệp, dịch vụ kế toán thuế, hóa đơn điện tử, chữ
+            ký số, phần mềm kế toán, thiết kế website, seo Google,…
+          </p>
+          <p class="mt-4 text-lg font-semibold leading-relaxed text-primary">
+            Chúng tôi luôn cam kết dịch vụ bạn nhận được là tối ưu nhất, giá cả
+            cạnh tranh nhất và uy tín cao nhất.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <CTABanner
+    title="Sẵn sàng để Hoàng Nam hỗ trợ?"
+    subtitle="Liên hệ với chúng tôi ngay hôm nay để được tư vấn miễn phí và bắt đầu hành trình phát triển doanh nghiệp của bạn."
+  />
+
+  <!-- Philosophy Section -->
+  <section class="bg-gray-50 py-16 md:py-24">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <div class="text-center">
+        <h2 class="text-3xl font-bold tracking-tight text-accent sm:text-4xl">
+          Triết Lý Phục Vụ Của Chúng Tôi
+        </h2>
+        <p class="mt-4 mx-auto max-w-2xl text-lg text-gray-600">
+          Thành công của bạn là sứ mệnh và là thước đo cho sự thành công của
+          Hoàng Nam.
+        </p>
+      </div>
+      <div class="mt-16 mx-auto max-w-4xl space-y-10">
+        {philosophies.map((item) => (
+          <div class="flex items-start gap-x-8">
+            <div class="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-primary">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6 text-white"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <Fragment set:html={item.icon} />
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-primary">{item.title}</h3>
+              <p class="mt-2 text-base text-gray-600">{item.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

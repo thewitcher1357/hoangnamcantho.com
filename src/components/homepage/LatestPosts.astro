@@ -1,0 +1,56 @@
+---
+import { getCollection } from "astro:content";
+
+const allPosts = await getCollection("blog");
+const latestPosts = allPosts
+  .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime())
+  .slice(0, 4);
+---
+
+{latestPosts.length > 0 && (
+  <section class="bg-gray-50 py-16 md:py-24">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <div class="flex items-center justify-center mb-12">
+        <div class="h-px flex-grow bg-gray-200"></div>
+        <h2 class="px-8 text-xl font-bold uppercase tracking-widest text-accent md:text-2xl text-center">
+          CÓ GÌ MỚI?
+        </h2>
+        <div class="h-px flex-grow bg-gray-200"></div>
+      </div>
+
+      <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+        {latestPosts.map((post) => (
+          <a
+            href={`/${post.id}`}
+            title={post.data.title}
+            class="group block overflow-hidden rounded-xl bg-white shadow-lg transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-2xl"
+          >
+            <div class="overflow-hidden">
+              {post.data.coverImage ? (
+                <img
+                  src={post.data.coverImage}
+                  alt={post.data.title}
+                  loading="lazy"
+                  decoding="async"
+                  class="aspect-video w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  width="400"
+                  height="225"
+                />
+              ) : (
+                <div class="aspect-video w-full bg-gradient-to-br from-primary/20 to-primary-light/20 flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-primary/30" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1"><path stroke-linecap="round" stroke-linejoin="round" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" /></svg>
+                </div>
+              )}
+            </div>
+            <div class="p-6">
+              <h3 class="flex min-h-[60px] items-center text-base font-bold leading-tight text-accent transition-colors duration-300 group-hover:text-primary">
+                {post.data.title}
+              </h3>
+              <div class="mt-4 h-px w-12 bg-gray-200 transition-all duration-300 group-hover:w-20 group-hover:bg-primary"></div>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+)}

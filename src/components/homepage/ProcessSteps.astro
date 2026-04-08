@@ -1,0 +1,76 @@
+---
+const steps = [
+  {
+    number: "01",
+    title: "Tư Vấn & Ký Kết",
+    description: "Tiếp nhận yêu cầu, tư vấn giải pháp tối ưu và ký hợp đồng dịch vụ.",
+    color: "#e91e63",
+    iconPath: "M17.25 8.25h-10.5a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25h.75l2.25 2.25v-2.25h6.75a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25z",
+  },
+  {
+    number: "02",
+    title: "Chuẩn Bị Hồ Sơ",
+    description: "Thu thập thông tin, soạn thảo đầy đủ hồ sơ theo đúng quy định pháp luật.",
+    color: "#007bff",
+    iconPath: "M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z",
+  },
+  {
+    number: "03",
+    title: "Nộp & Theo Dõi",
+    description: "Thay mặt khách hàng nộp hồ sơ lên cơ quan nhà nước và theo dõi tiến trình xử lý.",
+    color: "#ffb300",
+    iconPath: "M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z",
+  },
+  {
+    number: "04",
+    title: "Bàn Giao Kết Quả",
+    description: "Nhận kết quả và bàn giao tận tay khách hàng giấy phép, con dấu và các tài liệu liên quan.",
+    color: "#26a69a",
+    iconPath: "M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5",
+  },
+];
+---
+
+<section class="bg-gray-50 py-16 md:py-20">
+  <div class="mx-auto max-w-7xl px-4">
+    <div class="flex items-center justify-center mb-16">
+      <div class="flex-grow h-px bg-gray-200"></div>
+      <h2 class="px-8 text-xl md:text-2xl font-bold uppercase tracking-widest text-accent text-center">
+        Quy Trình Làm Việc
+      </h2>
+      <div class="flex-grow h-px bg-gray-200"></div>
+    </div>
+
+    <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+      {steps.map((step) => (
+        <div
+          class="group relative block overflow-hidden rounded-xl border-t-4 bg-white p-8 text-left shadow-lg transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-2xl"
+          style={`border-top-color: ${step.color}`}
+        >
+          <span class="absolute right-4 top-4 text-7xl font-black text-gray-200 transition-colors duration-300 group-hover:text-gray-300 md:text-8xl">
+            {step.number}
+          </span>
+          <div class="relative z-10">
+            <div
+              class="inline-block rounded-lg p-3 transition-colors duration-300"
+              style={`background-color: ${step.color}20; color: ${step.color}`}
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d={step.iconPath} />
+              </svg>
+            </div>
+            <h3
+              class="mt-6 text-base font-bold uppercase tracking-wider"
+              style={`color: ${step.color}`}
+            >
+              {step.title}
+            </h3>
+            <p class="mt-2 text-sm leading-relaxed text-gray-600">
+              {step.description}
+            </p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

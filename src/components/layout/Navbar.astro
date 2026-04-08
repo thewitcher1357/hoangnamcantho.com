@@ -1,144 +1,196 @@
 ---
 import { siteConfig } from "@/config/site";
-import ThemeToggle from "@/components/ui/ThemeToggle.astro";
+import { Image } from "astro:assets";
+import logoImg from "@/assets/images/logo.webp";
 ---
 
-<nav
-  class="fixed top-0 z-50 w-full border-b border-border bg-background md:bg-background/50 md:backdrop-blur"
->
-  <div
-    class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8"
-  >
-    <div class="flex items-center gap-2">
-      <a
-        href="/"
-        class="text-xl font-bold tracking-tight text-foreground transition-colors hover:text-primary"
-      >
-        {siteConfig.name}
-      </a>
-    </div>
-
-    <!-- Desktop Menu -->
-    <div class="hidden md:block">
-      <div class="ml-10 flex items-baseline space-x-8">
-        {
-          siteConfig.navLinks.map((link) => (
-            <a
-              href={link.href}
-              class="text-sm font-medium text-foreground transition-colors hover:text-primary"
-            >
-              {link.text}
-            </a>
-          ))
-        }
+<header id="main-header" class="sticky top-0 z-50 font-sans">
+  <!-- Top Bar -->
+  <div class="bg-primary text-white text-xs md:text-sm hidden md:block">
+    <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-2">
+      <p class="font-medium tracking-wide">
+        HOÀNG NAM CẦN THƠ — +10 NĂM ĐỒNG HÀNH CÙNG DOANH NGHIỆP
+      </p>
+      <div class="flex items-center space-x-4">
+        <a
+          href="/lien-he"
+          class="flex items-center space-x-1.5 transition-opacity hover:opacity-80"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+          <span>GỬI YÊU CẦU TƯ VẤN</span>
+        </a>
+        <a
+          href={`tel:${siteConfig.contact.hotline}`}
+          class="flex items-center space-x-1.5 transition-opacity hover:opacity-80"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+          <span>HOTLINE HỖ TRỢ {siteConfig.contact.hotlineDisplay}</span>
+        </a>
+        <div class="flex items-center space-x-2">
+          <a href={siteConfig.contact.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="transition-opacity hover:opacity-80">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+          </a>
+          <a href={siteConfig.contact.youtube} target="_blank" rel="noopener noreferrer" aria-label="YouTube" class="transition-opacity hover:opacity-80">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M21.582 6.186a2.016 2.016 0 0 0-1.423-1.423C18.438 4.5 12 4.5 12 4.5s-6.438 0-8.159.263a2.016 2.016 0 0 0-1.423 1.423C2 7.909 2 12 2 12s0 4.091.418 5.814a2.016 2.016 0 0 0 1.423 1.423C5.562 19.5 12 19.5 12 19.5s6.438 0 8.159-.263a2.016 2.016 0 0 0 1.423-1.423C22 16.091 22 12 22 12s0-4.091-.418-5.814zM10 15.5v-7l6 3.5-6 3.5z"></path></svg>
+          </a>
+        </div>
       </div>
     </div>
+  </div>
 
-    <div class="hidden md:flex items-center gap-4">
-      <a
-        href={siteConfig.socialLinks.github}
-        target="_blank"
-        rel="noopener noreferrer"
-        class="rounded-full bg-foreground/10 px-4 py-2 text-sm font-semibold text-foreground transition-all hover:bg-foreground/20"
-      >
-        GitHub
+  <!-- Main Navigation -->
+  <nav class="relative w-full bg-white/80 shadow-md backdrop-blur-md transition-all duration-300">
+    <div class="mx-auto flex max-w-7xl items-center justify-between px-4">
+      <!-- Logo -->
+      <a href="/" class="py-3">
+        <Image
+          src={logoImg}
+          alt="Hoàng Nam Cần Thơ Logo"
+          width={150}
+          height={50}
+          class="h-12 w-auto md:h-[50px]"
+          loading="eager"
+        />
       </a>
-      <ThemeToggle />
-    </div>
 
-    <!-- Mobile Menu Button -->
-    <div class="md:hidden flex items-center">
+      <!-- Hamburger (Mobile) -->
       <button
-        id="mobile-menu-button"
-        type="button"
-        class="inline-flex items-center justify-center p-2 rounded-md text-foreground hover:text-white hover:bg-white/10 focus:outline-none transition-colors"
-        aria-controls="mobile-menu"
+        id="menu-btn"
+        class="block md:hidden p-2"
+        aria-label="Mở menu"
         aria-expanded="false"
       >
-        <span class="sr-only">Open main menu</span>
-        <!-- Icon when menu is closed -->
-        <svg
-          id="menu-icon-closed"
-          class="block h-6 w-6"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-          aria-hidden="true"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M4 6h16M4 12h16M4 18h16"></path>
-        </svg>
-        <!-- Icon when menu is open -->
-        <svg
-          id="menu-icon-open"
-          class="hidden h-6 w-6"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-          aria-hidden="true"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M6 18L18 6M6 6l12 12"></path>
-        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
       </button>
-      <div class="ml-2">
-        <ThemeToggle />
-      </div>
-    </div>
-  </div>
 
-  <div class="hidden md:hidden" id="mobile-menu">
-    <div
-      class="space-y-1 border-b border-border bg-background/90 px-2 pb-3 pt-2 sm:px-3"
-    >
-      {
-        siteConfig.navLinks.map((link) => (
+      <!-- Desktop Menu -->
+      <ul class="hidden items-center md:flex md:space-x-1 lg:space-x-2">
+        {siteConfig.navLinks.map((link) => (
+          <li class={link.children ? "group relative" : ""}>
+            <a
+              href={link.href}
+              class="nav-link relative flex items-center px-3 lg:px-4 py-5 text-sm font-bold uppercase tracking-wider text-accent transition-colors duration-300 hover:text-primary"
+            >
+              <span>{link.text}</span>
+              {link.children && (
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="ml-1 inline-block transition-transform group-hover:rotate-180"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              )}
+            </a>
+            {link.children && (
+              <ul class="absolute left-0 top-full z-10 hidden min-w-[240px] rounded-md border border-gray-100 bg-white py-2 shadow-lg opacity-0 transition-all duration-300 group-hover:block group-hover:opacity-100 group-hover:translate-y-1">
+                {link.children.map((child) => (
+                  <li>
+                    <a
+                      href={child.href}
+                      class="block w-full px-4 py-2.5 text-sm text-gray-700 transition-colors duration-200 hover:bg-blue-50 hover:text-primary"
+                    >
+                      {child.text}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </li>
+        ))}
+        <li>
           <a
-            href={link.href}
-            class="block rounded-md px-3 py-2 text-base font-medium text-foreground transition-colors hover:bg-white/10 hover:text-primary"
+            href={siteConfig.contact.zalo}
+            class="block rounded-full bg-primary px-5 py-2.5 text-sm font-bold uppercase tracking-wider text-white transition-all duration-300 hover:bg-primary-dark hover:shadow-lg hover:scale-105"
           >
-            {link.text}
+            Tư Vấn Lập Công Ty
           </a>
-        ))
-      }
-      <a
-        href={siteConfig.socialLinks.github}
-        target="_blank"
-        class="block rounded-md px-3 py-2 text-base font-medium text-blue-400 transition-colors hover:cursor-pointer hover:bg-blue-500/10 hover:text-blue-300"
-        >GitHub</a
-      >
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu Panel -->
+  <div
+    id="mobile-menu-panel"
+    class="fixed inset-y-0 right-0 z-50 w-full max-w-sm translate-x-full transform bg-white shadow-xl transition-transform duration-300 ease-in-out md:hidden"
+    aria-hidden="true"
+  >
+    <div class="flex h-full flex-col">
+      <div class="flex items-center justify-between border-b border-gray-200 px-5 py-4">
+        <span class="font-bold text-accent">MENU</span>
+        <button id="close-menu-btn" aria-label="Đóng menu">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+      <ul class="flex-grow space-y-1 overflow-y-auto p-4">
+        {siteConfig.navLinks.map((link) => (
+          <li class="mobile-menu-item">
+            <a
+              href={link.href}
+              class="flex w-full items-center justify-between rounded-md px-4 py-3 font-bold text-gray-700 transition-colors duration-200 hover:bg-gray-100 hover:text-primary"
+            >
+              <span>{link.text}</span>
+              {link.children && (
+                <svg class="chevron-icon h-5 w-5 shrink-0 transition-transform" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+              )}
+            </a>
+            {link.children && (
+              <ul class="mobile-submenu pl-4 pt-1">
+                {link.children.map((child) => (
+                  <li>
+                    <a href={child.href} class="block rounded-md px-4 py-2.5 text-gray-600 hover:bg-gray-100">
+                      {child.text}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </li>
+        ))}
+        <li class="mobile-menu-item">
+          <a
+            href={siteConfig.contact.zalo}
+            class="block w-full rounded-md bg-primary px-4 py-3 text-center font-bold uppercase text-white"
+          >
+            Tư Vấn Lập Công Ty
+          </a>
+        </li>
+      </ul>
     </div>
   </div>
-</nav>
+  <!-- Backdrop -->
+  <div id="backdrop" class="fixed inset-0 z-40 bg-black/30 hidden md:hidden"></div>
+</header>
 
 <script>
-  document.addEventListener("astro:page-load", () => {
-    const button = document.getElementById("mobile-menu-button");
-    const menu = document.getElementById("mobile-menu");
-    const iconClosed = document.getElementById("menu-icon-closed");
-    const iconOpen = document.getElementById("menu-icon-open");
+  const initMobileMenu = () => {
+    const menuBtn = document.getElementById("menu-btn");
+    const closeBtn = document.getElementById("close-menu-btn");
+    const panel = document.getElementById("mobile-menu-panel");
+    const backdrop = document.getElementById("backdrop");
 
-    // Remove old event listener if it exists to prevent multiple triggers
-    const newButton = button?.cloneNode(true);
-    if (newButton && button && button.parentNode) {
-      button.parentNode.replaceChild(newButton, button);
-    }
+    const open = () => {
+      panel?.classList.remove("translate-x-full");
+      backdrop?.classList.remove("hidden");
+      document.body.style.overflow = "hidden";
+    };
 
-    const finalButton = document.getElementById("mobile-menu-button");
+    const close = () => {
+      panel?.classList.add("translate-x-full");
+      backdrop?.classList.add("hidden");
+      document.body.style.overflow = "";
+    };
 
-    finalButton?.addEventListener("click", () => {
-      const isExpanded = finalButton.getAttribute("aria-expanded") === "true";
+    menuBtn?.addEventListener("click", open);
+    closeBtn?.addEventListener("click", close);
+    backdrop?.addEventListener("click", close);
 
-      finalButton.setAttribute("aria-expanded", String(!isExpanded));
-      menu?.classList.toggle("hidden");
-      iconClosed?.classList.toggle("hidden");
-      iconOpen?.classList.toggle("hidden");
+    document.querySelectorAll(".mobile-menu-item").forEach((item) => {
+      const link = item.querySelector("a");
+      if (item.querySelector(".mobile-submenu") && link) {
+        link.addEventListener("click", (e) => {
+          e.preventDefault();
+          item.classList.toggle("is-open");
+        });
+      }
     });
-  });
+  };
+
+  document.addEventListener("astro:page-load", initMobileMenu);
+  initMobileMenu();
 </script>

@@ -1,0 +1,72 @@
+---
+import { Image } from "astro:assets";
+import teamPhoto from "@/assets/images/team-photo.webp";
+
+const reasons = [
+  {
+    title: "Chuyên nghiệp – tận tâm",
+    description: "Với đội ngũ nhân sự được đào tạo chuyên môn sâu.",
+  },
+  {
+    title: "Tiết kiệm chi phí & thời gian",
+    description: "Dịch vụ tận nơi, hồ sơ nhanh chóng, chính xác.",
+  },
+  {
+    title: "Hỗ trợ khách hàng 24/7",
+    description: "Luôn có nhân viên giải đáp thông tin khách hàng.",
+  },
+  {
+    title: "Bảo mật – an toàn",
+    description: "Cam kết bảo mật thông tin khách hàng.",
+  },
+  {
+    title: "Hậu mãi và hỗ trợ",
+    description: "Luôn có chính sách hậu mãi và hỗ trợ tốt nhất cho đối tác.",
+  },
+];
+---
+
+<section class="bg-white py-16 md:py-24">
+  <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    <div class="grid grid-cols-1 items-center gap-y-16 lg:grid-cols-12 lg:gap-x-20">
+      <!-- Image Column -->
+      <div class="relative lg:col-span-5">
+        <div class="absolute -left-4 -top-4 h-full w-full rounded-2xl bg-gradient-to-br from-primary to-primary-light opacity-10 blur-sm"></div>
+        <Image
+          src={teamPhoto}
+          alt="Đội ngũ Hoàng Nam Cần Thơ"
+          width={687}
+          height={1024}
+          class="relative w-full rounded-2xl shadow-2xl"
+          loading="lazy"
+        />
+      </div>
+
+      <!-- Content Column -->
+      <div class="lg:col-span-7">
+        <h2 class="text-3xl font-bold tracking-tight text-accent md:text-4xl">
+          Tại sao nên chọn Hoàng Nam Cần Thơ?
+        </h2>
+        <p class="mt-4 text-lg leading-relaxed text-gray-600">
+          Với kinh nghiệm và sự tận tâm, chúng tôi cam kết mang lại giải pháp tối ưu, tiết kiệm và an toàn cho doanh nghiệp của bạn.
+        </p>
+
+        <div class="mt-10 space-y-4">
+          {reasons.map((reason) => (
+            <div class="group flex items-start rounded-lg p-4 -ml-4 transition-colors duration-300 hover:bg-blue-50/70">
+              <div class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-primary">
+                <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <div class="ml-4">
+                <h3 class="text-lg font-bold text-primary">{reason.title}</h3>
+                <p class="mt-1 text-base text-gray-600">{reason.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,153 @@
+---
+import { siteConfig } from "@/config/site";
+
+const checkIcon = `<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 flex-shrink-0 text-teal-500" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>`;
+const crossIcon = `<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 flex-shrink-0 text-gray-400" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.697a1 1 0 010-1.414z" clip-rule="evenodd" /></svg>`;
+
+interface PlanFeature {
+  text: string;
+  included: boolean;
+  note?: string;
+}
+
+interface Plan {
+  name: string;
+  label: string;
+  price: string;
+  badge?: string;
+  featured: boolean;
+  features: PlanFeature[];
+}
+
+const plans: Plan[] = [
+  {
+    name: "Gói BASIC",
+    label: "(A)",
+    price: "1.500.000",
+    featured: false,
+    features: [
+      { text: "Giấy phép Kinh doanh", included: true },
+      { text: "Dấu tròn Công ty", included: false },
+      { text: "Mở TK Ngân hàng số đẹp Free", included: true },
+      { text: "Khai Thuế ban đầu", included: false },
+      { text: "Đăng ký thuế điện tử", included: false },
+      { text: "Dấu chức danh (Giám Đốc)", included: false },
+      { text: "Chữ ký số (Token)", included: false },
+      { text: "Hoá đơn điện tử (pm chuẩn TT78)", included: false },
+      { text: "Tặng email doanh nghiệp năm đầu", included: false },
+      { text: "Km 50% phí tk Logo + Banner", included: false },
+      { text: "Tặng phần mềm KT online năm đầu", included: false },
+      { text: "Free báo cáo thuế 1 quý (khi ký HĐ DVKT)", included: false },
+    ],
+  },
+  {
+    name: "Gói PRO",
+    label: "(B)",
+    price: "3.300.000",
+    badge: "Phổ biến nhất",
+    featured: true,
+    features: [
+      { text: "Giấy phép Kinh doanh", included: true },
+      { text: "Dấu tròn Công ty", included: true },
+      { text: "Mở TK Ngân hàng số đẹp Free", included: true, note: "MBBank, Techcombank,..." },
+      { text: "Khai Thuế ban đầu", included: true },
+      { text: "Đăng ký thuế điện tử", included: true },
+      { text: "Dấu chức danh (Giám Đốc)", included: false },
+      { text: "Chữ ký số (Token)", included: true, note: "1 năm" },
+      { text: "Hoá đơn điện tử (pm chuẩn TT78)", included: true, note: "100 số" },
+      { text: "Tặng email doanh nghiệp năm đầu", included: true, note: "hopthu.vn" },
+      { text: "Km 50% phí tk Logo + Banner", included: true },
+      { text: "Tặng phần mềm KT online năm đầu", included: true },
+      { text: "Free báo cáo thuế 1 quý (khi ký HĐ DVKT)", included: true },
+    ],
+  },
+  {
+    name: "Gói PLUS",
+    label: "(C)",
+    price: "3.900.000",
+    featured: false,
+    features: [
+      { text: "Giấy phép Kinh doanh", included: true },
+      { text: "Dấu tròn Công ty", included: true },
+      { text: "Mở TK Ngân hàng số đẹp Free", included: true, note: "MBBank, Techcombank,..." },
+      { text: "Khai Thuế ban đầu", included: true },
+      { text: "Đăng ký thuế điện tử", included: true },
+      { text: "Dấu chức danh (Giám Đốc)", included: true },
+      { text: "Chữ ký số (Token)", included: true, note: "3 năm" },
+      { text: "Hoá đơn điện tử (pm chuẩn TT78)", included: true, note: "300 số" },
+      { text: "Tặng email doanh nghiệp năm đầu", included: true, note: "hopthu.vn" },
+      { text: "Km 50% phí tk Logo + Banner", included: true },
+      { text: "Tặng phần mềm KT online năm đầu", included: true },
+      { text: "Free báo cáo thuế 1 quý (khi ký HĐ DVKT)", included: true },
+    ],
+  },
+];
+---
+
+<section class="bg-gradient-to-r from-primary to-primary-light py-16 md:py-24">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="text-center">
+      <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
+        Bảng Giá Dịch Vụ Tham Khảo
+      </h2>
+      <p class="mt-4 max-w-2xl mx-auto text-lg text-white/90">
+        Lựa chọn gói dịch vụ phù hợp nhất với nhu cầu và ngân sách của bạn để bắt đầu hành trình kinh doanh.
+      </p>
+    </div>
+
+    <div class="mt-16 grid grid-cols-1 gap-y-12 gap-x-8 lg:grid-cols-3 lg:gap-x-6 items-start">
+      {plans.map((plan) => (
+        <div class:list={[
+          "relative flex flex-col rounded-2xl shadow-2xl",
+          plan.featured ? "bg-blue-50 lg:scale-105 z-10" : "bg-white",
+        ]}>
+          {plan.badge && (
+            <div class="absolute -top-4 left-1/2 -translate-x-1/2">
+              <span class="inline-flex items-center rounded-full bg-teal-500 px-4 py-1 text-sm font-bold text-white shadow-lg">
+                {plan.badge}
+              </span>
+            </div>
+          )}
+          <div class="flex-1 p-8">
+            <h3 class="text-2xl font-bold text-center text-accent">
+              {plan.name} <span class="font-normal">{plan.label}</span>
+            </h3>
+            <div class="mt-6 flex items-baseline justify-center gap-x-2">
+              <span class="text-4xl font-bold tracking-tight text-gray-900">{plan.price}</span>
+              <span class="text-base font-semibold text-gray-600">VNĐ</span>
+            </div>
+            <p class="mt-2 text-center text-sm text-gray-500">Phí trọn gói</p>
+            <ul role="list" class="mt-8 space-y-4 text-sm leading-6 text-gray-600">
+              {plan.features.map((f) => (
+                <li class="flex gap-x-3">
+                  {f.included ? (
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 flex-shrink-0 text-teal-500" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                  ) : (
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 flex-shrink-0 text-gray-400" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.697a1 1 0 010-1.414z" clip-rule="evenodd" /></svg>
+                  )}
+                  <div>
+                    <span>{f.text}</span>
+                    {f.note && <span class="block text-xs text-gray-500 font-semibold">{f.note}</span>}
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div class="p-6 pt-0">
+            <a
+              href={siteConfig.contact.zalo}
+              class:list={[
+                "block w-full text-center text-base font-bold uppercase tracking-wider py-3 rounded-lg transition-all duration-300",
+                plan.featured
+                  ? "bg-primary text-white shadow-lg hover:bg-primary-dark hover:shadow-xl"
+                  : "border-2 border-primary text-primary hover:bg-primary hover:text-white",
+              ]}
+            >
+              Chọn Gói
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,106 @@
+---
+import { Image } from "astro:assets";
+import companyImg from "@/assets/images/services/company.webp";
+import taxImg from "@/assets/images/services/tax.webp";
+import accountingImg from "@/assets/images/services/accounting.webp";
+import accounting1Img from "@/assets/images/services/accounting-1.webp";
+import employeeImg from "@/assets/images/services/employee.webp";
+import tax1Img from "@/assets/images/services/tax-1.webp";
+
+const services = [
+  {
+    title: "Tư Vấn Thành Lập Doanh Nghiệp",
+    image: companyImg,
+    items: [
+      "Thành lập doanh nghiệp trong nước",
+      "Thành lập doanh nghiệp nước ngoài",
+      "Thành lập chi nhánh, văn phòng đại diện...",
+    ],
+  },
+  {
+    title: "Thuế",
+    image: taxImg,
+    items: [
+      "Kê khai, báo cáo thuế",
+      "Kiểm tra, đánh giá các rủi ro về thuế",
+      "Dịch vụ hoàn thuế GTGT",
+    ],
+  },
+  {
+    title: "Kế Toán",
+    image: accountingImg,
+    items: [
+      "Dịch vụ kế toán thuế trọn gói",
+      "Kiểm tra, hoàn thiện hồ sơ kế toán",
+      "Dịch vụ kế toán trưởng....",
+    ],
+  },
+  {
+    title: "Kế Toán Nội Bộ - Chuyên Sâu",
+    image: accounting1Img,
+    items: [
+      "Dịch vụ kế toán nội bộ",
+      "Tư vấn, thiết lập hệ thống kế toán",
+      "Kế toán DN có vốn đầu tư nước ngoài...",
+    ],
+  },
+  {
+    title: "Dịch Vụ Nhân Sự",
+    image: employeeImg,
+    items: [
+      "Tính lương, theo dõi trích bảo hiểm, thuế TNCN",
+      "Dịch vụ tuyển dụng; Giấy phép lao động nước ngoài",
+      "Quản lý hồ sơ Nhân sự...",
+    ],
+  },
+  {
+    title: "Dịch Vụ Liên Quan",
+    image: tax1Img,
+    items: [
+      "Đăng ký nhãn hiệu - thương hiệu",
+      "Giấy phép kinh doanh vận tải",
+      "Giấy phép đủ điều kiện hoạt động...",
+    ],
+  },
+];
+---
+
+<section class="bg-gray-50 py-16 md:py-20">
+  <div class="mx-auto max-w-7xl px-4">
+    <div class="flex items-center justify-center mb-12">
+      <div class="flex-grow h-px bg-gray-200"></div>
+      <h2 class="px-8 text-xl md:text-2xl font-bold uppercase tracking-widest text-accent text-center">
+        Dịch Vụ Của Chúng Tôi
+      </h2>
+      <div class="flex-grow h-px bg-gray-200"></div>
+    </div>
+
+    <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+      {services.map((service) => (
+        <a
+          href="#"
+          class="group block rounded-xl bg-white p-8 text-center shadow-lg transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-2xl"
+        >
+          <div class="mb-6 flex justify-center">
+            <Image
+              src={service.image}
+              alt={service.title}
+              width={70}
+              height={70}
+              class="h-16 w-16 object-contain transition-transform duration-300 group-hover:scale-110"
+              loading="lazy"
+            />
+          </div>
+          <h3 class="mb-4 flex min-h-[48px] items-center justify-center text-base font-bold uppercase leading-tight text-accent">
+            {service.title}
+          </h3>
+          <ul class="space-y-1">
+            {service.items.map((item) => (
+              <li class="text-sm leading-relaxed text-gray-600">{item}</li>
+            ))}
+          </ul>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

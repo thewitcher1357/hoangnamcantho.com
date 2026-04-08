@@ -35,11 +35,16 @@ const canonicalURL =
 <link rel="canonical" href={canonicalURL} />
 <meta name="generator" content={Astro.generator} />
 
+<!-- Theme Color -->
+<meta name="theme-color" content={siteConfig.themeColor} />
+<meta name="msapplication-TileColor" content={siteConfig.themeColor} />
+
 <!-- Primary Meta Tags -->
 <title>{fullTitle}</title>
 <meta name="title" content={fullTitle} />
 <meta name="description" content={description} />
 <meta name="author" content={siteConfig.author} />
+<meta name="keywords" content={`Hoàng Nam Cần Thơ, thành lập công ty Cần Thơ, dịch vụ kế toán Cần Thơ, thuế Cần Thơ, giấy phép kinh doanh Cần Thơ`} />
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website" />
@@ -55,8 +60,3 @@ const canonicalURL =
 <meta property="twitter:title" content={fullTitle} />
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={new URL(ogImageSrc, siteConfig.url)} />
-{
-  siteConfig.twitter && (
-    <meta property="twitter:creator" content={siteConfig.twitter} />
-  )
-}

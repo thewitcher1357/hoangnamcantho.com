@@ -1,0 +1,39 @@
+{
+  "project": {
+    "name": "hoangnamcantho.com",
+    "description": "Chuyển đổi website WordPress hoangnamcantho.com sang Astro - static site với blog, categories, tags",
+    "created_at": "2026-04-08T03:13:19Z",
+    "type": "wordpress-to-astro-migration"
+  },
+  "tech_stack": [
+    "Astro 6.x",
+    "TailwindCSS 4.x",
+    "MDX",
+    "TypeScript",
+    "astro-icon",
+    "Vercel (analytics/speed-insights)"
+  ],
+  "features": [
+    "Blog posts (MDX content)",
+    "Category pages",
+    "Tag pages",
+    "SEO (sitemap, RSS, Schema)",
+    "i18n (en/es)",
+    "Reading time",
+    "Contact page",
+    "Services page",
+    "About page"
+  ],
+  "decisions": [
+    {
+      "date": "2026-04-08",
+      "decision": "Dựa trên AstroStarterPro template, customize cho hoangnamcantho.com",
+      "reason": "Template có sẵn cấu trúc blog, SEO, responsive tốt"
+    },
+    {
+      "date": "2026-04-07",
+      "decision": "Blog post URL dùng root path (/slug) thay vì /blog/slug",
+      "reason": "Giữ tương thích URL structure từ WordPress cũ"
+    }
+  ]
+}

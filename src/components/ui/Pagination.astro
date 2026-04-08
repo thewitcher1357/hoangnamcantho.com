@@ -19,23 +19,23 @@ const { prev, next } = url;
       {prev ? (
         <a
           href={prev}
-          class="inline-flex items-center px-4 py-2 text-sm font-medium text-muted-foreground bg-card border border-border rounded-lg hover:bg-muted hover:text-foreground transition-colors"
+          class="inline-flex items-center px-5 py-2.5 text-sm font-semibold text-gray-700 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 hover:text-primary transition-all duration-300 shadow-sm hover:shadow"
         >
           <Icon name="tabler:arrow-left" class="w-4 h-4 mr-2" />
-          Previous
+          Trang trước
         </a>
       ) : (
         <span />
       )}
-      <div class="flex items-center text-sm text-muted-foreground">
-        Página {currentPage} de {lastPage}
+      <div class="flex items-center text-sm font-medium text-gray-500">
+        Trang {currentPage} / {lastPage}
       </div>
       {next ? (
         <a
           href={next}
-          class="inline-flex items-center px-4 py-2 text-sm font-medium text-muted-foreground bg-card border border-border rounded-lg hover:bg-muted hover:text-foreground transition-colors"
+          class="inline-flex items-center px-5 py-2.5 text-sm font-semibold text-gray-700 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 hover:text-primary transition-all duration-300 shadow-sm hover:shadow"
         >
-          Next
+          Trang sau
           <Icon name="tabler:arrow-right" class="w-4 h-4 ml-2" />
         </a>
       ) : (
