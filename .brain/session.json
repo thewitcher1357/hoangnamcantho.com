@@ -1,0 +1,95 @@
+{
+  "updated_at": "2026-04-08T11:14:00Z",
+  "working_on": {
+    "feature": "Page Migration from hoangnamvungtau.com reference",
+    "task": "Completed all main pages: gioi-thieu, lien-he, dich-vu, blog",
+    "status": "completed",
+    "files": [
+      "src/pages/gioi-thieu.astro",
+      "src/pages/lien-he.astro",
+      "src/pages/dich-vu.astro",
+      "src/pages/blog/[...page].astro",
+      "src/pages/category/[category].astro",
+      "src/components/blog/PostItem.astro",
+      "src/components/ui/Pagination.astro"
+    ],
+    "blockers": [],
+    "notes": "All pages use consistent hero banner + section pattern from reference site"
+  },
+  "recent_changes": [
+    {
+      "timestamp": "2026-04-08T09:00:00Z",
+      "type": "feature",
+      "description": "Trang chủ hoàn chỉnh: HeroBanner, ServicesGrid, CTABanner, ProcessSteps, PricingTable, WhyChooseUs, RequiredDocs, LatestPosts, ContactForm",
+      "files": ["src/pages/index.astro", "src/components/homepage/*"]
+    },
+    {
+      "timestamp": "2026-04-08T09:30:00Z",
+      "type": "config",
+      "description": "site.ts, global.css, Navbar, Footer, FloatingActions, BackToTop - toàn bộ layout system",
+      "files": ["src/config/site.ts", "src/styles/global.css", "src/components/layout/*", "src/components/ui/*"]
+    },
+    {
+      "timestamp": "2026-04-08T10:18:00Z",
+      "type": "feature",
+      "description": "Trang Giới Thiệu (/gioi-thieu): Hero, team photo, triết lý phục vụ",
+      "files": ["src/pages/gioi-thieu.astro"]
+    },
+    {
+      "timestamp": "2026-04-08T10:18:00Z",
+      "type": "feature",
+      "description": "Trang Liên Hệ (/lien-he): 4 contact cards, form tư vấn, Google Maps, giờ làm việc",
+      "files": ["src/pages/lien-he.astro"]
+    },
+    {
+      "timestamp": "2026-04-08T10:36:00Z",
+      "type": "feature",
+      "description": "Trang Dịch Vụ (/dich-vu): 3 dịch vụ chính + 6 dịch vụ bổ sung + why choose us",
+      "files": ["src/pages/dich-vu.astro"]
+    },
+    {
+      "timestamp": "2026-04-08T10:37:00Z",
+      "type": "improvement",
+      "description": "Việt hóa Blog: hero banner, vi-VN locale, 'phút đọc', pagination Vietnamese",
+      "files": ["src/pages/blog/[...page].astro", "src/components/blog/PostItem.astro", "src/components/ui/Pagination.astro", "src/pages/category/[category].astro"]
+    }
+  ],
+  "decisions_made": [
+    {
+      "decision": "pageSize 9 cho blog (thay vì 6)",
+      "reason": "Grid 3 cột, 3 hàng = 9 bài/trang đẹp hơn"
+    },
+    {
+      "decision": "Default author 'Hoàng Nam' nếu không có author",
+      "reason": "Nhiều bài từ WP migration không có author field"
+    }
+  ],
+  "pending_tasks": [
+    {
+      "task": "Xóa các trang English cũ (about.astro, contact.astro, services.astro)",
+      "priority": "low",
+      "notes": "Đã có trang Vietnamese thay thế, cần cleanup"
+    },
+    {
+      "task": "Deploy lên Vercel/Netlify",
+      "priority": "medium",
+      "notes": "Build đã thành công 62 pages"
+    },
+    {
+      "task": "Kiểm tra responsive trên mobile",
+      "priority": "medium",
+      "notes": "Cần test trên thiết bị thật"
+    },
+    {
+      "task": "Tối ưu Google Maps embed URL cho đúng vị trí",
+      "priority": "low",
+      "notes": "Hiện tại embed chung khu Xuân Khánh, cần pin chính xác"
+    }
+  ],
+  "build_stats": {
+    "pages": 62,
+    "build_time": "40.47s",
+    "last_build": "2026-04-08T10:40:15Z",
+    "status": "success"
+  }
+}

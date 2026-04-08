@@ -1,39 +1,148 @@
 {
+  "meta": {
+    "schema_version": "1.1.0",
+    "awf_version": "4.0.2",
+    "last_updated": "2026-04-08T11:14:00Z"
+  },
   "project": {
     "name": "hoangnamcantho.com",
-    "description": "Chuyển đổi website WordPress hoangnamcantho.com sang Astro - static site với blog, categories, tags",
+    "description": "Website dịch vụ thành lập doanh nghiệp Hoàng Nam - Chi nhánh Cần Thơ. Chuyển đổi từ WordPress sang Astro static site.",
     "created_at": "2026-04-08T03:13:19Z",
-    "type": "wordpress-to-astro-migration"
+    "type": "wordpress-to-astro-migration",
+    "status": "active-development",
+    "url": "https://hoangnamcantho.com",
+    "reference_site": "https://hoangnamvungtau.com"
   },
-  "tech_stack": [
-    "Astro 6.x",
-    "TailwindCSS 4.x",
-    "MDX",
-    "TypeScript",
-    "astro-icon",
-    "Vercel (analytics/speed-insights)"
-  ],
-  "features": [
-    "Blog posts (MDX content)",
-    "Category pages",
-    "Tag pages",
-    "SEO (sitemap, RSS, Schema)",
-    "i18n (en/es)",
-    "Reading time",
-    "Contact page",
-    "Services page",
-    "About page"
+  "tech_stack": {
+    "framework": "Astro 6.x",
+    "styling": "TailwindCSS 4.x + @tailwindcss/typography",
+    "content": "MDX (astro:content)",
+    "icons": "astro-icon",
+    "language": "TypeScript",
+    "build_output": "Static HTML (SSG)",
+    "deployment": "Vercel (planned)"
+  },
+  "design_system": {
+    "mode": "Light Only (no dark mode)",
+    "primary_color": "#0056b3",
+    "primary_dark": "#003d80",
+    "primary_light": "#0068ff",
+    "secondary": "#25368e",
+    "accent": "#1a5b96",
+    "font": "system-ui, -apple-system, sans-serif",
+    "hero_pattern": "bg-gradient-to-r from-primary to-primary-light + white text",
+    "card_pattern": "rounded-2xl ring-1 hover:-translate-y-2 hover:shadow-xl"
+  },
+  "contact_info": {
+    "company": "Hoàng Nam Cần Thơ",
+    "hotline": "0918883179",
+    "hotline_display": "091.888.31.79",
+    "email": "tructuyenhoangnam@gmail.com",
+    "address": "03 Đ. Quản Trọng Hoàng, Xuân Khánh, Ninh Kiều, Cần Thơ",
+    "zalo": "https://zalo.me/0918883179",
+    "facebook": "https://facebook.com/hoangnamcantho"
+  },
+  "pages": {
+    "active_vietnamese": [
+      { "route": "/", "file": "index.astro", "title": "Trang Chủ" },
+      { "route": "/gioi-thieu", "file": "gioi-thieu.astro", "title": "Giới Thiệu" },
+      { "route": "/dich-vu", "file": "dich-vu.astro", "title": "Dịch Vụ" },
+      { "route": "/lien-he", "file": "lien-he.astro", "title": "Liên Hệ" },
+      { "route": "/blog", "file": "blog/[...page].astro", "title": "Chia Sẻ Kiến Thức" },
+      { "route": "/category/[cat]", "file": "category/[category].astro", "title": "Chuyên Mục" },
+      { "route": "/tags/[tag]", "file": "tags/[tag].astro", "title": "Thẻ" },
+      { "route": "/[...slug]", "file": "[...slug].astro", "title": "Bài Viết (root path)" }
+    ],
+    "legacy_english_obsolete": [
+      "about.astro (replaced by gioi-thieu.astro)",
+      "contact.astro (replaced by lien-he.astro)",
+      "services.astro (replaced by dich-vu.astro)"
+    ]
+  },
+  "components": {
+    "homepage": [
+      "HeroBanner", "ServicesGrid", "CTABanner", "ProcessSteps",
+      "PricingTable", "WhyChooseUs", "RequiredDocs", "LatestPosts", "ContactForm"
+    ],
+    "layout": ["Navbar (with dropdowns)", "Footer", "FloatingActions (Zalo+Phone)", "BackToTop"],
+    "seo": ["Seo.astro", "Schema.astro (LocalBusiness)"],
+    "blog": ["PostItem.astro (vi-VN locale)"],
+    "ui": ["Pagination (Vietnamese)", "Headline", "Tags", "Button", "Card"]
+  },
+  "content": {
+    "blog_posts": 46,
+    "blog_format": "MDX with frontmatter (pubDate, categories, tags, image)",
+    "url_pattern": "Root path: /slug-bai-viet (WordPress compatible)",
+    "pagination": "9 posts per page"
+  },
+  "seo": {
+    "locale": "vi_VN",
+    "schema_type": "LocalBusiness",
+    "sitemap": "auto-generated",
+    "rss": "/rss.xml",
+    "og_image": "auto from assets",
+    "canonical": "https://hoangnamcantho.com"
+  },
+  "navigation": [
+    { "text": "Trang Chủ", "href": "/" },
+    { "text": "Giới Thiệu", "href": "/gioi-thieu" },
+    { "text": "Dịch Vụ", "href": "/dich-vu", "children": [
+      "Thành Lập Công Ty → /thanh-lap-cong-ty-tai-can-tho",
+      "Làm Giấy Phép Kinh Doanh → /lam-giay-phep-kinh-doanh-tai-can-tho",
+      "Giải Thể Công Ty → /giai-the-cong-ty-tai-can-tho"
+    ]},
+    { "text": "Chia Sẻ", "href": "/tin-tuc", "children": [
+      "Tin tức công ty → /tin-tuc/cong-ty",
+      "Kiến thức chuyên ngành → /tin-tuc/kien-thuc"
+    ]},
+    { "text": "Liên Hệ", "href": "/lien-he" }
   ],
   "decisions": [
+    {
+      "date": "2026-04-07",
+      "decision": "Blog post URL dùng root path (/slug) thay vì /blog/slug",
+      "reason": "Giữ tương thích URL structure từ WordPress cũ"
+    },
     {
       "date": "2026-04-08",
       "decision": "Dựa trên AstroStarterPro template, customize cho hoangnamcantho.com",
       "reason": "Template có sẵn cấu trúc blog, SEO, responsive tốt"
     },
     {
-      "date": "2026-04-07",
-      "decision": "Blog post URL dùng root path (/slug) thay vì /blog/slug",
-      "reason": "Giữ tương thích URL structure từ WordPress cũ"
+      "date": "2026-04-08",
+      "decision": "Light Mode only - không hỗ trợ Dark Mode",
+      "reason": "Target audience là doanh nghiệp, design chuyên nghiệp light theme"
+    },
+    {
+      "date": "2026-04-08",
+      "decision": "Thiết kế tham khảo hoangnamvungtau.com, localize cho Cần Thơ",
+      "reason": "Cùng thương hiệu Hoàng Nam, đồng bộ giao diện giữa các chi nhánh"
+    },
+    {
+      "date": "2026-04-08",
+      "decision": "site.ts là Single Source of Truth cho contact info, navigation, footer",
+      "reason": "Chỉ cần sửa 1 file khi thay đổi thông tin liên hệ hoặc menu"
     }
-  ]
+  ],
+  "knowledge_items": {
+    "patterns": [
+      "Hero Banner: gradient from-primary to-primary-light, white text, py-20 md:py-24",
+      "Section: bg-white hoặc bg-gray-50 luân phiên, py-16 md:py-24",
+      "Cards: rounded-2xl ring-1 hover:-translate-y-2 hover:shadow-xl transitions",
+      "CTA Banner: reusable CTABanner component với title/subtitle props",
+      "Icons: Inline SVG with Fragment set:html (không dùng astro-icon cho custom icons)"
+    ],
+    "gotchas": [
+      "Tailwind v4 dùng @theme thay vì extend trong config",
+      "astro:content collection cần pubDate (không phải pubDatetime) trong schema",
+      "PostItem dùng /${post.id} cho href (root path, không có /blog/ prefix)",
+      "CSS variables --color-primary etc. định nghĩa trong global.css @theme block"
+    ],
+    "conventions": [
+      "Vietnamese routes: /gioi-thieu, /dich-vu, /lien-he (không dùng English routes)",
+      "All text in Vietnamese, date format vi-VN",
+      "Reading time: 'X phút đọc', Pagination: 'Trang trước/sau'",
+      "siteConfig imported from @/config/site for all contact/nav data"
+    ]
+  }
 }
