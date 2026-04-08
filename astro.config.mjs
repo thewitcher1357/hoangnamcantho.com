@@ -4,12 +4,14 @@ import mdx from "@astrojs/mdx";
 import tailwindcss from "@tailwindcss/vite";
 import icon from "astro-icon";
 import remarkReadingTime from "remark-reading-time";
+import { remarkR2Images } from "./src/plugins/remark-r2-images.mjs";
 
 export default defineConfig({
   site: "https://hoangnamcantho.com/",
   integrations: [sitemap(), icon(), mdx()],
   markdown: {
     remarkPlugins: [
+      [remarkR2Images, { base: "https://images.hoangnamcantho.com" }],
       remarkReadingTime,
       () => {
         return function (tree, file) {

@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
+import { toR2Url } from "@/utils/r2";
 import Schema from "@/components/seo/Schema.astro";
 import { getCollection, render } from "astro:content";
 
@@ -16,6 +17,7 @@ const { Content, remarkPluginFrontmatter } = await render(post);
 
 // Lấy dữ liệu từ post.data
 const { title, description, pubDate, author, image } = post.data;
+const coverImage = toR2Url(image);
 
 // Fix lỗi: Đảm bảo pubDate là một đối tượng Date hợp lệ trước khi gọi toLocaleDateString
 const dateObj = pubDate instanceof Date ? pubDate : new Date(pubDate || Date.now());
@@ -33,7 +35,7 @@ const readingTime = remarkPluginFrontmatter?.minutesRead
 const metadata = {
   title: title,
   description: description,
-  ogImage: image,
+  ogImage: coverImage,
 };
 ---
 
@@ -43,7 +45,7 @@ const metadata = {
     data={{
       title,
       description,
-      image,
+      image: coverImage,
       pubDate: dateObj, // Dùng dateObj đã chuẩn hóa
       author,
       url: Astro.url.href,
@@ -64,9 +66,9 @@ const metadata = {
       </div>
 
       {
-        image && (
+        coverImage && (
           <div class="reveal relative mb-8 h-96 w-full overflow-hidden rounded-xl shadow-lg">
-            <img src={image} alt={title} class="h-full w-full object-cover" />
+            <img src={coverImage} alt={title} class="h-full w-full object-cover" />
           </div>
         )
       }

@@ -80,3 +80,4 @@ export const siteConfig = {
     ],
   },
 };
+export const R2_BASE = "https://images.hoangnamcantho.com";

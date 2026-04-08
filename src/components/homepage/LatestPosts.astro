@@ -1,5 +1,6 @@
 ---
 import { getCollection } from "astro:content";
+import { toR2Url } from "@/utils/r2";
 
 const allPosts = await getCollection("blog");
 const latestPosts = allPosts
@@ -26,9 +27,9 @@ const latestPosts = allPosts
             class="group block overflow-hidden rounded-xl bg-white shadow-lg transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-2xl"
           >
             <div class="overflow-hidden">
-              {post.data.coverImage ? (
+              {toR2Url(post.data.coverImage) ? (
                 <img
-                  src={post.data.coverImage}
+                  src={toR2Url(post.data.coverImage)}
                   alt={post.data.title}
                   loading="lazy"
                   decoding="async"
