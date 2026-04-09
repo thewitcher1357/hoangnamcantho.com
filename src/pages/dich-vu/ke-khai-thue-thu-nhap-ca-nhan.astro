@@ -1,0 +1,269 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { Image } from "astro:assets";
+import CTABanner from "@/components/homepage/CTABanner.astro";
+import heroImage from "@/assets/images/services/ke-khai-thue-tncn.png";
+
+const metadata = {
+  title: "Dịch Vụ Kê Khai Thuế Thu Nhập Cá Nhân Tại Cần Thơ – Hoàng Nam",
+  description:
+    "Dịch vụ kê khai thuế TNCN chuyên nghiệp tại Cần Thơ. Hoàng Nam tư vấn, đăng ký MST, khai thuế hàng tháng/quý, quyết toán thuế TNCN cuối năm.",
+};
+
+const servicesList = [
+  "Tư vấn thuế TNCN",
+  "Nộp thuế TNCN",
+  "Đăng ký thuế, đăng ký mã số thuế cá nhân",
+  "Đăng ký người phụ thuộc, đăng ký giảm trừ gia cảnh",
+  "Khai thuế thu nhập cá nhân hàng tháng",
+  "Khai thuế thu nhập cá nhân hàng quý",
+  "Khai thuế TNCN từ hoạt động kinh doanh",
+  "Khai thuế TNCN từ cho thuê bất động sản",
+  "Xác nhận hoàn tất nghĩa vụ thuế TNCN",
+];
+
+const whyChooseUs = [
+  "Thu thập thông tin, tài liệu liên quan đến nghĩa vụ nộp thuế TNCN của người nộp thuế.",
+  "Tư vấn các vấn đề có liên quan đến khai thuế TNCN.",
+  "Lập và in các loại báo cáo khai thuế TNCN.",
+  "Soạn thảo các báo cáo, tính toán số thuế phải nộp.",
+  "Hướng dẫn khách hàng chuẩn bị các hồ sơ, thông tin liên quan đến việc khai thuế TNCN.",
+];
+
+const benefits = [
+  "Chất lượng công việc kế toán, thủ tục thuế khi sử dụng dịch vụ của Hoàng Nam luôn được bảo đảm tốt nhất cho mọi doanh nghiệp, phù hợp với các quy định của pháp luật.",
+  "Nhân viên thực hiện dịch vụ khai thuế của Hoàng Nam luôn được cập nhật những chính sách, thông tư, nghị định, quy định mới của chính phủ để tư vấn kịp thời cho quý khách hàng.",
+  "Chi phí dịch vụ khai thuế khi sử dụng dịch vụ của Hoàng Nam luôn thấp hơn nhiều lần so với thuê hay tuyển dụng nhân viên kế toán.",
+  "Khi sử dụng dịch vụ khai thuế của Hoàng Nam, nhân sự của chúng tôi sẽ tư vấn, giải đáp cho doanh nghiệp và khách hàng các vấn đề liên quan đến quy định về thuế, kế toán, hóa đơn chứng từ.",
+  "Dịch vụ khai thuế của Hoàng Nam sẽ cung cấp cho doanh nghiệp các báo cáo chính xác và kịp thời, nhanh chóng hàng tháng, hàng quý, hàng năm hay tại bất kỳ thời điểm nào khi doanh nghiệp yêu cầu.",
+  "Sử dụng dịch vụ khai thuế của Hoàng Nam thì nhân sự chịu trách nhiệm thực hiện công việc của doanh nghiệp luôn ổn định, quý khách hàng không còn bận tâm về việc biến động của nhân viên kế toán.",
+];
+
+const supportServices = [
+  "Dịch vụ tuân thủ thuế TNCN",
+  "Kê khai, quyết toán cuối năm thuế TNCN",
+  "Dịch vụ tư vấn thù lao có hiệu quả cho mục đích tính thuế",
+  "Dịch vụ tư vấn lương thưởng dựa trên vốn chủ sở hữu",
+  "Dịch vụ hoạch định và tư vấn thuế trong nước và quốc tế",
+];
+
+const valueProps = [
+  {
+    icon: "❤️",
+    title: "Tập thể tận tâm",
+    description: "Dịch Vụ kê khai thuế thu nhập cá nhân của Hoàng Nam có đội ngũ tư vấn luôn hết mình và quy trình xử lý thông tin đơn giản tiết kiệm thời gian cho doanh nghiệp.",
+  },
+  {
+    icon: "💰",
+    title: "Giá cả hợp lý",
+    description: "Các mức phí Hoàng Nam đưa ra luôn hợp lý – chúng tôi không phải là đơn vị cung ứng dịch vụ rẻ nhất nhưng chúng tôi là đơn vị báo giá hợp lý và dịch vụ chất lượng nhất.",
+  },
+  {
+    icon: "📦",
+    title: "Các gói giải pháp tốt nhất",
+    description: "Hoàng Nam còn cung cấp thêm Chữ Ký Số để khai và nộp thuế online, Hóa Đơn Điện Tử với mức giá hỗ trợ thấp nhất thị trường. Hỗ trợ kỹ thuật 24/24.",
+  },
+  {
+    icon: "👨‍⚖️",
+    title: "Đội ngũ hàng đầu",
+    description: "Đội ngũ luật của Hoàng Nam sẽ tư vấn pháp lý cho khách hàng rõ hơn về quy định của pháp luật từng lĩnh vực trong lĩnh vực bạn kinh doanh.",
+  },
+];
+---
+
+<BaseLayout {metadata}>
+  <!-- Hero Banner -->
+  <section class="relative bg-gradient-to-r from-primary to-primary-light py-20 text-center text-white md:py-28">
+    <div class="relative z-10 mx-auto max-w-4xl px-6">
+      <h1 class="text-3xl font-extrabold uppercase leading-tight drop-shadow-md md:text-5xl">
+        Dịch Vụ Kê Khai Thuế Thu Nhập Cá Nhân Tại Cần Thơ
+      </h1>
+      <p class="mt-5 text-lg font-light text-white/90 md:text-xl">
+        Chuyên Nghiệp – Đúng Pháp Luật – Hỗ Trợ Tận Tâm
+      </p>
+    </div>
+  </section>
+
+  <!-- Giới thiệu -->
+  <section class="bg-white py-10 md:py-14">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <div class="prose prose-lg mx-auto max-w-none text-gray-700">
+        <p class="text-justify">
+          <strong class="text-primary">Dịch vụ khai thuế thu nhập cá nhân</strong> là dịch vụ thủ tục thuế chuyên
+          nghiệp của Hoàng Nam. Chúng tôi sẽ tư vấn, hướng dẫn khách hàng chuẩn bị các thông tin cần thiết theo
+          quy định của nhà nước.
+        </p>
+        <p class="text-justify">
+          Dịch vụ khai thuế thu nhập cá nhân của Hoàng Nam thực hiện lập các báo cáo, lập hồ sơ khai thuế TNCN
+          theo quy định của pháp luật.
+        </p>
+      </div>
+
+      <div class="my-10 overflow-hidden rounded-2xl shadow-xl">
+        <Image
+          src={heroImage}
+          alt="Dịch vụ kê khai thuế thu nhập cá nhân tại Cần Thơ"
+          width={815}
+          height={545}
+          class="w-full object-cover"
+          loading="lazy"
+        />
+      </div>
+
+      <div class="prose prose-lg mx-auto max-w-none text-gray-700">
+        <p class="text-justify">
+          Dịch vụ kê khai thuế thu nhập cá nhân của Hoàng Nam đáp ứng đầy đủ các điều kiện theo quy định của pháp luật
+          để cung cấp dịch vụ kế toán, dịch vụ kế toán trưởng, dịch vụ thủ tục thuế và được Bộ tài chính Việt Nam
+          cấp Giấy chứng nhận đủ điều kiện hoạt động.
+        </p>
+        <p class="text-justify">
+          Ngoài ra, dịch vụ của Hoàng Nam đi kèm thêm tư vấn và xử lý hành chính cho các tổ chức quốc tế và trong nước.
+          Giúp doanh nghiệp và nhân viên quản lý tốt các hoạt động của mình với rất nhiều nguyên tắc có ảnh hưởng đến
+          hợp đồng lao động của họ tại Việt Nam.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dịch vụ tại HN -->
+  <section class="bg-gray-50 py-10 md:py-14">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <h2 class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl">
+        Dịch Vụ Kê Khai Thuế Thu Nhập Cá Nhân Tại Hoàng Nam
+      </h2>
+      <div class="mt-6 prose prose-lg max-w-none text-gray-700">
+        <p class="text-justify">
+          Nếu như bạn đang gặp vấn đề trong quá trình kê khai thuế thu nhập cá nhân thì Hoàng Nam sẽ là người đồng
+          hành tuyệt vời để giúp khách hàng được hướng dẫn một cách cụ thể.
+        </p>
+        <p class="font-semibold mt-4">Dịch vụ kê khai thuế thu nhập cá nhân tại Hoàng Nam bao gồm:</p>
+      </div>
+      <div class="mt-6 space-y-3">
+        {servicesList.map((item) => (
+          <div class="flex items-start gap-3 rounded-xl border border-gray-100 bg-white p-4 shadow-sm">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mt-0.5 h-6 w-6 flex-shrink-0 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+            </svg>
+            <span class="text-gray-700">{item}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Vì sao chọn HN -->
+  <section class="bg-white py-10 md:py-14">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <h2 class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl">
+        Vì Sao Nên Chọn Hoàng Nam Tư Vấn Dịch Vụ Thuế Thu Nhập Cá Nhân
+      </h2>
+      <div class="mt-6 prose prose-lg max-w-none text-gray-700">
+        <p class="text-justify">
+          Dịch vụ kê khai thuế thu nhập cá nhân của Hoàng Nam chiếm vị trí hàng đầu trên thị trường.
+          Mục đích hỗ trợ các doanh nghiệp quản lý tốt hơn lực lượng lao động.
+        </p>
+        <p class="text-justify">
+          Bộ phận tư vấn dịch vụ thuế thu nhập cá nhân của Hoàng Nam có nguồn nhân lực, kinh nghiệm, công nghệ và
+          tính linh hoạt. Để hỗ trợ tất cả các loại hình tổ chức, không phân biệt giai đoạn phát triển trong nước hay quốc tế.
+        </p>
+      </div>
+      <div class="mt-6 space-y-3">
+        {whyChooseUs.map((item) => (
+          <div class="flex items-start gap-3 rounded-xl border border-gray-100 bg-white p-4 shadow-sm">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mt-0.5 h-5 w-5 flex-shrink-0 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span class="text-gray-700">{item}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Lợi ích -->
+  <section class="bg-gray-50 py-10 md:py-14">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <h2 class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl">
+        Lợi Ích Của Dịch Vụ Kê Khai Thuế Tại Hoàng Nam
+      </h2>
+      <div class="mt-8 space-y-4">
+        {benefits.map((item, index) => (
+          <div class="flex items-start gap-5 rounded-xl border border-gray-100 bg-white p-5 shadow-sm transition-all duration-300 hover:shadow-md">
+            <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-primary text-sm font-bold text-white">
+              {index + 1}
+            </span>
+            <p class="text-gray-700 pt-2">{item}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Hoàng Nam hỗ trợ -->
+  <section class="bg-white py-10 md:py-14">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <h2 class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl">
+        Hoàng Nam Hỗ Trợ Khách Hàng Như Thế Nào
+      </h2>
+      <p class="mt-6 text-gray-700 text-lg">
+        Bộ phận dịch vụ thuế thu nhập cá nhân bao gồm các dịch vụ sau:
+      </p>
+      <div class="mt-6 space-y-3">
+        {supportServices.map((item) => (
+          <div class="flex items-start gap-3 rounded-xl border border-gray-100 bg-white p-4 shadow-sm">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mt-0.5 h-6 w-6 flex-shrink-0 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+            </svg>
+            <span class="text-gray-700">{item}</span>
+          </div>
+        ))}
+      </div>
+      <div class="mt-8 rounded-r-xl border-l-[6px] border-primary bg-blue-50 px-8 py-6">
+        <p class="text-gray-700 text-justify">
+          Quý Khách hàng có nhu cầu được tư vấn về mặt pháp lý lẫn hỗ trợ về mặt thủ tục liên quan đến quyết toán
+          thuế thu nhập cá nhân nói riêng và các lĩnh vực thuế khác, xin vui lòng liên hệ
+          <strong class="text-primary">Hoàng Nam</strong> để biết thêm chi tiết!
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bạn nhận được gì -->
+  <section class="bg-gray-50 py-10 md:py-14">
+    <div class="mx-auto max-w-6xl px-6 lg:px-8">
+      <h2 class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl">
+        Bạn Nhận Được Gì Tại Dịch Vụ Của Hoàng Nam?
+      </h2>
+      <div class="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2">
+        {valueProps.map((item) => (
+          <div class="rounded-xl border border-gray-100 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+            <div class="mb-3 text-3xl">{item.icon}</div>
+            <strong class="block text-lg text-primary">{item.title}</strong>
+            <p class="mt-2 text-gray-600">{item.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Thông tin liên hệ -->
+  <section class="bg-white py-10 md:py-14">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <div class="rounded-2xl border-2 border-primary/20 bg-gradient-to-r from-blue-50 to-indigo-50 p-8 shadow-sm">
+        <h3 class="text-xl font-bold text-primary mb-4">🏢 HOÀNG NAM CHI NHÁNH CẦN THƠ</h3>
+        <div class="space-y-2 text-gray-700">
+          <p>📍 <strong>Địa chỉ:</strong> 03 Quản Trọng Hoàng, Phường Hưng Lợi, Quận Ninh Kiều, Cần Thơ</p>
+          <p>📞 <strong>Điện thoại:</strong> <a href="tel:0918883179" class="text-primary font-semibold hover:underline">091.888.3179</a></p>
+          <p>📧 <strong>Email:</strong> <a href="mailto:cskh@hoangnamcantho.com" class="text-primary hover:underline">cskh@hoangnamcantho.com</a></p>
+          <p>🌐 <strong>Website:</strong> <a href="https://hoangnamcantho.com/" class="text-primary hover:underline">https://hoangnamcantho.com/</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <CTABanner
+    title="Bạn cần dịch vụ kê khai thuế thu nhập cá nhân tại Cần Thơ?"
+    subtitle="Liên hệ ngay Hoàng Nam để được tư vấn miễn phí. Đăng ký MST, khai thuế TNCN, quyết toán cuối năm chuyên nghiệp."
+  />
+</BaseLayout>

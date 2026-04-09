@@ -1,0 +1,273 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { Image } from "astro:assets";
+import CTABanner from "@/components/homepage/CTABanner.astro";
+import heroImage from "@/assets/images/services/bao-cao-tai-chinh.png";
+
+const metadata = {
+  title: "Dịch Vụ Làm Báo Cáo Tài Chính Tại Cần Thơ – Hoàng Nam",
+  description:
+    "Dịch vụ làm báo cáo tài chính cuối năm tại Cần Thơ. Hoàng Nam gỡ rối sổ sách, hoàn thiện BCTC, quyết toán thuế chuyên nghiệp.",
+};
+
+const serviceHighlights = [
+  "Là giải pháp tối ưu cho doanh nghiệp.",
+  "Yên tâm về hiệu quả kế toán do Hoàng Nam chịu trách nhiệm dịch vụ.",
+  "Gỡ rối và hoàn thiện sổ sách kế toán cho doanh nghiệp.",
+  "Báo cáo tài chính & các báo cáo quyết toán thuế mà doanh nghiệp cần có cho các kỳ thuế.",
+];
+
+const workflow = [
+  "Kiểm tra rà soát lại các hóa đơn đầu ra, đầu vào đã kê khai trong Báo cáo thuế hằng tháng/quý.",
+  "Xem xét, kiểm tra tính hợp pháp, chi phí hợp lệ, chính xác của các chứng từ kế toán.",
+  "Cập nhật hóa đơn, chứng từ vào hệ thống sổ sách kế toán.",
+  "Hoàn thiện hệ thống sổ sách kế toán cuối năm.",
+  "Lập và nộp Báo cáo tài chính và các tờ khai quyết toán thuế TNDN, tờ khai quyết toán thuế TNCN cuối năm.",
+  "Tư vấn và giải đáp những vấn đề liên quan đến lĩnh vực thuế và kế toán.",
+  "Thông báo số tiền thuế cần phải nộp phát sinh cuối năm (nếu có).",
+  "In ấn, đóng lập hồ sơ kế toán nguyên năm.",
+];
+
+const commonProblems = [
+  "Kế toán thiếu kinh nghiệm làm báo cáo tài chính; Trình độ, năng lực chuyên môn của kế toán tại doanh nghiệp không đáp ứng được nhu cầu, bỏ sau lưng chủ doanh nghiệp là những báo cáo, sổ sách quá sơ sài.",
+  "Nội bộ kế toán có thay đổi người nên kế toán mới chưa kịp nắm bắt hết tình hình tài chính của doanh nghiệp.",
+  "Kế toán viên của bạn đã có thể hạch toán hằng ngày và làm báo cáo thuế hàng tháng tuy nhiên chưa thể lập báo cáo tài chính cuối năm.",
+  "Các quy định về thuế luôn được cập nhật và thay đổi liên tục và bạn không có thời gian để cập nhật hết các thông tư mới nhất của chính phủ.",
+  "Thuê kế toán làm bán thời gian nhưng không có trách nhiệm hoặc nghiệp vụ quá kém dẫn đến sai phạm cho doanh nghiệp.",
+  "Doanh nghiệp bạn cần làm báo cáo tài chính để đáp ứng yêu cầu hồ sơ vay vốn ngân hàng hoặc hồ sơ thầu trong khi số liệu vẫn chưa chuẩn chỉnh.",
+  "Kế toán làm thủ công trên excel, số liệu nhảy sai lung tung.",
+  "Kế toán thiếu nghiệp vụ tự ý chỉnh lại số liệu trực tiếp bằng tay.",
+];
+
+const workTasks = [
+  "Thu thập thông tin là các chứng từ, hóa đơn, sổ sách của doanh nghiệp.",
+  "Khảo sát thực tế quy trình hoạt động của doanh nghiệp.",
+  "Kiểm tra chứng từ kế toán, phân loại và sắp xếp chứng từ kế toán.",
+  "Tính và lập các bảng khấu hao tài sản cố định.",
+  "Loại bỏ, điều chỉnh, chỉnh sửa các chứng từ không phù hợp.",
+  "Hạch toán kế toán trên phần mềm kế toán chuyên nghiệp.",
+  "Lập các bảng phân bổ công cụ, dụng cụ, chi phí trả trước, chi phí chờ kết chuyển.",
+  "Kết chuyển, tổng hợp thông tin để lập sổ sách kế toán, báo cáo tài chính, báo cáo kết quả kinh doanh, thuyết trình báo cáo tài chính.",
+  "Trao đổi với doanh nghiệp các nội dung, nghiệp vụ có liên quan đến kết quả thực hiện.",
+  "Lập và in các loại báo cáo quyết toán thuế.",
+  "In báo cáo tài chính, sổ sách kế toán theo quy định.",
+  "Tư vấn cho doanh nghiệp các nội dung có liên quan trong quá trình tổng hợp thông tin để lập báo cáo tài chính.",
+];
+
+const valueProps = [
+  {
+    icon: "❤️",
+    title: "Tập thể tận tâm",
+    description: "Dịch Vụ Làm báo cáo tài chính của Hoàng Nam có đội ngũ tư vấn luôn hết mình và quy trình xử lý thông tin đơn giản tiết kiệm thời gian cho doanh nghiệp.",
+  },
+  {
+    icon: "💰",
+    title: "Giá cả hợp lý",
+    description: "Các mức phí Hoàng Nam đưa ra luôn hợp lý – chúng tôi không phải là đơn vị cung ứng dịch vụ rẻ nhất nhưng chúng tôi là đơn vị báo giá hợp lý và dịch vụ chất lượng nhất.",
+  },
+  {
+    icon: "📦",
+    title: "Các gói giải pháp tốt nhất",
+    description: "Hoàng Nam còn cung cấp thêm Chữ Ký Số để khai và nộp thuế online, Hóa Đơn Điện Tử đang trong lộ trình bắt buộc sử dụng với mức giá hỗ trợ thấp nhất thị trường. Hỗ trợ kỹ thuật 24/24.",
+  },
+  {
+    icon: "👨‍⚖️",
+    title: "Đội ngũ hàng đầu",
+    description: "Đội ngũ luật của Hoàng Nam sẽ tư vấn pháp lý cho khách hàng rõ hơn về quy định của pháp luật từng lĩnh vực trong lĩnh vực bạn kinh doanh.",
+  },
+];
+
+const supportAreas = [
+  "Ninh Kiều", "Cái Răng", "Bình Thủy", "Ô Môn", "Thốt Nốt",
+  "Phong Điền", "Cờ Đỏ", "Vĩnh Thạnh", "Thới Lai",
+];
+---
+
+<BaseLayout {metadata}>
+  <!-- Hero Banner -->
+  <section class="relative bg-gradient-to-r from-primary to-primary-light py-20 text-center text-white md:py-28">
+    <div class="relative z-10 mx-auto max-w-4xl px-6">
+      <h1 class="text-3xl font-extrabold uppercase leading-tight drop-shadow-md md:text-5xl">
+        Dịch Vụ Làm Báo Cáo Tài Chính Tại Cần Thơ
+      </h1>
+      <p class="mt-5 text-lg font-light text-white/90 md:text-xl">
+        Gỡ Rối Sổ Sách – Hoàn Thiện BCTC – Quyết Toán Thuế Chuẩn Chỉnh
+      </p>
+    </div>
+  </section>
+
+  <!-- Giới thiệu -->
+  <section class="bg-white py-10 md:py-14">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <div class="prose prose-lg mx-auto max-w-none text-gray-700">
+        <p class="text-justify">
+          <strong class="text-primary">Dịch vụ làm báo cáo tài chính tại Cần Thơ</strong> là hoạt động bắt buộc
+          của doanh nghiệp phải thực hiện khi kết thúc một chu kỳ kế toán (thường chu kỳ kế toán là vào mỗi năm
+          tài chính) đối với tất cả các doanh nghiệp đang hoạt động trong khu vực Cần Thơ.
+        </p>
+      </div>
+
+      <div class="my-10 overflow-hidden rounded-2xl shadow-xl">
+        <Image
+          src={heroImage}
+          alt="Dịch vụ làm báo cáo tài chính tại Cần Thơ"
+          width={815}
+          height={545}
+          class="w-full object-cover"
+          loading="lazy"
+        />
+      </div>
+
+      <div class="prose prose-lg mx-auto max-w-none text-gray-700">
+        <p class="text-justify">
+          Tùy thuộc vào số lượng hóa đơn chứng từ, doanh số và loại hình kinh doanh của các doanh nghiệp,
+          <strong class="text-primary">Hoàng Nam</strong> sẽ đưa mức phí làm báo cáo tài chính cuối năm hợp lý nhất.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dịch vụ BCTC -->
+  <section class="bg-gray-50 py-10 md:py-14">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <h2 class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl">
+        Dịch Vụ Báo Cáo Tài Chính Của Hoàng Nam
+      </h2>
+      <div class="mt-8 space-y-3">
+        {serviceHighlights.map((item) => (
+          <div class="flex items-start gap-3 rounded-xl border border-gray-100 bg-white p-4 shadow-sm">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mt-0.5 h-6 w-6 flex-shrink-0 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+            </svg>
+            <span class="text-gray-700">{item}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Quy trình -->
+  <section class="bg-white py-10 md:py-14">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <h2 class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl">
+        Quy Trình Làm Việc Của Hoàng Nam
+      </h2>
+      <div class="mt-8 space-y-4">
+        {workflow.map((step, index) => (
+          <div class="flex items-start gap-5 rounded-xl border border-gray-100 bg-white p-5 shadow-sm transition-all duration-300 hover:shadow-md">
+            <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-primary text-sm font-bold text-white">
+              {index + 1}
+            </span>
+            <p class="text-gray-700 pt-2">{step}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Vì sao chọn HN -->
+  <section class="bg-gray-50 py-10 md:py-14">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <h2 class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl">
+        Vì Sao Bạn Nên Sử Dụng Dịch Vụ Làm Báo Cáo Tài Chính Tại Hoàng Nam?
+      </h2>
+      <div class="mt-6 prose prose-lg max-w-none text-gray-700">
+        <p class="text-justify">
+          Hiện nay có rất nhiều doanh nghiệp để giảm bớt chi phí cho nhóm kế toán nên chủ doanh nghiệp đã tự mình
+          kê khai thuế hàng tháng, hàng quý, hàng năm. Nhưng việc lên báo cáo tài chính cuối năm rất phức tạp
+          các số liệu phải đi kèm với nhau.
+        </p>
+        <p class="font-semibold mt-4">Đây là những trường hợp doanh nghiệp của bạn có thể sẽ gặp:</p>
+      </div>
+      <div class="mt-6 space-y-3">
+        {commonProblems.map((problem, index) => (
+          <div class="flex items-start gap-3 rounded-xl border border-gray-100 bg-white p-4 shadow-sm">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mt-0.5 h-5 w-5 flex-shrink-0 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+            </svg>
+            <span class="text-gray-700">{problem}</span>
+          </div>
+        ))}
+      </div>
+      <div class="mt-8 rounded-r-xl border-l-[6px] border-primary bg-blue-50 px-8 py-6">
+        <p class="text-gray-700 text-justify">
+          Vì vậy giải pháp đi thuê <strong class="text-primary">Kế Toán Dịch Vụ Hoàng Nam</strong> lên báo cáo tài chính
+          là một lựa chọn đúng đắn của doanh nghiệp. Sử dụng dịch vụ làm báo cáo tài chính tại Cần Thơ của Hoàng Nam
+          sẽ là sự lựa chọn sáng suốt để tiết kiệm chi phí và đảm bảo chất lượng công việc.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Công việc triển khai -->
+  <section class="bg-white py-10 md:py-14">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <h2 class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl">
+        Những Công Việc Mà Hoàng Nam Triển Khai
+      </h2>
+      <div class="mt-8 grid grid-cols-1 gap-3 md:grid-cols-2">
+        {workTasks.map((task, index) => (
+          <div class="flex items-start gap-3 rounded-lg border border-gray-100 bg-white px-5 py-3 shadow-sm">
+            <span class="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full bg-primary/10 text-xs font-bold text-primary">
+              {index + 1}
+            </span>
+            <span class="text-gray-700 text-sm">{task}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Bạn nhận được gì -->
+  <section class="bg-gray-50 py-10 md:py-14">
+    <div class="mx-auto max-w-6xl px-6 lg:px-8">
+      <h2 class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl">
+        Bạn Nhận Được Gì Tại Dịch Vụ Của Hoàng Nam?
+      </h2>
+      <div class="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2">
+        {valueProps.map((item) => (
+          <div class="rounded-xl border border-gray-100 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+            <div class="mb-3 text-3xl">{item.icon}</div>
+            <strong class="block text-lg text-primary">{item.title}</strong>
+            <p class="mt-2 text-gray-600">{item.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Thông tin liên hệ -->
+  <section class="bg-white py-10 md:py-14">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <div class="rounded-2xl border-2 border-primary/20 bg-gradient-to-r from-blue-50 to-indigo-50 p-8 shadow-sm">
+        <h3 class="text-xl font-bold text-primary mb-4">🏢 HOÀNG NAM CHI NHÁNH CẦN THƠ</h3>
+        <div class="space-y-2 text-gray-700">
+          <p>📍 <strong>Địa chỉ:</strong> 03 Quản Trọng Hoàng, Phường Hưng Lợi, Quận Ninh Kiều, Cần Thơ</p>
+          <p>📞 <strong>Điện thoại:</strong> <a href="tel:0918883179" class="text-primary font-semibold hover:underline">091.888.3179</a></p>
+          <p>📧 <strong>Email:</strong> <a href="mailto:cskh@hoangnamcantho.com" class="text-primary hover:underline">cskh@hoangnamcantho.com</a></p>
+          <p>🌐 <strong>Website:</strong> <a href="https://hoangnamcantho.com/" class="text-primary hover:underline">https://hoangnamcantho.com/</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Khu vực hỗ trợ -->
+  <section class="bg-gray-50 py-12">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <div class="rounded-2xl border-2 border-dashed border-primary bg-blue-50 p-8 text-center">
+        <p class="text-lg font-bold text-primary">
+          Chúng tôi hỗ trợ và tư vấn miễn phí dịch vụ tại tất cả các địa điểm thuộc <strong>Cần Thơ</strong>:{" "}
+          <span class="font-normal text-gray-700">
+            quận {supportAreas.slice(0, 5).join(", ")} và các huyện {supportAreas.slice(5).join(", ")}.
+          </span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <CTABanner
+    title="Bạn cần dịch vụ làm báo cáo tài chính tại Cần Thơ?"
+    subtitle="Liên hệ ngay Hoàng Nam để được tư vấn miễn phí. Gỡ rối sổ sách, hoàn thiện BCTC chuyên nghiệp."
+  />
+</BaseLayout>

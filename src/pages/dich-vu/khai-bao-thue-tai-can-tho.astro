@@ -1,0 +1,280 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { Image } from "astro:assets";
+import CTABanner from "@/components/homepage/CTABanner.astro";
+import heroImage from "@/assets/images/services/khai-bao-thue.png";
+
+const metadata = {
+  title: "Dịch Vụ Khai Báo Thuế Tại Cần Thơ – Trọn Gói – Hoàng Nam",
+  description:
+    "Dịch vụ khai báo thuế trọn gói tại Cần Thơ. Hoàng Nam kê khai thuế hàng tháng, quý, năm – BCTC cuối năm – chuyên nghiệp, uy tín, tiết kiệm 60% chi phí.",
+};
+
+const pricingData = [
+  { id: 1, quantity: "Không phát sinh", commerce: "500,000", construction: "500,000", production: "500,000" },
+  { id: 2, quantity: "Dưới 5 chứng từ", commerce: "700,000", construction: "700,000", production: "700,000" },
+  { id: 3, quantity: "Từ 5-10 chứng từ", commerce: "900,000", construction: "1,100,000", production: "1,100,000" },
+  { id: 4, quantity: "Từ 11-20 chứng từ", commerce: "1,100,000", construction: "1,300,000", production: "1,300,000" },
+  { id: 5, quantity: "Từ 21-30 chứng từ", commerce: "1,300,000", construction: "1,500,000", production: "1,500,000" },
+  { id: 6, quantity: "Từ 31-40 chứng từ", commerce: "1,500,000", construction: "1,700,000", production: "1,700,000" },
+  { id: 7, quantity: "Trên 40 chứng từ", commerce: "Thỏa thuận", construction: "Thỏa thuận", production: "Thỏa thuận" },
+];
+
+const discounts = [
+  "Đối với KH thanh toán theo tháng: Vui lòng TT trong vòng 5 ngày kể từ ngày Tờ khai được CCT Chấp thuận.",
+  "Đối với KH thanh toán 3 tháng 1 lần: Giảm 5%.",
+  "Đối với KH thanh toán 4 tháng 1 lần: Giảm 10%.",
+  "Đối với KH thanh toán 5 tháng 1 lần: Giảm 15%.",
+  "Đối với KH thanh toán 6 tháng 1 lần: Miễn phí nộp BCTC cuối năm.",
+];
+
+const serviceTasks = [
+  "Thiết lập hệ thống kế toán ban đầu cho doanh nghiệp.",
+  "Cung cấp và tư vấn phần mềm kế toán cho doanh nghiệp.",
+  "Cung cấp dịch vụ làm sổ kế toán kết hợp đào tạo đội ngũ kế toán.",
+  "Làm sổ sách kế toán.",
+  "Đứng tên kế toán trưởng.",
+  "Kê khai thuế, kiểm tra sổ sách, chứng từ hàng tháng.",
+  "Tính toán các khoản: lương, BHXH, BHYT, BHTN, thuế TNCN,…",
+  "Kê khai thuế hàng quý.",
+  "Báo cáo tài chính cuối năm.",
+  "Kiểm tra hồ sơ, chứng từ nhiều năm liền cho hoạt động thanh tra thuế.",
+  "Tư vấn tài chính.",
+  "Lập báo cáo quản trị nội bộ.",
+];
+
+const processSteps = [
+  "Hàng tháng, định kỳ, công ty nhận bản sao chứng từ đã phát sinh trong tháng do khách hàng tập hợp.",
+  "Xem xét, kiểm tra tính hợp pháp, chính xác của các nghiệp vụ kinh tế, tài chính đã phát sinh ghi trên chứng từ kế toán.",
+  "Kiểm tra các chứng từ kế toán dưới góc độ hợp lý của kế toán và thuế, phát hiện các sai sót và điều chỉnh cho phù hợp.",
+  "Xử lý nghiệp vụ: Cập nhật sổ sách, kiểm soát công nợ, theo dõi vật tư hàng hóa, tập hợp chi phí và tính giá thành.",
+  "Lên cân đối phát sinh, lãi, lỗ, xác định kết quả kinh doanh hàng tháng.",
+  "Thay Doanh nghiệp nộp tờ khai, báo cáo hàng tháng, hàng quý, hàng năm.",
+  "Báo cáo về tình hình tài chính của công ty và cung cấp thông tin kịp thời.",
+  "Tư vấn cho doanh nghiệp để đưa các chi phí phát sinh thực tế vào chi phí hợp lý theo đúng luật thuế.",
+  "Hoàn thiện hệ thống sổ cuối năm.",
+  "Quyết toán thuế khi có yêu cầu của cơ quan thuế.",
+];
+
+const whyChooseUs = [
+  "Tiết kiệm lên đến 60% chi phí hằng tháng cho bộ phận kế toán.",
+  "Không cần phải lo lắng về hiệu quả nhân sự, chúng tôi cam kết hiệu quả mà mình mang lại.",
+  "Không cần tiêu tốn chi phí cho việc tuyển dụng, đào tạo, trả lương nhân viên kế toán.",
+  "Cập nhật những chính sách, thông tư, nghị định, quy định mới của nhà nước.",
+];
+
+const valueProps = [
+  {
+    icon: "❤️",
+    title: "Tập thể tận tâm",
+    description: "Dịch Vụ khai báo thuế tại Cần Thơ của Hoàng Nam có đội ngũ tư vấn luôn hết mình và quy trình xử lý thông tin đơn giản tiết kiệm thời gian cho doanh nghiệp.",
+  },
+  {
+    icon: "💰",
+    title: "Giá cả hợp lý",
+    description: "Các mức phí Hoàng Nam đưa ra luôn hợp lý – chúng tôi không phải là đơn vị cung ứng dịch vụ rẻ nhất nhưng chúng tôi là đơn vị báo giá hợp lý và dịch vụ chất lượng nhất.",
+  },
+  {
+    icon: "📦",
+    title: "Các gói giải pháp tốt nhất",
+    description: "Hoàng Nam còn cung cấp thêm Chữ Ký Số để khai và nộp thuế online, Hóa Đơn Điện Tử với mức giá hỗ trợ thấp nhất thị trường. Hỗ trợ kỹ thuật 24/24.",
+  },
+  {
+    icon: "👨‍⚖️",
+    title: "Đội ngũ hàng đầu",
+    description: "Đội ngũ luật của Hoàng Nam sẽ tư vấn pháp lý cho khách hàng rõ hơn về quy định của pháp luật từng lĩnh vực trong lĩnh vực bạn kinh doanh.",
+  },
+];
+---
+
+<BaseLayout {metadata}>
+  <!-- Hero Banner -->
+  <section class="relative bg-gradient-to-r from-primary to-primary-light py-20 text-center text-white md:py-28">
+    <div class="relative z-10 mx-auto max-w-4xl px-6">
+      <h1 class="text-3xl font-extrabold uppercase leading-tight drop-shadow-md md:text-5xl">
+        Dịch Vụ Khai Báo Thuế Tại Cần Thơ
+      </h1>
+      <p class="mt-5 text-lg font-light text-white/90 md:text-xl">
+        Trọn Gói – Chuyên Nghiệp – Tiết Kiệm 60% Chi Phí
+      </p>
+    </div>
+  </section>
+
+  <!-- Giới thiệu -->
+  <section class="bg-white py-10 md:py-14">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <div class="prose prose-lg mx-auto max-w-none text-gray-700">
+        <p class="text-justify">
+          <strong class="text-primary">Dịch vụ khai báo thuế Hoàng Nam</strong> – Giải quyết toàn bộ các vấn đề
+          đau đầu của kế toán, thuế, luật cho doanh nghiệp tại Cần Thơ.
+        </p>
+        <p class="text-justify">
+          Khai báo thuế là dịch vụ của Hoàng Nam giúp cho các doanh nghiệp, nhất là những doanh nghiệp có quy mô
+          vừa và nhỏ hay những doanh nghiệp mới thành lập chưa hoàn thiện bộ phận kế toán.
+        </p>
+      </div>
+
+      <div class="my-10 overflow-hidden rounded-2xl shadow-xl">
+        <Image
+          src={heroImage}
+          alt="Dịch vụ khai báo thuế tại Cần Thơ"
+          width={815}
+          height={545}
+          class="w-full object-cover"
+          loading="lazy"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Bảng giá -->
+  <section class="bg-gray-50 py-10 md:py-14">
+    <div class="mx-auto max-w-6xl px-6 lg:px-8">
+      <h2 class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl">
+        Biểu Phí Dịch Vụ Khai Thuế
+      </h2>
+      <p class="mt-4 text-gray-500 text-sm">Bao gồm Tư vấn, nộp báo cáo hằng tháng/quý và in tờ khai</p>
+
+      <div class="mt-6 overflow-x-auto">
+        <div class="overflow-hidden rounded-2xl border border-gray-200 shadow-sm">
+          <table class="w-full text-sm">
+            <thead class="bg-primary text-white">
+              <tr>
+                <th class="px-4 py-3 text-left font-semibold">STT</th>
+                <th class="px-4 py-3 text-left font-semibold">Số lượng chứng từ<br/><span class="text-xs font-normal">(HĐ mua vào + bán ra)</span></th>
+                <th class="px-4 py-3 text-center font-semibold">Thương mại<br/>Dịch vụ</th>
+                <th class="px-4 py-3 text-center font-semibold">Xây dựng<br/>Lắp đặt</th>
+                <th class="px-4 py-3 text-center font-semibold">Sản xuất<br/>Gia công</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-200 bg-white">
+              {pricingData.map((row) => (
+                <tr class="hover:bg-blue-50 transition-colors">
+                  <td class="px-4 py-3 text-gray-600 font-medium">{row.id}</td>
+                  <td class="px-4 py-3 text-gray-700">{row.quantity}</td>
+                  <td class="px-4 py-3 text-center text-gray-700 font-medium">{row.commerce}</td>
+                  <td class="px-4 py-3 text-center text-gray-700 font-medium">{row.construction}</td>
+                  <td class="px-4 py-3 text-center text-gray-700 font-medium">{row.production}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <p class="mt-4 text-gray-500 text-sm italic">* Phí dịch vụ trên chưa bao gồm 10% VAT. ĐVT: Đồng/Tháng.</p>
+
+      <!-- Ưu đãi -->
+      <div class="mt-6 rounded-2xl border border-green-200 bg-green-50 p-6">
+        <h3 class="text-lg font-bold text-green-800 mb-4">🎁 Chính Sách Ưu Đãi</h3>
+        <div class="space-y-2">
+          {discounts.map((item) => (
+            <div class="flex items-start gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" class="mt-0.5 h-5 w-5 flex-shrink-0 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
+              </svg>
+              <span class="text-gray-700">{item}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dịch vụ bao gồm -->
+  <section class="bg-white py-10 md:py-14">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <h2 class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl">
+        Dịch Vụ Khai Báo Thuế Bao Gồm
+      </h2>
+      <div class="mt-8 grid grid-cols-1 gap-3 md:grid-cols-2">
+        {serviceTasks.map((task, index) => (
+          <div class="flex items-start gap-3 rounded-lg border border-gray-100 bg-white px-5 py-3 shadow-sm">
+            <span class="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full bg-primary/10 text-xs font-bold text-primary">
+              {index + 1}
+            </span>
+            <span class="text-gray-700 text-sm">{task}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Quy trình -->
+  <section class="bg-gray-50 py-10 md:py-14">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <h2 class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl">
+        Quy Trình Làm Việc Khai Báo Thuế Của Hoàng Nam
+      </h2>
+      <div class="mt-8 space-y-4">
+        {processSteps.map((step, index) => (
+          <div class="flex items-start gap-5 rounded-xl border border-gray-100 bg-white p-5 shadow-sm transition-all duration-300 hover:shadow-md">
+            <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-primary text-sm font-bold text-white">
+              {index + 1}
+            </span>
+            <p class="text-gray-700 pt-2">{step}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Vì sao chọn HN -->
+  <section class="bg-white py-10 md:py-14">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <h2 class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl">
+        Vì Sao Nên Chọn Dịch Vụ Khai Báo Thuế Hoàng Nam?
+      </h2>
+      <p class="mt-6 text-lg font-semibold text-primary">Chúng tôi sẽ giúp doanh nghiệp của bạn:</p>
+      <div class="mt-6 space-y-3">
+        {whyChooseUs.map((item) => (
+          <div class="flex items-start gap-3 rounded-xl border border-gray-100 bg-white p-4 shadow-sm">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mt-0.5 h-6 w-6 flex-shrink-0 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+            </svg>
+            <span class="text-gray-700">{item}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Bạn nhận được gì -->
+  <section class="bg-gray-50 py-10 md:py-14">
+    <div class="mx-auto max-w-6xl px-6 lg:px-8">
+      <h2 class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl">
+        Bạn Nhận Được Gì Tại Dịch Vụ Của Hoàng Nam?
+      </h2>
+      <div class="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2">
+        {valueProps.map((item) => (
+          <div class="rounded-xl border border-gray-100 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+            <div class="mb-3 text-3xl">{item.icon}</div>
+            <strong class="block text-lg text-primary">{item.title}</strong>
+            <p class="mt-2 text-gray-600">{item.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Thông tin liên hệ -->
+  <section class="bg-white py-10 md:py-14">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <div class="rounded-2xl border-2 border-primary/20 bg-gradient-to-r from-blue-50 to-indigo-50 p-8 shadow-sm">
+        <h3 class="text-xl font-bold text-primary mb-4">🏢 HOÀNG NAM CHI NHÁNH CẦN THƠ</h3>
+        <div class="space-y-2 text-gray-700">
+          <p>📍 <strong>Địa chỉ:</strong> 03 Quản Trọng Hoàng, Phường Hưng Lợi, Quận Ninh Kiều, Cần Thơ</p>
+          <p>📞 <strong>Điện thoại:</strong> <a href="tel:0918883179" class="text-primary font-semibold hover:underline">091.888.3179</a></p>
+          <p>📧 <strong>Email:</strong> <a href="mailto:cskh@hoangnamcantho.com" class="text-primary hover:underline">cskh@hoangnamcantho.com</a></p>
+          <p>🌐 <strong>Website:</strong> <a href="https://hoangnamcantho.com/" class="text-primary hover:underline">https://hoangnamcantho.com/</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <CTABanner
+    title="Bạn cần dịch vụ khai báo thuế trọn gói tại Cần Thơ?"
+    subtitle="Liên hệ ngay Hoàng Nam để được tư vấn miễn phí. Tiết kiệm 60% chi phí, chuyên nghiệp và uy tín hàng đầu."
+  />
+</BaseLayout>

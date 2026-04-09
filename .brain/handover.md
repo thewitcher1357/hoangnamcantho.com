@@ -1,64 +1,73 @@
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-📋 HANDOVER DOCUMENT - Hoàng Nam Cần Thơ
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# Handover Document — hoangnamcantho.com
 
-📍 Đang làm: Migration toàn bộ giao diện từ hoangnamvungtau.com → hoangnamcantho.com
-🔢 Đến bước: Phase 2 hoàn thành (Pages), chuẩn bị Phase 3 (QA & Deploy)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📋 HANDOVER — 2026-04-09
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-✅ ĐÃ XONG:
-   - Phase 01: Setup & Config ✓
-     - astro.config.mjs (locale vi, site URL)
-     - site.ts (Single Source of Truth)
-     - global.css (Light mode only, #0056b3 primary)
-   - Phase 02: Layout Components ✓
-     - Navbar (top bar + main nav + dropdowns + mobile slide menu)
-     - Footer (3 columns: contact, about links, newsletter)
-     - FloatingActions (Zalo + Phone với ripple animation)
-     - BackToTop
-   - Phase 03: Trang Chủ (/) ✓
-     - 9 sections: Hero, Services, CTA, Process, Pricing, WhyChooseUs, Docs, Posts, Contact
-   - Phase 04: Trang Giới Thiệu (/gioi-thieu) ✓
-     - Hero banner, team photo, CTABanner, triết lý phục vụ
-   - Phase 05: Trang Liên Hệ (/lien-he) ✓
-     - 4 contact cards, form tư vấn, Google Maps embed, giờ làm việc
-   - Phase 06: Trang Dịch Vụ (/dich-vu) ✓
-     - 3 dịch vụ chính (cards + features list), CTA, 6 dịch vụ bổ sung, why choose us
-   - Phase 07: Việt hóa Blog & Category ✓
-     - Hero banners, vi-VN date, "phút đọc", pagination Vietnamese
+## 📍 Đang làm
+**Feature:** Service Pages Expansion — Trang dịch vụ chi tiết  
+**Status:** ✅ HOÀN THÀNH — Tất cả 8 service pages đã có nội dung
 
-⏳ CÒN LẠI:
-   - Cleanup trang English cũ (about, contact, services)
-   - Test responsive mobile
-   - Deploy lên Vercel/Netlify
-   - Tối ưu Google Maps embed cho đúng vị trí
+---
 
-🔧 QUYẾT ĐỊNH QUAN TRỌNG:
-   - Light Mode Only (không dark mode)
-   - site.ts là Single Source of Truth cho contact, nav, footer
-   - Blog URL dùng root path (/slug) - tương thích WordPress
-   - Thiết kế theo mẫu hoangnamvungtau.com, localize cho Cần Thơ
-   - Hero banner pattern: gradient from-primary to-primary-light
+## ✅ Đã xong (Session 2026-04-09)
 
-⚠️ LƯU Ý CHO SESSION SAU:
-   - Trang English cũ (about.astro, contact.astro, services.astro) vẫn còn → cần xóa
-   - widgets.astro là demo page từ template → có thể xóa
-   - Google Maps iframe cần embed URL chính xác cho địa chỉ 03 Quản Trọng Hoàng
-   - 46 blog posts đã migrate từ WordPress
+| Hạng mục | Chi tiết |
+|----------|----------|
+| **Logo** | Tải logo HN từ hoangnamvungtau.com (150×150px WebP), fix Navbar props |
+| **Service page: GPKD** | `/dich-vu/lam-giay-phep-kinh-doanh-tai-can-tho` — 12 sections đầy đủ |
+| **Service page: Thay đổi GPKD** | `/dich-vu/thay-doi-giay-phep-kinh-doanh-tai-can-tho` |
+| **Service page: Giải Thể CT** | `/dich-vu/giai-the-cong-ty-o-can-tho` |
+| **Service page: Kế Toán** | `/dich-vu/dich-vu-ke-toan-can-tho` — có bảng giá kế toán |
+| **Service page: Hóa Đơn Điện Tử** | `/dich-vu/hoa-don-dien-tu-can-tho` |
+| **Service page: Chữ Ký Số** | `/dich-vu/chu-ky-so-can-tho` |
+| **Service page: CT Vốn FDI** | `/dich-vu/thanh-lap-cong-ty-von-dau-tu-nuoc-ngoai-tai-can-tho` |
+| **Menu Navigation** | `site.ts`: 8 items trong Dịch Vụ dropdown |
+| **Bugfix spacing** | 52 sections × 7 files: `py-16 md:py-24` → `py-10 md:py-14` |
 
-📁 FILES QUAN TRỌNG:
-   - src/config/site.ts (thông tin liên hệ & navigation)
-   - src/styles/global.css (design system & prose styles)
-   - src/layouts/BaseLayout.astro (wrapper cho tất cả pages)
-   - src/components/homepage/* (9 components trang chủ)
-   - .brain/brain.json (project knowledge)
-   - .brain/session.json (session state)
+---
 
-📊 Build Stats:
-   - 62 pages built successfully
-   - 46 blog posts migrated
-   - 13 optimized images
-   - Build time: ~40s
+## ⏳ Còn lại (Todo)
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-📍 Đã lưu! Để tiếp tục: Gõ /recap
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+- [ ] Test responsive mobile trên 8 service pages
+- [ ] Deploy lên Cloudflare (wrangler.json đã sẵn sàng)
+- [ ] Xóa file English cũ: `about.astro`, `contact.astro`, `services.astro`
+- [ ] Pin chính xác Google Maps tại văn phòng Cần Thơ
+- [ ] (Optional) Đồng bộ spacing `thanh-lap-cong-ty` page về `py-10 md:py-14`
+
+---
+
+## 🔧 Quyết định quan trọng
+
+| Quyết định | Lý do |
+|-----------|-------|
+| Logo: `width={150} height={150}`, CSS `h-[50px] w-auto` | Intrinsic size 150×150, CSS control display size |
+| Section padding service pages: `py-10 md:py-14` | Tránh khoảng trắng 192px khi 2 section trắng liền nhau |
+| `thanh-lap-cong-ty` giữ `py-16 md:py-24` | Có `bg-primary` section xen giữa, không bị lỗi spacing |
+
+---
+
+## ⚠️ Lưu ý quan trọng cho session sau
+
+1. **Spacing rule:** Service pages mới → `py-10 md:py-14`. Nếu có section màu khác xen giữa thì có thể dùng lớn hơn
+2. **Logo:** Khi dùng `<Image>`, `width` và `height` PHẢI khớp intrinsic size của file ảnh gốc
+3. **Navigation:** Mọi service page route cần thêm vào `site.ts → siteConfig.navLinks.children`
+4. **GPKD page** (`lam-giay-phep...`) cũng chứa nội dung về Thay Đổi GPKD (cross-sell)
+
+---
+
+## 📁 Files quan trọng
+
+| File | Mô tả |
+|------|-------|
+| `src/config/site.ts` | Contact info + toàn bộ navigation menu |
+| `src/styles/global.css` | Design tokens, prose styles, animations |
+| `src/assets/images/logo.webp` | Logo HN 150×150px |
+| `src/components/layout/Navbar.astro` | Header + mobile menu |
+| `src/components/homepage/CTABanner.astro` | Reusable CTA cuối mỗi service page |
+| `.brain/brain.json` | Knowledge base dự án |
+| `.brain/session.json` | Tiến độ hiện tại |
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📍 Lần sau quay lại: gõ `/recap` để nhớ lại context
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

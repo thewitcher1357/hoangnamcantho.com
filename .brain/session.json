@@ -1,95 +1,127 @@
 {
-  "updated_at": "2026-04-08T11:14:00Z",
+  "updated_at": "2026-04-09T13:39:00Z",
   "working_on": {
-    "feature": "Page Migration from hoangnamvungtau.com reference",
-    "task": "Completed all main pages: gioi-thieu, lien-he, dich-vu, blog",
+    "feature": "Service Pages Expansion + UX Fixes",
+    "task": "8 service pages hoàn chỉnh, logo update, spacing fix",
     "status": "completed",
     "files": [
-      "src/pages/gioi-thieu.astro",
-      "src/pages/lien-he.astro",
-      "src/pages/dich-vu.astro",
-      "src/pages/blog/[...page].astro",
-      "src/pages/category/[category].astro",
-      "src/components/blog/PostItem.astro",
-      "src/components/ui/Pagination.astro"
+      "src/pages/dich-vu/thanh-lap-cong-ty-tai-can-tho.astro",
+      "src/pages/dich-vu/lam-giay-phep-kinh-doanh-tai-can-tho.astro",
+      "src/pages/dich-vu/thay-doi-giay-phep-kinh-doanh-tai-can-tho.astro",
+      "src/pages/dich-vu/giai-the-cong-ty-o-can-tho.astro",
+      "src/pages/dich-vu/dich-vu-ke-toan-can-tho.astro",
+      "src/pages/dich-vu/hoa-don-dien-tu-can-tho.astro",
+      "src/pages/dich-vu/chu-ky-so-can-tho.astro",
+      "src/pages/dich-vu/thanh-lap-cong-ty-von-dau-tu-nuoc-ngoai-tai-can-tho.astro",
+      "src/assets/images/logo.webp",
+      "src/components/layout/Navbar.astro",
+      "src/config/site.ts"
     ],
     "blockers": [],
-    "notes": "All pages use consistent hero banner + section pattern from reference site"
+    "notes": "Tất cả service pages đã có nội dung đầy đủ, menu navigation đã cập nhật"
   },
   "recent_changes": [
     {
-      "timestamp": "2026-04-08T09:00:00Z",
+      "timestamp": "2026-04-09T09:51:00Z",
       "type": "feature",
-      "description": "Trang chủ hoàn chỉnh: HeroBanner, ServicesGrid, CTABanner, ProcessSteps, PricingTable, WhyChooseUs, RequiredDocs, LatestPosts, ContactForm",
-      "files": ["src/pages/index.astro", "src/components/homepage/*"]
+      "description": "Tạo 2 page dịch vụ mới: Làm Giấy Phép Kinh Doanh + Thay Đổi GPKD, cập nhật menu navigation",
+      "files": [
+        "src/pages/dich-vu/lam-giay-phep-kinh-doanh-tai-can-tho.astro",
+        "src/pages/dich-vu/thay-doi-giay-phep-kinh-doanh-tai-can-tho.astro",
+        "src/config/site.ts"
+      ]
     },
     {
-      "timestamp": "2026-04-08T09:30:00Z",
-      "type": "config",
-      "description": "site.ts, global.css, Navbar, Footer, FloatingActions, BackToTop - toàn bộ layout system",
-      "files": ["src/config/site.ts", "src/styles/global.css", "src/components/layout/*", "src/components/ui/*"]
-    },
-    {
-      "timestamp": "2026-04-08T10:18:00Z",
+      "timestamp": "2026-04-09T10:00:00Z",
       "type": "feature",
-      "description": "Trang Giới Thiệu (/gioi-thieu): Hero, team photo, triết lý phục vụ",
-      "files": ["src/pages/gioi-thieu.astro"]
+      "description": "Tạo 5 page dịch vụ còn lại: Giải Thể CT, Dịch Vụ Kế Toán, Hóa Đơn Điện Tử, Chữ Ký Số, CT Vốn Nước Ngoài",
+      "files": [
+        "src/pages/dich-vu/giai-the-cong-ty-o-can-tho.astro",
+        "src/pages/dich-vu/dich-vu-ke-toan-can-tho.astro",
+        "src/pages/dich-vu/hoa-don-dien-tu-can-tho.astro",
+        "src/pages/dich-vu/chu-ky-so-can-tho.astro",
+        "src/pages/dich-vu/thanh-lap-cong-ty-von-dau-tu-nuoc-ngoai-tai-can-tho.astro"
+      ]
     },
     {
-      "timestamp": "2026-04-08T10:18:00Z",
-      "type": "feature",
-      "description": "Trang Liên Hệ (/lien-he): 4 contact cards, form tư vấn, Google Maps, giờ làm việc",
-      "files": ["src/pages/lien-he.astro"]
-    },
-    {
-      "timestamp": "2026-04-08T10:36:00Z",
-      "type": "feature",
-      "description": "Trang Dịch Vụ (/dich-vu): 3 dịch vụ chính + 6 dịch vụ bổ sung + why choose us",
-      "files": ["src/pages/dich-vu.astro"]
-    },
-    {
-      "timestamp": "2026-04-08T10:37:00Z",
+      "timestamp": "2026-04-09T10:51:00Z",
       "type": "improvement",
-      "description": "Việt hóa Blog: hero banner, vi-VN locale, 'phút đọc', pagination Vietnamese",
-      "files": ["src/pages/blog/[...page].astro", "src/components/blog/PostItem.astro", "src/components/ui/Pagination.astro", "src/pages/category/[category].astro"]
+      "description": "Cập nhật logo từ hoangnamvungtau.com (150x150px WebP). Sửa Navbar: width/height=150 cho đúng intrinsic size, class='h-[50px] w-auto'",
+      "files": [
+        "src/assets/images/logo.webp",
+        "src/components/layout/Navbar.astro"
+      ]
+    },
+    {
+      "timestamp": "2026-04-09T11:00:00Z",
+      "type": "bugfix",
+      "description": "Fix khoảng trắng lớn giữa sections trên 7 service pages mới: đổi py-16 md:py-24 → py-10 md:py-14 (52 sections trên 7 files)",
+      "files": [
+        "src/pages/dich-vu/lam-giay-phep-kinh-doanh-tai-can-tho.astro",
+        "src/pages/dich-vu/thay-doi-giay-phep-kinh-doanh-tai-can-tho.astro",
+        "src/pages/dich-vu/giai-the-cong-ty-o-can-tho.astro",
+        "src/pages/dich-vu/dich-vu-ke-toan-can-tho.astro",
+        "src/pages/dich-vu/hoa-don-dien-tu-can-tho.astro",
+        "src/pages/dich-vu/chu-ky-so-can-tho.astro",
+        "src/pages/dich-vu/thanh-lap-cong-ty-von-dau-tu-nuoc-ngoai-tai-can-tho.astro"
+      ]
     }
   ],
   "decisions_made": [
     {
-      "decision": "pageSize 9 cho blog (thay vì 6)",
-      "reason": "Grid 3 cột, 3 hàng = 9 bài/trang đẹp hơn"
+      "decision": "Logo hiển thị h-[50px] w-auto (không phải h-12)",
+      "reason": "Logo vuông 150x150, cần width/height prop đúng để Astro không distort ảnh"
     },
     {
-      "decision": "Default author 'Hoàng Nam' nếu không có author",
-      "reason": "Nhiều bài từ WP migration không có author field"
+      "decision": "Section padding standard cho service pages mới: py-10 md:py-14",
+      "reason": "py-16 md:py-24 gây khoảng trắng ~192px khi 2 section trắng liền nhau - ảnh hưởng UX"
+    }
+  ],
+  "errors_encountered": [
+    {
+      "error": "Khoảng trắng lớn giữa các section trên service pages mới",
+      "root_cause": "py-16 md:py-24 (96px mỗi chiều) × 2 section = 192px khoảng trắng thuần. Page thanh-lap-cong-ty không bị vì có section màu xanh bg-primary xen giữa",
+      "solution": "Giảm xuống py-10 md:py-14 (56px max) cho 7 service pages qua sed command",
+      "resolved": true
+    },
+    {
+      "error": "Navbar logo bị sai tỷ lệ - height={50} không khớp ảnh 150x150",
+      "root_cause": "Logo intrinsic size là 150×150 (tỷ lệ 1:1) nhưng props width=150 height=50 → Astro tạo srcset sai",
+      "solution": "Đổi thành width={150} height={150}, CSS class='h-[50px] w-auto' để control display size",
+      "resolved": true
     }
   ],
   "pending_tasks": [
     {
+      "task": "Kiểm tra responsive mobile cho tất cả service pages mới",
+      "priority": "high",
+      "notes": "Chưa test trên thiết bị thật, cần verify layout 8 pages dịch vụ"
+    },
+    {
       "task": "Xóa các trang English cũ (about.astro, contact.astro, services.astro)",
       "priority": "low",
-      "notes": "Đã có trang Vietnamese thay thế, cần cleanup"
+      "notes": "Đã có trang Vietnamese thay thế, cần cleanup để giảm số pages build"
     },
     {
-      "task": "Deploy lên Vercel/Netlify",
+      "task": "Deploy lên production (Cloudflare)",
       "priority": "medium",
-      "notes": "Build đã thành công 62 pages"
+      "notes": "wrangler.json đã có sẵn trong project"
     },
     {
-      "task": "Kiểm tra responsive trên mobile",
-      "priority": "medium",
-      "notes": "Cần test trên thiết bị thật"
-    },
-    {
-      "task": "Tối ưu Google Maps embed URL cho đúng vị trí",
+      "task": "Tối ưu Google Maps embed cho đúng vị trí văn phòng Cần Thơ",
       "priority": "low",
-      "notes": "Hiện tại embed chung khu Xuân Khánh, cần pin chính xác"
+      "notes": "Cần pin chính xác địa chỉ 03 Đ. Quản Trọng Hoàng, Xuân Khánh"
+    },
+    {
+      "task": "Đồng bộ spacing pattern cho thanh-lap-cong-ty page (hiện còn py-16 md:py-24)",
+      "priority": "low",
+      "notes": "Page này có bg-primary section xen giữa nên không bị lỗi, nhưng nên đồng bộ"
     }
   ],
   "build_stats": {
-    "pages": 62,
-    "build_time": "40.47s",
-    "last_build": "2026-04-08T10:40:15Z",
-    "status": "success"
+    "total_service_pages": 8,
+    "total_pages_estimate": "70+",
+    "last_build": "2026-04-09",
+    "status": "dev-running-port-4322"
   }
 }

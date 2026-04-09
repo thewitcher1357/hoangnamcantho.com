@@ -1,0 +1,280 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { Image } from "astro:assets";
+import { siteConfig } from "@/config/site";
+import CTABanner from "@/components/homepage/CTABanner.astro";
+import heroImage from "@/assets/images/services/giai-the-van-phong-dai-dien.png";
+
+const metadata = {
+  title: "Giải Thể Văn Phòng Đại Diện Tại Cần Thơ – Hoàng Nam",
+  description:
+    "Dịch vụ giải thể văn phòng đại diện tại Cần Thơ. Hoàng Nam tư vấn và thực hiện mọi thủ tục pháp lý: khóa MST, trả dấu, chấm dứt hoạt động nhanh gọn.",
+};
+
+const generalRegulations = [
+  "Văn phòng đại diện của doanh nghiệp được chấm dứt hoạt động theo quyết định của chính doanh nghiệp đó hoặc theo quyết định thu hồi Giấy chứng nhận đăng ký hoạt động văn phòng đại diện của cơ quan nhà nước có thẩm quyền.",
+  "Người đại diện theo pháp luật của doanh nghiệp; người đứng đầu văn phòng đại diện bị giải thể liên đới chịu trách nhiệm về tính trung thực; chính xác của hồ sơ chấm dứt hoạt động văn phòng đại diện.",
+  "Trong thời hạn 05 ngày làm việc, kể từ ngày nhận đủ hồ sơ chấm dứt hoạt động văn phòng đại diện; Cơ quan đăng ký kinh doanh cập nhật tình trạng pháp lý của văn phòng đại diện trên Cơ sở dữ liệu quốc gia về đăng ký doanh nghiệp.",
+];
+
+const step1Docs = [
+  "Thông báo chấm dứt hiệu lực mã số thuế – mẫu 24/ĐK-TCT theo Thông tư 95/2016/TT-BTC.",
+  "Quyết định giải thể văn phòng đại diện.",
+  "Biên bản họp Hội đồng thành viên/Đại hội đồng cổ đông về việc giải thể văn phòng đại diện.",
+  "Giấy đăng ký mã số thuế bản chính (nếu có).",
+  "Giấy chứng nhận đăng ký hoạt động văn phòng đại diện (bản sao).",
+];
+
+const step2Docs = [
+  "Văn bản xin trả dấu/xác nhận không sử dụng dấu.",
+  "Quyết định giải thể văn phòng đại diện.",
+  "Con dấu và giấy đăng ký mẫu con dấu bản chính (trường hợp trả con dấu).",
+];
+
+const step3Docs = [
+  "Thông báo chấm dứt hoạt động văn phòng đại diện (Mẫu tham khảo – thuộc Phụ lục II – 22, Thông tư 20/2015/TT-BKHDT)",
+  "Quyết định giải thể văn phòng đại diện.",
+  "Biên bản họp Hội đồng thành viên/Đại hội đồng cổ đông về việc giải thể văn phòng đại diện (nếu có).",
+  "Danh sách người lao động cũng như quyền lợi tương ứng của người lao động trong VPĐD.",
+  "Giấy chứng nhận đăng ký hoạt động văn phòng đại diện.",
+  "Con dấu văn phòng đại diện (nếu có).",
+  "Danh sách các chủ nợ cũng như số nợ chưa thực hiện thanh toán (nếu có).",
+  "Giấy chứng nhận đăng ký thuế và giấy chứng nhận đăng ký đầu tư bản sao (nếu có).",
+];
+
+const companionSteps = [
+  "Tư vấn, soạn thảo toàn bộ hồ sơ, thủ tục cần thiết",
+  "Gửi hồ sơ và hướng dẫn Quý doanh nghiệp ký, đóng dấu",
+  "Nhận hồ sơ từ Quý doanh nghiệp gửi và tiến hành nộp hồ sơ lên cơ quan Nhà nước",
+  "Thủ tục hủy con dấu",
+  "Tiếp nhận kết quả xử lý, thông báo/gửi kết quả đến Quý doanh nghiệp",
+];
+---
+
+<BaseLayout {metadata}>
+  <!-- Hero Banner -->
+  <section class="relative bg-gradient-to-r from-primary to-primary-light py-20 text-center text-white md:py-28">
+    <div class="relative z-10 mx-auto max-w-4xl px-6">
+      <h1 class="text-3xl font-extrabold uppercase leading-tight drop-shadow-md md:text-5xl">
+        Giải Thể Văn Phòng Đại Diện Tại Cần Thơ
+      </h1>
+      <p class="mt-5 text-lg font-light text-white/90 md:text-xl">
+        Xử Lý Nhanh Gọn – Tiết Kiệm Thời Gian & Chi Phí
+      </p>
+    </div>
+  </section>
+
+  <!-- Giới thiệu -->
+  <section class="bg-white py-10 md:py-14">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <div class="prose prose-lg mx-auto max-w-none text-gray-700">
+        <p class="text-justify">
+          Văn phòng đại diện hoạt động không còn hiệu quả hay không cần thiết cho việc phát triển cho doanh nghiệp
+          nữa thì thường lựa chọn <strong class="text-primary">giải thể văn phòng đại diện</strong> để giảm thiểu chi phí.
+        </p>
+      </div>
+
+      <div class="my-10 overflow-hidden rounded-2xl shadow-xl">
+        <Image
+          src={heroImage}
+          alt="Giải thể văn phòng đại diện tại Cần Thơ"
+          width={815}
+          height={545}
+          class="w-full object-cover"
+          loading="lazy"
+        />
+      </div>
+
+      <div class="prose prose-lg mx-auto max-w-none text-gray-700">
+        <p class="text-justify">
+          Theo quy định của Luật doanh nghiệp 2014, văn phòng đại diện của doanh nghiệp được chấm dứt hoạt động
+          dựa theo quyết định của chính doanh nghiệp đó, hoặc theo quyết định thu hồi Giấy chứng nhận đăng ký
+          hoạt động văn phòng đại diện của cơ quan nhà nước có thẩm quyền.
+        </p>
+      </div>
+
+      <!-- 3 câu hỏi -->
+      <div class="mt-8 grid grid-cols-1 gap-4 md:grid-cols-3">
+        <div class="rounded-xl border-2 border-primary/20 bg-blue-50 p-5 text-center">
+          <p class="text-3xl mb-2">📋</p>
+          <p class="font-semibold text-primary">Thủ tục giải thể văn phòng đại diện ra sao?</p>
+        </div>
+        <div class="rounded-xl border-2 border-primary/20 bg-blue-50 p-5 text-center">
+          <p class="text-3xl mb-2">📁</p>
+          <p class="font-semibold text-primary">Hồ sơ giải thể văn phòng đại diện như thế nào?</p>
+        </div>
+        <div class="rounded-xl border-2 border-primary/20 bg-blue-50 p-5 text-center">
+          <p class="text-3xl mb-2">🏦</p>
+          <p class="font-semibold text-primary">Thủ tục bên cơ quan thuế có phức tạp hay không?</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bảng dịch vụ -->
+  <section class="bg-gray-50 py-10 md:py-14">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <div class="overflow-hidden rounded-2xl border border-gray-200 shadow-sm">
+        <table class="w-full text-left">
+          <thead class="bg-primary text-white">
+            <tr>
+              <th class="px-6 py-4 text-sm font-semibold" colspan="3">E. Giải thể công ty, chi nhánh, VPĐD</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-200 bg-white">
+            <tr>
+              <td class="px-6 py-3 text-gray-700">Tư vấn giải thể công ty, chấm dứt HĐ</td>
+              <td class="px-6 py-3 text-gray-700 text-center" rowspan="5">Tuỳ vào tình hình thực tế công ty</td>
+              <td class="px-6 py-3 text-primary font-semibold text-right" rowspan="5">Liên hệ để được báo giá</td>
+            </tr>
+            <tr>
+              <td class="px-6 py-3 text-gray-700">Trả giấy phép kinh doanh của công ty</td>
+            </tr>
+            <tr>
+              <td class="px-6 py-3 text-gray-700">Trả con dấu tròn</td>
+            </tr>
+            <tr>
+              <td class="px-6 py-3 text-gray-700">Xin xác nhận chưa khắc con dấu (đối với chi nhánh, VPĐD không sử dụng con dấu tròn)</td>
+            </tr>
+            <tr>
+              <td class="px-6 py-3 text-gray-700">Nhận kết quả hoàn tất giải thể công ty</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="mt-8 rounded-r-xl border-l-[6px] border-primary bg-blue-50 px-8 py-6">
+        <p class="text-gray-700">
+          Thủ tục <strong class="text-primary">Giải thể Văn phòng đại diện tại Cần Thơ</strong> của Hoàng Nam
+          sẽ giúp Doanh nghiệp xử lý mọi vấn đề trong thời gian sớm nhất, tiết kiệm chi phí nhất.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quy định chung -->
+  <section class="bg-white py-10 md:py-14">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <h2 class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl">
+        Quy Định Chung Về Chấm Dứt Hoạt Động Văn Phòng Đại Diện
+      </h2>
+      <div class="mt-8 space-y-4">
+        {generalRegulations.map((item) => (
+          <div class="flex items-start gap-3 rounded-xl border border-gray-100 bg-white p-5 shadow-sm">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mt-0.5 h-6 w-6 flex-shrink-0 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span class="text-gray-700">{item}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Quy trình chi tiết -->
+  <section class="bg-gray-50 py-10 md:py-14">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <h2 class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl">
+        Quy Trình Thực Hiện Giải Thể Văn Phòng Đại Diện Tại Cần Thơ
+      </h2>
+      <p class="mt-6 text-gray-700 text-lg">
+        Quy trình chi tiết khi thực hiện công việc giải thể văn phòng đại diện:
+      </p>
+
+      <!-- Bước 1 -->
+      <div class="mt-8 rounded-2xl border border-gray-200 bg-white p-8 shadow-sm">
+        <div class="flex items-center gap-4 mb-6">
+          <span class="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-full bg-primary text-xl font-bold text-white">1</span>
+          <h3 class="text-xl font-bold text-primary">Nộp hồ sơ khóa mã số thuế văn phòng đại diện</h3>
+        </div>
+        <div class="space-y-3 ml-18">
+          {step1Docs.map((doc) => (
+            <div class="flex items-start gap-3 rounded-lg bg-gray-50 p-4">
+              <span class="text-primary font-bold">•</span>
+              <p class="text-gray-700">{doc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Bước 2 -->
+      <div class="mt-6 rounded-2xl border border-gray-200 bg-white p-8 shadow-sm">
+        <div class="flex items-center gap-4 mb-6">
+          <span class="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-full bg-primary text-xl font-bold text-white">2</span>
+          <h3 class="text-xl font-bold text-primary">Làm thủ tục trả dấu hoặc xác nhận không sử dụng dấu</h3>
+        </div>
+        <div class="space-y-3 ml-18">
+          {step2Docs.map((doc) => (
+            <div class="flex items-start gap-3 rounded-lg bg-gray-50 p-4">
+              <span class="text-primary font-bold">•</span>
+              <p class="text-gray-700">{doc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Bước 3 -->
+      <div class="mt-6 rounded-2xl border border-gray-200 bg-white p-8 shadow-sm">
+        <div class="flex items-center gap-4 mb-6">
+          <span class="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-full bg-primary text-xl font-bold text-white">3</span>
+          <h3 class="text-xl font-bold text-primary">Chuẩn bị hồ sơ giải thể văn phòng đại diện</h3>
+        </div>
+        <div class="space-y-3 ml-18">
+          {step3Docs.map((doc) => (
+            <div class="flex items-start gap-3 rounded-lg bg-gray-50 p-4">
+              <span class="text-primary font-bold">•</span>
+              <p class="text-gray-700">{doc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hoàng Nam đồng hành -->
+  <section class="bg-white py-10 md:py-14">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <h2 class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl">
+        Hoàng Nam Luôn Đồng Hành Cùng Doanh Nghiệp
+      </h2>
+      <div class="mt-8 space-y-4">
+        {companionSteps.map((step, index) => (
+          <div class="flex items-start gap-5 rounded-xl border border-gray-100 bg-white p-5 shadow-sm transition-all duration-300 hover:shadow-md">
+            <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-primary text-sm font-bold text-white">
+              {index + 1}
+            </span>
+            <p class="text-gray-700 pt-2">{step}</p>
+          </div>
+        ))}
+      </div>
+      <div class="mt-8 rounded-r-xl border-l-[6px] border-primary bg-blue-50 px-8 py-6">
+        <p class="text-gray-700">
+          Với quy trình nhanh, gọn, đầy đủ thủ tục theo quy định,
+          <strong class="text-primary">HOÀNG NAM</strong> đại diện Quý doanh nghiệp đi lại,
+          thực hiện các thủ tục với chi phí và thời gian tốt nhất.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Thông tin liên hệ -->
+  <section class="bg-gray-50 py-10 md:py-14">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <div class="rounded-2xl border-2 border-primary/20 bg-gradient-to-r from-blue-50 to-indigo-50 p-8 shadow-sm">
+        <h3 class="text-xl font-bold text-primary mb-4">🏢 HOÀNG NAM CHI NHÁNH CẦN THƠ</h3>
+        <div class="space-y-2 text-gray-700">
+          <p>📍 <strong>Địa chỉ:</strong> 03 Quản Trọng Hoàng, Phường Hưng Lợi, Quận Ninh Kiều, Cần Thơ</p>
+          <p>📞 <strong>Điện thoại:</strong> <a href="tel:0918883179" class="text-primary font-semibold hover:underline">091.888.3179</a></p>
+          <p>📧 <strong>Email:</strong> <a href="mailto:cskh@hoangnamcantho.com" class="text-primary hover:underline">cskh@hoangnamcantho.com</a></p>
+          <p>🌐 <strong>Website:</strong> <a href="https://hoangnamcantho.com/" class="text-primary hover:underline">https://hoangnamcantho.com/</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <CTABanner
+    title="Bạn cần giải thể văn phòng đại diện tại Cần Thơ?"
+    subtitle="Liên hệ ngay Hoàng Nam để được tư vấn miễn phí. Chúng tôi xử lý mọi thủ tục nhanh gọn và tiết kiệm chi phí nhất."
+  />
+</BaseLayout>

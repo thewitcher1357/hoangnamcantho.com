@@ -1,0 +1,275 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { Image } from "astro:assets";
+import CTABanner from "@/components/homepage/CTABanner.astro";
+import heroImage from "@/assets/images/services/khai-thue-ban-dau.png";
+
+const metadata = {
+  title: "Dịch Vụ Khai Thuế Ban Đầu Tại Cần Thơ – Hoàng Nam",
+  description:
+    "Dịch vụ kê khai thuế ban đầu cho doanh nghiệp mới thành lập tại Cần Thơ. Hoàng Nam soạn hồ sơ, nộp tờ khai môn bài, mở tài khoản ngân hàng trọn gói.",
+};
+
+const deadlines = [
+  {
+    title: "Đăng ký thuế ban đầu",
+    description: "Trong thời hạn 10 ngày từ ngày được cấp giấy chứng nhận đăng ký kinh doanh.",
+  },
+  {
+    title: "Thời hạn nộp tờ khai thuế môn bài",
+    description: "Trong vòng 30 ngày kể từ ngày nhận được đăng ký kinh doanh thì doanh nghiệp cần phải nộp tờ khai thuế môn bài. Trường hợp doanh nghiệp hoạt động luôn thì ngày kê khai chậm nhất là ngày cuối cùng của tháng nhận được đăng ký kinh doanh.",
+  },
+];
+
+const taxFileDocs = [
+  "Giấy chứng nhận đăng ký kinh doanh (bản sao được công chứng)",
+  "Quyết định bổ nhiệm Giám đốc, Tổng giám đốc",
+  "Quyết định bổ nhiệm Kế toán trưởng hoặc người phụ trách kế toán của doanh nghiệp",
+  "Tờ khai lệ phí môn bài bản sao đi kèm với xác nhận đã nộp tiền lệ phí môn bài",
+  "Bản sao công chứng giấy chứng minh nhân dân của người đại diện cho doanh nghiệp",
+  "Công văn đăng ký hình thức kế toán (Theo thông tư 200)",
+  "Bảng đăng ký trích khấu hao tài sản cố định",
+];
+
+const setupSteps = [
+  "Hoàng Nam sẽ soạn thảo toàn bộ hồ sơ khai thuế ban đầu cho doanh nghiệp.",
+  "Lập và nộp tờ khai thuế môn bài. Nộp thuế môn bài vào kho bạc theo quy định của chính phủ.",
+  "Đứng tên phụ trách kế toán cho doanh nghiệp (nếu doanh nghiệp sử dụng dịch vụ kế toán của Hoàng Nam).",
+  "Đại diện doanh nghiệp làm biên bản làm việc ban đầu với quản lý thuế trực tiếp của doanh nghiệp (nếu cơ quan thuế KHÔNG BẮT BUỘC người đại diện pháp luật phải lên trực tiếp).",
+  "Liên hệ ngân hàng mở tài khoản ngân hàng trực tiếp tại địa chỉ của doanh nghiệp hoàn toàn miễn phí (từ 2016 tất cả doanh nghiệp thành lập mới phải mở tài khoản ngân hàng).",
+];
+
+const invoiceSteps = [
+  "Soạn thảo hồ sơ, giấy tờ cần thiết.",
+  "Liên hệ nhà in uy tín để đặt in hóa đơn cho doanh nghiệp và thông báo phát hành hóa đơn. Đại diện doanh nghiệp mua hóa đơn tại cơ quan thuế (đối với doanh nghiệp không đặt in hóa đơn).",
+  "Hoàng Nam sẽ hướng dẫn doanh nghiệp viết hóa đơn, cách hủy hóa đơn đúng cách.",
+];
+
+const requiredDocs = [
+  "Giấy phép kinh doanh của doanh nghiệp bản photo (01 bản).",
+  "CMND hoặc hộ chiếu sao y của người đại diện pháp luật doanh nghiệp (01 bản).",
+  "Hợp đồng thuê, mượn nhà (nếu có), Hoàng Nam sẽ hỗ trợ mẫu hợp đồng đúng quy định nếu doanh nghiệp yêu cầu.",
+];
+
+const importantNotes = [
+  "Hạn nộp tờ khai lệ phí môn bài và lệ phí môn bài là ngày cuối cùng của tháng được Sở KH&ĐT cấp giấy chứng nhận đăng ký kinh doanh.",
+  "Ví dụ: Doanh nghiệp thành lập vào tháng 03/2020 thì hạn nộp tờ khai lệ phí môn bài là 31/03/2020.",
+  "Đối với doanh nghiệp thành lập từ 25/02/2020 trở đi thì được miễn lệ phí môn bài năm đầu thành lập.",
+  "Do đó, các doanh nghiệp này tiến hành nộp tờ khai và lệ phí môn bài (của năm sau năm thành lập) chậm nhất vào ngày 30/01 năm kế tiếp.",
+  "Doanh nghiệp cần lưu ý hai mốc thời hạn quan trọng này để tiến hành nộp tiền và tờ khai đúng hạn, tránh các rắc rối pháp lý không đáng có.",
+];
+
+const serviceBenefits = [
+  "Chi phí thấp: Tùy thuộc vào quy mô và ngành nghề kinh doanh.",
+  "Không phát sinh các khoản chi phí BHXH, BHYT, khen thưởng và trợ cấp cho người lao động do chi phí nêu trên là trọn gói.",
+  "Không phát sinh các khoản chi phí ban đầu như: phần mềm kế toán, bàn ghế cho kế toán viên, máy in, máy vi tính, văn phòng phẩm, điện, nước, chi phí đi lại…",
+  "Không phát sinh chi phí tuyển dụng và đào tạo đối với kế toán viên.",
+  "Làm việc trên phần mềm kế toán chuyên nghiệp, cách thức ghi chép sổ sách được thống nhất ngay từ đầu giúp sổ sách suôn sẻ, gọn gàng và dễ theo dõi.",
+  "Luôn cập nhật kịp thời về luật và chế độ kế toán hiện hành mang lại lợi ích thiết thực cho doanh nghiệp. (Đặc biệt, chúng tôi phục vụ hàng trăm doanh nghiệp nên có nhiều kinh nghiệm thực tế).",
+];
+---
+
+<BaseLayout {metadata}>
+  <!-- Hero Banner -->
+  <section class="relative bg-gradient-to-r from-primary to-primary-light py-20 text-center text-white md:py-28">
+    <div class="relative z-10 mx-auto max-w-4xl px-6">
+      <h1 class="text-3xl font-extrabold uppercase leading-tight drop-shadow-md md:text-5xl">
+        Dịch Vụ Khai Thuế Ban Đầu Tại Cần Thơ
+      </h1>
+      <p class="mt-5 text-lg font-light text-white/90 md:text-xl">
+        Trọn Gói – Nhanh Chóng – Tránh Phạt Vi Phạm Hành Chính
+      </p>
+    </div>
+  </section>
+
+  <!-- Giới thiệu -->
+  <section class="bg-white py-10 md:py-14">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <div class="prose prose-lg mx-auto max-w-none text-gray-700">
+        <p class="text-justify">
+          <strong class="text-primary">Kê khai thuế ban đầu</strong> là một công việc được xem là quan trọng và
+          luôn là ưu tiên hàng đầu đối với những doanh nghiệp mới thành lập. Nếu khai báo chậm hoặc có bất kỳ
+          sai phạm nào, doanh nghiệp có thể bị xử phạt hành chính theo quy định hiện hành của chính phủ.
+        </p>
+      </div>
+
+      <div class="my-10 overflow-hidden rounded-2xl shadow-xl">
+        <Image
+          src={heroImage}
+          alt="Dịch vụ kê khai thuế ban đầu tại Cần Thơ"
+          width={815}
+          height={545}
+          class="w-full object-cover"
+          loading="lazy"
+        />
+      </div>
+
+      <div class="prose prose-lg mx-auto max-w-none text-gray-700">
+        <p class="text-justify">
+          Quá trình <strong class="text-primary">khai thuế ban đầu</strong> bắt buộc doanh nghiệp phải làm theo
+          hình thức kế toán đã kê khai cho đến khi kết thúc kỳ quyết toán thuế cuối năm. Do vậy, để tự tin hơn
+          trong quá trình này, doanh nghiệp nên tham khảo gói <strong class="text-primary">dịch vụ kê khai thuế ban đầu</strong> tại Cần Thơ của Hoàng Nam.
+        </p>
+      </div>
+
+      <!-- Cảnh báo -->
+      <div class="mt-8 rounded-2xl border border-red-200 bg-red-50 p-6">
+        <p class="text-red-700 font-semibold">
+          ⚠️ Nếu bạn thành lập doanh nghiệp và không hoàn thành thủ tục kê khai thuế ban đầu, bạn có thể bị
+          xử phạt vi phạm hành chính, cụ thể là phạt tiền rất nặng, tùy theo tình hình công ty vi phạm.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Thời hạn -->
+  <section class="bg-gray-50 py-10 md:py-14">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <h2 class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl">
+        Thời Hạn Kê Khai Thuế Ban Đầu Tại Cần Thơ
+      </h2>
+      <div class="mt-8 space-y-6">
+        {deadlines.map((item) => (
+          <div class="rounded-xl border border-gray-100 bg-white p-6 shadow-sm">
+            <strong class="text-lg text-primary">{item.title}</strong>
+            <p class="mt-2 text-gray-700">{item.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Hồ sơ khai thuế ban đầu -->
+  <section class="bg-white py-10 md:py-14">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <h2 class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl">
+        Hồ Sơ Khai Thuế Ban Đầu Gồm Những Gì?
+      </h2>
+      <div class="mt-8 space-y-3">
+        {taxFileDocs.map((doc) => (
+          <div class="flex items-start gap-3 rounded-xl border border-gray-100 bg-white p-4 shadow-sm">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mt-0.5 h-5 w-5 flex-shrink-0 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+            </svg>
+            <span class="text-gray-700">{doc}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Hoàng Nam hỗ trợ -->
+  <section class="bg-gray-50 py-10 md:py-14">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <h2 class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl">
+        Hoàng Nam Hỗ Trợ Doanh Nghiệp Khai Thuế Ban Đầu
+      </h2>
+
+      <!-- Thiết lập hồ sơ thuế -->
+      <h3 class="mt-8 text-lg font-bold text-primary">📋 Thiết Lập Hồ Sơ Thuế Ban Đầu</h3>
+      <div class="mt-4 space-y-4">
+        {setupSteps.map((step, index) => (
+          <div class="flex items-start gap-5 rounded-xl border border-gray-100 bg-white p-5 shadow-sm transition-all duration-300 hover:shadow-md">
+            <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-primary text-sm font-bold text-white">
+              {index + 1}
+            </span>
+            <p class="text-gray-700 pt-2">{step}</p>
+          </div>
+        ))}
+      </div>
+
+      <!-- Mua hóa đơn -->
+      <h3 class="mt-10 text-lg font-bold text-primary">🧾 Mua Hóa Đơn, Đặt In Hóa Đơn</h3>
+      <div class="mt-4 space-y-4">
+        {invoiceSteps.map((step, index) => (
+          <div class="flex items-start gap-5 rounded-xl border border-gray-100 bg-white p-5 shadow-sm transition-all duration-300 hover:shadow-md">
+            <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-green-500 text-sm font-bold text-white">
+              {index + 1}
+            </span>
+            <p class="text-gray-700 pt-2">{step}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Giấy tờ cần cung cấp -->
+  <section class="bg-white py-10 md:py-14">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <h2 class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl">
+        Giấy Tờ Và Hồ Sơ Doanh Nghiệp Cần Cung Cấp
+      </h2>
+      <div class="mt-8 space-y-3">
+        {requiredDocs.map((doc) => (
+          <div class="flex items-start gap-3 rounded-xl border border-gray-100 bg-white p-4 shadow-sm">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mt-0.5 h-5 w-5 flex-shrink-0 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span class="text-gray-700">{doc}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Lưu ý quan trọng -->
+  <section class="bg-gray-50 py-10 md:py-14">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <div class="rounded-2xl border border-amber-200 bg-amber-50 p-8">
+        <h3 class="text-xl font-bold text-amber-800 mb-4">
+          ⚠️ Lưu Ý Quan Trọng Doanh Nghiệp Cần Biết
+        </h3>
+        <div class="space-y-3">
+          {importantNotes.map((note) => (
+            <div class="flex items-start gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" class="mt-0.5 h-5 w-5 flex-shrink-0 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span class="text-gray-700">{note}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lợi ích -->
+  <section class="bg-white py-10 md:py-14">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <h2 class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl">
+        Lợi Ích Khi Doanh Nghiệp Sử Dụng Dịch Vụ Của Hoàng Nam
+      </h2>
+      <div class="mt-8 space-y-3">
+        {serviceBenefits.map((item) => (
+          <div class="flex items-start gap-3 rounded-xl border border-gray-100 bg-white p-4 shadow-sm">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mt-0.5 h-6 w-6 flex-shrink-0 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+            </svg>
+            <span class="text-gray-700">{item}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Thông tin liên hệ -->
+  <section class="bg-gray-50 py-10 md:py-14">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <div class="rounded-2xl border-2 border-primary/20 bg-gradient-to-r from-blue-50 to-indigo-50 p-8 shadow-sm">
+        <h3 class="text-xl font-bold text-primary mb-4">🏢 HOÀNG NAM CHI NHÁNH CẦN THƠ</h3>
+        <div class="space-y-2 text-gray-700">
+          <p>📍 <strong>Địa chỉ:</strong> 03 Quản Trọng Hoàng, Phường Hưng Lợi, Quận Ninh Kiều, Cần Thơ</p>
+          <p>📞 <strong>Điện thoại:</strong> <a href="tel:0918883179" class="text-primary font-semibold hover:underline">091.888.3179</a></p>
+          <p>📧 <strong>Email:</strong> <a href="mailto:cskh@hoangnamcantho.com" class="text-primary hover:underline">cskh@hoangnamcantho.com</a></p>
+          <p>🌐 <strong>Website:</strong> <a href="https://hoangnamcantho.com/" class="text-primary hover:underline">https://hoangnamcantho.com/</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <CTABanner
+    title="Doanh nghiệp mới thành lập cần khai thuế ban đầu?"
+    subtitle="Liên hệ ngay Hoàng Nam để được hỗ trợ trọn gói. Soạn hồ sơ, nộp tờ khai và mở tài khoản ngân hàng nhanh chóng."
+  />
+</BaseLayout>

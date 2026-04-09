@@ -1,0 +1,328 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { Image } from "astro:assets";
+import { siteConfig } from "@/config/site";
+import CTABanner from "@/components/homepage/CTABanner.astro";
+import heroImage from "@/assets/images/services/thanh-lap-chi-nhanh.png";
+
+const metadata = {
+  title: "Thành Lập Chi Nhánh Công Ty Tại Cần Thơ – Hoàng Nam",
+  description:
+    "Dịch vụ thành lập chi nhánh công ty trọn gói tại Cần Thơ. Hoàng Nam tư vấn, soạn hồ sơ và nộp thủ tục thành lập chi nhánh nhanh chóng, uy tín.",
+};
+
+const requiredDocs = [
+  "2 bản Giấy phép kinh doanh của công ty mẹ sao y công chứng (không quá 3 tháng)",
+  "2 CMND sao y công chứng của người đứng đầu chi nhánh (không quá 3 tháng)",
+  "Địa chỉ chi nhánh",
+  "Số điện thoại chi nhánh",
+  "Số điện thoại giám đốc chi nhánh",
+];
+
+const conditions = [
+  {
+    title: "Giấy chứng nhận đăng ký doanh nghiệp",
+    description: "Có Giấy chứng nhận đăng ký doanh nghiệp được cấp theo quy định của pháp luật.",
+  },
+  {
+    title: "Trụ sở chi nhánh",
+    description: "Trụ sở chi nhánh thuộc quyền sử dụng hợp pháp của doanh nghiệp.",
+  },
+  {
+    title: "Người đứng đầu chi nhánh",
+    description: "Có người đứng đầu chi nhánh đủ điều kiện theo quy định tại Luật doanh nghiệp.",
+  },
+  {
+    title: "Chứng chỉ hành nghề",
+    description: "Có chứng chỉ hành nghề đối với ngành nghề kinh doanh chi nhánh yêu cầu chứng chỉ, có giấy xác nhận đủ điều kiện đối với chi nhánh kinh doanh ngành nghề có điều kiện theo quy định pháp luật.",
+  },
+];
+
+const preparations = [
+  "Giấy tờ chứng thực cá nhân",
+  "Đặt tên chi nhánh",
+  "Xác định địa chỉ trụ sở thuộc quyền sử dụng hợp pháp của Chi nhánh",
+  "Xác định ngành nghề kinh doanh",
+  "Hạch toán tài chính / kế toán của Chi nhánh",
+];
+
+const applicationDocs = [
+  "Giấy đề nghị Đăng ký hoạt động Chi nhánh",
+  "Quyết định bổ nhiệm người đứng đầu Chi nhánh",
+  "Quyết định và bản sao hợp lệ biên bản họp của Hội đồng thành viên đối với công ty TNHH hai thành viên trở lên, của chủ sở hữu công ty hoặc Hội đồng thành viên hoặc Chủ tịch công ty đối với công ty TNHH một thành viên, của Hội đồng quản trị đối với công ty cổ phần, của các thành viên hợp danh đối với công ty hợp danh về việc thành lập chi nhánh",
+  "Bản sao Thẻ căn cước công dân, Giấy chứng minh nhân dân, Hộ chiếu hoặc chứng thực cá nhân hợp pháp khác của người đứng đầu chi nhánh",
+  "Giấy ủy quyền cho người đại diện nộp hồ sơ (nếu có)",
+  "Chứng minh nhân dân của người đại diện nộp hồ sơ (nếu có)",
+  "Giấy đề nghị bổ sung, cập nhật thông tin đăng ký doanh nghiệp đối với doanh nghiệp hoạt động theo Giấy phép đầu tư, Giấy chứng nhận đầu tư hoặc các giấy tờ có giá trị pháp lý tương đương chưa thực hiện bổ sung, cập nhật thông tin đăng ký doanh nghiệp",
+];
+
+const postRegistration = [
+  "Khắc dấu của Chi nhánh",
+  "Đăng ký chữ ký số điện tử",
+  "Mở tài khoản ngân hàng cho Chi nhánh",
+  "Kê khai thuế và nộp thuế ban đầu",
+  "Thông báo tài khoản ngân hàng",
+  "Treo bảng hiệu Chi nhánh tại trụ sở",
+  "Phát hành hóa đơn GTGT",
+  "Khai thuế / Nộp thuế tháng – quý",
+];
+
+const benefits = [
+  { icon: "🤝", title: "LINH HOẠT", description: "Chúng tôi có kỹ năng làm việc qua email/zalo/điện thoại." },
+  { icon: "⚖️", title: "CHÍNH XÁC", description: "Làm đúng nội dung, đúng trình tự và đúng pháp luật." },
+  { icon: "💰", title: "PHÍ TỐT NHẤT", description: "Khách hàng yên tâm với phí dịch vụ tốt nhất." },
+  { icon: "⚡", title: "NHANH CHÓNG", description: "Công việc tiến hành nhanh chóng và đúng hẹn." },
+  { icon: "🛵", title: "TẬN NƠI", description: "Chúng tôi không ngại di chuyển để hỗ trợ." },
+  { icon: "💙", title: "CHU ĐÁO", description: "Tư vấn và nhắc nhở tận tình sau thành lập." },
+  { icon: "🎁", title: "HẬU MÃI", description: "Tư vấn miễn phí 12 tháng sau thành lập." },
+  { icon: "🏆", title: "THÀNH CÔNG", description: "HOÀNG NAM CORP luôn theo đuổi mục tiêu cho đến thành công." },
+];
+
+const supportAreas = [
+  "Ninh Kiều", "Cái Răng", "Bình Thủy", "Ô Môn", "Thốt Nốt",
+  "Phong Điền", "Cờ Đỏ", "Vĩnh Thạnh", "Thới Lai",
+];
+---
+
+<BaseLayout {metadata}>
+  <!-- Hero Banner -->
+  <section class="relative bg-gradient-to-r from-primary to-primary-light py-20 text-center text-white md:py-28">
+    <div class="relative z-10 mx-auto max-w-4xl px-6">
+      <h1 class="text-3xl font-extrabold uppercase leading-tight drop-shadow-md md:text-5xl">
+        Thành Lập Chi Nhánh Công Ty Tại Cần Thơ
+      </h1>
+      <p class="mt-5 text-lg font-light text-white/90 md:text-xl">
+        Trọn Gói – Uy Tín – Nhanh Chóng – Giao Giấy Phép Tận Nơi
+      </p>
+    </div>
+  </section>
+
+  <!-- Giới thiệu -->
+  <section class="bg-white py-10 md:py-14">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <div class="prose prose-lg mx-auto max-w-none text-gray-700">
+        <p class="text-justify">
+          Thành lập chi nhánh – mở rộng mạng lưới kinh doanh là một trong những nhu cầu thường thấy của các doanh nghiệp
+          để phù hợp hơn với tình hình kinh doanh của thị trường, khách hàng và chính bản thân doanh nghiệp.
+        </p>
+      </div>
+
+      <div class="my-10 overflow-hidden rounded-2xl shadow-xl">
+        <Image
+          src={heroImage}
+          alt="Thành lập chi nhánh công ty tại Cần Thơ"
+          width={815}
+          height={545}
+          class="w-full object-cover"
+          loading="lazy"
+        />
+      </div>
+
+      <div class="prose prose-lg mx-auto max-w-none text-gray-700">
+        <p class="text-justify">
+          Thấu hiểu được nhu cầu thiết thực đó của quý doanh nghiệp,
+          <strong class="text-primary">HOÀNG NAM CORP</strong> cung cấp dịch vụ tư vấn, hướng dẫn và nhận làm
+          thủ tục thành lập chi nhánh trọn gói và uy tín tại Cần Thơ.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Giấy tờ cần cung cấp -->
+  <section class="bg-gray-50 py-10 md:py-14">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <h2 class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl">
+        Giấy Tờ Cần Cung Cấp
+      </h2>
+      <p class="mt-6 text-gray-700 text-lg">
+        Quý doanh nghiệp vui lòng cung cấp cho chúng tôi các giấy tờ sau:
+      </p>
+      <div class="mt-6 space-y-3">
+        {requiredDocs.map((doc) => (
+          <div class="flex items-start gap-3 rounded-xl border border-gray-100 bg-white p-4 shadow-sm">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mt-0.5 h-5 w-5 flex-shrink-0 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span class="text-gray-700">{doc}</span>
+          </div>
+        ))}
+      </div>
+      <p class="mt-6 text-gray-700">
+        Chúng tôi sẽ soạn hồ sơ, mang tới cho bạn ký và mang giấy phép kinh doanh của chi nhánh mới về tận nơi cho doanh nghiệp.
+      </p>
+    </div>
+  </section>
+
+  <!-- Bảng giá -->
+  <section class="bg-white py-10 md:py-14">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <div class="overflow-hidden rounded-2xl border border-gray-200 shadow-sm">
+        <table class="w-full text-left">
+          <thead class="bg-primary text-white">
+            <tr>
+              <th class="px-6 py-4 text-sm font-semibold" colspan="4">D. Thành lập Chi nhánh, VPĐD</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-200 bg-white">
+            <tr>
+              <td class="px-6 py-4 text-gray-600 w-12">1</td>
+              <td class="px-6 py-4 text-gray-700">Thành lập văn phòng đại diện công ty</td>
+              <td class="px-6 py-4 text-gray-700 font-semibold text-center" rowspan="2">3 ngày</td>
+              <td class="px-6 py-4 text-primary font-bold text-right" rowspan="2">1.700.000đ</td>
+            </tr>
+            <tr>
+              <td class="px-6 py-4 text-gray-600">2</td>
+              <td class="px-6 py-4 text-gray-700">Thành lập chi nhánh công ty</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="mt-8 rounded-r-xl border-l-[6px] border-primary bg-blue-50 px-8 py-6">
+        <p class="text-lg font-bold text-primary text-center">
+          📞 Đừng ngần ngại hãy gọi ngay cho HOÀNG NAM CORP để được tư vấn thủ tục
+          <strong>thành lập chi nhánh tại Cần Thơ</strong> nhanh chóng và hiệu quả.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Thông tin liên hệ -->
+  <section class="bg-gray-50 py-10 md:py-14">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <div class="rounded-2xl border-2 border-primary/20 bg-gradient-to-r from-blue-50 to-indigo-50 p-8 shadow-sm">
+        <h3 class="text-xl font-bold text-primary mb-4">🏢 HOÀNG NAM CORP</h3>
+        <div class="space-y-2 text-gray-700">
+          <p>📍 <strong>Địa chỉ:</strong> 13 Tôn Thất Thuyết, P.9, Tp. Cần Thơ</p>
+          <p>📞 <strong>Điện thoại:</strong> <a href="tel:0918883179" class="text-primary font-semibold hover:underline">091.888.3179</a></p>
+          <p>📧 <strong>Email:</strong> <a href="mailto:cskh@hoangnamcantho.com" class="text-primary hover:underline">cskh@hoangnamcantho.com</a></p>
+          <p>🌐 <strong>Website:</strong> <a href="https://hoangnamcantho.com/" class="text-primary hover:underline">https://hoangnamcantho.com/</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Điều kiện thành lập -->
+  <section class="bg-white py-10 md:py-14">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <h2 class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl">
+        Điều Kiện Thành Lập Chi Nhánh
+      </h2>
+      <p class="mt-6 text-gray-700 italic">
+        Pháp luật Việt Nam không cấm việc thành lập chi nhánh, doanh nghiệp có thể thành lập chi nhánh trong và ngoài nước
+        nhưng để được Sở Kế hoạch và Đầu Tư cấp phép thì doanh nghiệp phải thỏa mãn các điều kiện sau:
+      </p>
+      <div class="mt-8 space-y-4">
+        {conditions.map((item, index) => (
+          <div class="flex items-start gap-5 rounded-xl border border-gray-100 bg-white p-5 shadow-sm transition-all duration-300 hover:shadow-md">
+            <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-primary text-sm font-bold text-white">
+              {index + 1}
+            </span>
+            <div>
+              <strong class="text-primary">{item.title}</strong>
+              <p class="mt-1 text-gray-700">{item.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Chuẩn bị trước khi thành lập -->
+  <section class="bg-gray-50 py-10 md:py-14">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <h2 class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl">
+        Chuẩn Bị Trước Khi Thành Lập Chi Nhánh
+      </h2>
+      <div class="mt-8 space-y-3">
+        {preparations.map((item, index) => (
+          <div class="flex items-start gap-4 rounded-xl border border-gray-100 bg-white p-5 shadow-sm">
+            <span class="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-primary/10 text-sm font-bold text-primary">
+              {index + 1}
+            </span>
+            <span class="text-gray-700 pt-1">{item}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Hồ sơ thành lập -->
+  <section class="bg-white py-10 md:py-14">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <h2 class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl">
+        Hồ Sơ Khi Thành Lập Chi Nhánh
+      </h2>
+      <div class="mt-8 space-y-3">
+        {applicationDocs.map((doc) => (
+          <div class="flex items-start gap-3 rounded-xl border border-gray-100 bg-white p-4 shadow-sm">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mt-0.5 h-5 w-5 flex-shrink-0 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+            </svg>
+            <span class="text-gray-700">{doc}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Thủ tục sau thành lập -->
+  <section class="bg-gray-50 py-10 md:py-14">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <h2 class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl">
+        Thủ Tục Sau Khi Có Giấy Chứng Nhận Đăng Ký Hoạt Động Chi Nhánh
+      </h2>
+      <div class="mt-8 space-y-4">
+        {postRegistration.map((step, index) => (
+          <div class="flex items-start gap-5 rounded-xl border border-gray-100 bg-white p-5 shadow-sm transition-all duration-300 hover:shadow-md">
+            <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-primary text-sm font-bold text-white">
+              {index + 1}
+            </span>
+            <p class="text-gray-700 pt-2">{step}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Lợi ích DV -->
+  <section class="bg-white py-10 md:py-14">
+    <div class="mx-auto max-w-6xl px-6 lg:px-8">
+      <h2 class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl">
+        Lợi Ích Khi Sử Dụng Dịch Vụ Thành Lập Chi Nhánh Của Hoàng Nam Corp
+      </h2>
+      <p class="mt-6 text-lg text-gray-700">
+        <strong class="text-primary">HOÀNG NAM CORP</strong> luôn cố gắng mang đến dịch vụ tốt nhất cho khách hàng:
+      </p>
+      <div class="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        {benefits.map((benefit) => (
+          <div class="group rounded-xl border border-gray-100 bg-white p-6 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+            <div class="mb-3 text-3xl">{benefit.icon}</div>
+            <strong class="block text-lg text-primary">{benefit.title}</strong>
+            <p class="mt-2 text-sm text-gray-600">{benefit.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Khu Vực Hỗ Trợ -->
+  <section class="bg-gray-50 py-12">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <div class="rounded-2xl border-2 border-dashed border-primary bg-blue-50 p-8 text-center">
+        <p class="text-lg font-bold text-primary">
+          📍 Hỗ trợ tận nơi tại Cần Thơ:{" "}
+          <span class="font-normal text-gray-700">
+            {supportAreas.join(", ")}.
+          </span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <CTABanner
+    title="Bạn muốn thành lập chi nhánh công ty tại Cần Thơ?"
+    subtitle="Liên hệ ngay Hoàng Nam để được tư vấn miễn phí, soạn hồ sơ trọn gói và giao giấy phép tận nơi."
+  />
+</BaseLayout>

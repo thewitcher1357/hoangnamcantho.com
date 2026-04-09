@@ -1,0 +1,203 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { Image } from "astro:assets";
+import CTABanner from "@/components/homepage/CTABanner.astro";
+import heroImage from "@/assets/images/services/quyet-toan-thue-tncn.png";
+
+const metadata = {
+  title: "Dịch Vụ Quyết Toán Thuế Thu Nhập Cá Nhân Tại Cần Thơ – Hoàng Nam",
+  description:
+    "Dịch vụ quyết toán thuế TNCN chuyên nghiệp tại Cần Thơ. Hoàng Nam tư vấn, soạn hồ sơ, nộp quyết toán thuế thu nhập cá nhân nhanh chóng, chính xác.",
+};
+
+const services = [
+  "Tư vấn cho khách hàng các quy định pháp luật thuế nói chung và pháp luật thuế thu nhập cá nhân nói riêng.",
+  "Tư vấn cho khách hàng các quy định và trình tự, thủ tục, hồ sơ về quyết toán thuế thu nhập cá nhân.",
+  "Thực hiện quyết toán thuế thu nhập cá nhân khi có sự ủy quyền của khách hàng, bao gồm: chuẩn bị, hoàn thiện và nộp hồ sơ quyết toán tới các cơ quan nhà nước có thẩm quyền.",
+  "Thay mặt khách hàng sửa đổi, bổ sung hồ sơ, trực tiếp làm việc với cơ quan có thẩm quyền khi có yêu cầu.",
+  "Thực hiện các dịch vụ liên quan đến quyết toán thuế khác khi khách hàng có nhu cầu.",
+];
+
+const processSteps = [
+  "Tư vấn thuế miễn phí",
+  "Chuẩn bị hồ sơ",
+  "Soạn hồ sơ quyết toán thuế TNCN",
+  "Ký hồ sơ quyết toán",
+  "Nộp hồ sơ quyết toán",
+  "Bàn giao chứng từ gốc",
+];
+
+const whyChooseUs = [
+  {
+    title: "Kinh nghiệm xử lý hàng ngàn hồ sơ",
+    description: "Với kinh nghiệm xử lí thành công hàng ngàn hồ sơ TNCN, các chuyên gia của Hoàng Nam tin rằng với kinh nghiệm và kiến thức chuyên môn sẽ giúp các tổ chức, cá nhân làm việc tại Việt Nam an tâm công tác, tránh được các rủi ro phát sinh khi quyết toán Thuế TNCN tại Việt Nam.",
+  },
+  {
+    title: "Tránh được việc đóng thuế 2 lần",
+    description: "Các chuyên gia tại Hoàng Nam sẽ tư vấn giúp các cá nhân đảm bảo số thuế phải nộp của bạn tuân thủ theo quy định và đảm bảo thu nhập của người nộp thuế tránh bị đánh thuế 2 lần.",
+  },
+  {
+    title: "Tiết kiệm thời gian & chuẩn bị đầy đủ biểu mẫu",
+    description: "Hoàng Nam sẽ đảm bảo các tờ khai dựa trên số liệu bạn cung cấp là hợp lệ, góp phần giảm thiểu thời gian đi lại và các trở ngại khi giao tiếp với cơ quan Thuế.",
+  },
+];
+
+const commitments = [
+  "Soạn thảo các hồ sơ, thủ tục cần thiết về quyết toán thuế TNCN.",
+  "Chịu trách nhiệm và bồi thường thiệt hại nếu làm dịch vụ sai lệch.",
+  "Có trách nhiệm giải trình với cơ quan thuế và các cơ quan có chức năng.",
+  "Bảo vệ lợi ích tối đa cho quý khách hàng là phương châm của Hoàng Nam.",
+  "Số liệu bảo mật tuyệt đối.",
+];
+---
+
+<BaseLayout {metadata}>
+  <!-- Hero Banner -->
+  <section class="relative bg-gradient-to-r from-primary to-primary-light py-20 text-center text-white md:py-28">
+    <div class="relative z-10 mx-auto max-w-4xl px-6">
+      <h1 class="text-3xl font-extrabold uppercase leading-tight drop-shadow-md md:text-5xl">
+        Dịch Vụ Quyết Toán Thuế Thu Nhập Cá Nhân Tại Cần Thơ
+      </h1>
+      <p class="mt-5 text-lg font-light text-white/90 md:text-xl">
+        Chuyên Nghiệp – Chính Xác – Bảo Mật – Uy Tín
+      </p>
+    </div>
+  </section>
+
+  <!-- Giới thiệu -->
+  <section class="bg-white py-10 md:py-14">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <div class="prose prose-lg mx-auto max-w-none text-gray-700">
+        <p class="text-justify">
+          <strong class="text-primary">Quyết toán thuế</strong> là việc xác định số thuế phải nộp của năm tính thuế
+          hoặc thời gian từ đầu năm tính thuế đến khi chấm dứt hoạt động phát sinh nghĩa vụ thuế hoặc thời gian
+          tính từ khi phát sinh nghĩa vụ thuế đến khi chấm dứt hoạt động phát sinh nghĩa vụ thuế.
+        </p>
+      </div>
+
+      <div class="my-10 overflow-hidden rounded-2xl shadow-xl">
+        <Image
+          src={heroImage}
+          alt="Dịch vụ quyết toán thuế thu nhập cá nhân tại Cần Thơ"
+          width={815}
+          height={545}
+          class="w-full object-cover"
+          loading="lazy"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Dịch vụ quyết toán thuế TNCN -->
+  <section class="bg-gray-50 py-10 md:py-14">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <h2 class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl">
+        Dịch Vụ Quyết Toán Thuế Thu Nhập Cá Nhân Của Hoàng Nam
+      </h2>
+      <div class="mt-8 space-y-3">
+        {services.map((item) => (
+          <div class="flex items-start gap-3 rounded-xl border border-gray-100 bg-white p-4 shadow-sm">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mt-0.5 h-6 w-6 flex-shrink-0 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+            </svg>
+            <span class="text-gray-700">{item}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Quy trình -->
+  <section class="bg-white py-10 md:py-14">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <h2 class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl">
+        Quy Trình Quyết Toán Thuế TNCN Của Hoàng Nam
+      </h2>
+      <div class="mt-8 space-y-4">
+        {processSteps.map((step, index) => (
+          <div class="flex items-start gap-5 rounded-xl border border-gray-100 bg-white p-5 shadow-sm transition-all duration-300 hover:shadow-md">
+            <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-primary text-sm font-bold text-white">
+              {index + 1}
+            </span>
+            <p class="text-gray-700 pt-2">{step}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Tại sao chọn Hoàng Nam -->
+  <section class="bg-gray-50 py-10 md:py-14">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <h2 class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl">
+        Tại Sao Sử Dụng Dịch Vụ Quyết Toán Thuế TNCN Tại Hoàng Nam?
+      </h2>
+      <div class="mt-8 space-y-6">
+        {whyChooseUs.map((item) => (
+          <div class="rounded-xl border border-gray-100 bg-white p-6 shadow-sm transition-all hover:shadow-md">
+            <div class="flex items-start gap-4">
+              <svg xmlns="http://www.w3.org/2000/svg" class="mt-1 h-6 w-6 flex-shrink-0 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+              </svg>
+              <div>
+                <strong class="text-lg text-primary">{item.title}</strong>
+                <p class="mt-2 text-gray-600">{item.description}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div class="mt-8 prose prose-lg max-w-none text-gray-700">
+        <p class="text-justify">
+          Quyết toán thuế là một công việc phức tạp đòi hỏi kế toán phải có nhiều kinh nghiệm đồng thời phải
+          am hiểu về sổ sách và số liệu của doanh nghiệp.
+        </p>
+        <p class="text-justify">
+          Nắm được tầm quan trọng của việc quyết toán thuế với các cá nhân,
+          <strong class="text-primary">Hoàng Nam</strong> là công ty cung cấp dịch vụ kế toán được thành lập
+          nhằm giúp giải quyết các thắc mắc, khó khăn trong quá trình thực hiện quyết toán thuế thu nhập cá nhân tại Cần Thơ.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cam kết -->
+  <section class="bg-white py-10 md:py-14">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <h2 class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl">
+        Cam Kết Của Hoàng Nam
+      </h2>
+      <div class="mt-8 space-y-3">
+        {commitments.map((item) => (
+          <div class="flex items-start gap-3 rounded-xl border border-gray-100 bg-white p-4 shadow-sm">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mt-0.5 h-5 w-5 flex-shrink-0 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+            </svg>
+            <span class="text-gray-700">{item}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Thông tin liên hệ -->
+  <section class="bg-gray-50 py-10 md:py-14">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <div class="rounded-2xl border-2 border-primary/20 bg-gradient-to-r from-blue-50 to-indigo-50 p-8 shadow-sm">
+        <h3 class="text-xl font-bold text-primary mb-4">🏢 HOÀNG NAM CHI NHÁNH CẦN THƠ</h3>
+        <div class="space-y-2 text-gray-700">
+          <p>📍 <strong>Địa chỉ:</strong> 03 Quản Trọng Hoàng, Phường Hưng Lợi, Quận Ninh Kiều, Cần Thơ</p>
+          <p>📞 <strong>Điện thoại:</strong> <a href="tel:0918883179" class="text-primary font-semibold hover:underline">091.888.3179</a></p>
+          <p>📧 <strong>Email:</strong> <a href="mailto:cskh@hoangnamcantho.com" class="text-primary hover:underline">cskh@hoangnamcantho.com</a></p>
+          <p>🌐 <strong>Website:</strong> <a href="https://hoangnamcantho.com/" class="text-primary hover:underline">https://hoangnamcantho.com/</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <CTABanner
+    title="Bạn cần quyết toán thuế thu nhập cá nhân tại Cần Thơ?"
+    subtitle="Liên hệ ngay Hoàng Nam để được tư vấn miễn phí. Chúng tôi cam kết bảo mật số liệu và xử lý hồ sơ nhanh chóng, chính xác."
+  />
+</BaseLayout>

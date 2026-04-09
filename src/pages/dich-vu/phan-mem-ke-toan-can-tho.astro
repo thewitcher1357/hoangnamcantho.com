@@ -1,0 +1,280 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { Image } from "astro:assets";
+import { siteConfig } from "@/config/site";
+import CTABanner from "@/components/homepage/CTABanner.astro";
+import heroImage from "@/assets/images/services/phan-mem-ke-toan.png";
+import bannerImage from "@/assets/images/services/phan-mem-ke-toan-banner.jpg";
+
+const metadata = {
+  title: "Phần Mềm Kế Toán Online Cần Thơ – Giá Rẻ, Tiện Ích – Hoàng Nam",
+  description:
+    "Cung cấp phần mềm kế toán online giá rẻ, tiện ích, dễ sử dụng nhất hiện nay tại Cần Thơ. Hoàng Nam tư vấn lựa chọn phần mềm kế toán phù hợp cho doanh nghiệp.",
+};
+
+const softwareBenefits = [
+  "Tiết kiệm được nhiều loại chi phí cho doanh nghiệp",
+  "Thực hiện chính xác công tác kế toán",
+  "Tự động hóa các thao tác kế toán thủ công",
+  "Giúp nhà quản lý đưa ra các dự báo và quyết định nhanh chóng, chính xác",
+  "Tra cứu thuận tiện",
+  "Công tác kế toán có tính kế thừa",
+  "Báo cáo thuế dễ dàng hơn",
+];
+
+const softwareList = [
+  "Phần mềm kế toán Hoàng Nam",
+  "Phần mềm kế toán Sivip",
+  "Phần mềm kế toán Vacom",
+  "Phần mềm kế toán Misa",
+  "Phần mềm kế toán Smart Pro",
+  "Phần mềm kế toán OMEGA",
+  "Phần mềm kế toán GAMA",
+  "Phần mềm kế toán Việt",
+  "Phần mềm kế toán Việt Nam",
+  "Phần mềm kế toán Sen Việt",
+  "Phần mềm kế toán Trí luật",
+  "Phần mềm kế toán Asoft",
+  "Phần mềm kế toán Asiasoft",
+  "Phần mềm kế toán Ansi",
+  "Phần mềm kế toán 1C V8",
+  "Phần mềm kế toán Simba",
+  "Phần mềm kế toán Unessco",
+  "Phần mềm kế toán Metadata",
+  "Phần mềm kế toán Effect",
+  "Phần mềm kế toán FAST",
+  "Phần mềm kế toán DAMI",
+  "Phần mềm kế toán Tony",
+  "Phần mềm kế toán BraVo",
+  "Phần mềm kế toán CNS",
+  "Phần mềm kế toán FTS",
+  "Phần mềm kế toán Perpect",
+];
+
+const serviceProcess = [
+  "Hàng tháng, định kỳ dịch vụ kế toán Hoàng Nam nhận chứng từ hoặc bản sao chứng từ đã phát sinh trong tháng do doanh nghiệp tổng hợp (có biên bản giao nhận).",
+  "Hoàng Nam sẽ tiến hành xem xét, kiểm tra tính hợp pháp, sự chính xác của các nghiệp vụ kinh tế, tài chính đã phát sinh ghi trên chứng từ kế toán, đối chiếu số liệu thông tin trên chứng từ kế toán với thực tế phát sinh.",
+  "Hoàng Nam tiến hành kiểm tra các chứng từ kế toán dưới góc độ hợp lý của kế toán và thuế, phát hiện các sai sót và điều chỉnh cho phù hợp.",
+  "Các hoạt động xử lý nghiệp vụ: Tập hợp chi phí, kiểm soát công nợ, cập nhật sổ sách, theo dõi vật tư hàng hóa, tổng hợp Nhập - Xuất - Tồn cuối tháng.",
+  "Hoàng Nam cân đối phát sinh, lãi, lỗ, xác định kết quả kinh doanh hàng tháng.",
+  "Hoàng Nam sẽ thay doanh nghiệp thực hiện các hoạt động nộp tờ khai, báo cáo hàng tháng, hàng quý, hàng năm.",
+  "Báo cáo về tình hình tài chính của công ty và cung cấp thông tin một cách kịp thời, tránh các sai sót, sai phạm tiềm tàng, vi phạm pháp luật.",
+  "Hoàng Nam tư vấn cho doanh nghiệp để đưa các chi phí phát sinh trong thực tế được vào chi phí hợp lý theo đúng luật thuế hiện hành.",
+  "Hoàng Nam hoàn thiện hệ thống sổ cuối năm.",
+];
+
+const valueProps = [
+  {
+    icon: "❤️",
+    title: "Tập thể tận tâm",
+    description: "Dịch Vụ Phần mềm Kế toán của Hoàng Nam có đội ngũ tư vấn luôn hết mình và quy trình xử lý thông tin đơn giản tiết kiệm thời gian cho doanh nghiệp.",
+  },
+  {
+    icon: "💰",
+    title: "Giá cả hợp lý",
+    description: "Các mức phí Hoàng Nam đưa ra luôn hợp lý – chúng tôi không phải là đơn vị cung ứng dịch vụ rẻ nhất nhưng chúng tôi là đơn vị báo giá hợp lý và dịch vụ chất lượng nhất.",
+  },
+  {
+    icon: "📦",
+    title: "Các gói giải pháp tốt nhất",
+    description: "Hoàng Nam còn cung cấp thêm Chữ Ký Số để khai và nộp thuế online, Hóa Đơn Điện Tử đang trong lộ trình bắt buộc sử dụng với mức giá hỗ trợ thấp nhất thị trường. Hỗ trợ kỹ thuật 24/24.",
+  },
+  {
+    icon: "👨‍⚖️",
+    title: "Đội ngũ hàng đầu",
+    description: "Đội ngũ luật của Hoàng Nam sẽ tư vấn pháp lý cho khách hàng rõ hơn về quy định của pháp luật từng lĩnh vực trong lĩnh vực bạn kinh doanh.",
+  },
+];
+
+const supportAreas = [
+  "Ninh Kiều", "Cái Răng", "Bình Thủy", "Ô Môn", "Thốt Nốt",
+  "Phong Điền", "Cờ Đỏ", "Vĩnh Thạnh", "Thới Lai",
+];
+---
+
+<BaseLayout {metadata}>
+  <!-- Hero Banner -->
+  <section class="relative bg-gradient-to-r from-primary to-primary-light py-20 text-center text-white md:py-28">
+    <div class="relative z-10 mx-auto max-w-4xl px-6">
+      <h1 class="text-3xl font-extrabold uppercase leading-tight drop-shadow-md md:text-5xl">
+        Phần Mềm Kế Toán Online Tại Cần Thơ
+      </h1>
+      <p class="mt-5 text-lg font-light text-white/90 md:text-xl">
+        Giá Rẻ – Tiện Ích – Dễ Sử Dụng Nhất Hiện Nay
+      </p>
+    </div>
+  </section>
+
+  <!-- Banner ảnh -->
+  <section class="bg-white py-10 md:py-14">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <div class="overflow-hidden rounded-2xl shadow-xl">
+        <Image
+          src={bannerImage}
+          alt="Phần mềm kế toán online Hoàng Nam"
+          width={934}
+          height={680}
+          class="w-full object-cover"
+          loading="eager"
+        />
+      </div>
+
+      <!-- Khuyến mãi -->
+      <div class="mt-8 rounded-2xl border-2 border-red-200 bg-red-50 p-6 text-center">
+        <p class="text-xl font-bold text-red-600">
+          🔥 Chương trình khuyến mãi giảm 50%
+        </p>
+        <p class="mt-2 text-lg font-semibold text-red-500">
+          Mọi chi tiết vui lòng liên hệ: <a href="tel:0906777019" class="underline">0906.777.019</a> gặp Mr.Hoàng
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Giới thiệu PM kế toán -->
+  <section class="bg-gray-50 py-10 md:py-14">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <div class="prose prose-lg mx-auto max-w-none text-gray-700">
+        <p class="text-justify">
+          <strong class="text-primary">Phần mềm kế toán</strong> giống như một công cụ giúp các nhân viên kế toán
+          thực hiện các thao tác nghiệp vụ như ghi chép, tính toán, tổng hợp, xuất dữ liệu… một cách tự động,
+          nhanh chóng và chính xác dựa trên dữ liệu đầu vào do nhân viên cung cấp.
+        </p>
+      </div>
+
+      <div class="my-10 overflow-hidden rounded-2xl shadow-xl">
+        <Image
+          src={heroImage}
+          alt="Phần mềm kế toán tại Cần Thơ"
+          width={815}
+          height={545}
+          class="w-full object-cover"
+          loading="lazy"
+        />
+      </div>
+
+      <div class="prose prose-lg mx-auto max-w-none text-gray-700">
+        <p class="text-justify">
+          Thấu hiểu được nhu cầu thiết thực đó của quý doanh nghiệp,
+          <strong class="text-primary">Hoàng Nam</strong> cung cấp hoạt động tư vấn, hướng dẫn và hỗ trợ công ty
+          dịch vụ kế toán trọn gói và uy tín tại Cần Thơ.
+        </p>
+      </div>
+
+      <!-- Lợi ích PM -->
+      <div class="mt-8 space-y-3">
+        {softwareBenefits.map((benefit) => (
+          <div class="flex items-start gap-3 rounded-xl border border-gray-100 bg-white p-4 shadow-sm">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mt-0.5 h-6 w-6 flex-shrink-0 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+            </svg>
+            <span class="text-gray-700">{benefit}</span>
+          </div>
+        ))}
+      </div>
+
+      <div class="mt-8 rounded-r-xl border-l-[6px] border-primary bg-blue-50 px-8 py-6">
+        <p class="text-gray-700 text-justify">
+          Nếu doanh nghiệp của bạn đang phân vân về việc lựa chọn phần mềm kế toán phù hợp cho doanh nghiệp
+          hãy gọi ngay cho <strong class="text-primary">Hoàng Nam</strong> để được tư vấn, hướng dẫn về các phần
+          mềm kế toán tại Cần Thơ nhanh chóng và hiệu quả.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Thông tin liên hệ -->
+  <section class="bg-white py-10 md:py-14">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <div class="rounded-2xl border-2 border-primary/20 bg-gradient-to-r from-blue-50 to-indigo-50 p-8 shadow-sm">
+        <h3 class="text-xl font-bold text-primary mb-4">🏢 HOÀNG NAM CHI NHÁNH CẦN THƠ</h3>
+        <div class="space-y-2 text-gray-700">
+          <p>📍 <strong>Địa chỉ:</strong> 03 Quản Trọng Hoàng, Phường Hưng Lợi, Quận Ninh Kiều, Cần Thơ</p>
+          <p>📞 <strong>Điện thoại:</strong> <a href="tel:0918883179" class="text-primary font-semibold hover:underline">091.888.3179</a></p>
+          <p>📧 <strong>Email:</strong> <a href="mailto:cskh@hoangnamcantho.com" class="text-primary hover:underline">cskh@hoangnamcantho.com</a></p>
+          <p>🌐 <strong>Website:</strong> <a href="https://hoangnamcantho.com/" class="text-primary hover:underline">https://hoangnamcantho.com/</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Danh sách PM kế toán -->
+  <section class="bg-gray-50 py-10 md:py-14">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <h2 class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl">
+        Các Phần Mềm Kế Toán Thông Dụng Hiện Nay
+      </h2>
+      <p class="mt-6 text-gray-700 text-lg">
+        Sau đây Hoàng Nam xin giới thiệu danh sách các phần mềm kế toán thông dụng hiện nay,
+        bạn tham khảo qua và xem phần mềm nào phù hợp với mình thì bạn lựa chọn nhé.
+      </p>
+      <div class="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2">
+        {softwareList.map((sw, index) => (
+          <div class="flex items-center gap-3 rounded-lg border border-gray-100 bg-white px-5 py-3 shadow-sm">
+            <span class="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-primary/10 text-sm font-bold text-primary">
+              {index + 1}
+            </span>
+            <span class="text-gray-700">{sw}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Quy trình dịch vụ -->
+  <section class="bg-white py-10 md:py-14">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <h2 class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl">
+        Quy Trình Dịch Vụ Kế Toán Của Hoàng Nam
+      </h2>
+      <div class="mt-8 space-y-4">
+        {serviceProcess.map((step, index) => (
+          <div class="flex items-start gap-5 rounded-xl border border-gray-100 bg-white p-5 shadow-sm transition-all duration-300 hover:shadow-md">
+            <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-primary text-sm font-bold text-white">
+              {index + 1}
+            </span>
+            <p class="text-gray-700 pt-2">{step}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Bạn nhận được gì -->
+  <section class="bg-gray-50 py-10 md:py-14">
+    <div class="mx-auto max-w-6xl px-6 lg:px-8">
+      <h2 class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl">
+        Bạn Nhận Được Gì Tại Dịch Vụ Của Hoàng Nam?
+      </h2>
+      <div class="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2">
+        {valueProps.map((item) => (
+          <div class="rounded-xl border border-gray-100 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+            <div class="mb-3 text-3xl">{item.icon}</div>
+            <strong class="block text-lg text-primary">{item.title}</strong>
+            <p class="mt-2 text-gray-600">{item.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Khu Vực Hỗ Trợ -->
+  <section class="bg-white py-12">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <div class="rounded-2xl border-2 border-dashed border-primary bg-blue-50 p-8 text-center">
+        <p class="text-lg font-bold text-primary">
+          Chúng tôi hỗ trợ và tư vấn miễn phí dịch vụ tại tất cả các địa điểm thuộc <strong>Cần Thơ</strong>:{" "}
+          <span class="font-normal text-gray-700">
+            quận {supportAreas.slice(0, 5).join(", ")} và các huyện {supportAreas.slice(5).join(", ")}.
+          </span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <CTABanner
+    title="Bạn cần tư vấn phần mềm kế toán phù hợp?"
+    subtitle="Liên hệ ngay Hoàng Nam để được tư vấn miễn phí và chọn phần mềm kế toán tốt nhất cho doanh nghiệp của bạn."
+  />
+</BaseLayout>

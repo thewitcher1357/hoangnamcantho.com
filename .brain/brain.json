@@ -2,7 +2,7 @@
   "meta": {
     "schema_version": "1.1.0",
     "awf_version": "4.0.2",
-    "last_updated": "2026-04-08T11:14:00Z"
+    "last_updated": "2026-04-09T13:39:00Z"
   },
   "project": {
     "name": "hoangnamcantho.com",
@@ -20,7 +20,7 @@
     "icons": "astro-icon",
     "language": "TypeScript",
     "build_output": "Static HTML (SSG)",
-    "deployment": "Vercel (planned)"
+    "deployment": "Cloudflare (wrangler.json present)"
   },
   "design_system": {
     "mode": "Light Only (no dark mode)",
@@ -30,8 +30,16 @@
     "secondary": "#25368e",
     "accent": "#1a5b96",
     "font": "system-ui, -apple-system, sans-serif",
-    "hero_pattern": "bg-gradient-to-r from-primary to-primary-light + white text",
-    "card_pattern": "rounded-2xl ring-1 hover:-translate-y-2 hover:shadow-xl"
+    "hero_pattern": "bg-gradient-to-r from-primary to-primary-light + white text, py-20 md:py-28",
+    "section_pattern": "bg-white hoặc bg-gray-50 luân phiên, py-10 md:py-14 (standard service pages)",
+    "card_pattern": "rounded-2xl ring-1 hover:-translate-y-2 hover:shadow-xl transitions",
+    "logo": {
+      "file": "src/assets/images/logo.webp",
+      "source": "https://hoangnamvungtau.com/_astro/logo.CtwFPiVy_2dyVqu.webp",
+      "intrinsic_size": "150x150px",
+      "rendered_size": "h-[50px] w-auto",
+      "format": "WebP"
+    }
   },
   "contact_info": {
     "company": "Hoàng Nam Cần Thơ",
@@ -43,20 +51,92 @@
     "facebook": "https://facebook.com/hoangnamcantho"
   },
   "pages": {
-    "active_vietnamese": [
+    "main": [
       { "route": "/", "file": "index.astro", "title": "Trang Chủ" },
       { "route": "/gioi-thieu", "file": "gioi-thieu.astro", "title": "Giới Thiệu" },
       { "route": "/dich-vu", "file": "dich-vu.astro", "title": "Dịch Vụ" },
       { "route": "/lien-he", "file": "lien-he.astro", "title": "Liên Hệ" },
-      { "route": "/blog", "file": "blog/[...page].astro", "title": "Chia Sẻ Kiến Thức" },
+      { "route": "/blog", "file": "blog/[...page].astro", "title": "Blog" },
       { "route": "/category/[cat]", "file": "category/[category].astro", "title": "Chuyên Mục" },
       { "route": "/tags/[tag]", "file": "tags/[tag].astro", "title": "Thẻ" },
       { "route": "/[...slug]", "file": "[...slug].astro", "title": "Bài Viết (root path)" }
     ],
-    "legacy_english_obsolete": [
+    "service_pages": [
+      {
+        "route": "/dich-vu/thanh-lap-cong-ty-tai-can-tho",
+        "file": "dich-vu/thanh-lap-cong-ty-tai-can-tho.astro",
+        "title": "Thành Lập Công Ty",
+        "note": "Page đầu tiên - có section bg-primary xen giữa, section padding py-16 md:py-24"
+      },
+      {
+        "route": "/dich-vu/lam-giay-phep-kinh-doanh-tai-can-tho",
+        "file": "dich-vu/lam-giay-phep-kinh-doanh-tai-can-tho.astro",
+        "title": "Làm Giấy Phép Kinh Doanh",
+        "note": "Section padding: py-10 md:py-14"
+      },
+      {
+        "route": "/dich-vu/thay-doi-giay-phep-kinh-doanh-tai-can-tho",
+        "file": "dich-vu/thay-doi-giay-phep-kinh-doanh-tai-can-tho.astro",
+        "title": "Thay Đổi Giấy Phép Kinh Doanh",
+        "note": "Section padding: py-10 md:py-14"
+      },
+      {
+        "route": "/dich-vu/giai-the-cong-ty-o-can-tho",
+        "file": "dich-vu/giai-the-cong-ty-o-can-tho.astro",
+        "title": "Giải Thể Công Ty",
+        "note": "Section padding: py-10 md:py-14"
+      },
+      {
+        "route": "/dich-vu/dich-vu-ke-toan-can-tho",
+        "file": "dich-vu/dich-vu-ke-toan-can-tho.astro",
+        "title": "Dịch Vụ Kế Toán",
+        "note": "Section padding: py-10 md:py-14"
+      },
+      {
+        "route": "/dich-vu/hoa-don-dien-tu-can-tho",
+        "file": "dich-vu/hoa-don-dien-tu-can-tho.astro",
+        "title": "Hóa Đơn Điện Tử",
+        "note": "Section padding: py-10 md:py-14"
+      },
+      {
+        "route": "/dich-vu/chu-ky-so-can-tho",
+        "file": "dich-vu/chu-ky-so-can-tho.astro",
+        "title": "Chữ Ký Số",
+        "note": "Section padding: py-10 md:py-14"
+      },
+      {
+        "route": "/dich-vu/thanh-lap-cong-ty-von-dau-tu-nuoc-ngoai-tai-can-tho",
+        "file": "dich-vu/thanh-lap-cong-ty-von-dau-tu-nuoc-ngoai-tai-can-tho.astro",
+        "title": "Thành Lập CT Vốn Nước Ngoài",
+        "note": "Section padding: py-10 md:py-14"
+      }
+    ],
+    "legacy_obsolete": [
       "about.astro (replaced by gioi-thieu.astro)",
       "contact.astro (replaced by lien-he.astro)",
       "services.astro (replaced by dich-vu.astro)"
+    ]
+  },
+  "navigation": {
+    "source_of_truth": "src/config/site.ts → siteConfig.navLinks",
+    "menu_items": [
+      { "text": "Trang Chủ", "href": "/" },
+      { "text": "Giới Thiệu", "href": "/gioi-thieu" },
+      {
+        "text": "Dịch Vụ", "href": "/dich-vu",
+        "children": [
+          "Thành Lập Công Ty → /dich-vu/thanh-lap-cong-ty-tai-can-tho",
+          "Làm Giấy Phép Kinh Doanh → /dich-vu/lam-giay-phep-kinh-doanh-tai-can-tho",
+          "Thay Đổi Giấy Phép Kinh Doanh → /dich-vu/thay-doi-giay-phep-kinh-doanh-tai-can-tho",
+          "Giải Thể Công Ty → /dich-vu/giai-the-cong-ty-o-can-tho",
+          "Dịch Vụ Kế Toán → /dich-vu/dich-vu-ke-toan-can-tho",
+          "Hóa Đơn Điện Tử → /dich-vu/hoa-don-dien-tu-can-tho",
+          "Chữ Ký Số → /dich-vu/chu-ky-so-can-tho",
+          "Thành Lập CT Vốn Nước Ngoài → /dich-vu/thanh-lap-cong-ty-von-dau-tu-nuoc-ngoai-tai-can-tho"
+        ]
+      },
+      { "text": "Blog", "href": "/blog" },
+      { "text": "Liên Hệ", "href": "/lien-he" }
     ]
   },
   "components": {
@@ -64,7 +144,7 @@
       "HeroBanner", "ServicesGrid", "CTABanner", "ProcessSteps",
       "PricingTable", "WhyChooseUs", "RequiredDocs", "LatestPosts", "ContactForm"
     ],
-    "layout": ["Navbar (with dropdowns)", "Footer", "FloatingActions (Zalo+Phone)", "BackToTop"],
+    "layout": ["Navbar (sticky, with dropdowns, logo 50px)", "Footer", "FloatingActions (Zalo+Phone ripple)", "BackToTop"],
     "seo": ["Seo.astro", "Schema.astro (LocalBusiness)"],
     "blog": ["PostItem.astro (vi-VN locale)"],
     "ui": ["Pagination (Vietnamese)", "Headline", "Tags", "Button", "Card"]
@@ -72,7 +152,7 @@
   "content": {
     "blog_posts": 46,
     "blog_format": "MDX with frontmatter (pubDate, categories, tags, image)",
-    "url_pattern": "Root path: /slug-bai-viet (WordPress compatible)",
+    "url_pattern": "Root path: /slug-bai-viet (WordPress compatible, không có /blog/ prefix)",
     "pagination": "9 posts per page"
   },
   "seo": {
@@ -80,23 +160,15 @@
     "schema_type": "LocalBusiness",
     "sitemap": "auto-generated",
     "rss": "/rss.xml",
-    "og_image": "auto from assets",
+    "og_image": "auto from assets/og-image.png",
     "canonical": "https://hoangnamcantho.com"
   },
-  "navigation": [
-    { "text": "Trang Chủ", "href": "/" },
-    { "text": "Giới Thiệu", "href": "/gioi-thieu" },
-    { "text": "Dịch Vụ", "href": "/dich-vu", "children": [
-      "Thành Lập Công Ty → /thanh-lap-cong-ty-tai-can-tho",
-      "Làm Giấy Phép Kinh Doanh → /lam-giay-phep-kinh-doanh-tai-can-tho",
-      "Giải Thể Công Ty → /giai-the-cong-ty-tai-can-tho"
-    ]},
-    { "text": "Chia Sẻ", "href": "/tin-tuc", "children": [
-      "Tin tức công ty → /tin-tuc/cong-ty",
-      "Kiến thức chuyên ngành → /tin-tuc/kien-thuc"
-    ]},
-    { "text": "Liên Hệ", "href": "/lien-he" }
-  ],
+  "cdn": {
+    "provider": "Cloudflare R2",
+    "base_url": "https://images.hoangnamcantho.com",
+    "usage": "Blog post images transform from /images/* → R2 URL via remark plugin",
+    "config_location": "src/config/site.ts → R2_BASE"
+  },
   "decisions": [
     {
       "date": "2026-04-07",
@@ -105,41 +177,45 @@
     },
     {
       "date": "2026-04-08",
-      "decision": "Dựa trên AstroStarterPro template, customize cho hoangnamcantho.com",
-      "reason": "Template có sẵn cấu trúc blog, SEO, responsive tốt"
-    },
-    {
-      "date": "2026-04-08",
       "decision": "Light Mode only - không hỗ trợ Dark Mode",
       "reason": "Target audience là doanh nghiệp, design chuyên nghiệp light theme"
     },
     {
       "date": "2026-04-08",
-      "decision": "Thiết kế tham khảo hoangnamvungtau.com, localize cho Cần Thơ",
-      "reason": "Cùng thương hiệu Hoàng Nam, đồng bộ giao diện giữa các chi nhánh"
-    },
-    {
-      "date": "2026-04-08",
       "decision": "site.ts là Single Source of Truth cho contact info, navigation, footer",
       "reason": "Chỉ cần sửa 1 file khi thay đổi thông tin liên hệ hoặc menu"
+    },
+    {
+      "date": "2026-04-09",
+      "decision": "Service pages mới dùng py-10 md:py-14 cho sections (không phải py-16 md:py-24)",
+      "reason": "Tránh khoảng trắng quá lớn giữa các section liền nhau cùng màu nền"
+    },
+    {
+      "date": "2026-04-09",
+      "decision": "Logo lấy từ hoangnamvungtau.com (cùng thương hiệu), intrinsic 150x150, render h-[50px] w-auto",
+      "reason": "Đồng bộ thương hiệu giữa 2 chi nhánh Vũng Tàu và Cần Thơ"
     }
   ],
   "knowledge_items": {
     "patterns": [
-      "Hero Banner: gradient from-primary to-primary-light, white text, py-20 md:py-24",
-      "Section: bg-white hoặc bg-gray-50 luân phiên, py-16 md:py-24",
+      "Hero Banner: gradient from-primary to-primary-light, white text, py-20 md:py-28",
+      "Section standard (service pages mới): bg-white/bg-gray-50 luân phiên, py-10 md:py-14",
+      "Section TLCT page (cũ): py-16 md:py-24 (có section màu xanh xen giữa nên không bị lỗi spacing)",
       "Cards: rounded-2xl ring-1 hover:-translate-y-2 hover:shadow-xl transitions",
       "CTA Banner: reusable CTABanner component với title/subtitle props",
-      "Icons: Inline SVG with Fragment set:html (không dùng astro-icon cho custom icons)"
+      "Logo Navbar: <Image width={150} height={150} class='h-[50px] w-auto'>"
     ],
     "gotchas": [
       "Tailwind v4 dùng @theme thay vì extend trong config",
       "astro:content collection cần pubDate (không phải pubDatetime) trong schema",
       "PostItem dùng /${post.id} cho href (root path, không có /blog/ prefix)",
-      "CSS variables --color-primary etc. định nghĩa trong global.css @theme block"
+      "CSS variables --color-primary etc. định nghĩa trong global.css @theme block",
+      "Logo Navbar: width và height phải khớp intrinsic size của ảnh (150x150), CSS class điều chỉnh display size",
+      "Khi 2 section liền nhau cùng màu trắng: py-24 + py-24 = 192px khoảng trắng - quá lớn. Dùng py-14 max"
     ],
     "conventions": [
       "Vietnamese routes: /gioi-thieu, /dich-vu, /lien-he (không dùng English routes)",
+      "Service page routes: /dich-vu/[slug]-tai-can-tho hoặc /dich-vu/[slug]-can-tho",
       "All text in Vietnamese, date format vi-VN",
       "Reading time: 'X phút đọc', Pagination: 'Trang trước/sau'",
       "siteConfig imported from @/config/site for all contact/nav data"
