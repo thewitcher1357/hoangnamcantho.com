@@ -42,7 +42,7 @@ export const siteConfig = {
       children: [
         {
           text: "Thành Lập Công Ty",
-          href: "/thanh-lap-cong-ty-tai-can-tho",
+          href: "/dich-vu/thanh-lap-cong-ty-tai-can-tho",
         },
         {
           text: "Làm Giấy Phép Kinh Doanh",
@@ -55,13 +55,9 @@ export const siteConfig = {
       ],
     },
     {
-      text: "Chia Sẻ",
-      href: "/tin-tuc",
+      text: "Blog",
+      href: "/blog",
       icon: "lucide:book-open",
-      children: [
-        { text: "Tin tức công ty", href: "/tin-tuc/cong-ty" },
-        { text: "Kiến thức chuyên ngành", href: "/tin-tuc/kien-thuc" },
-      ],
     },
     {
       text: "Liên Hệ",

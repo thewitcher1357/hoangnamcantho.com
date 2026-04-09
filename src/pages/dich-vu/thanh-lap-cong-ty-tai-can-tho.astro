@@ -1,0 +1,413 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { Image } from "astro:assets";
+import { siteConfig } from "@/config/site";
+import CTABanner from "@/components/homepage/CTABanner.astro";
+import heroImage from "@/assets/images/services/thanh-lap-cong-ty-tai-can-tho.jpg";
+
+const metadata = {
+  title: "Dịch Vụ Thành Lập Công Ty Trọn Gói Tại Cần Thơ - Tặng GPKD",
+  description:
+    "Hoàng Nam cung cấp dịch vụ thành lập công ty trọn gói tại Cần Thơ. Uy tín, chuyên nghiệp, tối ưu chi phí. Nhận hồ sơ hoàn thiện sau 2h làm việc.",
+};
+
+const processSteps = [
+  {
+    title: "TIẾP NHẬN THÔNG TIN",
+    description:
+      "Lấy thông tin đăng ký: tên công ty, địa chỉ trụ sở, CMND, ngành nghề, vốn điều lệ, danh sách thành viên, người đại diện theo pháp luật và tỉ lệ vốn.",
+  },
+  {
+    title: "XỬ LÝ HỒ SƠ",
+    description:
+      "Tiến hành xử lý hồ sơ: kiểm tra thiếu sót thông tin KH cung cấp, điền thông tin doanh nghiệp đăng ký và nộp hồ sơ lên cổng thông tin sở KH & ĐT.",
+  },
+  {
+    title: "CẬP NHẬT TIẾN ĐỘ",
+    description:
+      "Tiếp nhận phản hồi của khách hàng, cập nhật tiến độ xử lý hồ sơ, tạo điều kiện để KH theo dõi tiến độ công việc.",
+  },
+  {
+    title: "BÀN GIAO HỒ SƠ",
+    description:
+      "Bàn giao hoàn trả đầy đủ hồ sơ KH như giấy phép, bảng hiệu, bố cáo thành lập, con dấu, chữ ký số, HĐĐT, …",
+  },
+  {
+    title: "CHĂM SÓC KHÁCH HÀNG",
+    description:
+      "Chăm sóc khách hàng sau khi hoàn thành hồ sơ, tư vấn các vấn đề doanh nghiệp mới thành lập cho các KH thắc mắc.",
+  },
+];
+
+const benefits = [
+  { icon: "🤝", title: "LINH HOẠT", description: "Kỹ năng làm việc đa kênh qua email/zalo/điện thoại, phù hợp với mọi khách hàng." },
+  { icon: "⚖️", title: "CHÍNH XÁC", description: "Đảm bảo làm đúng nội dung, đúng trình tự và tuân thủ tuyệt đối pháp luật hiện hành." },
+  { icon: "🏆", title: "THÀNH CÔNG", description: "Hoàng Nam luôn đồng hành và cam kết kết quả cuối cùng cho sự phát triển của bạn." },
+  { icon: "⚡", title: "NHANH CHÓNG", description: "Mọi hồ sơ được xử lý thần tốc, đảm bảo tiến độ công việc và bàn giao đúng hẹn." },
+  { icon: "🛵", title: "TẬN NƠI", description: "Chúng tôi không ngại di chuyển để hỗ trợ quý khách ký hồ sơ và bàn giao kết quả." },
+  { icon: "💙", title: "CHU ĐÁO", description: "Tư vấn tận tâm, nhắc nhở các cột mốc quan trọng cho doanh nghiệp sau thành lập." },
+  { icon: "💰", title: "PHÍ TỐT NHẤT", description: "Giá cả minh bạch, cạnh tranh nhất thị trường Cần Thơ, không chi phí ẩn." },
+  { icon: "🎁", title: "HẬU MÃI", description: "Miễn phí tư vấn pháp luật và thuế lên đến 12 tháng sau khi hoàn tất dịch vụ." },
+];
+
+const faqs = [
+  {
+    question: "Thành lập công ty tại Cần Thơ có cần bằng cấp không?",
+    answer: "KHÔNG – Đa số các ngành nghề không yêu cầu bằng cấp, ngoại trừ giáo dục, bảo hiểm, bảo vệ...",
+    note: "Căn cứ Điều 19-22 Luật doanh nghiệp 2020, hồ sơ bao gồm: Giấy đề nghị, Điều lệ, Danh sách thành viên/cổ đông, Bản sao CMND/CCCD...",
+  },
+  {
+    question: "Phải đóng những loại thuế nào sau khi thành lập?",
+    answer: "Doanh nghiệp cần nộp Lệ phí môn bài (miễn năm đầu), Thuế GTGT, và Thuế TNDN. Hoàng Nam sẽ hướng dẫn bạn cách tối ưu thuế hiệu quả nhất.",
+    note: "",
+  },
+  {
+    question: "Địa chỉ nhà riêng, chung cư có được dùng làm trụ sở?",
+    answer: "Nhà riêng ĐƯỢC, chung cư KHÔNG (trừ trường hợp chung cư có chức năng thương mại/văn phòng theo quyết định chủ đầu tư).",
+    note: "",
+  },
+];
+
+const pricingPlans = [
+  {
+    name: "GÓI CƠ BẢN",
+    subtitle: "Tiết kiệm chi phí ban đầu",
+    price: "LIÊN HỆ",
+    featured: false,
+    features: [
+      { text: "Tư vấn pháp lý doanh nghiệp", included: true },
+      { text: "Soạn hồ sơ + Điều lệ", included: true },
+      { text: "Đã bao gồm lệ phí nhà nước", included: true },
+      { text: "Khắc dấu tròn công ty", included: true },
+      { text: "Bố cáo thành lập doanh nghiệp", included: true },
+      { text: "Chữ ký số 01 năm", included: false },
+      { text: "Hóa đơn điện tử", included: false },
+    ],
+    cta: "TƯ VẤN NGAY",
+  },
+  {
+    name: "GÓI TRỌN GÓI",
+    subtitle: "Đầy đủ pháp lý để hoạt động",
+    price: "GIÁ TỐT NHẤT",
+    featured: true,
+    features: [
+      { text: "Toàn bộ thủ tục của Gói Cơ Bản", included: true },
+      { text: "Chữ ký số + Hóa đơn điện tử", included: true, bold: true },
+      { text: "Khai thuế ban đầu trọn gói", included: true },
+      { text: "Tặng bảng hiệu Mica treo công ty", included: true },
+      { text: "Hỗ trợ mở TK ngân hàng số đẹp", included: true },
+      { text: "Giao nhận hồ sơ tận nơi", included: true },
+      { text: "Khuyến mãi khai thuế quý đầu", included: true, bonus: true },
+    ],
+    cta: "NHẬN GIÁ QUA ZALO",
+  },
+  {
+    name: "GÓI VIP",
+    subtitle: "Giải pháp vận hành 12 tháng",
+    price: "LIÊN HỆ",
+    featured: false,
+    features: [
+      { text: "Toàn bộ thủ tục của Gói Trọn Gói", included: true },
+      { text: "Báo cáo thuế trọn gói 12 tháng", included: true },
+      { text: "Thiết lập hệ thống kế toán nội bộ", included: true },
+      { text: "Tư vấn pháp lý hợp đồng chuyên sâu", included: true },
+      { text: "Hỗ trợ bảo hiểm xã hội lần đầu", included: true },
+    ],
+    cta: "TƯ VẤN VIP",
+  },
+];
+
+const supportAreas = [
+  "Ninh Kiều", "Cái Răng", "Bình Thủy", "Ô Môn", "Thốt Nốt",
+  "Phong Điền", "Cờ Đỏ", "Vĩnh Thạnh", "Thới Lai",
+];
+---
+
+<BaseLayout {metadata}>
+  <!-- Hero Banner -->
+  <section class="relative bg-gradient-to-r from-primary to-primary-light py-20 text-center text-white md:py-28">
+    <div class="relative z-10 mx-auto max-w-4xl px-6">
+      <h1 class="text-3xl font-extrabold uppercase leading-tight drop-shadow-md md:text-5xl">
+        Dịch Vụ Thành Lập Công Ty Trọn Gói Tại Cần Thơ - Tặng GPKD
+      </h1>
+      <p class="mt-5 text-lg font-light text-white/90 md:text-xl">
+        Uy Tín – Chuyên Nghiệp – Tối Ưu Chi Phí – Hỗ Trợ Tận Tâm
+      </p>
+    </div>
+  </section>
+
+  <!-- Giới thiệu -->
+  <section class="bg-white py-16 md:py-24">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <div class="prose prose-lg mx-auto max-w-none text-gray-700">
+        <p class="text-justify">
+          <strong class="text-primary">Hoàng Nam</strong> là công ty chuyên cung cấp
+          <strong>dịch vụ thành lập công ty tại Cần Thơ uy tín và chuyên nghiệp</strong>.
+          Chúng tôi với nhiều năm kinh nghiệm cung cấp <strong>Dịch Vụ Thành Lập Công Ty
+          Trọn Gói tại Cần Thơ cho doanh nghiệp</strong> khởi nghiệp có địa điểm kinh doanh
+          tại đây. Hoàng Nam tự tin là công ty tư vấn dịch vụ chất lượng, phí dịch vụ cạnh tranh,
+          tối ưu quy trình và tốc độ hoàn thành các giai đoạn công việc nhanh, đi kèm với đội ngũ
+          gồm luật sư, giảng viên kế toán, chuyên viên tư vấn trình độ cao có thể xử lý mọi hồ sơ
+          thành lập nhiều ngành nghề, loại hình kinh doanh như công ty TNHH (1-2 thành viên trở lên),
+          cổ phần, doanh nghiệp tư nhân, công ty hợp danh…
+        </p>
+      </div>
+
+      <!-- Hero Image -->
+      <div class="my-10 overflow-hidden rounded-2xl shadow-xl">
+        <Image
+          src={heroImage}
+          alt="Dịch vụ thành lập công ty tại Cần Thơ"
+          width={1024}
+          height={765}
+          class="w-full object-cover"
+          loading="lazy"
+        />
+      </div>
+
+      <!-- Highlight Box -->
+      <div class="rounded-r-xl border-l-[6px] border-primary bg-blue-50 px-8 py-6">
+        <p class="text-center text-lg font-bold text-primary">
+          🚀 Quý khách chỉ cần cung cấp thông tin - Nhận hồ sơ hoàn thiện sau 2h làm việc!
+        </p>
+      </div>
+
+      <div class="prose prose-lg mt-8 max-w-none text-gray-700">
+        <p>
+          Hoàng Nam xây dựng quy trình thủ tục nhanh gọn, đơn giản do có kinh nghiệm trong
+          cách xử lý dịch vụ hàng trăm hồ sơ, điều kiện đăng ký cũng vô cùng thuận tiện khi
+          Hoàng Nam có thể hỗ trợ tận tình mọi công tác khai thuế, nộp thuế, báo cáo thuế qua
+          mạng bước đầu cho công ty.
+        </p>
+        <p>
+          <a href="/dich-vu/thanh-lap-cong-ty-tai-can-tho" class="font-bold text-primary no-underline border-b-2 border-primary pb-0.5 hover:text-primary-dark">
+            Chi Phí Thành Lập Công Ty tại Cần Thơ
+          </a>{" "}
+          phụ thuộc vào các dịch vụ mà công ty lựa chọn, càng ít dịch vụ, chi phí càng thấp.
+        </p>
+        <p>
+          Quý khách có thể liên hệ với hotline của Hoàng Nam để chúng tôi được phục vụ nhanh nhất,
+          tư vấn chính xác nhất giúp quý khách chọn được dịch vụ phù hợp nhất.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Thông Tin Liên Hệ Nhanh -->
+  <section class="bg-primary py-12 text-white md:py-16">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <h2 class="text-2xl font-bold uppercase tracking-wider">
+        HOÀNG NAM CHI NHÁNH CẦN THƠ
+      </h2>
+      <div class="mt-6 grid grid-cols-1 gap-6 md:grid-cols-2">
+        <div class="space-y-3">
+          <p class="flex items-start gap-2">
+            <span>🏠</span>
+            <span><strong>Địa chỉ:</strong> {siteConfig.contact.address}</span>
+          </p>
+          <p class="flex items-start gap-2">
+            <span>📞</span>
+            <span><strong>Hotline:</strong> {siteConfig.contact.hotlineDisplay}</span>
+          </p>
+        </div>
+        <div class="space-y-3">
+          <p class="flex items-start gap-2">
+            <span>✉️</span>
+            <span><strong>Email:</strong> {siteConfig.contact.email}</span>
+          </p>
+          <p class="flex items-start gap-2">
+            <span>🌐</span>
+            <span><strong>Website:</strong> {siteConfig.contact.website}</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quy Trình Đăng Ký -->
+  <section class="bg-white py-16 md:py-24">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <h2 class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl">
+        QUY TRÌNH ĐĂNG KÝ THÀNH LẬP CÔNG TY TẠI CẦN THƠ
+      </h2>
+      <div class="mt-10 flex flex-col gap-5">
+        {processSteps.map((step, index) => (
+          <div class="flex items-start gap-5 rounded-xl border border-gray-100 bg-white p-5 shadow-sm transition-all duration-300 hover:shadow-md">
+            <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-primary text-sm font-bold text-white">
+              {index + 1}
+            </span>
+            <div>
+              <h3 class="text-lg font-bold text-primary">{step.title}</h3>
+              <p class="mt-1 text-gray-600">{step.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Bảng Giá Dịch Vụ -->
+  <section class="bg-gray-50 py-16 md:py-24">
+    <div class="mx-auto max-w-6xl px-6 lg:px-8">
+      <h2 class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl">
+        BẢNG GIÁ DỊCH VỤ THÀNH LẬP DOANH NGHIỆP
+      </h2>
+      <div class="mt-10 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+        {pricingPlans.map((plan) => (
+          <div
+            class:list={[
+              "flex flex-col rounded-2xl bg-white p-8 shadow-md transition-all duration-300 hover:shadow-xl",
+              plan.featured
+                ? "relative scale-100 ring-2 ring-primary lg:scale-105"
+                : "ring-1 ring-gray-200",
+            ]}
+          >
+            {plan.featured && (
+              <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 rounded-full bg-primary px-5 py-1 text-xs font-bold uppercase tracking-wider text-white">
+                Phổ biến nhất
+              </div>
+            )}
+
+            {/* Header */}
+            <div class="border-b border-gray-100 pb-5 text-center">
+              <h3 class="text-xl font-bold uppercase text-primary">{plan.name}</h3>
+              <p class="mt-1 text-sm text-gray-500">{plan.subtitle}</p>
+              <div class="mt-3 text-2xl font-extrabold text-primary md:text-3xl">{plan.price}</div>
+            </div>
+
+            {/* Features */}
+            <ul class="mt-6 flex-grow space-y-3 text-sm">
+              {plan.features.map((feature) => (
+                <li
+                  class:list={[
+                    "flex items-center gap-2.5",
+                    !feature.included && "opacity-40",
+                    feature.bonus && "font-bold text-red-600",
+                  ]}
+                >
+                  {feature.included ? (
+                    feature.bonus ? (
+                      <span>🎁</span>
+                    ) : (
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 flex-shrink-0 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                    )
+                  ) : (
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 flex-shrink-0 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+                  )}
+                  <span class:list={[feature.bold && "font-semibold"]}>{feature.text}</span>
+                </li>
+              ))}
+            </ul>
+
+            {/* CTA */}
+            <a
+              href={siteConfig.contact.zalo}
+              class:list={[
+                "mt-8 block rounded-lg py-3 text-center font-bold transition-all duration-300 hover:scale-105",
+                plan.featured
+                  ? "bg-primary text-white shadow-lg shadow-primary/30 hover:bg-primary-dark"
+                  : "bg-blue-50 text-primary hover:bg-blue-100",
+              ]}
+            >
+              {plan.cta}
+            </a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Lợi Ích -->
+  <section class="bg-white py-16 md:py-24">
+    <div class="mx-auto max-w-6xl px-6 lg:px-8">
+      <h2 class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl">
+        LỢI ÍCH KHI SỬ DỤNG DỊCH VỤ CỦA HOÀNG NAM
+      </h2>
+      <p class="mt-6 text-lg text-gray-700">
+        <strong>HOÀNG NAM</strong> luôn cố gắng mang đến dịch vụ tốt nhất cho khách hàng với các giá trị như sau:
+      </p>
+      <div class="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        {benefits.map((benefit) => (
+          <div class="group rounded-xl border border-gray-100 bg-white p-6 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+            <div class="mb-3 text-3xl">{benefit.icon}</div>
+            <strong class="block text-lg text-primary">{benefit.title}</strong>
+            <p class="mt-2 text-sm text-gray-600">{benefit.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Hồ Sơ Cần Chuẩn Bị -->
+  <section class="bg-gray-50 py-16 md:py-24">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <h2 class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl">
+        HỒ SƠ VÀ THỦ TỤC CẦN THIẾT
+      </h2>
+      <div class="mt-8 rounded-2xl border border-gray-200 bg-white p-8 shadow-sm">
+        <ul class="space-y-5 text-gray-700">
+          <li class="flex items-start gap-3">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mt-1 h-5 w-5 flex-shrink-0 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+            <span><strong>Chứng minh nhân dân/ căn cước hoặc Hộ Chiếu (Passport)</strong> bản sao công chứng không quá 3 tháng. (Hoàng Nam hỗ trợ công chứng miễn phí nếu bạn cung cấp bản chính).</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mt-1 h-5 w-5 flex-shrink-0 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+            <span><strong>Chuẩn bị tên công ty:</strong> Chúng tôi sẽ kiểm tra độ trùng lặp và tư vấn đặt tên thương hiệu đúng luật.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mt-1 h-5 w-5 flex-shrink-0 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+            <span><strong>Địa chỉ trụ sở chính:</strong> Cung cấp địa chỉ hợp pháp tại Cần Thơ.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mt-1 h-5 w-5 flex-shrink-0 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+            <span><strong>Ngành nghề & Vốn điều lệ:</strong> Xác định mục tiêu kinh doanh và mức vốn đăng ký phù hợp.</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hỏi Đáp -->
+  <section class="bg-white py-16 md:py-24">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <h2 class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl">
+        HỎI ĐÁP DỊCH VỤ
+      </h2>
+      <div class="mt-10 space-y-6">
+        {faqs.map((faq) => (
+          <div class="rounded-2xl border-l-[5px] border-primary bg-gray-50 p-6 md:p-8">
+            <h3 class="flex items-center gap-2 text-lg font-bold text-primary">
+              <span>❓</span> {faq.question}
+            </h3>
+            <p class="mt-3 text-gray-700">
+              <strong>ĐÁP:</strong>{" "}{faq.answer}
+            </p>
+            {faq.note && (
+              <p class="mt-2 text-sm italic text-gray-500">{faq.note}</p>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Khu Vực Hỗ Trợ -->
+  <section class="bg-gray-50 py-12">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <div class="rounded-2xl border-2 border-dashed border-primary bg-blue-50 p-8 text-center">
+        <p class="text-lg font-bold text-primary">
+          📍 Hỗ trợ tận nơi tại Cần Thơ:{" "}
+          <span class="font-normal text-gray-700">
+            {supportAreas.join(", ")}.
+          </span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <CTABanner
+    title="Bạn muốn thành lập công ty tại Cần Thơ?"
+    subtitle="Liên hệ ngay Hoàng Nam để được tư vấn miễn phí, nhận báo giá chi tiết và bắt đầu hành trình khởi nghiệp của bạn."
+  />
+</BaseLayout>
