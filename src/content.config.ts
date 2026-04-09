@@ -11,7 +11,7 @@ const blog = defineCollection({
     tags: z.array(z.string()).optional(),
     // Khớp với tên coverImage trong file .md của bạn
     coverImage: z.string().optional(),
-    author: z.string().default("Nguyễn Trần Chung"),
+    author: z.string().default("Hoàng Nam"),
     description: z.string().optional(),
   }).transform((data) => ({
     ...data,
