@@ -46,7 +46,11 @@ export const siteConfig = {
         },
         {
           text: "Làm Giấy Phép Kinh Doanh",
-          href: "/lam-giay-phep-kinh-doanh-tai-can-tho",
+          href: "/dich-vu/lam-giay-phep-kinh-doanh-tai-can-tho",
+        },
+        {
+          text: "Thay Đổi Giấy Phép Kinh Doanh",
+          href: "/dich-vu/thay-doi-giay-phep-kinh-doanh-tai-can-tho",
         },
         {
           text: "Giải Thể Công Ty",

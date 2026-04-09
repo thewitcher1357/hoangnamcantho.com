@@ -1,0 +1,345 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { Image } from "astro:assets";
+import { siteConfig } from "@/config/site";
+import CTABanner from "@/components/homepage/CTABanner.astro";
+import heroImage from "@/assets/images/services/thay-doi-giay-phep-kinh-doanh.png";
+
+const metadata = {
+  title: "Dịch Vụ Thay Đổi Giấy Phép Kinh Doanh Tại Cần Thơ – Nhanh 3-5 Ngày",
+  description:
+    "Hoàng Nam cung cấp dịch vụ thay đổi giấy phép kinh doanh tại Cần Thơ trọn gói. Thay đổi địa chỉ, vốn, người đại diện, ngành nghề. Hotline 091.888.31.79.",
+};
+
+const changeItems = [
+  { text: "Thay Đổi Địa Chỉ Công Ty", detail: "Công ty, chi nhánh, văn phòng đại diện, hoặc địa điểm kinh doanh." },
+  { text: "Thay đổi người đại diện pháp luật", detail: "Cập nhật thông tin giám đốc hoặc người đại diện mới." },
+  { text: "Tăng hoặc giảm vốn điều lệ", detail: "Điều chỉnh vốn để phù hợp với chiến lược kinh doanh." },
+  { text: "Chuyển nhượng vốn", detail: "Thay đổi tỷ lệ góp vốn hoặc chuyển nhượng cho cá nhân/tổ chức khác." },
+  { text: "Thay đổi loại hình doanh nghiệp", detail: "Từ TNHH 1TV sang 2TV trở lên, hoặc từ TNHH sang cổ phần." },
+  { text: "Bổ sung ngành nghề kinh doanh", detail: "Thêm ngành nghề mới để mở rộng hoạt động." },
+  { text: "Cập nhật CCCD", detail: "Đổi thông tin căn cước công dân cho giám đốc hoặc thành viên công ty." },
+];
+
+const servicebenefits = [
+  { icon: "⚡", title: "Tốc độ xử lý nhanh", desc: "Hoàn tất thủ tục trong 3-5 ngày làm việc, hoặc sớm hơn với gói dịch vụ trọn gói (24-48 giờ)." },
+  { icon: "💰", title: "Tiết kiệm thời gian và chi phí", desc: "Không cần tự tìm hiểu thủ tục hành chính phức tạp, tránh sai sót và phát sinh chi phí sửa đổi." },
+  { icon: "💼", title: "Tư vấn chuyên sâu", desc: "Đội ngũ chuyên gia pháp lý cung cấp giải pháp phù hợp với từng loại hình doanh nghiệp." },
+  { icon: "📋", title: "Cam kết minh bạch", desc: "Báo giá rõ ràng, không phát sinh chi phí ẩn." },
+];
+
+const processSteps = [
+  {
+    title: "Tư vấn và chuẩn bị hồ sơ",
+    items: [
+      "Tư vấn miễn phí về quy định pháp lý và yêu cầu cụ thể.",
+      "Soạn thảo hồ sơ chuẩn khung theo Nghị định 01/2021/NĐ-CP.",
+    ],
+  },
+  {
+    title: "Nộp hồ sơ",
+    items: [
+      "Đại diện nộp hồ sơ tại Sở KH&ĐT Cần Thơ (47 Lê Lai, P. An Hội, Q. Ninh Kiều) hoặc online qua Cổng thông tin Đăng ký doanh nghiệp quốc gia.",
+    ],
+  },
+  {
+    title: "Nhận kết quả",
+    items: [
+      "Nhận Giấy chứng nhận đăng ký doanh nghiệp mới trong 3-5 ngày làm việc.",
+      "Cập nhật thông tin với cơ quan thuế, ngân hàng, và chữ ký số (nếu cần).",
+    ],
+  },
+];
+
+const pricingGroups = [
+  {
+    title: "A. Thay đổi nội dung đăng ký kinh doanh",
+    items: [
+      { name: "Tên công ty", time: "3 ngày", price: "1,300,000" },
+      { name: "Địa chỉ trụ sở chính", time: "3 ngày", price: "1,300,000" },
+      { name: "Ngành nghề kinh doanh", time: "3 ngày", price: "1,300,000" },
+      { name: "Người đại diện pháp luật", time: "3 ngày", price: "1,300,000" },
+    ],
+  },
+  {
+    title: "B. Thay đổi cơ cấu góp vốn",
+    items: [
+      { name: "Thay đổi thành viên, cổ đông sáng lập", time: "5 ngày", price: "1,500,000" },
+      { name: "Tăng, giảm vốn điều lệ", time: "5 ngày", price: "1,500,000" },
+      { name: "DN tư nhân → Công ty TNHH", time: "5 ngày", price: "1,500,000" },
+      { name: "TNHH 1TV → 2TV", time: "5 ngày", price: "1,500,000" },
+      { name: "TNHH 2TV → 1TV", time: "5 ngày", price: "1,500,000" },
+      { name: "TNHH → Cổ phần", time: "5 ngày", price: "1,500,000" },
+      { name: "Cổ phần → TNHH 1TV", time: "5 ngày", price: "1,500,000" },
+    ],
+  },
+  {
+    title: "C. Xin cấp lại GCN ĐKKD",
+    items: [
+      { name: "Cấp lại do mất, rách, cháy, hư hỏng", time: "3 ngày", price: "800,000" },
+    ],
+  },
+];
+
+const notices = [
+  {
+    title: "Thay Đổi Địa Chỉ Công Ty",
+    items: [
+      "Kiểm tra tính hợp pháp: Địa chỉ mới phải phù hợp với quy hoạch của địa phương.",
+      "Thay đổi cùng phường: Chỉ cần thông báo đến cơ quan thuế và các cơ quan liên quan.",
+      "Thay đổi khác phường/quận: Cần thực hiện thêm thủ tục chuyển cơ quan quản lý thuế, đổi con dấu (nếu cần).",
+    ],
+  },
+  {
+    title: "Thay Đổi Tên Công Ty",
+    items: [
+      "Đảm bảo tên mới không trùng lặp, tuân thủ quy định Luật Doanh nghiệp.",
+      "Sau đổi tên: Thông báo đến cơ quan thuế, đổi con dấu, cập nhật thông tin với ngân hàng.",
+    ],
+  },
+  {
+    title: "Tăng, Giảm Vốn Điều Lệ",
+    items: [
+      "Tăng vốn có thể làm thay đổi mức thuế môn bài (VD: từ 2 triệu lên 3 triệu/năm nếu vốn trên 10 tỷ).",
+      "Cần cập nhật thông tin vốn mới với cơ quan thuế.",
+    ],
+  },
+  {
+    title: "Thay Đổi Người Đại Diện Pháp Luật",
+    items: [
+      "Cung cấp bản sao công chứng CCCD/CMND/hộ chiếu của người đại diện mới.",
+      "Thông báo đến cơ quan thuế và các cơ quan liên quan.",
+    ],
+  },
+  {
+    title: "Bổ Sung Ngành Nghề Kinh Doanh",
+    items: [
+      "Kiểm tra ngành nghề có thuộc danh mục quy hoạch tại Cần Thơ.",
+      "Đảm bảo đáp ứng yêu cầu về vốn pháp định hoặc chứng chỉ hành nghề (nếu có).",
+    ],
+  },
+];
+
+const finalResults = [
+  "Giấy chứng nhận đăng ký doanh nghiệp mới.",
+  "Con dấu mới (nếu thay đổi tên, địa chỉ hoặc yêu cầu khác).",
+  "Thông báo thay đổi mẫu dấu (nếu có).",
+  "Đăng bố cáo thay đổi trên Cổng thông tin Đăng ký doanh nghiệp quốc gia.",
+];
+---
+
+<BaseLayout {metadata}>
+  <!-- Hero Banner -->
+  <section class="relative bg-gradient-to-r from-primary to-primary-light py-20 text-center text-white md:py-28">
+    <div class="relative z-10 mx-auto max-w-4xl px-6">
+      <h1 class="text-3xl font-extrabold uppercase leading-tight drop-shadow-md md:text-5xl">
+        Dịch Vụ Thay Đổi Giấy Phép Kinh Doanh Tại Cần Thơ
+      </h1>
+      <p class="mt-5 text-lg font-light text-white/90 md:text-xl">
+        Nhanh 3-5 ngày – Trọn gói – Đúng Luật Doanh nghiệp 2020
+      </p>
+    </div>
+  </section>
+
+  <!-- Giới thiệu -->
+  <section class="bg-white py-16 md:py-24">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <div class="prose prose-lg mx-auto max-w-none text-gray-700">
+        <p class="text-justify">
+          Bạn cần <strong class="text-primary">thay đổi giấy phép kinh doanh tại Cần Thơ</strong> để cập nhật thông tin doanh nghiệp như địa chỉ, người đại diện pháp luật, vốn điều lệ hay ngành nghề kinh doanh? <strong class="text-primary">Hoàng Nam</strong> cung cấp dịch vụ trọn gói, giúp bạn hoàn tất <strong>thủ tục thay đổi giấy phép kinh doanh</strong> nhanh chóng, đúng quy định <strong>Luật Doanh nghiệp 2020</strong>. Với kinh nghiệm hỗ trợ hàng trăm doanh nghiệp tại Cần Thơ, chúng tôi đảm bảo quy trình minh bạch, chuyên nghiệp, tiết kiệm thời gian và chi phí.
+        </p>
+      </div>
+
+      <div class="my-10 overflow-hidden rounded-2xl shadow-xl">
+        <Image
+          src={heroImage}
+          alt="Dịch vụ thay đổi giấy phép kinh doanh tại Cần Thơ"
+          width={815}
+          height={545}
+          class="w-full object-cover"
+          loading="lazy"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- 7 nội dung thay đổi -->
+  <section class="bg-gray-50 py-16 md:py-24">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <h2 class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl">
+        Các Nội Dung Thay Đổi Trên Giấy Phép Kinh Doanh
+      </h2>
+      <p class="mt-4 text-gray-600">Chúng tôi hỗ trợ mọi thủ tục liên quan đến <strong>thay đổi đăng ký kinh doanh</strong>, bao gồm:</p>
+      <div class="mt-6 space-y-4">
+        {changeItems.map((item, i) => (
+          <div class="flex items-start gap-4 rounded-xl border border-gray-100 bg-white p-5 shadow-sm transition-all duration-300 hover:shadow-md">
+            <span class="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-primary/10 text-sm font-bold text-primary">
+              {i + 1}
+            </span>
+            <div>
+              <strong class="text-primary">{item.text}</strong>
+              <span class="text-gray-600">: {item.detail}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Lợi ích -->
+  <section class="bg-white py-16 md:py-24">
+    <div class="mx-auto max-w-6xl px-6 lg:px-8">
+      <h2 class="text-center text-2xl font-extrabold uppercase text-primary md:text-3xl">
+        Tại Sao Nên Chọn Hoàng Nam?
+      </h2>
+      <div class="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {servicebenefits.map((b) => (
+          <div class="group rounded-xl border border-gray-100 bg-white p-6 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+            <div class="mb-3 text-3xl">{b.icon}</div>
+            <strong class="block text-lg text-primary">{b.title}</strong>
+            <p class="mt-2 text-sm text-gray-600">{b.desc}</p>
+          </div>
+        ))}
+      </div>
+      <div class="mt-8 rounded-xl border border-gray-100 bg-gray-50 p-6">
+        <p class="text-gray-700">
+          Với hơn 5 năm kinh nghiệm, Hoàng Nam đã hỗ trợ hàng trăm doanh nghiệp tại Cần Thơ thực hiện <strong>thay đổi giấy phép kinh doanh</strong> thành công. Chúng tôi đảm bảo tuân thủ <strong>Luật Doanh nghiệp 2020</strong> và các quy định của <strong>Sở Kế hoạch và Đầu tư Cần Thơ</strong>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quy trình -->
+  <section class="bg-gray-50 py-16 md:py-24">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <h2 class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl">
+        Quy Trình Thay Đổi Giấy Phép Kinh Doanh
+      </h2>
+      <div class="mt-10 flex flex-col gap-6">
+        {processSteps.map((step, index) => (
+          <div class="flex items-start gap-5 rounded-xl border border-gray-100 bg-white p-6 shadow-sm transition-all duration-300 hover:shadow-md">
+            <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-primary text-sm font-bold text-white">
+              {index + 1}
+            </span>
+            <div>
+              <h3 class="text-lg font-bold text-primary">{step.title}</h3>
+              <ul class="mt-2 space-y-1 text-gray-600">
+                {step.items.map((item) => (
+                  <li class="flex items-start gap-2">
+                    <span class="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary/50" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Bảng Giá -->
+  <section class="bg-white py-16 md:py-24">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <h2 class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl">
+        Chi Phí Thay Đổi Giấy Phép Kinh Doanh
+      </h2>
+      <p class="mt-4 text-gray-600">Hoàng Nam cung cấp dịch vụ với chi phí minh bạch, cụ thể:</p>
+      <div class="mt-8 overflow-hidden rounded-2xl border border-gray-200 shadow-sm">
+        <table class="w-full text-left text-sm">
+          <thead>
+            <tr class="bg-primary text-white">
+              <th class="px-4 py-3 font-semibold md:px-6">Nội dung thay đổi</th>
+              <th class="hidden px-4 py-3 font-semibold sm:table-cell md:px-6">Thời gian</th>
+              <th class="px-4 py-3 text-right font-semibold md:px-6">Phí dịch vụ (VNĐ)</th>
+            </tr>
+          </thead>
+          <tbody>
+            {pricingGroups.map((group) => (
+              <>
+                <tr class="bg-blue-50">
+                  <td colspan={3} class="px-4 py-3 font-bold text-primary md:px-6">{group.title}</td>
+                </tr>
+                {group.items.map((item, idx) => (
+                  <tr class:list={[idx % 2 === 1 ? "bg-gray-50" : "bg-white", "border-t border-gray-100"]}>
+                    <td class="px-4 py-3 md:px-6">{item.name}</td>
+                    <td class="hidden px-4 py-3 sm:table-cell md:px-6">{item.time}</td>
+                    <td class="px-4 py-3 text-right font-semibold text-primary md:px-6">{item.price}</td>
+                  </tr>
+                ))}
+              </>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <div class="mt-6 rounded-r-xl border-l-[6px] border-amber-400 bg-amber-50 px-6 py-4">
+        <p class="text-sm text-amber-800">
+          <strong>Lưu ý:</strong> Lệ phí nhà nước: 200,000 đ (nộp tại Sở KHĐT Cần Thơ). Phí phát sinh (nếu có): công chứng giấy tờ, cập nhật thuế môn bài hoặc con dấu.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lưu ý quan trọng -->
+  <section class="bg-gray-50 py-16 md:py-24">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <h2 class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl">
+        Các Lưu Ý Quan Trọng
+      </h2>
+      <div class="mt-8 space-y-6">
+        {notices.map((notice) => (
+          <div class="rounded-2xl border-l-[5px] border-primary bg-white p-6 shadow-sm md:p-8">
+            <h3 class="mb-3 text-lg font-bold text-primary">{notice.title}</h3>
+            <ul class="space-y-2 text-gray-600">
+              {notice.items.map((item) => (
+                <li class="flex items-start gap-2">
+                  <span class="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary/50" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Kết Quả Nhận Được -->
+  <section class="bg-white py-16 md:py-24">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <h2 class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl">
+        Kết Quả Khách Hàng Nhận Được
+      </h2>
+      <div class="mt-8 rounded-2xl border border-gray-200 bg-white p-8 shadow-sm">
+        <ul class="space-y-4 text-gray-700">
+          {finalResults.map((r) => (
+            <li class="flex items-start gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" class="mt-1 h-5 w-5 flex-shrink-0 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+              <span>{r}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Khu vực hỗ trợ -->
+  <section class="bg-gray-50 py-12">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <div class="rounded-2xl border-2 border-dashed border-primary bg-blue-50 p-8 text-center">
+        <p class="text-lg font-bold text-primary">
+          📍 Hỗ trợ tận nơi tại Cần Thơ:{" "}
+          <span class="font-normal text-gray-700">
+            Ninh Kiều, Cái Răng, Bình Thủy, Ô Môn, Thốt Nốt, Phong Điền, Cờ Đỏ, Vĩnh Thạnh, Thới Lai.
+          </span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <CTABanner
+    title="Gọi Ngay Hotline 091.888.31.79 Để Được Tư Vấn Miễn Phí!"
+    subtitle="Đừng để thủ tục thay đổi giấy phép kinh doanh làm gián đoạn hoạt động kinh doanh của bạn. Liên hệ Hoàng Nam ngay!"
+  />
+</BaseLayout>
