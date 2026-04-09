@@ -54,7 +54,23 @@ export const siteConfig = {
         },
         {
           text: "Giải Thể Công Ty",
-          href: "/giai-the-cong-ty-tai-can-tho",
+          href: "/dich-vu/giai-the-cong-ty-o-can-tho",
+        },
+        {
+          text: "Dịch Vụ Kế Toán",
+          href: "/dich-vu/dich-vu-ke-toan-can-tho",
+        },
+        {
+          text: "Hóa Đơn Điện Tử",
+          href: "/dich-vu/hoa-don-dien-tu-can-tho",
+        },
+        {
+          text: "Chữ Ký Số",
+          href: "/dich-vu/chu-ky-so-can-tho",
+        },
+        {
+          text: "Thành Lập CT Vốn Nước Ngoài",
+          href: "/dich-vu/thanh-lap-cong-ty-von-dau-tu-nuoc-ngoai-tai-can-tho",
         },
       ],
     },

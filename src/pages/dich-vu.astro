@@ -44,7 +44,7 @@ const services = [
   },
   {
     title: "Giải Thể Công Ty",
-    href: "/giai-the-cong-ty-tai-can-tho",
+    href: "/dich-vu/giai-the-cong-ty-o-can-tho",
     description:
       "Quy trình chuyên nghiệp giúp bạn kết thúc hoạt động kinh doanh một cách nhẹ nhàng, đúng pháp luật.",
     icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />`,
@@ -58,24 +58,73 @@ const services = [
     bgLight: "bg-red-50",
     ringColor: "ring-red-200",
   },
-];
-
-const additionalServices = [
   {
     title: "Dịch Vụ Kế Toán Thuế",
-    description: "Kê khai thuế, báo cáo tài chính, sổ sách kế toán hàng tháng/quý/năm.",
+    href: "/dich-vu/dich-vu-ke-toan-can-tho",
+    description:
+      "Dịch vụ kế toán trọn gói: báo cáo thuế, sổ sách kế toán, hóa đơn điện tử cho doanh nghiệp tại Cần Thơ.",
     icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />`,
+    features: [
+      "Kê khai thuế GTGT, TNCN, TNDN",
+      "Quản lý sổ sách kế toán",
+      "Báo cáo tài chính cuối năm",
+      "Giải trình thuế & tư vấn pháp lý",
+    ],
+    color: "from-emerald-500 to-emerald-600",
+    bgLight: "bg-emerald-50",
+    ringColor: "ring-emerald-200",
   },
   {
     title: "Hóa Đơn Điện Tử",
-    description: "Cung cấp và triển khai giải pháp hóa đơn điện tử cho doanh nghiệp.",
+    href: "/dich-vu/hoa-don-dien-tu-can-tho",
+    description:
+      "Cung cấp giải pháp hóa đơn điện tử uy tín từ Hona-Invoice, Viettel, BKAV với giá cạnh tranh nhất.",
     icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z" />`,
+    features: [
+      "Đáp ứng TT 78/2021/TT-BTC",
+      "Hona-Invoice giá rẻ nhất",
+      "Triển khai nhanh trong ngày",
+      "Hỗ trợ kỹ thuật 24/7",
+    ],
+    color: "from-violet-500 to-violet-600",
+    bgLight: "bg-violet-50",
+    ringColor: "ring-violet-200",
   },
   {
     title: "Chữ Ký Số",
-    description: "Đăng ký chữ ký số (token) cho doanh nghiệp và cá nhân.",
+    href: "/dich-vu/chu-ky-so-can-tho",
+    description:
+      "Đại lý phân phối chữ ký số hàng đầu: Viettel-CA, FPT-CA, VNPT-CA, BKAV-CA với giá ưu đãi tốt nhất.",
     icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z" />`,
+    features: [
+      "Mua 3 năm tặng 1 năm",
+      "Hỗ trợ kê khai thuế, hải quan",
+      "CKS mềm ký HĐĐT không cần Token",
+      "Cài đặt tận nơi miễn phí",
+    ],
+    color: "from-amber-500 to-amber-600",
+    bgLight: "bg-amber-50",
+    ringColor: "ring-amber-200",
   },
+  {
+    title: "Thành Lập CT Vốn Nước Ngoài",
+    href: "/dich-vu/thanh-lap-cong-ty-von-dau-tu-nuoc-ngoai-tai-can-tho",
+    description:
+      "Dịch vụ xin giấy chứng nhận đầu tư, thành lập doanh nghiệp FDI tại Cần Thơ, uy tín, nhanh chóng.",
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />`,
+    features: [
+      "Xin cấp GCN đăng ký đầu tư",
+      "Thành lập DNNN tại Cần Thơ",
+      "Tư vấn tỷ lệ góp vốn",
+      "Hậu mãi 12 tháng miễn phí",
+    ],
+    color: "from-cyan-500 to-cyan-600",
+    bgLight: "bg-cyan-50",
+    ringColor: "ring-cyan-200",
+  },
+];
+
+const additionalServices = [
   {
     title: "Thiết Kế Website",
     description: "Thiết kế website chuyên nghiệp, tối ưu SEO cho doanh nghiệp.",

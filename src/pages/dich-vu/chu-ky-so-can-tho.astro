@@ -1,0 +1,485 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { Image } from "astro:assets";
+import { siteConfig } from "@/config/site";
+import CTABanner from "@/components/homepage/CTABanner.astro";
+import heroImage from "@/assets/images/services/chu-ky-so.jpg";
+
+const metadata = {
+  title: "Dịch Vụ Chữ Ký Số Tại Cần Thơ – Gói 4 Năm Chỉ 1.490K",
+  description:
+    "Hoàng Nam – đại lý phân phối chữ ký số hàng đầu tại Cần Thơ. Viettel-CA, FPT-CA, VNPT-CA, BKAV-CA. Mua 3 năm tặng 1 năm. Hỗ trợ cài đặt tận nơi.",
+};
+
+const cksInfo = [
+  "Tên của Doanh nghiệp bao gồm: Mã số thuế, Tên Công Ty, Địa chỉ doanh nghiệp,…",
+  "Số hiệu của chứng thư số (số seri)",
+  "Thời hạn có hiệu lực của chứng thư số",
+  "Tên của tổ chức chứng thực chữ ký số (Ví dụ: Viettel-CA)",
+  "Chữ ký số của tổ chức chứng thực chữ ký số",
+  "Các thư hạn chế về mục đích, phạm vi sử dụng của chứng thư số",
+  "Các hạn chế về trách nhiệm của tổ chức cung cấp dịch vụ chứng thực chữ ký số",
+  "Các nội dung cần thiết khác theo quy định của Bộ Thông Tin Truyền Thông",
+];
+
+const cksUsages = [
+  "Chữ ký số đảm bảo giá trị pháp lý tương đương chữ ký tay (đối với cá nhân) và tương đương con dấu và chữ ký của người đại diện (đối với tổ chức, doanh nghiệp).",
+  "Chữ ký số có thể sử dụng thay thế chữ ký tay trong tất cả các trường hợp giao dịch thương mại điện tử trong môi trường số.",
+  "Sử dụng trong các giao dịch thư điện tử, ký vào email để đối tác, khách hàng biết có phải bạn là người gửi thư không.",
+  "Sử dụng chữ ký số để đóng bảo hiểm xã hội.",
+  "Sử dụng với các ứng dụng chính phủ điện tử, làm thủ tục hành chính trực tuyến.",
+  "Sử dụng với các ứng dụng quản lý doanh nghiệp với mức độ tin cậy, bảo mật và xác thực cao.",
+  "Ký hợp đồng với các đối tác hoàn toàn trực tuyến trên mạng mà không cần gặp nhau.",
+  "Kê khai nộp thuế trực tuyến hoặc khai báo với cơ quan hải quan và tiến hành thông quan trực tuyến.",
+];
+
+const pricingFPT_VINA_VIETTEL = {
+  headers: ["FPT-CA", "VINA-CA (Smartsign)", "VIETTEL-CA"],
+  rows: [
+    {
+      label: "CẤP MỚI",
+      sub: [
+        { name: "Giá gốc", fpt: ["1,760K", "2,640K", "3,080K"], vina: ["1,815K", "2,740K", "3,080K"], viettel: ["1,826K", "2,741K", "3,109K"] },
+        { name: "Giá thực thu", fpt: ["1,250K", "1,650K", "1,750K"], vina: ["1,350K", "1,750K", "1,890K"], viettel: ["1,290K", "1,790K", "1,990K"] },
+      ],
+    },
+    {
+      label: "GIA HẠN",
+      sub: [
+        { name: "Giá gốc", fpt: ["1,320K", "2,200K", "2,860K"], vina: ["1,320K", "2,200K", "2,860K"], viettel: ["1,276K", "2,191K", "2,909K"] },
+        { name: "Giá thực thu", fpt: ["1,090K", "1,490K", "1,690K"], vina: ["1,150K", "1,490K", "1,690K"], viettel: ["1,090K", "1,690K", "1,890K"] },
+      ],
+    },
+  ],
+};
+
+const pricingEASY_NEW = [
+  { service: "CẤP MỚI", easy: ["990K", "1,290K", "1,390K", "1,540K"], newca: ["1,090K", "1,390K", "1,490K", "–"] },
+  { service: "GIA HẠN", easy: ["–", "–", "–", "–"], newca: ["880K", "1,190K", "1,390K", "–"] },
+];
+
+const pricingCA2_BKAV = [
+  { service: "CẤP MỚI", ca2: ["1,350K", "2,190K", "2,090K"], bkav: ["1,290K", "1,890K", "1,990K"] },
+  { service: "GIA HẠN", ca2: ["1,150K", "1,850K", "1,950K"], bkav: ["1,150K", "1,750K", "1,890K"] },
+];
+
+const supportAreas = [
+  "Ninh Kiều", "Cái Răng", "Bình Thủy", "Ô Môn", "Thốt Nốt",
+  "Phong Điền", "Cờ Đỏ", "Vĩnh Thạnh", "Thới Lai",
+];
+---
+
+<BaseLayout {metadata}>
+  <!-- Hero Banner -->
+  <section class="relative bg-gradient-to-r from-primary to-primary-light py-20 text-center text-white md:py-28">
+    <div class="relative z-10 mx-auto max-w-4xl px-6">
+      <h1 class="text-3xl font-extrabold uppercase leading-tight drop-shadow-md md:text-5xl">
+        Dịch Vụ Chữ Ký Số Tại Cần Thơ
+      </h1>
+      <p class="mt-5 text-lg font-light text-white/90 md:text-xl">
+        Gói 4 Năm Chỉ 1.490K – Mua 3 Năm Tặng 1 Năm
+      </p>
+    </div>
+  </section>
+
+  <!-- Khuyến mãi -->
+  <section class="bg-white py-10">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <div class="rounded-2xl bg-gradient-to-r from-red-500 to-red-600 p-8 text-white text-center shadow-lg">
+        <h2 class="text-xl font-bold md:text-2xl">
+          🎁 Khuyến mãi 2024: Mua chữ ký số gói 3 năm tặng 1 năm
+        </h2>
+        <p class="mt-3 text-lg">
+          Đặc biệt khi mua gói Hoá Đơn Điện Tử trên 10.000 số sẽ <strong>tặng Chữ Ký Số gói 3 năm</strong>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Giới thiệu -->
+  <section class="bg-white py-12 md:py-20">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <div class="prose prose-lg mx-auto max-w-none text-gray-700">
+        <p class="text-justify">
+          <strong class="text-primary">Dịch vụ chữ ký số tại Cần Thơ</strong> |Gói 4 năm: 1.490K| của Hoàng Nam
+          chuyên hỗ trợ các doanh nghiệp. Đặc biệt đối với những doanh nghiệp mới được thành lập thì việc mua
+          chữ ký số (chứng thư số) là điều bắt buộc, bởi vì chữ ký số là một con dấu để xác nhận văn bản là
+          của Doanh nghiệp, sử dụng để ký vào những báo cáo, văn bản mà Doanh nghiệp giao dịch, đặc biệt là
+          với Cơ quan thuế, Hải quan và Bảo hiểm.
+        </p>
+      </div>
+
+      <div class="my-10 overflow-hidden rounded-2xl shadow-xl">
+        <Image
+          src={heroImage}
+          alt="Chữ ký số Cần Thơ"
+          width={621}
+          height={361}
+          class="w-full object-cover"
+          loading="lazy"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- CKS là gì -->
+  <section class="bg-gray-50 py-16 md:py-24">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <h2 class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl">
+        Chữ Ký Số Là Gì?
+      </h2>
+      <div class="mt-8 prose prose-lg max-w-none text-gray-700">
+        <p class="text-justify">
+          Chữ ký số là một dạng chữ ký điện tử được tạo ra bằng sự biến đổi một thông điệp dữ liệu sử dụng
+          hệ thống mật mã không đối xứng, theo đó, người có được thông điệp dữ liệu ban đầu và khóa công khai
+          của người ký có thể xác định được chính xác:
+        </p>
+        <div class="mt-4 space-y-3">
+          <div class="flex items-start gap-3 rounded-xl bg-blue-50 p-5">
+            <span class="font-bold text-primary">a)</span>
+            <span>Việc biến đổi nêu trên được tạo ra bằng đúng khóa bí mật tương ứng với khóa công khai trong cùng một cặp khóa.</span>
+          </div>
+          <div class="flex items-start gap-3 rounded-xl bg-blue-50 p-5">
+            <span class="font-bold text-primary">b)</span>
+            <span>Sự toàn vẹn nội dung của thông điệp dữ liệu kể từ khi thực hiện việc biến đổi nêu trên.</span>
+          </div>
+        </div>
+        <p class="mt-6 text-justify">
+          Chữ ký số hay còn gọi là Token là một thiết bị được mã hóa tất cả các dữ liệu, thông tin của một
+          doanh nghiệp dùng thay cho chữ kí trên các loại văn bản và tài liệu số thực hiện đối với các giao dịch
+          điện tử qua mạng internet.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Thông tin CKS -->
+  <section class="bg-white py-16 md:py-24">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <h2 class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl">
+        Thông Tin Có Trong Chữ Ký Số
+      </h2>
+      <div class="mt-8 space-y-3">
+        {cksInfo.map((item) => (
+          <div class="flex items-start gap-3 rounded-xl border border-gray-100 bg-white p-4 shadow-sm">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mt-0.5 h-5 w-5 flex-shrink-0 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span class="text-gray-700">{item}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CKS đối với DN -->
+  <section class="bg-gray-50 py-16 md:py-24">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <h2 class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl">
+        Chữ Ký Số Đối Với Doanh Nghiệp
+      </h2>
+      <div class="mt-8 space-y-4">
+        {cksUsages.map((item) => (
+          <div class="flex items-start gap-3 rounded-xl border border-gray-100 bg-white p-5 shadow-sm transition-all hover:shadow-md">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mt-0.5 h-6 w-6 flex-shrink-0 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+            </svg>
+            <span class="text-gray-700">{item}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Bảng giá FPT/VINA/VIETTEL -->
+  <section class="bg-white py-16 md:py-24">
+    <div class="mx-auto max-w-6xl px-6 lg:px-8">
+      <h2 class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl">
+        Bảng Giá Chữ Ký Số – FPT, VINA, VIETTEL
+      </h2>
+      <div class="mt-8 overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm">
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-sm">
+            <thead>
+              <tr class="bg-primary text-white">
+                <th class="px-3 py-3 font-bold" rowspan="2">Dịch vụ</th>
+                <th class="px-3 py-3 font-bold text-center" colspan="3">FPT-CA</th>
+                <th class="px-3 py-3 font-bold text-center" colspan="3">VINA-CA</th>
+                <th class="px-3 py-3 font-bold text-center" colspan="3">VIETTEL-CA</th>
+              </tr>
+              <tr class="bg-primary/90 text-white text-xs">
+                <th class="px-3 py-2 text-center">1 năm</th>
+                <th class="px-3 py-2 text-center">2 năm</th>
+                <th class="px-3 py-2 text-center">3 năm</th>
+                <th class="px-3 py-2 text-center">1 năm</th>
+                <th class="px-3 py-2 text-center">2 năm</th>
+                <th class="px-3 py-2 text-center">3 năm</th>
+                <th class="px-3 py-2 text-center">1 năm</th>
+                <th class="px-3 py-2 text-center">2 năm</th>
+                <th class="px-3 py-2 text-center">3 năm</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Cấp mới - Giá thực thu -->
+              <tr class="border-b border-gray-100 bg-green-50 font-semibold">
+                <td class="px-3 py-3">CẤP MỚI<br/><span class="text-xs font-normal text-gray-500">Giá thực thu</span></td>
+                <td class="px-3 py-3 text-center">1,250K</td>
+                <td class="px-3 py-3 text-center">1,650K</td>
+                <td class="px-3 py-3 text-center">1,750K</td>
+                <td class="px-3 py-3 text-center">1,350K</td>
+                <td class="px-3 py-3 text-center">1,750K</td>
+                <td class="px-3 py-3 text-center">1,890K</td>
+                <td class="px-3 py-3 text-center">1,290K</td>
+                <td class="px-3 py-3 text-center">1,790K</td>
+                <td class="px-3 py-3 text-center">1,990K</td>
+              </tr>
+              <!-- Gia hạn - Giá thực thu -->
+              <tr class="border-b border-gray-100 hover:bg-blue-50/50">
+                <td class="px-3 py-3">GIA HẠN<br/><span class="text-xs font-normal text-gray-500">Giá thực thu</span></td>
+                <td class="px-3 py-3 text-center">1,090K</td>
+                <td class="px-3 py-3 text-center">1,490K</td>
+                <td class="px-3 py-3 text-center">1,690K</td>
+                <td class="px-3 py-3 text-center">1,150K</td>
+                <td class="px-3 py-3 text-center">1,490K</td>
+                <td class="px-3 py-3 text-center">1,690K</td>
+                <td class="px-3 py-3 text-center">1,090K</td>
+                <td class="px-3 py-3 text-center">1,690K</td>
+                <td class="px-3 py-3 text-center">1,890K</td>
+              </tr>
+              <!-- CKS Cá nhân Viettel -->
+              <tr class="border-b border-gray-100 hover:bg-blue-50/50">
+                <td class="px-3 py-3">CKS CÁ NHÂN<br/><span class="text-xs font-normal text-gray-500">Viettel</span></td>
+                <td class="px-3 py-3 text-center text-gray-400" colspan="3">–</td>
+                <td class="px-3 py-3 text-center text-gray-400" colspan="3">–</td>
+                <td class="px-3 py-3 text-center">990K</td>
+                <td class="px-3 py-3 text-center">1,190K</td>
+                <td class="px-3 py-3 text-center">1,290K</td>
+              </tr>
+              <!-- CKS Mềm Viettel -->
+              <tr class="hover:bg-blue-50/50">
+                <td class="px-3 py-3">CKS MỀM<br/><span class="text-xs font-normal text-gray-500">Không cần Token</span></td>
+                <td class="px-3 py-3 text-center text-gray-400" colspan="3">–</td>
+                <td class="px-3 py-3 text-center text-gray-400" colspan="3">–</td>
+                <td class="px-3 py-3 text-center">850K</td>
+                <td class="px-3 py-3 text-center">1,250K</td>
+                <td class="px-3 py-3 text-center">1,650K</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Bảng EASY-CA / NEW-CA -->
+      <h3 class="mt-12 text-xl font-bold text-primary">💎 GIÁ RẺ NHẤT: EASY-CA & NEW-CA</h3>
+      <div class="mt-4 overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm">
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-sm">
+            <thead>
+              <tr class="bg-primary text-white">
+                <th class="px-3 py-3 font-bold" rowspan="2">Dịch vụ</th>
+                <th class="px-3 py-3 font-bold text-center" colspan="4">EASY-CA</th>
+                <th class="px-3 py-3 font-bold text-center" colspan="3">NEW-CA</th>
+              </tr>
+              <tr class="bg-primary/90 text-white text-xs">
+                <th class="px-3 py-2 text-center">1 năm</th>
+                <th class="px-3 py-2 text-center">2 năm</th>
+                <th class="px-3 py-2 text-center">3 năm</th>
+                <th class="px-3 py-2 text-center">4 năm</th>
+                <th class="px-3 py-2 text-center">1 năm</th>
+                <th class="px-3 py-2 text-center">2 năm</th>
+                <th class="px-3 py-2 text-center">3 năm</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-b border-gray-100 bg-green-50 font-semibold">
+                <td class="px-3 py-3">CẤP MỚI</td>
+                <td class="px-3 py-3 text-center">990K</td>
+                <td class="px-3 py-3 text-center">1,290K</td>
+                <td class="px-3 py-3 text-center">1,390K</td>
+                <td class="px-3 py-3 text-center">1,540K</td>
+                <td class="px-3 py-3 text-center">1,090K</td>
+                <td class="px-3 py-3 text-center">1,390K</td>
+                <td class="px-3 py-3 text-center">1,490K</td>
+              </tr>
+              <tr class="hover:bg-blue-50/50">
+                <td class="px-3 py-3">GIA HẠN</td>
+                <td class="px-3 py-3 text-center text-gray-400" colspan="4">–</td>
+                <td class="px-3 py-3 text-center">880K</td>
+                <td class="px-3 py-3 text-center">1,190K</td>
+                <td class="px-3 py-3 text-center">1,390K</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Bảng CA2 / BKAV -->
+      <h3 class="mt-12 text-xl font-bold text-primary">🔐 CA2-CA & BKAV-CA</h3>
+      <div class="mt-4 overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm">
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-sm">
+            <thead>
+              <tr class="bg-primary text-white">
+                <th class="px-3 py-3 font-bold" rowspan="2">Dịch vụ</th>
+                <th class="px-3 py-3 font-bold text-center" colspan="3">CA2-CA</th>
+                <th class="px-3 py-3 font-bold text-center" colspan="3">BKAV-CA</th>
+              </tr>
+              <tr class="bg-primary/90 text-white text-xs">
+                <th class="px-3 py-2 text-center">1 năm</th>
+                <th class="px-3 py-2 text-center">2 năm</th>
+                <th class="px-3 py-2 text-center">3 năm</th>
+                <th class="px-3 py-2 text-center">1 năm</th>
+                <th class="px-3 py-2 text-center">2 năm</th>
+                <th class="px-3 py-2 text-center">3 năm</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-b border-gray-100 bg-green-50 font-semibold">
+                <td class="px-3 py-3">CẤP MỚI</td>
+                <td class="px-3 py-3 text-center">1,350K</td>
+                <td class="px-3 py-3 text-center">2,190K</td>
+                <td class="px-3 py-3 text-center">2,090K</td>
+                <td class="px-3 py-3 text-center">1,290K</td>
+                <td class="px-3 py-3 text-center">1,890K</td>
+                <td class="px-3 py-3 text-center">1,990K</td>
+              </tr>
+              <tr class="border-b border-gray-100 hover:bg-blue-50/50">
+                <td class="px-3 py-3">GIA HẠN</td>
+                <td class="px-3 py-3 text-center">1,150K</td>
+                <td class="px-3 py-3 text-center">1,850K</td>
+                <td class="px-3 py-3 text-center">1,950K</td>
+                <td class="px-3 py-3 text-center">1,150K</td>
+                <td class="px-3 py-3 text-center">1,750K</td>
+                <td class="px-3 py-3 text-center">1,890K</td>
+              </tr>
+              <tr class="hover:bg-blue-50/50">
+                <td class="px-3 py-3">CKS MỀM<br/><span class="text-xs text-gray-500">BKAV</span></td>
+                <td class="px-3 py-3 text-center text-gray-400" colspan="3">–</td>
+                <td class="px-3 py-3 text-center">750K</td>
+                <td class="px-3 py-3 text-center">950K</td>
+                <td class="px-3 py-3 text-center">1,050K</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Viettel CKS -->
+  <section class="bg-gray-50 py-16 md:py-24">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <h2 class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl">
+        Chữ Ký Số Viettel
+      </h2>
+      <div class="mt-8 prose prose-lg max-w-none text-gray-700">
+        <p class="text-justify">
+          <strong>Viettel</strong> là 1 trong 9 công ty được Bộ TT&TT cấp giấy phép phát triển và cung cấp chữ ký số
+          cho doanh nghiệp trên toàn quốc và 5 công ty được công nhận hợp chuẩn bởi Tổng cục Hải quan về phần mềm
+          khai Hải quan.
+        </p>
+        <p class="text-justify">
+          Tuy nhiên, đồng thời được công nhận hợp chuẩn phần mềm bởi cả hai cơ quan (Thuế & Hải Quan) này chỉ có
+          2 công ty, trong đó có Viettel.
+        </p>
+        <p class="text-justify font-bold text-primary">
+          Hãy liên hệ ngay với Hoàng Nam để được tư vấn miễn phí về chữ ký số Viettel!
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bạn nhận được gì -->
+  <section class="bg-white py-16 md:py-24">
+    <div class="mx-auto max-w-6xl px-6 lg:px-8">
+      <h2 class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl">
+        Bạn Nhận Được Gì Tại Dịch Vụ Của Hoàng Nam?
+      </h2>
+      <p class="mt-6 text-gray-700">
+        Hoàng Nam là đối tác uỷ quyền phân phối hàng đầu về chữ ký số cho các nhà mạng trên toàn quốc. Với hơn 5 năm
+        kinh nghiệm cung cấp dịch vụ thuế và báo cáo thuế cho hàng nghìn doanh nghiệp tại Cần Thơ.
+      </p>
+      <div class="mt-10 grid grid-cols-1 gap-8 md:grid-cols-2">
+        <div class="rounded-2xl border border-gray-100 bg-white p-8 shadow-sm transition-all hover:shadow-lg">
+          <div class="text-3xl mb-3">👥</div>
+          <h3 class="text-xl font-bold text-primary">Tập thể tận tâm</h3>
+          <p class="mt-3 text-gray-600">
+            Đội ngũ tư vấn luôn hết mình và quy trình xử lý thông tin đơn giản tiết kiệm thời gian cho doanh nghiệp.
+          </p>
+        </div>
+        <div class="rounded-2xl border border-gray-100 bg-white p-8 shadow-sm transition-all hover:shadow-lg">
+          <div class="text-3xl mb-3">💰</div>
+          <h3 class="text-xl font-bold text-primary">Giá cả hợp lý</h3>
+          <p class="mt-3 text-gray-600">
+            Các mức phí luôn hợp lý – chúng tôi là đơn vị báo giá hợp lý và dịch vụ chất lượng nhất.
+          </p>
+        </div>
+        <div class="rounded-2xl border border-gray-100 bg-white p-8 shadow-sm transition-all hover:shadow-lg">
+          <div class="text-3xl mb-3">📦</div>
+          <h3 class="text-xl font-bold text-primary">Các gói giải pháp tốt nhất</h3>
+          <p class="mt-3 text-gray-600">
+            Cung cấp Chữ Ký Số, Hoá Đơn Điện Tử với mức giá hỗ trợ thấp nhất thị trường và hỗ trợ kỹ thuật 24/24.
+          </p>
+        </div>
+        <div class="rounded-2xl border border-gray-100 bg-white p-8 shadow-sm transition-all hover:shadow-lg">
+          <div class="text-3xl mb-3">⚖️</div>
+          <h3 class="text-xl font-bold text-primary">Đội ngũ hàng đầu</h3>
+          <p class="mt-3 text-gray-600">
+            Đội ngũ luật của Hoàng Nam sẽ tư vấn pháp lý cho khách hàng về quy định pháp luật từng lĩnh vực kinh doanh.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Thông tin liên hệ -->
+  <section class="bg-primary py-12 text-white md:py-16">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <h2 class="text-2xl font-bold uppercase tracking-wider">
+        HOÀNG NAM CHI NHÁNH CẦN THƠ
+      </h2>
+      <div class="mt-6 grid grid-cols-1 gap-6 md:grid-cols-2">
+        <div class="space-y-3">
+          <p class="flex items-start gap-2">
+            <span>🏠</span>
+            <span><strong>Địa chỉ:</strong> 462 Lê Hồng Nhi, KV1, P.Ba Láng, Q. Cái Răng, Tp. Cần Thơ</span>
+          </p>
+          <p class="flex items-start gap-2">
+            <span>📞</span>
+            <span><strong>Hotline:</strong> 091.888.3179 – 0906.777.019 – 09737.111.96</span>
+          </p>
+        </div>
+        <div class="space-y-3">
+          <p class="flex items-start gap-2">
+            <span>✉️</span>
+            <span><strong>Email:</strong> hona@honainvoice.vn</span>
+          </p>
+          <p class="flex items-start gap-2">
+            <span>🌐</span>
+            <span><strong>Website:</strong> https://honainvoice.vn/ | https://hoangnamcantho.com/</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Khu Vực Hỗ Trợ -->
+  <section class="bg-gray-50 py-12">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <div class="rounded-2xl border-2 border-dashed border-primary bg-blue-50 p-8 text-center">
+        <p class="text-lg font-bold text-primary">
+          📍 Hỗ trợ tận nơi tại Cần Thơ:{" "}
+          <span class="font-normal text-gray-700">
+            {supportAreas.join(", ")}.
+          </span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <CTABanner
+    title="Bạn cần mua chữ ký số?"
+    subtitle="Liên hệ ngay Hoàng Nam để được tư vấn miễn phí và mua chữ ký số với giá ưu đãi tốt nhất tại Cần Thơ."
+  />
+</BaseLayout>

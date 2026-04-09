@@ -1,0 +1,298 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { Image } from "astro:assets";
+import { siteConfig } from "@/config/site";
+import CTABanner from "@/components/homepage/CTABanner.astro";
+import heroImage from "@/assets/images/services/hoa-don-dien-tu.png";
+import bannerImage from "@/assets/images/services/hddt-auto-banner.jpg";
+
+const metadata = {
+  title: "Hóa Đơn Điện Tử Cần Thơ – Báo Giá Tốt Nhất | Hona-Invoice",
+  description:
+    "Dịch vụ hóa đơn điện tử Cần Thơ của Hoàng Nam. Cung cấp Hona-Invoice, Viettel, BKAV, VNPT với giá cạnh tranh nhất. Đáp ứng TT 78/2021/TT-BTC.",
+};
+
+const invoiceTypes = [
+  "Hóa đơn điện tử là tập hợp thông điệp dữ liệu về bán hàng hoá, cung ứng dịch vụ được tạo, lập, gửi, nhận, lưu trữ quản lý bằng phương tiện điện tử.",
+  "Hóa đơn điện tử gồm các loại: hóa đơn xuất khẩu, hóa đơn giá trị gia tăng, hóa đơn bán hàng, hóa đơn khác gồm: tem, vé, thẻ, phiếu thu tiền bảo hiểm, phiếu thu tiền cước vận chuyển hàng không...",
+  "Hóa đơn điện tử được khởi tạo, lập, xử lý trên hệ thống máy tính của tổ chức đã được cấp mã số thuế khi bán hàng hóa, dịch vụ và được lưu trữ trên máy tính của các bên theo quy định.",
+  "Hóa đơn điện tử đảm bảo nguyên tắc: xác định được số hóa đơn theo nguyên tắc liên tục và trình tự thời gian, mỗi số hóa đơn đảm bảo chỉ được lập và sử dụng một lần duy nhất.",
+];
+
+const conditions = [
+  "Là tổ chức kinh tế có đủ điều kiện và đang thực hiện giao dịch điện tử trong khai thuế với cơ quan thuế; hoặc có sử dụng giao dịch điện tử trong hoạt động ngân hàng.",
+  "Có địa điểm, các đường truyền tải thông tin, mạng thông tin, thiết bị truyền tin đáp ứng yêu cầu khai thác, kiểm soát, xử lý, sử dụng, bảo quản và lưu trữ hóa đơn điện tử.",
+  "Có chữ ký điện tử theo quy định của pháp luật.",
+  "Có đội ngũ người thực thi đủ trình độ, khả năng tương xứng với yêu cầu để thực hiện việc khởi tạo, lập, sử dụng hóa đơn điện tử.",
+  "Có phần mềm bán hàng hóa, dịch vụ kết nối với phần mềm kế toán, đảm bảo dữ liệu của hóa đơn điện tử được tự động chuyển vào phần mềm kế toán tại thời điểm lập hóa đơn.",
+  "Có các quy trình sao lưu dữ liệu, khôi phục dữ liệu, lưu trữ dữ liệu đáp ứng các yêu cầu tối thiểu về chất lượng lưu trữ.",
+];
+
+const invoiceBenefits = [
+  "Giảm thiểu các rủi ro liên quan đến quản lý hoá đơn.",
+  "HĐĐT có đầy đủ giá trị pháp lý theo quy định, khách hàng có thể an tâm khi sử dụng để kê khai thuế, hạch toán kế toán, lưu trữ chứng từ kế toán.",
+  "Đảm bảo tính an toàn bảo mật cao, không có bị giả mạo.",
+  "Khách hàng có nhu cầu có thể nhận HĐĐT ngay sau khi kết thúc giao dịch mà không cần phải mất thời gian chờ đợi.",
+  "Tiết kiệm chi phí và thời gian cho doanh nghiệp ở các khâu lưu trữ, bảo quản hóa đơn.",
+  "Doanh nghiệp có thể dễ dàng tra cứu hoá đơn điện tử trên Internet đầy đủ, chính xác, mọi lúc, mọi nơi.",
+  "Phù hợp với nhu cầu hóa đơn của bất cứ loại hình doanh nghiệp nào (công ty cổ phần, TNHH,...).",
+  "Dễ dàng tích hợp hệ thống phần mềm có sẵn của doanh nghiệp, hỗ trợ xử lý, tổng hợp dữ liệu cho việc kê khai thuế, báo cáo.",
+];
+
+const registrationSteps = [
+  "Tiến hành ký Hợp đồng cung cấp dịch vụ Hóa đơn điện tử. Doanh nghiệp cần bổ sung hồ sơ: Giấy phép ĐKKD và CMND/Passport người đại diện pháp luật.",
+  "Tiến hành thanh toán bằng chuyển khoản hoặc tiền mặt. Nhân viên khởi tạo dịch vụ HĐĐT cho doanh nghiệp. Xuất hóa đơn theo giá trị hợp đồng.",
+  "Hướng dẫn khách hàng chọn mẫu hóa đơn phù hợp.",
+  "Hoàng Nam sẽ gửi toàn bộ hồ sơ và hướng dẫn để doanh nghiệp làm thủ tục đăng ký sử dụng HĐĐT với cơ quan Thuế.",
+  "Sau khi cơ quan Thuế phê duyệt, Hoàng Nam gửi tài khoản, sẵn sàng hướng dẫn doanh nghiệp sử dụng toàn bộ nghiệp vụ trên hệ thống HĐĐT.",
+];
+
+const supportAreas = [
+  "Ninh Kiều", "Cái Răng", "Bình Thủy", "Ô Môn", "Thốt Nốt",
+  "Phong Điền", "Cờ Đỏ", "Vĩnh Thạnh", "Thới Lai",
+];
+---
+
+<BaseLayout {metadata}>
+  <!-- Hero Banner -->
+  <section class="relative bg-gradient-to-r from-primary to-primary-light py-20 text-center text-white md:py-28">
+    <div class="relative z-10 mx-auto max-w-4xl px-6">
+      <h1 class="text-3xl font-extrabold uppercase leading-tight drop-shadow-md md:text-5xl">
+        Dịch Vụ Hóa Đơn Điện Tử Tại Cần Thơ
+      </h1>
+      <p class="mt-5 text-lg font-light text-white/90 md:text-xl">
+        Hona-Invoice – Giá Rẻ Nhất – Hỗ Trợ Kỹ Thuật 24/7
+      </p>
+    </div>
+  </section>
+
+  <!-- Giới thiệu -->
+  <section class="bg-white py-16 md:py-24">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <div class="prose prose-lg mx-auto max-w-none text-gray-700">
+        <p class="text-justify">
+          <a href="https://honainvoice.vn/" class="font-bold text-primary no-underline border-b-2 border-primary pb-0.5 hover:text-primary-dark">Báo Giá Hóa Đơn Điện Tử</a>{" "}
+          là bảng thống kê chi tiết về giá thành dịch vụ của các nhà cung cấp hóa đơn điện tử như{" "}
+          <strong>Hona-Invoice (Autoinvoice)</strong>, Viettel, Bkav, Vin, VNPT, FPT, Misa Meinvoice, Easyinvoice…
+        </p>
+        <p class="text-justify">
+          Đăng ký triển khai hệ thống hóa đơn điện tử nào, giá bao nhiêu là do khách hàng đánh giá dựa vào các tiêu chí:
+          <strong class="text-primary"> Tiết kiệm chi phí – Thương hiệu tin cậy – Độ bảo mật dữ liệu – Đáp ứng TT 78/2021/TT-BTC thuộc nghị định 123</strong>.
+        </p>
+      </div>
+
+      <div class="my-10 overflow-hidden rounded-2xl shadow-xl">
+        <Image
+          src={bannerImage}
+          alt="Hóa đơn điện tử Hona-Invoice"
+          width={1024}
+          height={406}
+          class="w-full object-cover"
+          loading="lazy"
+        />
+      </div>
+
+      <!-- Khuyến mãi -->
+      <div class="rounded-2xl bg-gradient-to-r from-red-500 to-red-600 p-8 text-white text-center shadow-lg">
+        <h2 class="text-xl font-bold md:text-2xl">
+          🎁 Đặc biệt: Mua gói Hoá đơn điện tử Honainvoice từ 10.000 số trở lên
+        </h2>
+        <p class="mt-3 text-lg">
+          HoNa sẽ <strong>tặng bạn Chữ Ký Số gói 3 năm</strong> trị giá <strong>1,390K</strong>
+        </p>
+      </div>
+
+      <div class="mt-10 prose prose-lg mx-auto max-w-none text-gray-700">
+        <p class="text-justify">
+          <strong class="text-primary">Dịch vụ hóa đơn điện tử Cần Thơ</strong> của HOÀNG NAM được đội ngũ nhân sự
+          chuyên nghiệp thực hiện, các thủ tục và quy trình nhanh chóng với bảng giá tốt nhất đến với doanh nghiệp
+          tại Cần Thơ. Cung cấp giải pháp hóa đơn điện tử từ các nhà cung cấp uy tín theo tiêu chí của TCT,
+          hỗ trợ chuyển đổi và áp dụng theo quy định mới nhất thông tư 78.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Thương hiệu -->
+  <section class="bg-gray-50 py-16 md:py-24">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <h2 class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl">
+        Thương Hiệu Nào Dành Cho Bạn?
+      </h2>
+      <div class="mt-8 prose prose-lg max-w-none text-gray-700">
+        <p class="text-justify">
+          <strong>Hona-Invoice (Autoinvoice)</strong> là sản phẩm đầy tâm huyết từ một Doanh Nghiệp với hơn 20 năm
+          phát triển trong lĩnh vực cốt lõi về phần mềm kèm kinh nghiệm hợp tác và triển khai về các sản phẩm ứng dụng
+          chuyển đổi số ngành thuế mà TCT ưu tiên ứng dụng nhằm nâng cao hiệu quả quản lý, vận hành và điều hành
+          trong kinh doanh.
+        </p>
+      </div>
+
+      <div class="my-10 overflow-hidden rounded-2xl shadow-xl">
+        <Image
+          src={heroImage}
+          alt="Hóa đơn điện tử Cần Thơ"
+          width={815}
+          height={545}
+          class="w-full object-cover"
+          loading="lazy"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- HĐĐT là gì -->
+  <section class="bg-white py-16 md:py-24">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <h2 class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl">
+        Hóa Đơn Điện Tử Là Gì?
+      </h2>
+      <p class="mt-6 text-gray-700">
+        Theo khoản 1 Điều 3 trong Thông tư số 32/2011/TT-BTC ngày 14/03/2011 của Bộ Tài Chính:
+      </p>
+      <div class="mt-6 space-y-4">
+        {invoiceTypes.map((item, index) => (
+          <div class="flex items-start gap-4 rounded-xl border border-gray-100 bg-gray-50 p-5">
+            <span class="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-primary text-sm font-bold text-white">
+              {index + 1}
+            </span>
+            <p class="text-gray-700">{item}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- HĐĐT theo TT78 -->
+  <section class="bg-gray-50 py-16 md:py-24">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <h2 class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl">
+        Hóa Đơn Điện Tử Cần Thơ Theo Thông Tư 78
+      </h2>
+      <div class="mt-8 prose prose-lg max-w-none text-gray-700">
+        <p class="text-justify">
+          Theo như quy định của thông tư 78 và Nghị định 123, doanh nghiệp, tổ chức, cá nhân kinh doanh
+          <strong> bắt buộc chuyển đổi sử dụng hóa đơn điện tử từ ngày 1/7/2022</strong>. Hiện nay, 6 tỉnh thành
+          đã triển khai áp dụng hóa đơn điện tử, cho thấy được những lợi ích mà HĐĐT mang lại cho công việc
+          kinh doanh của doanh nghiệp.
+        </p>
+        <p class="text-justify">
+          Định hướng sử dụng hóa đơn điện tử cho doanh nghiệp cho thấy mang lại nhiều lợi ích, điều này không chỉ
+          mang lại hiệu quả kinh doanh mà còn góp phần tạo nên môi trường kinh doanh lành mạnh, công bằng.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Điều kiện -->
+  <section class="bg-white py-16 md:py-24">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <h2 class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl">
+        Điều Kiện Cần Và Đủ Để Sử Dụng Hóa Đơn Điện Tử
+      </h2>
+      <div class="mt-8 space-y-4">
+        {conditions.map((item) => (
+          <div class="flex items-start gap-3 rounded-xl border border-gray-100 bg-white p-5 shadow-sm">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mt-0.5 h-6 w-6 flex-shrink-0 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span class="text-gray-700">{item}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Lợi ích -->
+  <section class="bg-gray-50 py-16 md:py-24">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <h2 class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl">
+        Lợi Ích Sử Dụng Hóa Đơn Điện Tử
+      </h2>
+      <div class="mt-8 grid grid-cols-1 gap-4 md:grid-cols-2">
+        {invoiceBenefits.map((benefit) => (
+          <div class="flex items-start gap-3 rounded-xl border border-gray-100 bg-white p-5 shadow-sm transition-all hover:shadow-md">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mt-0.5 h-5 w-5 flex-shrink-0 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+            </svg>
+            <span class="text-sm text-gray-700">{benefit}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Quy trình đăng ký -->
+  <section class="bg-white py-16 md:py-24">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <h2 class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl">
+        Quy Trình Đăng Ký Dịch Vụ Hóa Đơn Điện Tử Tại Hoàng Nam
+      </h2>
+      <p class="mt-6 text-gray-700">
+        Hoàng Nam là đại lý cung cấp các giải pháp hóa đơn điện tử từ các nhà cung cấp uy tín, được tổng cục thuế
+        công nhận và công bố danh sách chứng thực.
+      </p>
+      <div class="mt-8 flex flex-col gap-5">
+        {registrationSteps.map((step, index) => (
+          <div class="flex items-start gap-5 rounded-xl border border-gray-100 bg-white p-5 shadow-sm transition-all duration-300 hover:shadow-md">
+            <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-primary text-sm font-bold text-white">
+              {index + 1}
+            </span>
+            <p class="text-gray-700 pt-2">{step}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Thông tin liên hệ -->
+  <section class="bg-primary py-12 text-white md:py-16">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <h2 class="text-2xl font-bold uppercase tracking-wider">
+        HOÀNG NAM CHI NHÁNH CẦN THƠ
+      </h2>
+      <div class="mt-6 grid grid-cols-1 gap-6 md:grid-cols-2">
+        <div class="space-y-3">
+          <p class="flex items-start gap-2">
+            <span>🏠</span>
+            <span><strong>Địa chỉ:</strong> 462 Lê Hồng Nhi, KV1, P.Ba Láng, Q. Cái Răng, Tp. Cần Thơ</span>
+          </p>
+          <p class="flex items-start gap-2">
+            <span>📞</span>
+            <span><strong>Hotline:</strong> 091.888.3179 - 0906.777.019 - 09737.111.96</span>
+          </p>
+        </div>
+        <div class="space-y-3">
+          <p class="flex items-start gap-2">
+            <span>✉️</span>
+            <span><strong>Email:</strong> hona@honainvoice.vn</span>
+          </p>
+          <p class="flex items-start gap-2">
+            <span>🌐</span>
+            <span><strong>Website:</strong> https://honainvoice.vn</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Khu Vực Hỗ Trợ -->
+  <section class="bg-gray-50 py-12">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <div class="rounded-2xl border-2 border-dashed border-primary bg-blue-50 p-8 text-center">
+        <p class="text-lg font-bold text-primary">
+          📍 Hỗ trợ tận nơi tại Cần Thơ:{" "}
+          <span class="font-normal text-gray-700">
+            {supportAreas.join(", ")}.
+          </span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <CTABanner
+    title="Bạn cần đăng ký hóa đơn điện tử?"
+    subtitle="Liên hệ ngay Hoàng Nam để được tư vấn miễn phí và triển khai hóa đơn điện tử nhanh chóng với giá tốt nhất."
+  />
+</BaseLayout>

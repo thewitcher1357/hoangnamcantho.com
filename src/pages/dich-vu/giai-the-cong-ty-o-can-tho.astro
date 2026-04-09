@@ -1,0 +1,437 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { Image } from "astro:assets";
+import { siteConfig } from "@/config/site";
+import CTABanner from "@/components/homepage/CTABanner.astro";
+import heroImage from "@/assets/images/services/giai-the-cong-ty.png";
+
+const metadata = {
+  title: "Dịch Vụ Giải Thể Công Ty Tại Cần Thơ – Tư Vấn Tận Tình, Giá Rẻ",
+  description:
+    "Dịch vụ giải thể công ty tốt nhất tại Cần Thơ. Hoàng Nam tư vấn tận tình, quy trình nhanh chóng, chi phí hợp lý. Hỗ trợ toàn bộ thủ tục giải thể doanh nghiệp.",
+};
+
+const dissolveServices = [
+  { name: "Tư vấn giải thể công ty, chấm dứt HĐ" },
+  { name: "Trả giấy phép kinh doanh của công ty" },
+  { name: "Trả con dấu tròn" },
+  { name: "Xin xác nhận chưa khắc con dấu (đối với chi nhánh công ty, VPĐD không sử dụng con dấu tròn)" },
+  { name: "Nhận kết quả hoàn tất giải thể công ty" },
+];
+
+const benefits = [
+  "Nhận được Tư vấn miễn phí các thông tin cần thiết cho doanh nghiệp.",
+  "Tiết kiệm thời gian của doanh nghiệp",
+  "Tiết kiệm chi phí, không phát sinh các khoản chi không cần thiết.",
+  "Đưa ra được phương án tối ưu nhất cho doanh nghiệp chuẩn bị giải thể",
+  "Hoàng Nam cam kết tính chính xác của các loại giấy tờ.",
+  "Cung cấp văn bản pháp luật có liên quan theo yêu cầu.",
+];
+
+const dissolveCases = [
+  "Khi đã quá thời hạn hoạt động ghi trong điều lệ nhưng các chủ doanh nghiệp không có ý định gia hạn thêm.",
+  "Doanh nghiệp bị thu hồi Giấy chứng nhận đăng ký kinh doanh.",
+  "Giải thể theo quyết định của các đồng chủ sở hữu: Đối với doanh nghiệp tư nhân là theo quyết định của chủ doanh nghiệp. Quyết định của thành viên hợp danh đối với công ty hợp danh. Đối với công ty TNHH là Hội đồng thành viên hoặc chủ sở hữu công ty. Còn công ty cổ phần là Đại hội đồng cổ đông.",
+  "Không có đủ số lượng thành viên tối thiểu trong 06 tháng liên tục & không thay đổi loại hình doanh nghiệp.",
+];
+
+const dissolveConditions = [
+  "Bảo đảm thực hiện đầy đủ các nghĩa vụ tài sản. Thực hiện thanh toán đầy đủ các khoản nợ như: Lương của người lao động, nợ bảo hiểm, nợ thuế & các khoản nợ đối với các đối tác làm ăn (nếu có).",
+  "Doanh nghiệp không đang tham gia vào quá trình giải quyết tranh chấp tại Tòa Án nhân dân hoặc tổ chức Trọng tài thương mại.",
+];
+
+const processSteps = [
+  "Tư vấn sơ bộ về quy trình tiến hành thủ tục giải thể doanh nghiệp theo quy định của pháp luật.",
+  "Soạn thảo các hồ sơ, biểu mẫu theo quy định của pháp luật về giải thể công ty.",
+  "Nộp hồ sơ giải thể lên cơ quan thuế.",
+  "Nhận kết quả hoàn thành nghĩa vụ thuế từ cơ quan thuế.",
+  "Nộp hồ sơ giải thể tại cơ quan đăng ký kinh doanh/Sở Kế Hoạch & Đầu Tư.",
+  "Trả dấu (nếu con dấu làm từ trước tháng 7/2015).",
+  "Nhận kết quả giải thể tại Sở Kế Hoạch & Đầu Tư.",
+  "Kiểm tra, theo dõi tiến trình; kịp thời thông báo cho Quý Công ty.",
+  "Bàn giao toàn bộ hồ sơ giải thể trả khách hàng.",
+];
+
+const taxSteps = [
+  "Hoàn thiện sổ sách kế toán, hồ sơ thuế (từ năm bắt đầu hoạt động đến thời điểm giải thể).",
+  "Làm thủ tục hủy hóa đơn và đóng mã số thuế doanh nghiệp.",
+  "Lập hồ sơ giải thể bao gồm: Thông báo giải thể + Quyết định + Biên bản họp gửi Cơ Quan Thuế.",
+  "Đại diện doanh nghiệp giải trình hồ sơ quyết toán thuế với Cơ Quan Thuế.",
+  "Nộp công văn và nhận thông báo xác nhận hoàn thành nghĩa vụ thuế tại Cơ quan thuế.",
+];
+
+const planningSteps = [
+  "Lập hồ sơ giải thể.",
+  "Trả giấy phép kinh doanh, con dấu và chứng nhận mẫu dấu tại Phòng đăng ký kinh doanh – Sở Kế Hoạch & Đầu Tư.",
+  "Đại diện Doanh nghiệp nhận kết quả giải thể tại sở kế hoạch và đầu tư.",
+];
+
+const prohibitedActs = [
+  "Cất giấu, tẩu tán tài sản.",
+  "Từ bỏ hoặc giảm bớt quyền đòi nợ.",
+  "Ký kết hợp đồng mới trừ trường hợp để thực hiện giải thể doanh nghiệp.",
+  "Chấm dứt thực hiện hợp đồng đã có hiệu lực.",
+  "Huy động vốn dưới mọi hình thức.",
+  "Chuyển các khoản nợ không có bảo đảm thành các khoản nợ có bảo đảm bằng tài sản của doanh nghiệp.",
+  "Cầm cố, thế chấp, tặng cho, cho thuê tài sản.",
+];
+
+const supportAreas = [
+  "Ninh Kiều", "Cái Răng", "Bình Thủy", "Ô Môn", "Thốt Nốt",
+  "Phong Điền", "Cờ Đỏ", "Vĩnh Thạnh", "Thới Lai",
+];
+---
+
+<BaseLayout {metadata}>
+  <!-- Hero Banner -->
+  <section class="relative bg-gradient-to-r from-primary to-primary-light py-20 text-center text-white md:py-28">
+    <div class="relative z-10 mx-auto max-w-4xl px-6">
+      <h1 class="text-3xl font-extrabold uppercase leading-tight drop-shadow-md md:text-5xl">
+        Dịch Vụ Giải Thể Công Ty Tại Cần Thơ
+      </h1>
+      <p class="mt-5 text-lg font-light text-white/90 md:text-xl">
+        Tư Vấn Tận Tình – Giá Rẻ Nhất – Quy Trình Nhanh Chóng
+      </p>
+    </div>
+  </section>
+
+  <!-- Giới thiệu -->
+  <section class="bg-white py-16 md:py-24">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <div class="prose prose-lg mx-auto max-w-none text-gray-700">
+        <p class="text-justify">
+          Đối với doanh nghiệp thông thường sẽ có các ràng buộc của các cơ quan quản lý doanh nghiệp
+          hàng tháng, quý, năm như làm sổ sách kế toán, báo cáo thuế nên doanh nghiệp cần phải làm
+          thủ tục hồ sơ giải thể doanh nghiệp khi không còn hoạt động kinh doanh tại khu vực Cần Thơ.
+        </p>
+      </div>
+
+      <div class="my-10 overflow-hidden rounded-2xl shadow-xl">
+        <Image
+          src={heroImage}
+          alt="Giải thể doanh nghiệp tại Cần Thơ"
+          width={815}
+          height={545}
+          class="w-full object-cover"
+          loading="lazy"
+        />
+      </div>
+
+      <div class="prose prose-lg mx-auto max-w-none text-gray-700">
+        <p class="text-justify">
+          Tuy nhiên, việc làm thủ tục khá phức tạp nên rất nhiều doanh nghiệp thường lựa chọn sử dụng
+          dịch vụ giải thể doanh nghiệp.
+        </p>
+        <p class="text-justify">
+          Đến với <strong class="text-primary">Dịch vụ giải thể công ty tại Cần Thơ của Hoàng Nam</strong>,
+          bạn sẽ được hỗ trợ tư vấn tận tình và giải quyết hết mọi việc nhanh chóng, gọn gàng để hoàn tất
+          thủ tục giải thể doanh nghiệp.
+        </p>
+        <p class="text-justify">
+          Dịch vụ giải thể doanh nghiệp tại <strong>Hoàng Nam</strong> uy tín, chuyên nghiệp. Khi sử dụng
+          dịch vụ giải thể, chúng tôi tư vấn và thực hiện toàn bộ các hồ sơ, thủ tục và khách hàng không
+          cần tốn nhiều thời gian, công sức để lo lắng đến việc giải thể doanh nghiệp.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bảng dịch vụ giải thể -->
+  <section class="bg-gray-50 py-16 md:py-24">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <h2 class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl">
+        Giải Thể Công Ty, Chi Nhánh, VPĐD
+      </h2>
+      <div class="mt-8 overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm">
+        <table class="w-full text-left text-sm">
+          <thead>
+            <tr class="bg-primary text-white">
+              <th class="px-6 py-4 font-bold">STT</th>
+              <th class="px-6 py-4 font-bold">Nội dung dịch vụ</th>
+              <th class="px-6 py-4 font-bold">Thời gian</th>
+              <th class="px-6 py-4 font-bold">Phí dịch vụ</th>
+            </tr>
+          </thead>
+          <tbody>
+            {dissolveServices.map((item, index) => (
+              <tr class="border-b border-gray-100 hover:bg-blue-50/50 transition-colors">
+                <td class="px-6 py-4 text-center font-semibold text-primary">{index + 1}</td>
+                <td class="px-6 py-4 text-gray-700">{item.name}</td>
+                {index === 0 && (
+                  <>
+                    <td class="px-6 py-4 text-gray-600 align-middle" rowspan="5">Tuỳ vào tình hình thực tế công ty</td>
+                    <td class="px-6 py-4 font-semibold text-primary align-middle" rowspan="5">Liên hệ để được báo giá</td>
+                  </>
+                )}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lợi ích -->
+  <section class="bg-white py-16 md:py-24">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <h2 class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl">
+        Lợi Ích Khi Sử Dụng Dịch Vụ Giải Thể Của Hoàng Nam
+      </h2>
+      <div class="mt-8 space-y-4">
+        {benefits.map((benefit) => (
+          <div class="flex items-start gap-3 rounded-xl border border-gray-100 bg-white p-5 shadow-sm transition-all hover:shadow-md">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mt-0.5 h-6 w-6 flex-shrink-0 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span class="text-gray-700">{benefit}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Thông tin liên hệ -->
+  <section class="bg-primary py-12 text-white md:py-16">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <h2 class="text-2xl font-bold uppercase tracking-wider">
+        HOÀNG NAM CHI NHÁNH CẦN THƠ
+      </h2>
+      <div class="mt-6 grid grid-cols-1 gap-6 md:grid-cols-2">
+        <div class="space-y-3">
+          <p class="flex items-start gap-2">
+            <span>🏠</span>
+            <span><strong>Địa chỉ:</strong> 03 Quản Trọng Hoàng, Phường Hưng Lợi, Quận Ninh Kiều, Cần Thơ</span>
+          </p>
+          <p class="flex items-start gap-2">
+            <span>📞</span>
+            <span><strong>Điện thoại:</strong> {siteConfig.contact.hotlineDisplay}</span>
+          </p>
+        </div>
+        <div class="space-y-3">
+          <p class="flex items-start gap-2">
+            <span>✉️</span>
+            <span><strong>Email:</strong> cskh@hoangnamcantho.com</span>
+          </p>
+          <p class="flex items-start gap-2">
+            <span>🌐</span>
+            <span><strong>Website:</strong> https://hoangnamcantho.com/</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Các trường hợp giải thể -->
+  <section class="bg-white py-16 md:py-24">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <h2 class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl">
+        Các Trường Hợp Doanh Nghiệp Được Giải Thể
+      </h2>
+      <p class="mt-6 text-gray-700">
+        Điều 201 Luật Doanh nghiệp 2014 quy định doanh nghiệp giải thể trong các trường hợp sau:
+      </p>
+      <div class="mt-6 space-y-4">
+        {dissolveCases.map((item, index) => (
+          <div class="flex items-start gap-4 rounded-xl border border-gray-100 bg-gray-50 p-5">
+            <span class="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-primary text-sm font-bold text-white">
+              {index + 1}
+            </span>
+            <p class="text-gray-700">{item}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Điều kiện giải thể -->
+  <section class="bg-gray-50 py-16 md:py-24">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <h2 class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl">
+        Điều Kiện Để Doanh Nghiệp Được Giải Thể
+      </h2>
+      <p class="mt-6 text-gray-700">
+        Doanh nghiệp có thể giải thể khi đáp ứng được toàn bộ các điều kiện sau:
+      </p>
+      <div class="mt-6 space-y-4">
+        {dissolveConditions.map((item) => (
+          <div class="flex items-start gap-3 rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mt-0.5 h-6 w-6 flex-shrink-0 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span class="text-gray-700">{item}</span>
+          </div>
+        ))}
+      </div>
+      <div class="mt-6 rounded-r-xl border-l-[6px] border-amber-500 bg-amber-50 px-8 py-6">
+        <p class="text-amber-800">
+          <strong>⚠️ Lưu ý:</strong> Trường hợp doanh nghiệp không còn khả năng thanh toán (mất khả năng thanh toán),
+          thì doanh nghiệp phải thực hiện thủ tục phá sản theo quy định của Luật phá sản 2014.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quy trình thực hiện -->
+  <section class="bg-white py-16 md:py-24">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <h2 class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl">
+        Quy Trình Thực Hiện Dịch Vụ Giải Thể Công Ty Tại Cần Thơ
+      </h2>
+      <p class="mt-6 text-gray-700">
+        Các công việc mà công ty <strong class="text-primary">HOÀNG NAM</strong> sẽ thực hiện:
+      </p>
+      <div class="mt-8 flex flex-col gap-4">
+        {processSteps.map((step, index) => (
+          <div class="flex items-start gap-5 rounded-xl border border-gray-100 bg-white p-5 shadow-sm transition-all duration-300 hover:shadow-md">
+            <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-primary text-sm font-bold text-white">
+              {index + 1}
+            </span>
+            <p class="text-gray-700 pt-2">{step}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Cơ quan thuế -->
+  <section class="bg-gray-50 py-16 md:py-24">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <h2 class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl">
+        Cơ Quan Thuế
+      </h2>
+      <div class="mt-8 flex flex-col gap-4">
+        {taxSteps.map((step, index) => (
+          <div class="flex items-start gap-5 rounded-xl border border-gray-100 bg-white p-5 shadow-sm">
+            <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-blue-100 text-sm font-bold text-primary">
+              {index + 1}
+            </span>
+            <p class="text-gray-700 pt-2">{step}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Sở KH&ĐT -->
+  <section class="bg-white py-16 md:py-24">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <h2 class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl">
+        Sở Kế Hoạch Và Đầu Tư
+      </h2>
+      <div class="mt-8 flex flex-col gap-4">
+        {planningSteps.map((step, index) => (
+          <div class="flex items-start gap-5 rounded-xl border border-gray-100 bg-white p-5 shadow-sm">
+            <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-blue-100 text-sm font-bold text-primary">
+              {index + 1}
+            </span>
+            <p class="text-gray-700 pt-2">{step}</p>
+          </div>
+        ))}
+      </div>
+      <div class="mt-6 rounded-r-xl border-l-[6px] border-amber-500 bg-amber-50 px-8 py-6">
+        <p class="text-amber-800">
+          <strong>⚠️ Lưu ý:</strong> Trường hợp doanh nghiệp có chi nhánh hoặc văn phòng đại diện,
+          thì nộp kèm theo hồ sơ giải thể chi nhánh, VPĐD.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hoạt động bị cấm -->
+  <section class="bg-gray-50 py-16 md:py-24">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <h2 class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl">
+        Các Hoạt Động Bị Cấm Kể Từ Khi Có Quyết Định Giải Thể
+      </h2>
+      <p class="mt-6 text-gray-700">
+        Điều 205 Luật Doanh nghiệp năm 2014 quy định kể từ khi có quyết định giải thể doanh nghiệp.
+        Nghiêm cấm doanh nghiệp, người quản lý doanh nghiệp thực hiện các hoạt động sau đây:
+      </p>
+      <div class="mt-6 space-y-3">
+        {prohibitedActs.map((act) => (
+          <div class="flex items-start gap-3 rounded-lg bg-red-50 p-4">
+            <span class="text-red-500 font-bold text-lg">✕</span>
+            <span class="text-gray-700">{act}</span>
+          </div>
+        ))}
+      </div>
+      <div class="mt-8 prose prose-lg max-w-none text-gray-700">
+        <p class="text-justify">
+          Việc quy định các hành vi bị cấm nêu trên là nhằm ngăn chặn phát sinh thêm quyền và nghĩa vụ.
+          Dẫn đến làm giảm khả năng trả nợ của doanh nghiệp. Đồng thời, hạn chế việc doanh nghiệp tẩu tán
+          tài sản. Trốn tránh các nghĩa vụ với các đối tác trong quá trình hoạt động. Gây ảnh hưởng trực tiếp
+          tới quyền và lợi ích hợp pháp của các chủ thể có liên quan.
+        </p>
+        <p class="text-justify">
+          Hi vọng những thông tin trên sẽ giúp bạn hiểu rõ hơn về các vấn đề liên quan đến giải thể doanh nghiệp
+          tại Cần Thơ. Nếu bạn vẫn còn thắc mắc, thì hãy liên hệ ngay
+          <strong class="text-primary">HOÀNG NAM</strong> – dịch vụ giải thể doanh nghiệp để được tư vấn chuyên sâu
+          và chính xác hơn.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bạn nhận được gì -->
+  <section class="bg-white py-16 md:py-24">
+    <div class="mx-auto max-w-6xl px-6 lg:px-8">
+      <h2 class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl">
+        Bạn Nhận Được Gì Tại Dịch Vụ Của Hoàng Nam?
+      </h2>
+      <div class="mt-10 grid grid-cols-1 gap-8 md:grid-cols-2">
+        <div class="rounded-2xl border border-gray-100 bg-white p-8 shadow-sm transition-all hover:shadow-lg">
+          <div class="text-3xl mb-3">👥</div>
+          <h3 class="text-xl font-bold text-primary">Tập thể tận tâm</h3>
+          <p class="mt-3 text-gray-600">
+            Dịch Vụ giải thể công ty tại Cần Thơ của Hoàng Nam có đội ngũ tư vấn luôn hết mình và quy trình
+            xử lý thông tin đơn giản tiết kiệm thời gian cho doanh nghiệp.
+          </p>
+        </div>
+        <div class="rounded-2xl border border-gray-100 bg-white p-8 shadow-sm transition-all hover:shadow-lg">
+          <div class="text-3xl mb-3">💰</div>
+          <h3 class="text-xl font-bold text-primary">Giá cả hợp lý</h3>
+          <p class="mt-3 text-gray-600">
+            Các mức phí Hoàng Nam đưa ra luôn hợp lý – chúng tôi không phải là đơn vị cung ứng dịch vụ rẻ nhất
+            nhưng chúng tôi là đơn vị báo giá hợp lý và dịch vụ chất lượng nhất.
+          </p>
+        </div>
+        <div class="rounded-2xl border border-gray-100 bg-white p-8 shadow-sm transition-all hover:shadow-lg">
+          <div class="text-3xl mb-3">📦</div>
+          <h3 class="text-xl font-bold text-primary">Các gói giải pháp tốt nhất</h3>
+          <p class="mt-3 text-gray-600">
+            Hoàng Nam còn cung cấp thêm cho khách hàng các gói dịch vụ mà ngành Thuế đang bắt buộc như:
+            Chữ Ký Số, Hoá Đơn Điện Tử với mức giá hỗ trợ thấp nhất thị trường và hỗ trợ kỹ thuật 24/24.
+          </p>
+        </div>
+        <div class="rounded-2xl border border-gray-100 bg-white p-8 shadow-sm transition-all hover:shadow-lg">
+          <div class="text-3xl mb-3">⚖️</div>
+          <h3 class="text-xl font-bold text-primary">Đội ngũ hàng đầu</h3>
+          <p class="mt-3 text-gray-600">
+            Đội ngũ luật của Hoàng Nam sẽ tư vấn pháp lý cho khách hàng rõ hơn về quy định của pháp luật
+            từng lĩnh vực kinh doanh cũng như theo quy định của từng quốc gia cụ thể.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Khu Vực Hỗ Trợ -->
+  <section class="bg-gray-50 py-12">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <div class="rounded-2xl border-2 border-dashed border-primary bg-blue-50 p-8 text-center">
+        <p class="text-lg font-bold text-primary">
+          📍 Hỗ trợ tận nơi tại Cần Thơ:{" "}
+          <span class="font-normal text-gray-700">
+            {supportAreas.join(", ")}.
+          </span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <CTABanner
+    title="Bạn cần giải thể doanh nghiệp tại Cần Thơ?"
+    subtitle="Liên hệ ngay Hoàng Nam để được tư vấn miễn phí, xử lý nhanh chóng mọi thủ tục giải thể công ty."
+  />
+</BaseLayout>
