@@ -1,73 +1,47 @@
-# Handover Document — hoangnamcantho.com
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📋 HANDOVER DOCUMENT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-📋 HANDOVER — 2026-04-09
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📍 Đang làm: Service Pages Expansion (hoangnamcantho.com)
+🔢 Đến bước: ALL 4 BATCHES COMPLETE ✅
 
-## 📍 Đang làm
-**Feature:** Service Pages Expansion — Trang dịch vụ chi tiết  
-**Status:** ✅ HOÀN THÀNH — Tất cả 8 service pages đã có nội dung
+✅ ĐÃ XONG:
+   - Batch 1: GPKD + Thay đổi GPKD + Giải thể (3 pages, có submenu)
+   - Batch 2: Kế toán + HĐĐT + CKS + FDI (4 pages, có submenu)  
+   - Batch 3: VPĐD + PM Kế toán + Chi nhánh + Giải thể CN + Giải thể VPĐD (5 pages, KHÔNG submenu)
+   - Batch 4: QT thuế TNCN + BCTC + Khai thuế ban đầu + Khai báo thuế + KK thuế TNCN (5 pages, KHÔNG submenu)
+   - Total: 80 pages built, 0 errors
+   - Git: pushed to master (commit 0f72a54)
 
----
+⏳ CÒN LẠI:
+   - Không có task pending
+   - User có thể yêu cầu thêm service pages mới (batch 5+)
 
-## ✅ Đã xong (Session 2026-04-09)
+🔧 QUYẾT ĐỊNH QUAN TRỌNG:
+   - Menu Dịch Vụ cố định 8 submenu (batch 1+2), batch 3-4 KHÔNG thêm vào menu
+   - Service pages mới dùng py-10 md:py-14 cho sections
+   - Trang Khai Báo Thuế có bảng giá biểu phí + chính sách ưu đãi
+   - Blog URL dùng root path (/slug) - WordPress compatible
+   - Light Mode only
+   - site.ts là Single Source of Truth
 
-| Hạng mục | Chi tiết |
-|----------|----------|
-| **Logo** | Tải logo HN từ hoangnamvungtau.com (150×150px WebP), fix Navbar props |
-| **Service page: GPKD** | `/dich-vu/lam-giay-phep-kinh-doanh-tai-can-tho` — 12 sections đầy đủ |
-| **Service page: Thay đổi GPKD** | `/dich-vu/thay-doi-giay-phep-kinh-doanh-tai-can-tho` |
-| **Service page: Giải Thể CT** | `/dich-vu/giai-the-cong-ty-o-can-tho` |
-| **Service page: Kế Toán** | `/dich-vu/dich-vu-ke-toan-can-tho` — có bảng giá kế toán |
-| **Service page: Hóa Đơn Điện Tử** | `/dich-vu/hoa-don-dien-tu-can-tho` |
-| **Service page: Chữ Ký Số** | `/dich-vu/chu-ky-so-can-tho` |
-| **Service page: CT Vốn FDI** | `/dich-vu/thanh-lap-cong-ty-von-dau-tu-nuoc-ngoai-tai-can-tho` |
-| **Menu Navigation** | `site.ts`: 8 items trong Dịch Vụ dropdown |
-| **Bugfix spacing** | 52 sections × 7 files: `py-16 md:py-24` → `py-10 md:py-14` |
+⚠️ LƯU Ý CHO SESSION SAU:
+   - Nếu thêm service mới: follow pattern batch 3-4 (KHÔNG sửa site.ts)
+   - dich-vu.astro hiện có 17 cards chính + 2 additionalServices (Thiết Kế Website, SEO)
+   - Images service pages: src/assets/images/services/
 
----
+📁 FILES QUAN TRỌNG:
+   - src/config/site.ts (navigation, contact info - DON'T MODIFY menu)
+   - src/pages/dich-vu.astro (service index - 17 cards + 2 additional)
+   - .brain/brain.json (project knowledge)
+   - plans/ (4 batch plans, all complete)
 
-## ⏳ Còn lại (Todo)
+📊 STATS:
+   - Total pages: 80
+   - Service pages: 18 (8 in nav + 10 index-only)
+   - Blog posts: 46
+   - Build time: ~7.6s
 
-- [ ] Test responsive mobile trên 8 service pages
-- [ ] Deploy lên Cloudflare (wrangler.json đã sẵn sàng)
-- [ ] Xóa file English cũ: `about.astro`, `contact.astro`, `services.astro`
-- [ ] Pin chính xác Google Maps tại văn phòng Cần Thơ
-- [ ] (Optional) Đồng bộ spacing `thanh-lap-cong-ty` page về `py-10 md:py-14`
-
----
-
-## 🔧 Quyết định quan trọng
-
-| Quyết định | Lý do |
-|-----------|-------|
-| Logo: `width={150} height={150}`, CSS `h-[50px] w-auto` | Intrinsic size 150×150, CSS control display size |
-| Section padding service pages: `py-10 md:py-14` | Tránh khoảng trắng 192px khi 2 section trắng liền nhau |
-| `thanh-lap-cong-ty` giữ `py-16 md:py-24` | Có `bg-primary` section xen giữa, không bị lỗi spacing |
-
----
-
-## ⚠️ Lưu ý quan trọng cho session sau
-
-1. **Spacing rule:** Service pages mới → `py-10 md:py-14`. Nếu có section màu khác xen giữa thì có thể dùng lớn hơn
-2. **Logo:** Khi dùng `<Image>`, `width` và `height` PHẢI khớp intrinsic size của file ảnh gốc
-3. **Navigation:** Mọi service page route cần thêm vào `site.ts → siteConfig.navLinks.children`
-4. **GPKD page** (`lam-giay-phep...`) cũng chứa nội dung về Thay Đổi GPKD (cross-sell)
-
----
-
-## 📁 Files quan trọng
-
-| File | Mô tả |
-|------|-------|
-| `src/config/site.ts` | Contact info + toàn bộ navigation menu |
-| `src/styles/global.css` | Design tokens, prose styles, animations |
-| `src/assets/images/logo.webp` | Logo HN 150×150px |
-| `src/components/layout/Navbar.astro` | Header + mobile menu |
-| `src/components/homepage/CTABanner.astro` | Reusable CTA cuối mỗi service page |
-| `.brain/brain.json` | Knowledge base dự án |
-| `.brain/session.json` | Tiến độ hiện tại |
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-📍 Lần sau quay lại: gõ `/recap` để nhớ lại context
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📍 Đã lưu! Để tiếp tục: Gõ /recap
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

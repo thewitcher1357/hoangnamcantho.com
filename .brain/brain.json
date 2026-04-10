@@ -2,7 +2,7 @@
   "meta": {
     "schema_version": "1.1.0",
     "awf_version": "4.0.2",
-    "last_updated": "2026-04-09T13:39:00Z"
+    "last_updated": "2026-04-09T16:26:00Z"
   },
   "project": {
     "name": "hoangnamcantho.com",
@@ -11,7 +11,8 @@
     "type": "wordpress-to-astro-migration",
     "status": "active-development",
     "url": "https://hoangnamcantho.com",
-    "reference_site": "https://hoangnamvungtau.com"
+    "reference_site": "https://hoangnamvungtau.com",
+    "total_pages": 80
   },
   "tech_stack": {
     "framework": "Astro 6.x",
@@ -54,62 +55,103 @@
     "main": [
       { "route": "/", "file": "index.astro", "title": "Trang Chủ" },
       { "route": "/gioi-thieu", "file": "gioi-thieu.astro", "title": "Giới Thiệu" },
-      { "route": "/dich-vu", "file": "dich-vu.astro", "title": "Dịch Vụ" },
+      { "route": "/dich-vu", "file": "dich-vu.astro", "title": "Dịch Vụ (index - 17 cards + 2 additional)" },
       { "route": "/lien-he", "file": "lien-he.astro", "title": "Liên Hệ" },
       { "route": "/blog", "file": "blog/[...page].astro", "title": "Blog" },
       { "route": "/category/[cat]", "file": "category/[category].astro", "title": "Chuyên Mục" },
       { "route": "/tags/[tag]", "file": "tags/[tag].astro", "title": "Thẻ" },
       { "route": "/[...slug]", "file": "[...slug].astro", "title": "Bài Viết (root path)" }
     ],
-    "service_pages": [
+    "service_pages_in_nav": [
       {
         "route": "/dich-vu/thanh-lap-cong-ty-tai-can-tho",
-        "file": "dich-vu/thanh-lap-cong-ty-tai-can-tho.astro",
         "title": "Thành Lập Công Ty",
-        "note": "Page đầu tiên - có section bg-primary xen giữa, section padding py-16 md:py-24"
+        "note": "Page đầu tiên - section padding py-16 md:py-24"
       },
       {
         "route": "/dich-vu/lam-giay-phep-kinh-doanh-tai-can-tho",
-        "file": "dich-vu/lam-giay-phep-kinh-doanh-tai-can-tho.astro",
-        "title": "Làm Giấy Phép Kinh Doanh",
-        "note": "Section padding: py-10 md:py-14"
+        "title": "Làm Giấy Phép Kinh Doanh"
       },
       {
         "route": "/dich-vu/thay-doi-giay-phep-kinh-doanh-tai-can-tho",
-        "file": "dich-vu/thay-doi-giay-phep-kinh-doanh-tai-can-tho.astro",
-        "title": "Thay Đổi Giấy Phép Kinh Doanh",
-        "note": "Section padding: py-10 md:py-14"
+        "title": "Thay Đổi Giấy Phép Kinh Doanh"
       },
       {
         "route": "/dich-vu/giai-the-cong-ty-o-can-tho",
-        "file": "dich-vu/giai-the-cong-ty-o-can-tho.astro",
-        "title": "Giải Thể Công Ty",
-        "note": "Section padding: py-10 md:py-14"
+        "title": "Giải Thể Công Ty"
       },
       {
         "route": "/dich-vu/dich-vu-ke-toan-can-tho",
-        "file": "dich-vu/dich-vu-ke-toan-can-tho.astro",
-        "title": "Dịch Vụ Kế Toán",
-        "note": "Section padding: py-10 md:py-14"
+        "title": "Dịch Vụ Kế Toán"
       },
       {
         "route": "/dich-vu/hoa-don-dien-tu-can-tho",
-        "file": "dich-vu/hoa-don-dien-tu-can-tho.astro",
-        "title": "Hóa Đơn Điện Tử",
-        "note": "Section padding: py-10 md:py-14"
+        "title": "Hóa Đơn Điện Tử"
       },
       {
         "route": "/dich-vu/chu-ky-so-can-tho",
-        "file": "dich-vu/chu-ky-so-can-tho.astro",
-        "title": "Chữ Ký Số",
-        "note": "Section padding: py-10 md:py-14"
+        "title": "Chữ Ký Số"
       },
       {
         "route": "/dich-vu/thanh-lap-cong-ty-von-dau-tu-nuoc-ngoai-tai-can-tho",
-        "file": "dich-vu/thanh-lap-cong-ty-von-dau-tu-nuoc-ngoai-tai-can-tho.astro",
-        "title": "Thành Lập CT Vốn Nước Ngoài",
-        "note": "Section padding: py-10 md:py-14"
+        "title": "Thành Lập CT Vốn Nước Ngoài"
       }
+    ],
+    "service_pages_no_nav": [
+      {
+        "route": "/dich-vu/thanh-lap-van-phong-dai-dien-tai-can-tho",
+        "title": "Thành Lập VPĐD",
+        "batch": 3
+      },
+      {
+        "route": "/dich-vu/phan-mem-ke-toan-can-tho",
+        "title": "Phần Mềm Kế Toán",
+        "batch": 3
+      },
+      {
+        "route": "/dich-vu/thanh-lap-chi-nhanh-cong-ty-can-tho",
+        "title": "Thành Lập Chi Nhánh",
+        "batch": 3
+      },
+      {
+        "route": "/dich-vu/giai-the-chi-nhanh-can-tho",
+        "title": "Giải Thể Chi Nhánh",
+        "batch": 3
+      },
+      {
+        "route": "/dich-vu/giai-the-van-phong-dai-dien-can-tho",
+        "title": "Giải Thể VPĐD",
+        "batch": 3
+      },
+      {
+        "route": "/dich-vu/quyet-toan-thue-thu-nhap-ca-nhan",
+        "title": "Quyết Toán Thuế TNCN",
+        "batch": 4
+      },
+      {
+        "route": "/dich-vu/dich-vu-lam-bao-cao-tai-chinh-can-tho",
+        "title": "Làm Báo Cáo Tài Chính",
+        "batch": 4
+      },
+      {
+        "route": "/dich-vu/khai-thue-ban-dau",
+        "title": "Khai Thuế Ban Đầu",
+        "batch": 4
+      },
+      {
+        "route": "/dich-vu/khai-bao-thue-tai-can-tho",
+        "title": "Khai Báo Thuế (có bảng giá)",
+        "batch": 4
+      },
+      {
+        "route": "/dich-vu/ke-khai-thue-thu-nhap-ca-nhan",
+        "title": "Kê Khai Thuế TNCN",
+        "batch": 4
+      }
+    ],
+    "additional_services_no_page": [
+      "Thiết Kế Website",
+      "SEO Google"
     ],
     "legacy_obsolete": [
       "about.astro (replaced by gioi-thieu.astro)",
@@ -119,6 +161,7 @@
   },
   "navigation": {
     "source_of_truth": "src/config/site.ts → siteConfig.navLinks",
+    "note": "Menu Dịch vụ chỉ có 8 submenus cố định. Các service pages batch 2-4 KHÔNG có trong menu, chỉ hiển thị trên trang /dich-vu index.",
     "menu_items": [
       { "text": "Trang Chủ", "href": "/" },
       { "text": "Giới Thiệu", "href": "/gioi-thieu" },
@@ -169,6 +212,28 @@
     "usage": "Blog post images transform from /images/* → R2 URL via remark plugin",
     "config_location": "src/config/site.ts → R2_BASE"
   },
+  "plans_history": {
+    "batch1": {
+      "plan": "plans/260409-0909-gpkd-pages-zalo/plan.md",
+      "status": "complete",
+      "pages": ["lam-giay-phep-kinh-doanh", "thay-doi-giay-phep-kinh-doanh", "giai-the-cong-ty"]
+    },
+    "batch2": {
+      "plan": "plans/260409-0951-service-pages-batch2/plan.md",
+      "status": "complete",
+      "pages": ["dich-vu-ke-toan", "hoa-don-dien-tu", "chu-ky-so", "thanh-lap-cong-ty-von-nuoc-ngoai"]
+    },
+    "batch3": {
+      "plan": "plans/260409-1351-service-pages-batch3/plan.md",
+      "status": "complete",
+      "pages": ["thanh-lap-van-phong-dai-dien", "phan-mem-ke-toan", "thanh-lap-chi-nhanh", "giai-the-chi-nhanh", "giai-the-van-phong-dai-dien"]
+    },
+    "batch4": {
+      "plan": "plans/260409-1612-service-pages-batch4/plan.md",
+      "status": "complete",
+      "pages": ["quyet-toan-thue-tncn", "lam-bao-cao-tai-chinh", "khai-thue-ban-dau", "khai-bao-thue", "ke-khai-thue-tncn"]
+    }
+  },
   "decisions": [
     {
       "date": "2026-04-07",
@@ -194,6 +259,11 @@
       "date": "2026-04-09",
       "decision": "Logo lấy từ hoangnamvungtau.com (cùng thương hiệu), intrinsic 150x150, render h-[50px] w-auto",
       "reason": "Đồng bộ thương hiệu giữa 2 chi nhánh Vũng Tàu và Cần Thơ"
+    },
+    {
+      "date": "2026-04-09",
+      "decision": "Menu Dịch Vụ cố định 8 submenu, các trang mới batch 2-4 KHÔNG thêm vào menu",
+      "reason": "User yêu cầu rõ ràng - các dịch vụ mới chỉ truy cập từ trang /dich-vu index"
     }
   ],
   "knowledge_items": {
@@ -203,7 +273,11 @@
       "Section TLCT page (cũ): py-16 md:py-24 (có section màu xanh xen giữa nên không bị lỗi spacing)",
       "Cards: rounded-2xl ring-1 hover:-translate-y-2 hover:shadow-xl transitions",
       "CTA Banner: reusable CTABanner component với title/subtitle props",
-      "Logo Navbar: <Image width={150} height={150} class='h-[50px] w-auto'>"
+      "Logo Navbar: <Image width={150} height={150} class='h-[50px] w-auto'>",
+      "Service page template: BaseLayout + Image + CTABanner imports, frontmatter data arrays, alternating bg sections",
+      "dich-vu.astro index: services array (17 cards with href) + additionalServices array (2 cards without href)",
+      "Service card colors: mỗi trang dùng color gradient riêng (from-X-500 to-X-600), bgLight, ringColor",
+      "Bảng giá: dùng HTML table với thead bg-primary text-white, tbody hover:bg-blue-50"
     ],
     "gotchas": [
       "Tailwind v4 dùng @theme thay vì extend trong config",
@@ -211,14 +285,17 @@
       "PostItem dùng /${post.id} cho href (root path, không có /blog/ prefix)",
       "CSS variables --color-primary etc. định nghĩa trong global.css @theme block",
       "Logo Navbar: width và height phải khớp intrinsic size của ảnh (150x150), CSS class điều chỉnh display size",
-      "Khi 2 section liền nhau cùng màu trắng: py-24 + py-24 = 192px khoảng trắng - quá lớn. Dùng py-14 max"
+      "Khi 2 section liền nhau cùng màu trắng: py-24 + py-24 = 192px khoảng trắng - quá lớn. Dùng py-14 max",
+      "KHÔNG sửa site.ts menu khi thêm service pages mới (user decision)"
     ],
     "conventions": [
       "Vietnamese routes: /gioi-thieu, /dich-vu, /lien-he (không dùng English routes)",
       "Service page routes: /dich-vu/[slug]-tai-can-tho hoặc /dich-vu/[slug]-can-tho",
       "All text in Vietnamese, date format vi-VN",
       "Reading time: 'X phút đọc', Pagination: 'Trang trước/sau'",
-      "siteConfig imported from @/config/site for all contact/nav data"
+      "siteConfig imported from @/config/site for all contact/nav data",
+      "Service images: src/assets/images/services/[name].png, downloaded from hoangnamcantho.com WP uploads",
+      "Info box contact: rounded-2xl border-primary/20 bg-gradient-to-r from-blue-50 to-indigo-50 p-8"
     ]
   }
 }
