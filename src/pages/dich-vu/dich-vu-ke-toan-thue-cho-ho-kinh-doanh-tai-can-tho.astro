@@ -1,0 +1,241 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import ProcessSteps from "@/components/homepage/ProcessSteps.astro";
+import CTABanner from "@/components/homepage/CTABanner.astro";
+import ServiceFeature from "@/components/services/ServiceFeature.astro";
+
+// Images from assets
+import imgHero from "@/assets/images/services/ke-toan-thue-ho-kinh-doanh.jpg";
+import imgHoSo from "@/assets/images/services/ho-so-can-chuan-bi.png";
+
+const metadata = {
+  title: "Dịch Vụ Kế Toán Thuế Cho Hộ Kinh Doanh Tại Cần Thơ | Hoàng Nam",
+  description:
+    "Hoàng Nam cung cấp Dịch vụ Kế toán thuế trọn gói dành riêng cho Hộ kinh doanh tại Cần Thơ. Đảm bảo hóa đơn chứng từ hợp lệ theo Thông tư 40, chi phí chỉ từ 500k/tháng.",
+};
+
+const workingProcess = [
+  {
+    title: "Tiếp nhận hồ sơ",
+    description: "Khách hàng cung cấp các hóa đơn, chứng từ phát sinh trong tháng/quý cho Hoàng Nam qua Zalo, Email hoặc nhận trực tiếp tận nơi.",
+  },
+  {
+    title: "Xử lý, Báo cáo & Lập sổ sách",
+    description: "Chuyên viên kế toán kiểm tra tính hợp lệ của chứng từ, tiến hành kê khai báo cáo thuế và in sổ sách tài liệu giao cho khách hàng.",
+  },
+  {
+    title: "Tư vấn & Hướng dẫn liên tục",
+    description: "Đại diện giải trình với Thuế (nếu có yêu cầu). Tư vấn ngay khi có văn bản Pháp luật mới ảnh hưởng tới Hộ kinh doanh.",
+  },
+];
+---
+
+<BaseLayout {metadata}>
+  <!-- Hero Banner -->
+  <section class="relative bg-gradient-to-r from-primary to-primary-light py-20 text-center text-white md:py-28">
+    <div class="relative z-10 mx-auto max-w-4xl px-6">
+      <h1 class="text-3xl font-extrabold uppercase leading-tight drop-shadow-md md:text-5xl">
+        Dịch Vụ Kế Toán Thuế Cho Hộ Kinh Doanh Tại Cần Thơ
+      </h1>
+      <p class="mt-5 text-lg font-light text-white/90 md:text-xl">
+        Giải pháp trọn gói, an tâm tuyệt đối chuẩn Nghị Định 70 & Thông Tư 40.
+      </p>
+    </div>
+  </section>
+
+  <!-- Intro & Tại sao cần -->
+  <section class="py-16 md:py-24 bg-white relative overflow-hidden">
+    <div class="container mx-auto px-6 max-w-7xl">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <!-- Text content -->
+        <div class="space-y-6">
+          <h2 class="text-3xl font-bold text-accent mb-4">Tại Sao Hộ Kinh Doanh Nên Thuê Kế Toán Chuyên Nghiệp?</h2>
+          
+          <div class="space-y-4 text-gray-700 leading-relaxed text-lg">
+            <p>
+              Rất nhiều chủ hộ kinh doanh tại Cần Thơ mang suy nghĩ "kinh doanh nhỏ lẻ cần gì kế toán", nhưng điều này dẫn đến <strong class="text-red-500">3 rủi ro chí tử</strong>: phạt báo cáo chậm, sai sót chứng từ, và truy thu thuế hàng chục triệu đồng.
+            </p>
+            
+            <p>
+              Theo Thông tư 40/2021/TT-BTC, Hộ kinh doanh phải có tổ chức kế toán quy củ hơn bao giờ hết, cụ thể:
+            </p>
+            <ul class="list-disc pl-5 space-y-2 text-gray-600 text-base mb-6">
+                <li>Sử dụng chứng từ minh bạch rõ ràng.</li>
+                <li>Lập sổ sách kế toán thường xuyên.</li>
+                <li>Phải sử dụng Hóa đơn điện tử chống hàng giả.</li>
+                <li>Nộp tờ khai thuế định kỳ đầy đủ, chuẩn mẫu.</li>
+            </ul>
+          </div>
+          
+          <div class="bg-primary/5 p-6 rounded-2xl border border-primary/20">
+             <h3 class="font-bold text-primary text-xl mb-4 border-b border-primary/10 pb-3">LỢI ÍCH TRỌN VẸN TỪ HOÀNG NAM</h3>
+             <ul class="space-y-3">
+                 <li class="flex items-start">
+                     <svg class="h-6 w-6 text-green-500 mr-3 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                     <span class="text-gray-700 font-medium">Bảo đảm an toàn pháp lý mức cao nhất.</span>
+                 </li>
+                 <li class="flex items-start">
+                     <svg class="h-6 w-6 text-green-500 mr-3 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                     <span class="text-gray-700 font-medium">Chi phí siêu tiết kiệm: Chỉ bằng 1/10 thuê nhân viên cố định.</span>
+                 </li>
+                 <li class="flex items-start">
+                     <svg class="h-6 w-6 text-green-500 mr-3 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                     <span class="text-gray-700 font-medium">Cập nhật Kịp thời Nghị định mới bảo vệ được đồng vốn lợi nhuận.</span>
+                 </li>
+                 <li class="flex items-start">
+                     <svg class="h-6 w-6 text-green-500 mr-3 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                     <span class="text-gray-700 font-medium">Bạn có 100% thời gian tập trung vào việc Buôn bán.</span>
+                 </li>
+             </ul>
+          </div>
+        </div>
+        
+        <!-- Image -->
+        <div class="relative rounded-2xl overflow-hidden shadow-2xl group">
+             <img 
+              src={imgHero.src}
+              alt="Dịch vụ Kế toán Thuế Hộ kinh doanh tại Cần Thơ" 
+              class="w-full h-auto object-cover transform transition-transform duration-700 group-hover:scale-105"
+            />
+            <div class="absolute inset-0 border-4 border-white/20 rounded-2xl z-20 pointer-events-none"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DV Trọn gói -->
+  <section class="py-16 md:py-24 bg-gray-50 border-t border-gray-100">
+    <div class="container mx-auto px-6 max-w-7xl">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-accent">Dịch vụ kế toán trọn gói Hoàng Nam thực hiện những gì?</h2>
+        <p class="text-gray-600 mt-4 max-w-xl mx-auto">Hoàng Nam đại diện, đóng vai trò như một phòng kế toán tuân thủ đúng yêu cầu Thuế.</p>
+      </div>
+      
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <!-- List -->
+        <div>
+          <ul class="space-y-4 mb-6">
+             <li class="flex items-start bg-white p-4 rounded-xl shadow-sm border border-gray-100">
+                 <div class="flex-shrink-0 mt-1 w-8 h-8 flex items-center justify-center bg-blue-100 text-blue-600 rounded-full font-bold mr-4"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg></div>
+                 <p class="text-gray-700 mt-1">Đăng ký và phát hành Hóa đơn điện tử.</p>
+             </li>
+             <li class="flex items-start bg-white p-4 rounded-xl shadow-sm border border-gray-100">
+                 <div class="flex-shrink-0 mt-1 w-8 h-8 flex items-center justify-center bg-indigo-100 text-indigo-600 rounded-full font-bold mr-4"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg></div>
+                 <p class="text-gray-700 mt-1">Tư vấn cách viết Hóa đơn, quản lý chi phí đầu ra/đầu vào.</p>
+             </li>
+             <li class="flex items-start bg-white p-4 rounded-xl shadow-sm border border-gray-100">
+                 <div class="flex-shrink-0 mt-1 w-8 h-8 flex items-center justify-center bg-green-100 text-green-600 rounded-full font-bold mr-4"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg></div>
+                 <p class="text-gray-700 mt-1">Hàng tháng lập các tờ khai thuế (Thuế GTGT, TNCN). Soạn chứng từ, ghi sổ kế toán.</p>
+             </li>
+             <li class="flex items-start bg-white p-4 rounded-xl shadow-sm border border-gray-100">
+                 <div class="flex-shrink-0 mt-1 w-8 h-8 flex items-center justify-center bg-purple-100 text-purple-600 rounded-full font-bold mr-4"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg></div>
+                 <p class="text-gray-700 mt-1">Nộp tờ khai thuế cho Cơ quan thuế định kỳ (Theo tháng hoặc quý).</p>
+             </li>
+             <li class="flex items-start bg-white p-4 rounded-xl shadow-sm border border-gray-100 relative overflow-hidden">
+                 <div class="absolute -right-2 -top-2 w-12 h-12 bg-red-500 transform rotate-45 flex items-end justify-center"><span class="text-white text-[10px] font-bold mb-1">FREE</span></div>
+                 <div class="flex-shrink-0 mt-1 w-8 h-8 flex items-center justify-center bg-red-100 text-red-600 rounded-full font-bold mr-4"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg></div>
+                 <p class="text-gray-700 mt-1 font-medium">Báo cáo tình hình, Tư vấn mức đóng thuế khoán <span class="text-red-500 font-bold">THẤP NHẤT</span>.</p>
+             </li>
+          </ul>
+        </div>
+        
+        <!-- Image in fancy border -->
+        <div class="bg-white p-4 rounded-2xl shadow-xl transform rotate-1">
+             <div class="border-2 border-dashed border-primary/30 rounded-xl overflow-hidden relative">
+                 <div class="absolute top-0 right-0 bg-primary text-white text-xs font-bold px-3 py-1 rounded-bl-lg z-10">Bàn giao Sổ Sách Chuẩn</div>
+                 <img src={imgHoSo.src} alt="Bàn giao sổ sách hồ sơ kế toán" class="w-full h-auto object-cover opacity-90 hover:opacity-100 transition-opacity" />
+             </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <ProcessSteps 
+    title="Quy Trình Chuyên Nghiệp"
+    subtitle="Bạn chỉ việc bán hàng, hệ thống chứng từ và nộp lưu đã có Hoàng Nam."
+    steps={workingProcess} 
+  />
+
+  <!-- Giá Cả & Why Choose Us -->
+  <section class="py-16 md:py-24 bg-white relative">
+    <div class="container mx-auto px-6 max-w-7xl">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+          
+          <!-- Bảng Giá -->
+          <div>
+            <div class="bg-gradient-to-br from-primary to-primary-dark p-8 rounded-3xl shadow-xl text-white relative overflow-hidden">
+               <!-- Decorative -->
+               <svg class="absolute -right-6 -bottom-6 w-48 h-48 text-white opacity-10" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M8.433 7.418c.155-.103.346-.196.567-.267v1.698a2.305 2.305 0 01-.567-.267C8.07 8.34 8 8.114 8 8c0-.114.07-.34.433-.582zM11 12.849v-1.698c.22.071.412.164.567.267.364.243.433.468.433.582 0 .114-.07.34-.433.582a2.305 2.305 0 01-.567.267z"></path><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-13a1 1 0 10-2 0v.092a4.535 4.535 0 00-1.676.662C6.602 6.234 6 7.009 6 8c0 .99.602 1.765 1.324 2.246.48.32 1.054.545 1.676.662v1.941c-.391-.127-.68-.317-.843-.504a1 1 0 10-1.51 1.31c.562.649 1.413 1.076 2.353 1.253V15a1 1 0 102 0v-.092a4.535 4.535 0 001.676-.662C13.398 13.766 14 12.991 14 12c0-.99-.602-1.765-1.324-2.246A4.535 4.535 0 0011 9.092V7.151c.391.127.68.317.843.504a1 1 0 101.511-1.31c-.563-.649-1.413-1.076-2.354-1.253V5z" clip-rule="evenodd"></path></svg>
+               
+               <h3 class="text-2xl font-bold mb-3 relative z-10">Bảng Phí Thuê Kế Toán HKD</h3>
+               <p class="text-white/80 mb-6 text-sm relative z-10">Phí tính theo tháng. Phụ thuộc vào Lĩnh vực kinh doanh & Tổng hóa đơn chứng từ.</p>
+               
+               <div class="space-y-4 relative z-10">
+                   <div class="bg-white/10 backdrop-blur border border-white/20 p-5 rounded-2xl">
+                       <h4 class="font-bold text-yellow-300">Gói Cơ Bản (Hóa đơn ít)</h4>
+                       <div class="text-3xl font-black mt-1">500.000<span class="text-xl font-medium text-white/70"> - </span>1.000.000<span class="text-lg text-white/70 ml-1">đ/tháng</span></div>
+                   </div>
+                   <div class="bg-white/10 backdrop-blur border border-white/20 p-5 rounded-2xl">
+                       <h4 class="font-bold text-yellow-300">Gói Nâng Cao (Doanh thu lớn)</h4>
+                       <div class="text-3xl font-black mt-1">1.200.000<span class="text-xl font-medium text-white/70"> - </span>2.000.000<span class="text-lg text-white/70 ml-1">đ/tháng</span></div>
+                   </div>
+               </div>
+               
+               <div class="mt-6 pt-5 border-t border-white/20 relative z-10">
+                   <p class="text-sm font-medium italic text-white text-center">CAM KẾT BẢO MẬT & KHÔNG PHÁT SINH.</p>
+               </div>
+            </div>
+          </div>
+
+          <!-- Tại sao chọn -->
+          <div>
+            <h3 class="text-2xl font-bold text-accent mb-6">3 Lý Do Khách Hàng Gọi Hoàng Nam</h3>
+            <div class="space-y-4">
+               <ServiceFeature 
+                  title="Nhân Sự Tinh Nhuệ" 
+                  description="Kế toán viên của Công ty Hoàng Nam là những người đã có nhiều năm kinh nghiệm, luôn đưa ra tư vấn Hợp tình - Hợp Lý." 
+               />
+               <ServiceFeature 
+                  title="Nhanh Chóng & Minh Bạch" 
+                  description="Luôn đúng hẹn, Báo cáo thuế kịp thời. Toàn bộ Quy trình bàn giao được In ấn Rõ Ràng. Từng biểu thuế được giải thích minh bạch dễ hiểu." 
+               />
+               <ServiceFeature 
+                  title="Đồng Hành & Hỗ Trợ 24/7" 
+                  description="Chỉ cần khách hàng gặp vướng trong khâu Nhập xuất Hóa đơn, kiểm kê Hàng Hóa,... Hoàng Nam sẽ hỗ trợ tận tình qua điện thoại không tính phí." 
+               />
+            </div>
+            
+            <div class="mt-8 bg-blue-50 borderl border-blue-100 p-6 rounded-xl relative">
+                <div class="absolute -left-2 top-10 w-4 h-4 bg-blue-500 rotate-45"></div>
+                <h4 class="font-bold text-blue-900 mb-2">Lời Khuyên Thực Tế 💡</h4>
+                <p class="text-sm text-gray-700 italic">"Gần đây chúng tôi tiếp nhận 1 Khách hàng là HKD bán lẽ đồ gia dụng nhỏ, bị cơ quan thuế thông báo nộp phạt 2.000.000đ do nhầm lẫn Mẫu biểu kê khai Hóa đơn điện tử. Hãy đầu tư ngay 1 khoảng nhỏ thuê Kế toán dịch vụ mỗi tháng để loại bỏ vĩnh viễn rủi ro Đóng Phạt và Mất Giấy Phép!".</p>
+            </div>
+          </div>
+      </div>
+    </div>
+  </section>
+
+  <CTABanner
+    title="Chấm Dứt Mọi Phiền Não Về Số Liệu Kế Toán"
+    subtitle="Bạn điều hành buôn bán - Hoàng Nam Quét Sạch Hồ Sơ. Gọi Ngay!"
+  />
+
+  <section class="py-16 bg-primary/5">
+    <div class="container mx-auto px-6 max-w-4xl text-center">
+        <h2 class="text-2xl font-bold text-accent mb-6">Công Ty Tư Vấn Và Kế Toán Hoàng Nam</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 text-left mt-8">
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                <h4 class="font-bold text-lg text-primary mb-3">Thông Tin Liên Hệ</h4>
+                <p class="text-gray-600 mb-2"><strong>Địa chỉ:</strong> 03 Đ. Quản Trọng Hoàng, Xuân Khánh, Ninh Kiều, Cần Thơ, Việt Nam</p>
+                <p class="text-gray-600 mb-2"><strong>Điện thoại:</strong> 091.888.31.79</p>
+                <p class="text-gray-600"><strong>Email:</strong> tructuyenhoangnam@gmail.com</p>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 flex flex-col justify-center">
+                <h4 class="font-bold text-lg text-primary mb-3">Khu Vực Triển Khai</h4>
+                <p class="text-gray-600 text-sm leading-relaxed">Chúng tôi nhận tất cả hồ sơ kê khai Kế Toán / Thuế tại Quận Ninh Kiều, Cái Răng, Bình Thủy, Ô Môn, Thốt Nốt và các huyện trực thuộc TP Cần Thơ có nhận hồ sơ từ xa qua Zalo.</p>
+            </div>
+        </div>
+    </div>
+  </section>
+
+</BaseLayout>

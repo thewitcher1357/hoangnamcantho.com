@@ -1,0 +1,269 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import CTABanner from "@/components/homepage/CTABanner.astro";
+import ServiceFeature from "@/components/services/ServiceFeature.astro";
+
+// Use an image from assets
+import imgHero from "@/assets/images/services/dang-ky-ho-kinh-doanh.jpg";
+
+const metadata = {
+  title: "Dịch Vụ Đăng Ký Giấy Phép Hộ Kinh Doanh Tại Cần Thơ | Hoàng Nam",
+  description:
+    "Đăng ký giấy phép Dịch vụ đăng ký Hộ kinh doanh cá thể tại Cần Thơ trọn phí 800k. Có giấy phép trong vòng 3 ngày làm việc, bao gồm cả hồ sơ thuế ban đầu.",
+};
+---
+
+<BaseLayout {metadata}>
+  <!-- Hero Banner -->
+  <section class="relative bg-gradient-to-r from-primary to-primary-light py-20 text-center text-white md:py-28">
+    <div class="relative z-10 mx-auto max-w-4xl px-6">
+      <h1 class="text-3xl font-extrabold uppercase leading-tight drop-shadow-md md:text-5xl">
+        Dịch Vụ Đăng Ký Giấy Phép Hộ Kinh Doanh Tại Cần Thơ
+      </h1>
+      <p class="mt-5 text-lg font-light text-white/90 md:text-xl">
+        Nhanh chóng, Đúng luật. Hoàn tất đăng ký hộ kinh doanh cá thể nhanh chóng trong 3 ngày làm việc.
+      </p>
+    </div>
+  </section>
+
+  <!-- Intro -->
+  <section class="py-16 md:py-24 bg-white relative overflow-hidden">
+    <div class="container mx-auto px-6 max-w-7xl">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div class="space-y-6 order-2 lg:order-1">
+          <div class="inline-block rounded-lg bg-primary/10 px-3 py-1 text-sm font-semibold text-primary">
+            Dành Cho Cá Nhân & Hộ Gia Đình
+          </div>
+          <h2 class="text-3xl font-bold text-accent mb-4">Ai bắt buộc phải Đăng ký Hộ Kinh Doanh?</h2>
+          
+          <div class="space-y-4 text-gray-700 leading-relaxed text-lg mb-6">
+            <p>
+              Nếu bạn là cá nhân hoặc hộ gia đình đang có ý định mở quán xá, cửa hàng hay bán buôn quy mô nhỏ với số vốn thấp tại Cần Thơ, việc đăng ký hộ kinh doanh cá thể là một bước khởi đầu an toàn và thông minh nhất.
+            </p>
+          </div>
+          
+          <h3 class="font-bold text-lg text-accent text-xl mt-6 mb-3 border-l-4 border-primary pl-4">3 trường hợp bắt buộc phải đăng ký:</h3>
+          <ul class="space-y-3">
+             <li class="flex items-start">
+               <svg class="h-6 w-6 text-primary mr-3 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+               <span><strong>Có địa điểm cố định:</strong> Quán ăn, tạp hóa, tiệm sửa xe, cửa hàng bán lẻ...</span>
+             </li>
+             <li class="flex items-start">
+               <svg class="h-6 w-6 text-primary mr-3 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+               <span><strong>Sản xuất, kinh doanh có quy mô:</strong> Sử dụng từ 1 lao động trở lên thường xuyên.</span>
+             </li>
+             <li class="flex items-start">
+               <svg class="h-6 w-6 text-primary mr-3 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+               <span><strong>Doanh thu đạt mức chịu thuế:</strong> Theo quy định hiện hành (thường trên 100tr/năm).</span>
+             </li>
+          </ul>
+          <p class="text-gray-500 italic text-sm mt-4">* Ngoại trừ những nhóm thu nhập thấp như: buôn lê bán mẹt, bán hàng rong, làm đồ vặt cá nhân lẻ tẻ thì không phải đăng ký HKD.</p>
+        </div>
+        
+        <div class="relative order-1 lg:order-2 rounded-2xl overflow-hidden shadow-xl group">
+             <img 
+              src={imgHero.src}
+              alt="Dịch vụ Đăng ký Hộ kinh doanh tại Cần Thơ" 
+              class="w-full h-auto object-cover transform transition-transform duration-700 group-hover:scale-105"
+            />
+            <div class="absolute inset-0 border-4 border-white/20 rounded-2xl z-20 pointer-events-none"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lợi ích hợp pháp hóa -->
+  <section class="py-16 bg-gray-50 border-t border-gray-100">
+    <div class="container mx-auto px-6 max-w-7xl">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-accent">Lợi Ích Khi Hợp Pháp Hóa Cơ Sở Kinh Doanh</h2>
+            <p class="text-gray-600 mt-4 max-w-2xl mx-auto">Việc đăng ký hộ kinh doanh mang lại nhiều hơn là 1 tờ giấy phép.</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 text-center hover:-translate-y-2 transition-transform duration-300">
+                <div class="mx-auto w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
+                </div>
+                <h4 class="font-bold text-lg text-accent mb-2">Tránh Rủi Ro Phạt</h4>
+                <p class="text-gray-600 text-sm">Tránh bị xử phạt vi phạm hành chính từ cơ quan Quản lý thị trường và Thuế địa phương.</p>
+            </div>
+            
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 text-center hover:-translate-y-2 transition-transform duration-300">
+                <div class="mx-auto w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5" /></svg>
+                </div>
+                <h4 class="font-bold text-lg text-accent mb-2">Gia Tăng Uy Tín</h4>
+                <p class="text-gray-600 text-sm">Với giấy phép kinh doanh, bạn sẽ nâng tầm uy tín trước mắt bạn hàng, đối tác và khách hàng.</p>
+            </div>
+            
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 text-center hover:-translate-y-2 transition-transform duration-300">
+                <div class="mx-auto w-16 h-16 bg-amber-100 text-amber-600 rounded-full flex items-center justify-center mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                </div>
+                <h4 class="font-bold text-lg text-accent mb-2">Tiếp Cận Vốn Vay</h4>
+                <p class="text-gray-600 text-sm">HKD dễ dàng vay vốn với lãi suất ưu đãi từ các ngân hàng, hỗ trợ mở rộng kinh doanh.</p>
+            </div>
+            
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 text-center hover:-translate-y-2 transition-transform duration-300">
+                <div class="mx-auto w-16 h-16 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
+                </div>
+                <h4 class="font-bold text-lg text-accent mb-2">Bảo Vệ Pháp Lý</h4>
+                <p class="text-gray-600 text-sm">Thương hiệu, biển hiệu của HKD được Cơ quan nhà nước bảo hộ ở một mức độ hợp lý trong cùng phạm vi Huyện.</p>
+            </div>
+        </div>
+    </div>
+  </section>
+
+  <!-- Hồ sơ & Thủ tục -->
+  <section class="py-16 md:py-24 bg-white relative">
+    <div class="container mx-auto px-6 max-w-7xl">
+        <h2 class="text-3xl font-bold text-accent mb-12 text-center">Hồ Sơ & Quy Trình Nộp</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <!-- Hồ sơ -->
+            <div class="bg-gray-50 border border-gray-100 rounded-3xl p-8 lg:p-10">
+                <h3 class="text-2xl font-bold text-accent mb-6 border-b border-gray-200 pb-4">Hồ sơ cần chuẩn bị</h3>
+                <ul class="space-y-4">
+                    <li class="flex items-start">
+                        <svg class="h-6 w-6 text-primary mr-3 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                        <span class="text-gray-700">Đơn đề nghị đăng ký HKD theo quy định pháp luật.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="h-6 w-6 text-primary mr-3 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                        <span class="text-gray-700">01 bản sao công chứng CMND/CCCD/Hộ chiếu người đại diện kinh doanh.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="h-6 w-6 text-primary mr-3 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                        <span class="text-gray-700">Giấy đề nghị theo mẫu (có sẵn từ cơ quan chức năng).</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="h-6 w-6 text-primary mr-3 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                        <span class="text-gray-700">Nếu địa điểm kinh doanh mua, mướn, mượn cần kèm 1 bản công chứng minh các nội dung liên quan khu đất, nhà ở.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="h-6 w-6 text-primary mr-3 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                        <span class="text-gray-700">Một số giấy tờ liên quan (phụ thuộc vào mỗi loại hình).</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Quy trình vs Tự làm -->
+            <div class="space-y-6">
+                <div class="bg-amber-50 p-6 rounded-2xl border border-amber-100">
+                    <h4 class="font-bold text-amber-800 text-lg mb-3">Tự Nộp Hồ Sơ?</h4>
+                    <p class="text-gray-700 mb-3">Thông thường được tiếp nhận tại <strong>Bộ phận 1 Cửa (UBND quận/huyện)</strong>. Tuy nhiên ở 1 số khu vực đông, bạn nên hỏi cán bộ một cửa về cách nộp online qua trang web riêng và nộp hồ sơ giấy kèm theo.</p>
+                    <p class="text-gray-700">Bạn sẽ mất từ <strong class="text-red-500">5 - 15 ngày</strong> tùy độ khó & chuẩn chỉnh của hồ sơ. Rủi ro sai sót tên, ngành nghề là cực lớn.</p>
+                </div>
+                
+                <div class="bg-blue-50 p-6 rounded-2xl border border-blue-100 h-full">
+                    <h4 class="font-bold text-blue-800 text-xl mb-3">Hoặc để Hoàng Nam Lo Dùm Bạn!</h4>
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-start">
+                            <span class="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2 mr-2"></span>
+                            <span class="text-gray-700">Bạn chỉ cần cung cấp: <strong>01 CMND photo công chứng</strong> & Ý tưởng kinh doanh.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2 mr-2"></span>
+                            <span class="text-gray-700">Hoàng Nam thực hiện: Tra cứu, Góp ý, Soạn thảo, Đại diện nộp hồ sơ và Trả kết quả tận tay.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2 mr-2"></span>
+                            <span class="text-gray-700">Tặng thêm tư vấn Khai thuế ban đầu!</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+  </section>
+
+  <!-- Bảng giá Trọn Gói -->
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-6 max-w-7xl">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div class="bg-white p-8 rounded-3xl shadow-xl transform scale-100 hover:scale-105 transition-transform duration-300 relative border border-primary/20">
+             <div class="absolute top-0 right-0 bg-red-500 text-white px-4 py-1 rounded-bl-xl rounded-tr-3xl font-bold font-sm">HOT DEAL CẦN THƠ</div>
+             
+             <h3 class="text-2xl font-bold text-accent mb-2">Đăng Ký HKD Trọn Gói</h3>
+             <p class="text-gray-600 mb-8">Không đi lại - Không phát sinh - Bao pháp lý trọn đời.</p>
+             
+             <div class="text-4xl lg:text-5xl font-black text-primary mb-4">800.000<span class="text-2xl text-gray-500 font-medium"> - </span>1.500.000<span class="text-xl text-gray-500 font-medium ml-1">đ</span></div>
+             <p class="text-gray-500 font-medium mb-8">Tùy từng loại hình & mức độ phức tạp khu vực Quận/Huyện.</p>
+             
+             <ul class="space-y-4 mb-8">
+                 <li class="flex items-center text-gray-700"><svg class="h-5 w-5 text-green-500 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg> Đã gồm Lệ phí đóng Nhà nước!</li>
+                 <li class="flex items-center text-gray-700"><svg class="h-5 w-5 text-green-500 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg> Thời gian 3-5 ngày!</li>
+                 <li class="flex items-center text-gray-700"><svg class="h-5 w-5 text-green-500 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg> Miễn phí Đăng ký Mã số thuế (MST)</li>
+                 <li class="flex items-center text-gray-700"><svg class="h-5 w-5 text-green-500 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg> Tư vấn chọn Thuế khoán phù hợp nhất!</li>
+             </ul>
+             
+             <a href="tel:0918883179" class="w-full block text-center rounded-xl bg-primary px-8 py-4 text-lg font-bold text-white shadow-lg hover:bg-primary-dark transition-colors">
+                GỌI ĐỂ NHẬN BÁO GIÁ CHUẨN
+             </a>
+          </div>
+          
+          <div>
+            <h3 class="text-2xl lg:text-3xl font-bold text-accent mb-6">3 Sai lầm chết người khi tự đi đăng ký</h3>
+            
+            <div class="space-y-6">
+                <!-- Sai lầm 1 -->
+                 <div>
+                    <h4 class="font-bold text-red-600 mb-2">1. Đăng ký trùng tên / Tên sai cơ chế cấp phép</h4>
+                    <p class="text-gray-700">Nhiều cửa hàng tự nghĩ tên, nộp vào Bộ phận Một cửa đợi 15 ngày bị trả lại do tên trùng ở địa bàn cấp Huyện. <strong class="text-green-600">Hoàng Nam sẽ tra cứu và tư vấn tên đẹp, đúng chuẩn luật Doanh Nghiệp.</strong></p>
+                 </div>
+                 
+                <!-- Sai lầm 2 -->
+                 <div>
+                    <h4 class="font-bold text-red-600 mb-2">2. Đăng ký ngành yêu cầu chứng chỉ hành nghề (CCHN)</h4>
+                    <p class="text-gray-700">Có một số ngành nghề (Y Tế, Cầm Đồ, Ăn Uống VSATTP...) khi kinh doanh yêu cầu Giấy phép con. Bạn sẽ không xin được giấy HKD nếu chưa rõ quy định. <strong class="text-green-600">Chúng tôi tư vấn trọn gói xin Giấy phép con.</strong></p>
+                 </div>
+                 
+                 <!-- Sai lầm 3 -->
+                 <div>
+                    <h4 class="font-bold text-red-600 mb-2">3. Khai địa chỉ bị lỗi</h4>
+                    <p class="text-gray-700">Ngôi nhà bạn dự tính kinh doanh phải có số rõ ràng, chưa bị đứng tên đăng ký kinh doanh cho một Doanh nghiệp khác và hoàn toàn không nằm trong kế hoạch xây cất công trình khác. <strong class="text-green-600">Hoàng Nam giúp bạn kiểm tra các vấn đề pháp lý của địa chỉ kinh doanh trước!</strong></p>
+                 </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Story Thực tế -->
+  <section class="py-16 md:py-24 bg-white relative">
+    <div class="container mx-auto px-6 max-w-4xl text-center">
+        <h2 class="text-3xl font-bold text-accent mb-6">CÂU CHUYỆN THỰC TẾ</h2>
+        <div class="bg-gray-50 border-l-4 border-primary p-8 rounded-xl shadow-sm text-center md:text-left">
+            <p class="italic text-gray-700 text-lg mb-4">"Chị Lan Mở quán ăn gia đình tại phường Hưng Phú – Cái Răng Cần Thơ, kinh doanh thời gian nhưng quên giấy phép và bị phạt hàng chục triệu."</p>
+             <p class="italic text-gray-700 text-lg mb-6">"Sau khi liên hệ Hoàng Nam, chúng tôi đã tư vấn các giảm nhẹ khoản phạt cũng như hoàn thành thủ tục Đăng ký HKD & Chứng nhận Vệ Sinh An Toàn Thực Phẩm chỉ trong vòng vài ngày thủ tục nhanh gọn. Và Chị rất vui vì mức thuế khoán Hoàng Nam Deal được với Phường là rất bé!"</p>
+             <div class="font-bold text-primary">— Hoàng Nam (Tư vấn viên)</div>
+        </div>
+    </div>
+  </section>
+
+  <CTABanner
+    title="Sẵn Sàng Mở Cửa Hàng Chớp Nhoáng?"
+    subtitle="Hãy để Hoàng Nam gỡ rối Pháp lý và tập trung vào Doanh thu của bạn! Giao giấy phép tận cửa sau 3 ngày!"
+  />
+
+  <section class="py-16 bg-primary/5">
+    <div class="container mx-auto px-6 max-w-4xl text-center">
+        <h2 class="text-2xl font-bold text-accent mb-6">Công Ty Tư Vấn Và Kế Toán Hoàng Nam</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 text-left mt-8">
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                <h4 class="font-bold text-lg text-primary mb-3">Thông Tin Liên Hệ</h4>
+                <p class="text-gray-600 mb-2"><strong>Địa chỉ:</strong> 03 Đ. Quản Trọng Hoàng, Xuân Khánh, Ninh Kiều, Cần Thơ, Việt Nam</p>
+                <p class="text-gray-600 mb-2"><strong>Điện thoại:</strong> 091.888.31.79</p>
+                <p class="text-gray-600"><strong>Email:</strong> tructuyenhoangnam@gmail.com</p>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 flex flex-col justify-center">
+                <h4 class="font-bold text-lg text-primary mb-3">Khu Vực Triển Khai</h4>
+                <p class="text-gray-600 text-sm leading-relaxed">Chúng tôi hỗ trợ mở HKD tận nhà tại Quận Ninh Kiều, Cái Răng, Bình Thủy, Ô Môn, Thốt Nốt và các huyện Phong Điền, Cờ Đỏ, Vĩnh Thạnh, Thới Lai (TP Cần Thơ).</p>
+            </div>
+        </div>
+    </div>
+  </section>
+
+</BaseLayout>
