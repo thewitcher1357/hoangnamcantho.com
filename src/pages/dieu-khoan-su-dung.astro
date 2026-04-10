@@ -1,0 +1,116 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { siteConfig } from "@/config/site";
+
+const metadata = {
+  title: "Điều Khoản Sử Dụng",
+  description:
+    "Điều khoản sử dụng dịch vụ của Hoàng Nam Cần Thơ. Vui lòng đọc kỹ trước khi sử dụng dịch vụ của chúng tôi.",
+};
+---
+
+<BaseLayout {metadata}>
+  <!-- Hero -->
+  <section class="relative bg-gradient-to-r from-primary to-primary-light py-20 text-center text-white md:py-24">
+    <div class="relative z-10">
+      <h1 class="text-4xl font-bold drop-shadow-md md:text-5xl">Điều Khoản Sử Dụng</h1>
+      <p class="mt-4 text-lg text-white/90">
+        Hoàng Nam Cần Thơ — Điều Khoản Áp Dụng Cho Dịch Vụ Của Chúng Tôi
+      </p>
+    </div>
+  </section>
+
+  <!-- Content -->
+  <section class="bg-white py-14 md:py-20">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <div class="prose prose-lg max-w-none text-gray-700">
+
+        <p class="lead text-xl text-gray-600">
+          Khi sử dụng dịch vụ của Hoàng Nam Cần Thơ, bạn đồng ý tuân theo các điều khoản và điều kiện được quy định dưới đây. Vui lòng đọc kỹ trước khi tiến hành sử dụng dịch vụ.
+        </p>
+
+        <h2 class="mt-10 text-2xl font-bold text-accent">1. Chấp Nhận Điều Khoản</h2>
+        <p>
+          Bằng cách liên hệ, đặt dịch vụ hoặc sử dụng bất kỳ dịch vụ nào của Hoàng Nam Cần Thơ, bạn xác nhận rằng bạn đã đọc, hiểu và đồng ý với toàn bộ các điều khoản sử dụng này. Nếu bạn không đồng ý, vui lòng không sử dụng dịch vụ.
+        </p>
+
+        <h2 class="mt-10 text-2xl font-bold text-accent">2. Mô Tả Dịch Vụ</h2>
+        <p>
+          Hoàng Nam Cần Thơ cung cấp các dịch vụ tư vấn và hỗ trợ pháp lý doanh nghiệp, bao gồm nhưng không giới hạn:
+        </p>
+        <ul class="mt-4 space-y-2">
+          <li>Thành lập, thay đổi và giải thể doanh nghiệp.</li>
+          <li>Dịch vụ kế toán, thuế và báo cáo tài chính.</li>
+          <li>Hóa đơn điện tử và chữ ký số.</li>
+          <li>Bảo hiểm xã hội và các thủ tục hành chính khác.</li>
+        </ul>
+
+        <h2 class="mt-10 text-2xl font-bold text-accent">3. Trách Nhiệm Của Khách Hàng</h2>
+        <p>Khi sử dụng dịch vụ, bạn có trách nhiệm:</p>
+        <ul class="mt-4 space-y-2">
+          <li>Cung cấp thông tin chính xác, đầy đủ và trung thực theo yêu cầu của chúng tôi.</li>
+          <li>Hợp tác và cung cấp tài liệu cần thiết để thực hiện dịch vụ.</li>
+          <li>Thanh toán phí dịch vụ theo thỏa thuận đã ký kết.</li>
+          <li>Thông báo kịp thời nếu có thay đổi thông tin liên quan đến dịch vụ đang sử dụng.</li>
+        </ul>
+
+        <h2 class="mt-10 text-2xl font-bold text-accent">4. Trách Nhiệm Của Hoàng Nam Cần Thơ</h2>
+        <p>Chúng tôi cam kết:</p>
+        <ul class="mt-4 space-y-2">
+          <li>Thực hiện dịch vụ theo đúng thỏa thuận và quy định pháp luật hiện hành.</li>
+          <li>Bảo mật thông tin khách hàng theo <a href="/chinh-sach-bao-mat" class="text-primary hover:underline">Chính sách bảo mật</a> của chúng tôi.</li>
+          <li>Thông báo kịp thời nếu có vấn đề phát sinh ảnh hưởng đến tiến độ dịch vụ.</li>
+          <li>Hỗ trợ tư vấn và giải đáp thắc mắc trong suốt quá trình sử dụng dịch vụ.</li>
+        </ul>
+
+        <h2 class="mt-10 text-2xl font-bold text-accent">5. Phí Dịch Vụ & Thanh Toán</h2>
+        <p>
+          Phí dịch vụ được thỏa thuận cụ thể trước khi bắt đầu thực hiện. Chúng tôi cam kết không phát sinh chi phí ngoài thỏa thuận mà không có sự đồng ý của bạn. Thanh toán có thể thực hiện qua chuyển khoản ngân hàng hoặc tiền mặt.
+        </p>
+
+        <h2 class="mt-10 text-2xl font-bold text-accent">6. Giới Hạn Trách Nhiệm</h2>
+        <p>
+          Hoàng Nam Cần Thơ không chịu trách nhiệm đối với thiệt hại phát sinh do:
+        </p>
+        <ul class="mt-4 space-y-2">
+          <li>Thông tin không chính xác hoặc không đầy đủ do khách hàng cung cấp.</li>
+          <li>Sự thay đổi của quy định pháp luật nằm ngoài tầm kiểm soát của chúng tôi.</li>
+          <li>Trường hợp bất khả kháng (thiên tai, dịch bệnh, v.v.).</li>
+          <li>Quyết định của cơ quan nhà nước có thẩm quyền.</li>
+        </ul>
+
+        <h2 class="mt-10 text-2xl font-bold text-accent">7. Thay Đổi Điều Khoản</h2>
+        <p>
+          Hoàng Nam Cần Thơ có quyền cập nhật các điều khoản này bất kỳ lúc nào. Mọi thay đổi sẽ có hiệu lực ngay khi được đăng tải trên trang web. Việc tiếp tục sử dụng dịch vụ sau khi thay đổi đồng nghĩa với việc bạn chấp nhận các điều khoản mới.
+        </p>
+
+        <h2 class="mt-10 text-2xl font-bold text-accent">8. Giải Quyết Tranh Chấp</h2>
+        <p>
+          Mọi tranh chấp phát sinh sẽ được ưu tiên giải quyết thông qua thương lượng, hòa giải. Nếu không đạt được thỏa thuận, tranh chấp sẽ được giải quyết tại Tòa án có thẩm quyền tại Cần Thơ theo quy định pháp luật Việt Nam.
+        </p>
+
+        <h2 class="mt-10 text-2xl font-bold text-accent">9. Liên Hệ</h2>
+        <p>Mọi thắc mắc về điều khoản sử dụng, vui lòng liên hệ:</p>
+        <ul class="mt-4 space-y-2 not-prose">
+          <li><strong>Địa chỉ:</strong> {siteConfig.contact.address}</li>
+          <li>
+            <strong>Điện thoại:</strong>
+            <a href={`tel:${siteConfig.contact.hotline}`} class="text-primary hover:underline">
+              {siteConfig.contact.hotlineDisplay}
+            </a>
+          </li>
+          <li>
+            <strong>Email:</strong>
+            <a href={`mailto:${siteConfig.contact.email}`} class="text-primary hover:underline">
+              {siteConfig.contact.email}
+            </a>
+          </li>
+        </ul>
+
+        <p class="mt-10 text-sm text-gray-400">
+          Các điều khoản này có hiệu lực từ ngày 01/01/2024. Phiên bản cập nhật gần nhất: tháng 4/2025.
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

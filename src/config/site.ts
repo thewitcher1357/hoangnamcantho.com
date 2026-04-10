@@ -90,7 +90,6 @@ export const siteConfig = {
   footerLinks: {
     about: [
       { text: "Giới thiệu công ty", href: "/gioi-thieu" },
-      { text: "Giới thiệu CEO", href: "/gioi-thieu-ceo" },
       { text: "Chính sách bảo mật", href: "/chinh-sach-bao-mat" },
       { text: "Điều khoản sử dụng", href: "/dieu-khoan-su-dung" },
     ],

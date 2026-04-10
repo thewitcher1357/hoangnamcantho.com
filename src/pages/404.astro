@@ -1,31 +1,41 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import Hero from "@/components/widgets/Hero.astro";
 
 const metadata = {
-  title: "404 - Page Not Found",
-  description: "The page you're looking for doesn't exist.",
+  title: "404 - Không Tìm Thấy Trang",
+  description: "Trang bạn đang tìm kiếm không tồn tại hoặc đã bị di chuyển.",
   ignoreTitleTemplate: true,
 };
 ---
 
 <BaseLayout {metadata}>
-  <Hero
-    title={`<h1 class="bg-linear-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent text-[12rem] font-extrabold tracking-tighter mb-4">404</h1>`}
-    description="We're sorry, we can't find the page you're looking for. It may have been moved or deleted."
-    actions={[
-      {
-        variant: "primary",
-        text: "Back to Home",
-        href: "/",
-        icon: "lucide:home",
-      },
-      {
-        variant: "secondary",
-        text: "Contact",
-        href: "/contact",
-        icon: "lucide:phone",
-      },
-    ]}
-  />
+  <section class="flex min-h-[70vh] flex-col items-center justify-center px-6 py-24 text-center">
+    <p class="text-8xl font-extrabold text-primary md:text-[10rem]">404</p>
+    <h1 class="mt-6 text-3xl font-bold tracking-tight text-accent md:text-4xl">
+      Không Tìm Thấy Trang
+    </h1>
+    <p class="mt-4 max-w-md text-lg text-gray-600">
+      Trang bạn đang tìm kiếm không tồn tại, đã bị di chuyển hoặc xóa. Vui lòng kiểm tra lại địa chỉ hoặc quay về trang chủ.
+    </p>
+    <div class="mt-10 flex flex-wrap items-center justify-center gap-4">
+      <a
+        href="/"
+        class="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-bold uppercase tracking-wider text-white shadow-lg transition-all duration-300 hover:bg-primary-dark hover:shadow-xl"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+        </svg>
+        Về Trang Chủ
+      </a>
+      <a
+        href="/lien-he"
+        class="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-white px-6 py-3 text-sm font-bold uppercase tracking-wider text-primary shadow transition-all duration-300 hover:bg-primary/5"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+        </svg>
+        Liên Hệ
+      </a>
+    </div>
+  </section>
 </BaseLayout>

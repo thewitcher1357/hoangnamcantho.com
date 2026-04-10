@@ -1,0 +1,102 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { siteConfig } from "@/config/site";
+
+const metadata = {
+  title: "Chính Sách Bảo Mật",
+  description:
+    "Chính sách bảo mật thông tin của Hoàng Nam Cần Thơ. Chúng tôi cam kết bảo vệ dữ liệu cá nhân và thông tin doanh nghiệp của khách hàng.",
+};
+---
+
+<BaseLayout {metadata}>
+  <!-- Hero -->
+  <section class="relative bg-gradient-to-r from-primary to-primary-light py-20 text-center text-white md:py-24">
+    <div class="relative z-10">
+      <h1 class="text-4xl font-bold drop-shadow-md md:text-5xl">Chính Sách Bảo Mật</h1>
+      <p class="mt-4 text-lg text-white/90">
+        Hoàng Nam Cần Thơ — Cam Kết Bảo Vệ Thông Tin Của Bạn
+      </p>
+    </div>
+  </section>
+
+  <!-- Content -->
+  <section class="bg-white py-14 md:py-20">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <div class="prose prose-lg max-w-none text-gray-700">
+
+        <p class="lead text-xl text-gray-600">
+          Hoàng Nam Cần Thơ cam kết bảo vệ quyền riêng tư và thông tin cá nhân của khách hàng. Chính sách này giải thích cách chúng tôi thu thập, sử dụng và bảo vệ thông tin của bạn.
+        </p>
+
+        <h2 class="mt-10 text-2xl font-bold text-accent">1. Thông Tin Chúng Tôi Thu Thập</h2>
+        <p>Chúng tôi có thể thu thập các loại thông tin sau khi bạn sử dụng dịch vụ hoặc liên hệ với chúng tôi:</p>
+        <ul class="mt-4 space-y-2">
+          <li><strong>Thông tin cá nhân:</strong> Họ tên, số điện thoại, địa chỉ email, địa chỉ doanh nghiệp.</li>
+          <li><strong>Thông tin doanh nghiệp:</strong> Tên công ty, mã số thuế, ngành nghề kinh doanh, tài liệu pháp lý liên quan.</li>
+          <li><strong>Thông tin kỹ thuật:</strong> Địa chỉ IP, loại trình duyệt, thời gian truy cập (dùng cho mục đích phân tích).</li>
+        </ul>
+
+        <h2 class="mt-10 text-2xl font-bold text-accent">2. Mục Đích Sử Dụng Thông Tin</h2>
+        <p>Thông tin thu thập được sử dụng để:</p>
+        <ul class="mt-4 space-y-2">
+          <li>Cung cấp và hoàn thiện dịch vụ theo yêu cầu của bạn.</li>
+          <li>Liên hệ tư vấn, thông báo tiến độ xử lý hồ sơ.</li>
+          <li>Lập hồ sơ, thực hiện các thủ tục pháp lý theo yêu cầu.</li>
+          <li>Gửi thông tin cập nhật về dịch vụ và chính sách (nếu bạn đồng ý nhận).</li>
+        </ul>
+
+        <h2 class="mt-10 text-2xl font-bold text-accent">3. Chia Sẻ Thông Tin</h2>
+        <p>
+          Hoàng Nam Cần Thơ <strong>không bán, cho thuê hay chia sẻ</strong> thông tin cá nhân của bạn cho bên thứ ba vì mục đích thương mại. Thông tin chỉ được chia sẻ trong các trường hợp:
+        </p>
+        <ul class="mt-4 space-y-2">
+          <li>Theo yêu cầu của cơ quan nhà nước có thẩm quyền (cơ quan thuế, đăng ký kinh doanh, v.v.) để thực hiện dịch vụ cho bạn.</li>
+          <li>Theo sự đồng ý rõ ràng của bạn.</li>
+        </ul>
+
+        <h2 class="mt-10 text-2xl font-bold text-accent">4. Bảo Mật Thông Tin</h2>
+        <p>
+          Chúng tôi áp dụng các biện pháp bảo mật phù hợp để bảo vệ thông tin của bạn khỏi truy cập trái phép, mất mát hoặc tiết lộ. Tuy nhiên, không có phương thức truyền dữ liệu qua internet nào là an toàn tuyệt đối.
+        </p>
+
+        <h2 class="mt-10 text-2xl font-bold text-accent">5. Quyền Của Bạn</h2>
+        <p>Bạn có quyền:</p>
+        <ul class="mt-4 space-y-2">
+          <li>Yêu cầu xem, chỉnh sửa hoặc xóa thông tin cá nhân của mình.</li>
+          <li>Từ chối nhận thông tin marketing từ chúng tôi bất kỳ lúc nào.</li>
+          <li>Yêu cầu giải thích về cách thông tin của bạn được sử dụng.</li>
+        </ul>
+
+        <h2 class="mt-10 text-2xl font-bold text-accent">6. Thời Gian Lưu Trữ</h2>
+        <p>
+          Chúng tôi lưu trữ thông tin của bạn trong thời gian cần thiết để cung cấp dịch vụ và tuân thủ các nghĩa vụ pháp lý. Sau khi không còn cần thiết, thông tin sẽ được xóa hoặc ẩn danh hóa.
+        </p>
+
+        <h2 class="mt-10 text-2xl font-bold text-accent">7. Liên Hệ</h2>
+        <p>
+          Nếu bạn có câu hỏi về chính sách bảo mật này, vui lòng liên hệ:
+        </p>
+        <ul class="mt-4 space-y-2 not-prose">
+          <li><strong>Địa chỉ:</strong> {siteConfig.contact.address}</li>
+          <li>
+            <strong>Điện thoại:</strong>
+            <a href={`tel:${siteConfig.contact.hotline}`} class="text-primary hover:underline">
+              {siteConfig.contact.hotlineDisplay}
+            </a>
+          </li>
+          <li>
+            <strong>Email:</strong>
+            <a href={`mailto:${siteConfig.contact.email}`} class="text-primary hover:underline">
+              {siteConfig.contact.email}
+            </a>
+          </li>
+        </ul>
+
+        <p class="mt-10 text-sm text-gray-400">
+          Chính sách này có hiệu lực từ ngày 01/01/2024 và có thể được cập nhật theo thời gian. Mọi thay đổi sẽ được đăng tải trên trang web này.
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
