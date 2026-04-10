@@ -1,0 +1,348 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { Image } from "astro:assets";
+import CTABanner from "@/components/homepage/CTABanner.astro";
+import heroImage from "@/assets/images/services/thay-doi-von-dieu-le.jpg";
+import stepsImage from "@/assets/images/services/so-ke-hoach-dau-tu-steps.png";
+
+const metadata = {
+  title: "Dịch Vụ Bổ Sung, Thay Đổi Vốn Điều Lệ Công Ty Tại Cần Thơ – 24-48H",
+  description:
+    "Hoàng Nam cung cấp dịch vụ thay đổi vốn điều lệ công ty tại Cần Thơ trọn gói. Tăng hoặc giảm vốn điều lệ nhanh chóng, đúng Luật Doanh nghiệp 2020. Hotline 091.888.31.79.",
+};
+
+const whyChangeReasons = [
+  { title: "Mở rộng kinh doanh", desc: "Tăng vốn để đầu tư vào dự án mới hoặc mở chi nhánh." },
+  { title: "Đấu thầu dự án", desc: "Nhiều dự án yêu cầu mức vốn điều lệ tối thiểu để đủ điều kiện tham gia." },
+  { title: "Tiếp nhận cổ đông/thành viên mới", desc: "Điều chỉnh vốn để phù hợp với tỷ lệ góp vốn của cổ đông hoặc thành viên mới." },
+  { title: "Giảm vốn điều lệ", desc: "Khi cần hoàn trả vốn cho thành viên/cổ đông hoặc điều chỉnh chiến lược kinh doanh." },
+];
+
+const vonImpacts = [
+  { icon: "💰", title: "Thuế môn bài", desc: "Theo Nghị định 139/2016/NĐ-CP, mức thuế môn bài phụ thuộc vào vốn điều lệ (2-3 triệu đồng/năm)." },
+  { icon: "⚖️", title: "Năng lực pháp lý", desc: "Vốn điều lệ cao giúp tăng uy tín khi đấu thầu, ký hợp đồng hoặc hợp tác với đối tác lớn." },
+  { icon: "📈", title: "Khả năng mở rộng", desc: "Đáp ứng yêu cầu vốn pháp định của một số ngành nghề đặc thù (bất động sản, xây dựng...)." },
+];
+
+const docsGroups = [
+  {
+    type: "Công ty TNHH 1 thành viên",
+    items: [
+      "Quyết định của chủ sở hữu về thay đổi vốn.",
+      "Thông báo thay đổi nội dung đăng ký kinh doanh (theo mẫu Nghị định 01/2021/NĐ-CP).",
+      "Giấy chứng nhận đăng ký doanh nghiệp (bản sao công chứng).",
+    ],
+  },
+  {
+    type: "Công ty TNHH 2 thành viên trở lên",
+    items: [
+      "Biên bản họp Hội đồng thành viên.",
+      "Quyết định thay đổi vốn điều lệ.",
+      "Danh sách thành viên và tỷ lệ góp vốn mới.",
+    ],
+  },
+  {
+    type: "Công ty cổ phần",
+    items: [
+      "Biên bản họp Đại hội đồng cổ đông.",
+      "Nghị quyết thay đổi vốn điều lệ.",
+      "Danh sách cổ đông (nếu có thay đổi).",
+    ],
+  },
+  {
+    type: "Công ty hợp danh",
+    items: [
+      "Biên bản họp thành viên hợp danh.",
+      "Quyết định và thông báo thay đổi vốn.",
+    ],
+  },
+];
+
+const processSteps = [
+  {
+    title: "Tư vấn và chuẩn bị hồ sơ",
+    items: [
+      "Kiểm tra tính hợp lệ của mức vốn mới.",
+      "Soạn thảo biên bản, nghị quyết, và thông báo theo mẫu.",
+    ],
+  },
+  {
+    title: "Nộp hồ sơ",
+    items: [
+      "Nộp trực tiếp hoặc online qua Cổng thông tin Đăng ký doanh nghiệp quốc gia.",
+      "Theo dõi và xử lý sửa đổi (nếu có).",
+    ],
+  },
+  {
+    title: "Nhận kết quả",
+    items: [
+      "Nhận Giấy chứng nhận đăng ký kinh doanh mới.",
+      "Cập nhật thông tin thuế môn bài (nếu cần).",
+    ],
+  },
+];
+
+const pricing = [
+  { name: "Công ty TNHH", range: "500.000 – 800.000 đ" },
+  { name: "Công ty cổ phần", range: "700.000 – 1.200.000 đ" },
+];
+
+const commitments = [
+  { icon: "⚡", title: "Xử lý trong 24-48 giờ", desc: "Hoàn tất hồ sơ nhanh, bàn giao kết quả đúng hạn." },
+  { icon: "🎁", title: "Tặng mẫu biên bản miễn phí", desc: "Cung cấp mẫu biên bản, nghị quyết chuẩn khung đúng quy định." },
+  { icon: "📢", title: "Hỗ trợ công bố thông tin", desc: "Miễn phí dịch vụ công bố trên Cổng thông tin quốc gia." },
+  { icon: "💡", title: "Tư vấn pháp lý miễn phí", desc: "Đội ngũ chuyên gia am hiểu Luật Doanh nghiệp và Sở KHĐT Cần Thơ." },
+];
+---
+
+<BaseLayout {metadata}>
+  <!-- Hero Banner -->
+  <section class="relative bg-gradient-to-r from-primary to-primary-light py-20 text-center text-white md:py-28">
+    <div class="relative z-10 mx-auto max-w-4xl px-6">
+      <h1 class="text-3xl font-extrabold uppercase leading-tight drop-shadow-md md:text-5xl">
+        Dịch Vụ Bổ Sung, Thay Đổi Vốn Điều Lệ Công Ty Tại Cần Thơ
+      </h1>
+      <p class="mt-5 text-lg font-light text-white/90 md:text-xl">
+        Trọn gói – Nhanh 24-48 giờ – Đúng Luật Doanh nghiệp 2020
+      </p>
+    </div>
+  </section>
+
+  <!-- Giới thiệu -->
+  <section class="bg-white py-10 md:py-14">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <div class="prose prose-lg mx-auto max-w-none text-gray-700">
+        <p class="text-justify">
+          Bạn đang cần <strong class="text-primary">dịch vụ thay đổi vốn điều lệ công ty tại Cần Thơ</strong> để mở rộng kinh doanh, đấu thầu hoặc tiếp nhận cổ đông mới? <strong class="text-primary">Hoàng Nam</strong> cung cấp giải pháp trọn gói, giúp bạn hoàn tất <strong>thủ tục tăng vốn điều lệ công ty tại Cần Thơ</strong> nhanh chóng, đúng luật, chỉ trong 24-48 giờ. Với đội ngũ chuyên gia pháp lý giàu kinh nghiệm, chúng tôi đảm bảo hồ sơ chuẩn khung, tuân thủ <strong>Luật Doanh nghiệp 2020</strong>, giúp doanh nghiệp của bạn tránh rủi ro và tiết kiệm thời gian.
+        </p>
+      </div>
+      <div class="my-10 overflow-hidden rounded-2xl shadow-xl">
+        <Image
+          src={heroImage}
+          alt="Dịch Vụ Bổ Sung, Thay Đổi Vốn Điều Lệ Công Ty Tại Cần Thơ"
+          width={750}
+          height={500}
+          class="w-full object-cover"
+          loading="lazy"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Vì sao vốn điều lệ quan trọng -->
+  <section class="bg-gray-50 py-10 md:py-14">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <h2 class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl">
+        ⚠️ Nhận Biết Ngay: Vì Sao Vốn Điều Lệ Quan Trọng?
+      </h2>
+      <p class="mt-4 text-gray-600">
+        Thay đổi vốn điều lệ là bước quan trọng để doanh nghiệp phát triển. <strong>Vốn điều lệ</strong> là số vốn do các thành viên hoặc cổ đông góp vào công ty, ảnh hưởng trực tiếp đến:
+      </p>
+      <div class="mt-6 grid grid-cols-1 gap-5 sm:grid-cols-3">
+        {vonImpacts.map((item) => (
+          <div class="rounded-xl border border-gray-100 bg-white p-6 text-center shadow-sm">
+            <div class="mb-3 text-3xl">{item.icon}</div>
+            <strong class="block text-base text-primary">{item.title}</strong>
+            <p class="mt-2 text-sm text-gray-600">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+
+      <h3 class="mt-10 text-xl font-bold text-primary">Khi Nào Cần Tăng Vốn Điều Lệ?</h3>
+      <div class="mt-4 space-y-3">
+        {whyChangeReasons.map((r) => (
+          <div class="flex items-start gap-4 rounded-xl border border-gray-100 bg-white p-5 shadow-sm">
+            <span class="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-primary" />
+            <div>
+              <strong class="text-primary">{r.title}</strong>
+              <span class="text-gray-600">: {r.desc}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div class="mt-6 rounded-r-xl border-l-[6px] border-amber-400 bg-amber-50 px-6 py-4">
+        <p class="text-sm text-amber-800">
+          <strong>Lưu ý:</strong> Không thực hiện đúng <strong>thủ tục tăng vốn điều lệ công ty tại Cần Thơ</strong> có thể dẫn đến sai sót hồ sơ, bị phạt hành chính hoặc ảnh hưởng uy tín doanh nghiệp.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hồ sơ cần chuẩn bị -->
+  <section class="bg-white py-10 md:py-14">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <h2 class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl">
+        Thủ Tục Thay Đổi Vốn Điều Lệ Tại Cần Thơ
+      </h2>
+      <h3 class="mt-6 text-xl font-bold text-primary">Chuẩn Bị Hồ Sơ Theo Loại Hình Doanh Nghiệp</h3>
+      <div class="mt-4 space-y-4">
+        {docsGroups.map((group) => (
+          <div class="rounded-2xl border-l-[5px] border-primary bg-gray-50 p-6 shadow-sm">
+            <h4 class="mb-3 font-bold text-primary">{group.type}</h4>
+            <ul class="space-y-2 text-gray-600">
+              {group.items.map((item) => (
+                <li class="flex items-start gap-2">
+                  <span class="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary/50" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Quy trình -->
+  <section class="bg-gray-50 py-10 md:py-14">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <h3 class="text-xl font-bold text-primary">Các Bước Thực Hiện Tại Sở Kế Hoạch &amp; Đầu Tư Cần Thơ</h3>
+      <div class="my-6 overflow-hidden rounded-2xl shadow-md">
+        <Image
+          src={stepsImage}
+          alt="Các bước thực hiện tại Sở Kế hoạch Đầu tư Cần Thơ"
+          width={1105}
+          height={416}
+          class="w-full object-cover"
+          loading="lazy"
+        />
+      </div>
+      <div class="mt-4 flex flex-col gap-5">
+        {processSteps.map((step, i) => (
+          <div class="flex items-start gap-5 rounded-xl border border-gray-100 bg-white p-6 shadow-sm">
+            <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-primary text-sm font-bold text-white">
+              {i + 1}
+            </span>
+            <div>
+              <h4 class="font-bold text-primary">{step.title}</h4>
+              <ul class="mt-2 space-y-1 text-gray-600">
+                {step.items.map((item) => (
+                  <li class="flex items-start gap-2">
+                    <span class="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary/50" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div class="mt-6 rounded-xl border border-blue-200 bg-blue-50 p-5">
+        <p class="text-sm text-blue-800">
+          ⏱️ <strong>Thời gian xử lý:</strong> Thông thường từ <strong>3-7 ngày làm việc</strong> tại Sở KHĐT Cần Thơ. Dịch vụ trọn gói của Hoàng Nam: hoàn tất trong <strong>24-48 giờ</strong>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Chi phí -->
+  <section class="bg-white py-10 md:py-14">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <h2 class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl">
+        Chi Phí Thay Đổi Vốn Điều Lệ Tại Cần Thơ
+      </h2>
+      <div class="mt-6 overflow-hidden rounded-2xl border border-gray-200 shadow-sm">
+        <table class="w-full text-left text-sm">
+          <thead>
+            <tr class="bg-primary text-white">
+              <th class="px-4 py-3 font-semibold md:px-6">Loại hình doanh nghiệp</th>
+              <th class="px-4 py-3 text-right font-semibold md:px-6">Phí dịch vụ</th>
+            </tr>
+          </thead>
+          <tbody>
+            {pricing.map((p, i) => (
+              <tr class:list={[i % 2 === 0 ? "bg-white" : "bg-gray-50", "border-t border-gray-100"]}>
+                <td class="px-4 py-3 md:px-6">{p.name}</td>
+                <td class="px-4 py-3 text-right font-semibold text-primary md:px-6">{p.range}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <div class="mt-4 rounded-r-xl border-l-[6px] border-amber-400 bg-amber-50 px-6 py-4">
+        <p class="text-sm text-amber-800">
+          <strong>Lưu ý:</strong> Lệ phí nhà nước: <strong>200.000 đ</strong> (nộp tại Sở KHĐT Cần Thơ). Tăng vốn điều lệ có thể làm thay đổi mức thuế môn bài. Doanh nghiệp phải công bố thông tin trên Cổng thông tin quốc gia (phí 100.000 đ). Hoàng Nam hỗ trợ toàn bộ.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cam kết dịch vụ -->
+  <section class="bg-gray-50 py-10 md:py-14">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <h2 class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl">
+        Dịch Vụ Hỗ Trợ Trọn Gói – Cam Kết Hoàng Nam
+      </h2>
+      <div class="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-2">
+        {commitments.map((c) => (
+          <div class="flex items-start gap-4 rounded-xl border border-gray-100 bg-white p-6 shadow-sm transition-all hover:shadow-md">
+            <div class="text-3xl">{c.icon}</div>
+            <div>
+              <strong class="block text-primary">{c.title}</strong>
+              <p class="mt-1 text-sm text-gray-600">{c.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="mt-8 overflow-hidden rounded-2xl border border-gray-100 bg-white p-6 shadow-sm">
+        <h3 class="font-bold text-primary">So Sánh: Tự Làm Thủ Tục vs. Dùng Dịch Vụ Chuyên Nghiệp</h3>
+        <div class="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2">
+          <div class="rounded-xl border border-gray-200 p-4">
+            <p class="font-semibold text-gray-700">❌ Tự làm</p>
+            <ul class="mt-2 space-y-1 text-sm text-gray-600">
+              <li>✅ Tiết kiệm chi phí (200.000 đ lệ phí nhà nước)</li>
+              <li>❌ Mất thời gian, dễ sai sót, sửa đổi nhiều lần</li>
+            </ul>
+          </div>
+          <div class="rounded-xl border border-primary/30 bg-blue-50 p-4">
+            <p class="font-semibold text-primary">✅ Dịch vụ Hoàng Nam</p>
+            <ul class="mt-2 space-y-1 text-sm text-gray-700">
+              <li>✅ Nhanh chóng, đúng luật, hỗ trợ trọn gói</li>
+              <li>✅ Không lo rủi ro, tiết kiệm công sức và thời gian</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Khu vực hỗ trợ -->
+  <section class="bg-gray-50 py-12">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <div class="rounded-2xl border-2 border-dashed border-primary bg-blue-50 p-8 text-center">
+        <p class="text-lg font-bold text-primary">
+          📍 Hỗ trợ tận nơi tại Cần Thơ:{" "}
+          <span class="font-normal text-gray-700">
+            Ninh Kiều, Cái Răng, Bình Thủy, Ô Môn, Thốt Nốt, Phong Điền, Cờ Đỏ, Vĩnh Thạnh, Thới Lai.
+          </span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Info -->
+  <section class="bg-white py-10 md:py-14">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <div class="rounded-2xl border border-primary/20 bg-blue-50 p-8">
+        <h2 class="text-xl font-extrabold text-primary">
+          📞 Gọi Ngay 091.888.31.79 – Tư Vấn Miễn Phí &amp; Hỗ Trợ Xử Lý Hồ Sơ Trong 24-48H Tại Cần Thơ
+        </h2>
+        <p class="mt-4 text-gray-700">
+          Đừng để <strong>thủ tục tăng vốn điều lệ công ty tại Cần Thơ</strong> làm chậm trễ kế hoạch kinh doanh của bạn. Liên hệ ngay <strong>Hoàng Nam</strong> để được tư vấn miễn phí!
+        </p>
+        <div class="mt-6 space-y-2 text-sm text-gray-700">
+          <p>📌 <strong>Địa chỉ:</strong> 462 Lê Hồng Nhi, KV1, P. Ba Láng, Q. Cái Răng, Tp. Cần Thơ</p>
+          <p>📞 <strong>Hotline:</strong> 091.888.31.79</p>
+          <p>📧 <strong>Email:</strong> <a href="mailto:tructuyenhoangnam@gmail.com" class="text-primary underline">tructuyenhoangnam@gmail.com</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <CTABanner
+    title="Gọi Ngay Hotline 091.888.31.79 – Thay Đổi Vốn Điều Lệ Trong 24-48H!"
+    subtitle="Hoàng Nam – Gỡ rối, kết nối, đảm bảo thông suốt mọi thủ tục pháp lý doanh nghiệp tại Cần Thơ."
+  />
+</BaseLayout>

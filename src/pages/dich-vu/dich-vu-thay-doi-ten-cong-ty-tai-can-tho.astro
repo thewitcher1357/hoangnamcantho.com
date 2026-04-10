@@ -1,0 +1,298 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { Image } from "astro:assets";
+import CTABanner from "@/components/homepage/CTABanner.astro";
+import heroImage from "@/assets/images/services/thay-doi-ten-cong-ty.jpg";
+import processImage from "@/assets/images/services/quy-trinh-doi-ten-cong-ty.png";
+
+const metadata = {
+  title: "Dịch Vụ Thay Đổi Tên Công Ty Tại Cần Thơ – Nhanh 3-5 Ngày",
+  description:
+    "Hoàng Nam cung cấp dịch vụ thay đổi tên công ty tại Cần Thơ uy tín, chuyên nghiệp. Đổi tên nhanh 3-5 ngày, hỗ trợ cập nhật thuế, con dấu, hóa đơn. Hotline 091.888.31.79.",
+};
+
+const changeReasons = [
+  { icon: "🔄", title: "Trùng lặp hoặc gây nhầm lẫn", desc: "Tên công ty trùng với doanh nghiệp khác hoặc vi phạm quy định đặt tên, dẫn đến nguy cơ bị phạt hoặc bị yêu cầu đổi tên." },
+  { icon: "🎯", title: "Chiến lược thương hiệu", desc: "Tên mới phù hợp hơn với định hướng phát triển, mở rộng thị trường hoặc tái định vị thương hiệu." },
+  { icon: "🌏", title: "Mở rộng kinh doanh", desc: "Một cái tên mới giúp doanh nghiệp dễ dàng tiếp cận thị trường quốc tế hoặc tạo ấn tượng mạnh hơn." },
+];
+
+const mandatoryChangeCases = [
+  "Tên công ty vi phạm quy định về đặt tên (trùng, gây nhầm lẫn, sử dụng từ ngữ cấm).",
+  "Tên công ty không phù hợp với loại hình doanh nghiệp hoặc gây hiểu lầm về hoạt động kinh doanh.",
+  "Cơ quan chức năng (Sở KHĐT hoặc cơ quan thuế) yêu cầu thay đổi do vi phạm quy định pháp luật.",
+];
+
+const processSteps = [
+  {
+    step: "Bước 1",
+    title: "Tư Vấn Và Kiểm Tra Thông Tin Pháp Lý – Miễn Phí",
+    desc: "Đội ngũ chuyên gia của Hoàng Nam sẽ tư vấn miễn phí, kiểm tra tính hợp lệ của tên mới, đảm bảo không trùng lặp, không vi phạm quy định và phù hợp với chiến lược thương hiệu của bạn.",
+    items: [],
+  },
+  {
+    step: "Bước 2",
+    title: "Soạn Hồ Sơ – Chuẩn Mẫu Sở KHĐT",
+    desc: "Hồ sơ thay đổi tên công ty bao gồm:",
+    items: [
+      "Thông báo thay đổi tên công ty (chuẩn mẫu theo Nghị định 01/2021/NĐ-CP).",
+      "Biên bản họp của Hội đồng thành viên/Đại hội đồng cổ đông về việc đổi tên.",
+      "Quyết định thay đổi tên do chủ sở hữu/Hội đồng quản trị ban hành.",
+      "Các giấy tờ liên quan khác (nếu cần).",
+    ],
+  },
+  {
+    step: "Bước 3",
+    title: "Nộp Sở KHĐT – Nhận GPKD Mới Trong 3-5 Ngày",
+    desc: "Sau khi hoàn thiện hồ sơ, Hoàng Nam thay bạn nộp trực tiếp hoặc online tại Sở KHĐT Cần Thơ. Thời gian xử lý thường từ 3-5 ngày làm việc. Nếu có yêu cầu sửa đổi, chúng tôi xử lý ngay lập tức.",
+    items: [],
+  },
+  {
+    step: "Bước 4",
+    title: "Hoàn Tất Sau Đổi Tên – Thuế, Con Dấu, Hóa Đơn",
+    desc: "Sau khi nhận Giấy chứng nhận đăng ký doanh nghiệp mới:",
+    items: [
+      "Thông báo thay đổi tên công ty với cơ quan thuế tại Cần Thơ.",
+      "Thay đổi con dấu công ty: Khắc dấu mới và hủy dấu cũ theo quy định.",
+      "Cập nhật hóa đơn, chữ ký số, BHXH.",
+      "Điều chỉnh thông tin trên biển hiệu, hợp đồng, tài sản công ty.",
+    ],
+  },
+];
+
+const pricing = [
+  { name: "Công ty TNHH", range: "500.000 – 800.000 đ" },
+  { name: "Công ty cổ phần", range: "700.000 – 1.000.000 đ" },
+];
+
+const benefits = [
+  { icon: "⏱️", title: "Tiết Kiệm Thời Gian", desc: "Chỉ cần cung cấp thông tin, Hoàng Nam lo toàn bộ quy trình, từ tư vấn đến nhận GPKD mới." },
+  { icon: "🛡️", title: "Tránh Sai Sót Pháp Lý", desc: "Đội ngũ chuyên gia am hiểu quy định tại Sở KHĐT Cần Thơ, đảm bảo hồ sơ nộp đúng, đủ, tránh bị từ chối." },
+  { icon: "📋", title: "Hỗ Trợ Toàn Diện Sau Đổi Tên", desc: "Cập nhật thông tin với cơ quan thuế, BHXH, hóa đơn điện tử, chữ ký số." },
+  { icon: "🏆", title: "Đội Ngũ Chuyên Viên Pháp Lý", desc: "Am hiểu quy trình tại Sở Kế hoạch và Đầu tư Cần Thơ và cơ quan thuế địa phương." },
+];
+
+const faqs = [
+  { q: "Hồ sơ cần chuẩn bị gồm những gì?", a: "Thông báo thay đổi tên công ty, biên bản họp và quyết định đổi tên, GCNĐKKD (bản sao công chứng), giấy ủy quyền (nếu sử dụng dịch vụ). Hoàng Nam hỗ trợ chuẩn bị đầy đủ, đúng mẫu." },
+  { q: "Thời gian cấp GPKD mới là bao lâu?", a: "Thời gian xử lý tại Sở KHĐT Cần Thơ thường từ 3-5 ngày làm việc, tùy thuộc vào tính phức tạp của hồ sơ." },
+  { q: "Có thể nộp online không? Phí nhà nước bao nhiêu?", a: "Có, bạn có thể nộp hồ sơ online qua Cổng thông tin Đăng ký doanh nghiệp quốc gia. Phí nhà nước là 200.000 đ (đổi tên) và 300.000 đ (khắc dấu mới)." },
+  { q: "Sau khi đổi tên cần làm những gì tiếp theo?", a: "Thông báo với cơ quan thuế, khắc con dấu mới và hủy dấu cũ, cập nhật thông tin trên hóa đơn, chữ ký số, BHXH, điều chỉnh hợp đồng, tài sản, biển hiệu công ty. Hoàng Nam hỗ trợ trọn gói." },
+];
+---
+
+<BaseLayout {metadata}>
+  <!-- Hero Banner -->
+  <section class="relative bg-gradient-to-r from-primary to-primary-light py-20 text-center text-white md:py-28">
+    <div class="relative z-10 mx-auto max-w-4xl px-6">
+      <h1 class="text-3xl font-extrabold uppercase leading-tight drop-shadow-md md:text-5xl">
+        Dịch Vụ Thay Đổi Tên Công Ty Tại Cần Thơ
+      </h1>
+      <p class="mt-5 text-lg font-light text-white/90 md:text-xl">
+        Nhanh 3-5 Ngày – Hỗ Trợ Cập Nhật Thuế, Con Dấu, Hóa Đơn
+      </p>
+    </div>
+  </section>
+
+  <!-- Giới thiệu -->
+  <section class="bg-white py-10 md:py-14">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <div class="prose prose-lg mx-auto max-w-none text-gray-700">
+        <p class="text-justify">
+          Bạn đang tìm kiếm <strong class="text-primary">dịch vụ thay đổi tên công ty tại Cần Thơ</strong> uy tín, chuyên nghiệp để đảm bảo quy trình đúng luật, nhanh chóng và tiết kiệm chi phí? <strong class="text-primary">Hoàng Nam</strong> cung cấp giải pháp trọn gói, giúp doanh nghiệp của bạn hoàn tất thủ tục thay đổi tên công ty chỉ trong 3-5 ngày. Với đội ngũ chuyên gia pháp lý am hiểu quy định tại Sở Kế hoạch và Đầu tư (KHĐT) Cần Thơ, chúng tôi cam kết mang đến trải nghiệm dịch vụ mượt mà, không phát sinh phí.
+        </p>
+      </div>
+      <div class="my-10 overflow-hidden rounded-2xl shadow-xl">
+        <Image
+          src={heroImage}
+          alt="Dịch vụ thay đổi tên công ty tại Cần Thơ"
+          width={750}
+          height={500}
+          class="w-full object-cover"
+          loading="lazy"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Lý do đổi tên -->
+  <section class="bg-gray-50 py-10 md:py-14">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <h2 class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl">
+        Vì Sao Cần Thay Đổi Tên Công Ty Tại Cần Thơ?
+      </h2>
+      <div class="mt-6 grid grid-cols-1 gap-5 sm:grid-cols-3">
+        {changeReasons.map((r) => (
+          <div class="rounded-xl border border-gray-100 bg-white p-6 text-center shadow-sm">
+            <div class="mb-3 text-3xl">{r.icon}</div>
+            <strong class="block text-sm text-primary">{r.title}</strong>
+            <p class="mt-2 text-sm text-gray-600">{r.desc}</p>
+          </div>
+        ))}
+      </div>
+
+      <h3 class="mt-8 text-xl font-bold text-primary">Khi Nào Bắt Buộc Thay Đổi Tên Theo Luật Doanh Nghiệp 2020?</h3>
+      <p class="mt-2 text-sm text-gray-600">Theo Điều 48 Luật Doanh nghiệp 2020 và Nghị định 01/2021/NĐ-CP, doanh nghiệp bắt buộc phải thay đổi tên khi:</p>
+      <div class="mt-4 space-y-3">
+        {mandatoryChangeCases.map((c, i) => (
+          <div class="flex items-start gap-4 rounded-xl border border-gray-100 bg-white p-4 shadow-sm">
+            <span class="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full bg-primary/10 text-sm font-bold text-primary">{i + 1}</span>
+            <p class="text-sm text-gray-700">{c}</p>
+          </div>
+        ))}
+      </div>
+      <div class="mt-4 rounded-r-xl border-l-[6px] border-red-400 bg-red-50 px-6 py-4">
+        <p class="text-sm text-red-800">
+          <strong>⚠️ Lưu ý:</strong> Không thực hiện đúng thời hạn, doanh nghiệp có thể bị phạt từ <strong>5-15 triệu đồng</strong> (theo Nghị định 122/2021/NĐ-CP).
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quy trình 4 bước -->
+  <section class="bg-white py-10 md:py-14">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <h2 class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl">
+        Quy Trình 4 Bước Đơn Giản – Đổi Tên Công Ty Thuận Lợi Tại Cần Thơ
+      </h2>
+      <div class="my-8 overflow-hidden rounded-2xl shadow-md">
+        <Image
+          src={processImage}
+          alt="Quy Trình 4 Bước Đơn Giản Đổi Tên Công Ty Tại Cần Thơ"
+          width={1099}
+          height={552}
+          class="w-full object-cover"
+          loading="lazy"
+        />
+      </div>
+      <div class="flex flex-col gap-5">
+        {processSteps.map((step, i) => (
+          <div class="flex items-start gap-5 rounded-xl border border-gray-100 bg-gray-50 p-6 shadow-sm">
+            <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-primary text-sm font-bold text-white">
+              {i + 1}
+            </span>
+            <div>
+              <p class="text-xs font-semibold uppercase text-primary/60">{step.step}</p>
+              <h4 class="font-bold text-primary">{step.title}</h4>
+              <p class="mt-1 text-sm text-gray-600">{step.desc}</p>
+              {step.items.length > 0 && (
+                <ul class="mt-2 space-y-1 text-sm text-gray-600">
+                  {step.items.map((item) => (
+                    <li class="flex items-start gap-2">
+                      <span class="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary/50" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Chi phí -->
+  <section class="bg-gray-50 py-10 md:py-14">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <h2 class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl">
+        Chi Phí &amp; Thời Gian – Minh Bạch Cho Từng Loại Hình Doanh Nghiệp
+      </h2>
+      <div class="mt-6 overflow-hidden rounded-2xl border border-gray-200 shadow-sm">
+        <table class="w-full text-left text-sm">
+          <thead>
+            <tr class="bg-primary text-white">
+              <th class="px-4 py-3 font-semibold md:px-6">Loại hình doanh nghiệp</th>
+              <th class="px-4 py-3 text-right font-semibold md:px-6">Phí dịch vụ</th>
+            </tr>
+          </thead>
+          <tbody>
+            {pricing.map((p, i) => (
+              <tr class:list={[i % 2 === 0 ? "bg-white" : "bg-gray-50", "border-t border-gray-100"]}>
+                <td class="px-4 py-3 md:px-6">{p.name}</td>
+                <td class="px-4 py-3 text-right font-semibold text-primary md:px-6">{p.range}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <div class="mt-4 rounded-r-xl border-l-[6px] border-amber-400 bg-amber-50 px-6 py-4">
+        <p class="text-sm text-amber-800">
+          <strong>Phí nhà nước:</strong> 200.000 đ (đổi tên) + 300.000 đ (khắc dấu mới). Cam kết không phát sinh phí. Ưu đãi gói dịch vụ trọn gói khi thực hiện nhiều thủ tục.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lợi ích -->
+  <section class="bg-white py-10 md:py-14">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <h2 class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl">
+        Lợi Ích Khi Chọn Dịch Vụ Uy Tín Tại Cần Thơ
+      </h2>
+      <div class="mt-6 grid grid-cols-1 gap-5 sm:grid-cols-2">
+        {benefits.map((b) => (
+          <div class="flex items-start gap-4 rounded-xl border border-gray-100 bg-gray-50 p-6 shadow-sm transition-all hover:shadow-md">
+            <div class="text-3xl">{b.icon}</div>
+            <div>
+              <strong class="block text-primary">{b.title}</strong>
+              <p class="mt-1 text-sm text-gray-600">{b.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="bg-gray-50 py-10 md:py-14">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <h2 class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl">
+        Hỏi Đáp Nhanh – Giải Tỏa Mọi Thắc Mắc
+      </h2>
+      <div class="mt-6 space-y-4">
+        {faqs.map((faq) => (
+          <div class="rounded-2xl border-l-[5px] border-primary bg-white p-6 shadow-sm">
+            <h4 class="font-bold text-primary">{faq.q}</h4>
+            <p class="mt-2 text-sm text-gray-700">{faq.a}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Khu vực hỗ trợ -->
+  <section class="bg-white py-12">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <div class="rounded-2xl border-2 border-dashed border-primary bg-blue-50 p-8 text-center">
+        <p class="text-lg font-bold text-primary">
+          📍 Hỗ trợ tận nơi tại Cần Thơ:{" "}
+          <span class="font-normal text-gray-700">
+            Ninh Kiều, Cái Răng, Bình Thủy, Ô Môn, Thốt Nốt, Phong Điền, Cờ Đỏ, Vĩnh Thạnh, Thới Lai.
+          </span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Info -->
+  <section class="bg-gray-50 py-10 md:py-14">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <div class="rounded-2xl border border-primary/20 bg-blue-50 p-8">
+        <h2 class="text-xl font-extrabold text-primary">
+          📞 Gọi Ngay Để Được Tư Vấn Miễn Phí Và Hỗ Trợ Đổi Tên Công Ty Tại Cần Thơ!
+        </h2>
+        <div class="mt-6 space-y-2 text-sm text-gray-700">
+          <p>📌 <strong>Địa chỉ:</strong> 462 Lê Hồng Nhi, KV1, P. Ba Láng, Q. Cái Răng, Tp. Cần Thơ</p>
+          <p>📞 <strong>Hotline:</strong> 091.888.31.79</p>
+          <p>📧 <strong>Email:</strong> <a href="mailto:tructuyenhoangnam@gmail.com" class="text-primary underline">tructuyenhoangnam@gmail.com</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <CTABanner
+    title="Gọi Ngay 091.888.31.79 – Đổi Tên Công Ty Tại Cần Thơ, Nhận GPKD Mới 3-5 Ngày!"
+    subtitle="Hoàng Nam – Gỡ rối, kết nối, đảm bảo thông suốt mọi thủ tục pháp lý doanh nghiệp tại Cần Thơ."
+  />
+</BaseLayout>

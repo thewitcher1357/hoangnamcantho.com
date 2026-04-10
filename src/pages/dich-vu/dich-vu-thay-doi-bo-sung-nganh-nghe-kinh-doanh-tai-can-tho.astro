@@ -1,0 +1,296 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { Image } from "astro:assets";
+import CTABanner from "@/components/homepage/CTABanner.astro";
+import heroImage from "@/assets/images/services/thay-doi-nganh-nghe.jpg";
+
+const metadata = {
+  title: "Dịch Vụ Thay Đổi, Bổ Sung Ngành Nghề Kinh Doanh Tại Cần Thơ – 24H",
+  description:
+    "Hoàng Nam cung cấp dịch vụ thay đổi ngành nghề kinh doanh tại Cần Thơ trọn gói. Bổ sung ngành nghề nhanh trong 24 giờ, đúng Luật Doanh nghiệp 2020. Hotline 091.888.31.79.",
+};
+
+const benefits = [
+  { icon: "🚀", title: "Mở rộng thị trường", desc: "Thêm ngành nghề mới giúp doanh nghiệp tiếp cận khách hàng và cơ hội kinh doanh mới." },
+  { icon: "⚖️", title: "Tuân thủ pháp luật", desc: "Đảm bảo hoạt động kinh doanh phù hợp với Giấy chứng nhận đăng ký kinh doanh, tránh rủi ro pháp lý." },
+  { icon: "🏆", title: "Tăng uy tín", desc: "Cập nhật ngành nghề chính xác giúp xây dựng hình ảnh chuyên nghiệp với đối tác." },
+];
+
+const penalties = [
+  { icon: "⚠️", title: "Phạt hành chính", desc: "Theo Nghị định 122/2021/NĐ-CP, doanh nghiệp có thể bị phạt từ 5-10 triệu đồng nếu không cập nhật ngành nghề." },
+  { icon: "📄", title: "Rủi ro pháp lý", desc: "Hoạt động ngoài ngành nghề đăng ký có thể bị từ chối hóa đơn hoặc gặp vấn đề với cơ quan thuế." },
+  { icon: "📉", title: "Ảnh hưởng kinh doanh", desc: "Mất cơ hội hợp tác với đối tác do thông tin không chính xác." },
+];
+
+const docsRequired = [
+  "Thông báo thay đổi nội dung đăng ký kinh doanh (theo mẫu Nghị định 01/2021/NĐ-CP).",
+  "Biên bản họp của Hội đồng thành viên/Đại hội đồng cổ đông về việc thay đổi ngành nghề.",
+  "Quyết định thay đổi ngành nghề do chủ sở hữu/Hội đồng quản trị ban hành.",
+  "Giấy chứng nhận đăng ký doanh nghiệp (bản sao công chứng).",
+  "Giấy ủy quyền (nếu sử dụng dịch vụ của Hoàng Nam).",
+];
+
+const processSteps = [
+  {
+    title: "Tư vấn và soạn hồ sơ",
+    items: [
+      "Kiểm tra ngành nghề mới, đảm bảo phù hợp với Hệ thống ngành kinh tế Việt Nam.",
+      "Soạn hồ sơ chuẩn mẫu, đúng quy định.",
+    ],
+  },
+  {
+    title: "Nộp hồ sơ tại Sở KHĐT Cần Thơ",
+    items: [
+      "Nộp trực tiếp hoặc online qua Cổng thông tin Đăng ký doanh nghiệp quốc gia.",
+    ],
+  },
+  {
+    title: "Nhận kết quả",
+    items: [
+      "Nhận Giấy chứng nhận đăng ký kinh doanh mới trong 3-5 ngày làm việc.",
+      "Hoàn tất sớm hơn với dịch vụ trọn gói Hoàng Nam (24 giờ).",
+    ],
+  },
+];
+
+const serviceFeatures = [
+  { icon: "⏱️", title: "Tiết Kiệm Thời Gian", desc: "Chỉ cần cung cấp thông tin, chúng tôi soạn hồ sơ, nộp Sở KHĐT và giao GPKD mới tận tay trong 24-48 giờ." },
+  { icon: "👨‍⚖️", title: "Chuyên Gia Pháp Lý Hỗ Trợ", desc: "Đội ngũ am hiểu Luật Doanh nghiệp và các quy định liên quan, hỗ trợ từ A-Z." },
+  { icon: "✅", title: "Đảm Bảo Đúng Quy Định", desc: "Kiểm tra kỹ ngành nghề đăng ký, phù hợp Hệ thống ngành kinh tế Việt Nam, không sai sót." },
+];
+
+const pricing = [
+  { name: "Tự làm", cost: "Khoảng 200.000 đ (phí nhà nước)", note: "Mất thời gian, dễ sai sót, có thể phát sinh chi phí sửa đổi." },
+  { name: "Dịch vụ Hoàng Nam", cost: "500.000 – 1.000.000 đ", note: "Tiết kiệm thời gian, đảm bảo đúng quy định, không phát sinh thêm phí." },
+];
+
+const specialIndustries = [
+  { name: "Giáo dục", requirement: "Cần giấy phép của Sở Giáo dục và Đào tạo." },
+  { name: "Vận tải", requirement: "Yêu cầu giấy phép của Sở Giao thông Vận tải." },
+  { name: "Y tế", requirement: "Cần giấy phép hoạt động từ Sở Y tế." },
+];
+
+const importantNotes = [
+  "Đảm bảo ngành nghề đăng ký thuộc danh mục của Hệ thống ngành kinh tế Việt Nam.",
+  "Một số ngành nghề yêu cầu giấy phép con (ví dụ: giáo dục, y tế, vận tải). Chúng tôi sẽ tư vấn cụ thể.",
+  "Kiểm tra kỹ thông tin trước khi nộp để tránh bị trả lại hồ sơ.",
+];
+---
+
+<BaseLayout {metadata}>
+  <!-- Hero Banner -->
+  <section class="relative bg-gradient-to-r from-primary to-primary-light py-20 text-center text-white md:py-28">
+    <div class="relative z-10 mx-auto max-w-4xl px-6">
+      <h1 class="text-3xl font-extrabold uppercase leading-tight drop-shadow-md md:text-5xl">
+        Dịch Vụ Thay Đổi, Bổ Sung Ngành Nghề Kinh Doanh Tại Cần Thơ
+      </h1>
+      <p class="mt-5 text-lg font-light text-white/90 md:text-xl">
+        Trọn Gói – Nhanh 24H – Đúng Luật Doanh Nghiệp 2020
+      </p>
+    </div>
+  </section>
+
+  <!-- Giới thiệu -->
+  <section class="bg-white py-10 md:py-14">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <div class="prose prose-lg mx-auto max-w-none text-gray-700">
+        <p class="text-justify">
+          Bạn đang tìm <strong class="text-primary">dịch vụ thay đổi ngành nghề kinh doanh tại Cần Thơ</strong> để mở rộng hoạt động doanh nghiệp một cách nhanh chóng và đúng luật? <strong class="text-primary">Hoàng Nam</strong> cung cấp giải pháp trọn gói, giúp bạn hoàn tất <strong>thủ tục thay đổi ngành nghề kinh doanh tại Cần Thơ</strong> chỉ trong 24 giờ. Với đội ngũ chuyên gia pháp lý giàu kinh nghiệm, chúng tôi đảm bảo hồ sơ chuẩn khung, tuân thủ <strong>Luật Doanh nghiệp 2020</strong>.
+        </p>
+      </div>
+      <div class="my-10 overflow-hidden rounded-2xl shadow-xl">
+        <Image
+          src={heroImage}
+          alt="Dịch vụ thay đổi ngành nghề kinh doanh tại Cần Thơ"
+          width={750}
+          height={500}
+          class="w-full object-cover"
+          loading="lazy"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Lý do & Hệ lụy -->
+  <section class="bg-gray-50 py-10 md:py-14">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <h2 class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl">
+        Thay Đổi Ngành Nghề Kinh Doanh – Đừng Để Pháp Lý Cản Bước Thành Công
+      </h2>
+      <h3 class="mt-6 text-xl font-bold text-primary">Tại Sao Cần Thay Đổi Ngành Nghề Đúng Thời Hạn?</h3>
+      <div class="mt-4 grid grid-cols-1 gap-5 sm:grid-cols-3">
+        {benefits.map((b) => (
+          <div class="rounded-xl border border-gray-100 bg-white p-6 text-center shadow-sm">
+            <div class="mb-3 text-3xl">{b.icon}</div>
+            <strong class="block text-sm text-primary">{b.title}</strong>
+            <p class="mt-2 text-sm text-gray-600">{b.desc}</p>
+          </div>
+        ))}
+      </div>
+
+      <h3 class="mt-8 text-xl font-bold text-primary">Hệ Lụy Nếu Không Tuân Thủ Quy Định</h3>
+      <div class="mt-4 grid grid-cols-1 gap-5 sm:grid-cols-3">
+        {penalties.map((p) => (
+          <div class="rounded-xl border border-gray-100 bg-white p-6 text-center shadow-sm">
+            <div class="mb-3 text-3xl">{p.icon}</div>
+            <strong class="block text-sm text-primary">{p.title}</strong>
+            <p class="mt-2 text-xs text-gray-600">{p.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Hồ sơ & Quy trình -->
+  <section class="bg-white py-10 md:py-14">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <h2 class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl">
+        Thủ Tục Thay Đổi Ngành Nghề Kinh Doanh Tại Cần Thơ
+      </h2>
+      <h3 class="mt-6 text-xl font-bold text-primary">Hồ Sơ Cần Chuẩn Bị Theo Luật Doanh Nghiệp</h3>
+      <div class="mt-4 space-y-3">
+        {docsRequired.map((doc) => (
+          <div class="flex items-start gap-3 rounded-xl border border-gray-100 bg-gray-50 p-4 shadow-sm">
+            <span class="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-primary" />
+            <p class="text-sm text-gray-700">{doc}</p>
+          </div>
+        ))}
+      </div>
+
+      <h3 class="mt-8 text-xl font-bold text-primary">Quy Trình Nộp Hồ Sơ Tại Sở KHĐT Cần Thơ</h3>
+      <div class="mt-4 flex flex-col gap-5">
+        {processSteps.map((step, i) => (
+          <div class="flex items-start gap-5 rounded-xl border border-gray-100 bg-gray-50 p-6 shadow-sm">
+            <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-primary text-sm font-bold text-white">
+              {i + 1}
+            </span>
+            <div>
+              <h4 class="font-bold text-primary">{step.title}</h4>
+              <ul class="mt-2 space-y-1 text-gray-600">
+                {step.items.map((item) => (
+                  <li class="flex items-start gap-2">
+                    <span class="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary/50" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="mt-4 rounded-r-xl border-l-[6px] border-amber-400 bg-amber-50 px-6 py-4">
+        <p class="text-sm text-amber-800">
+          <strong>Lưu ý quan trọng:</strong>
+        </p>
+        <ul class="mt-2 space-y-1">
+          {importantNotes.map((note) => (
+            <li class="flex items-start gap-2 text-sm text-amber-800">
+              <span class="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-amber-400" />{note}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Chi phí -->
+  <section class="bg-gray-50 py-10 md:py-14">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <h2 class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl">
+        Chi Phí Thay Đổi Ngành Nghề – Minh Bạch &amp; Hợp Lý
+      </h2>
+      <div class="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
+        {pricing.map((p, i) => (
+          <div class:list={["rounded-xl border p-6 shadow-sm", i === 0 ? "border-gray-200 bg-white" : "border-primary/30 bg-blue-50"]}>
+            <h4 class:list={["font-bold", i === 0 ? "text-gray-700" : "text-primary"]}>{p.name}</h4>
+            <p class:list={["mt-2 text-2xl font-extrabold", i === 0 ? "text-gray-800" : "text-primary"]}>{p.cost}</p>
+            <p class="mt-2 text-sm text-gray-600">{p.note}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Lợi ích dịch vụ -->
+  <section class="bg-white py-10 md:py-14">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <h2 class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl">
+        Lợi Ích Khi Sử Dụng Dịch Vụ Bổ Sung Ngành Nghề Tại Cần Thơ
+      </h2>
+      <div class="mt-6 grid grid-cols-1 gap-5 sm:grid-cols-3">
+        {serviceFeatures.map((f) => (
+          <div class="flex flex-col items-center rounded-xl border border-gray-100 bg-gray-50 p-6 text-center shadow-sm transition-all hover:shadow-md">
+            <div class="text-3xl">{f.icon}</div>
+            <strong class="mt-3 block text-primary">{f.title}</strong>
+            <p class="mt-2 text-sm text-gray-600">{f.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Ngành nghề cần giấy phép con -->
+  <section class="bg-gray-50 py-10 md:py-14">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <h2 class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl">
+        Ngành Nghề Cần Giấy Phép Con – Bạn Đã Biết?
+      </h2>
+      <p class="mt-4 text-gray-600">Một số ngành nghề yêu cầu giấy phép con trước khi hoạt động:</p>
+      <div class="mt-4 space-y-3">
+        {specialIndustries.map((ind) => (
+          <div class="flex items-start gap-4 rounded-xl border border-gray-100 bg-white p-4 shadow-sm">
+            <span class="text-primary font-bold">🔑</span>
+            <div>
+              <strong class="text-primary">{ind.name}</strong>
+              <span class="text-gray-600">: {ind.requirement}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="mt-8 rounded-2xl border border-green-200 bg-green-50 p-6">
+        <h3 class="font-bold text-green-800">✅ Ví Dụ Thực Tế</h3>
+        <p class="mt-2 text-sm text-gray-700">
+          Một doanh nghiệp tại Cần Thơ muốn mở rộng sang lĩnh vực thương mại điện tử. Hoàng Nam đã hỗ trợ kiểm tra và đề xuất mã ngành phù hợp (<strong>4791 – Bán lẻ qua bưu điện hoặc Internet</strong>), soạn hồ sơ và nộp tại Sở KHĐT Cần Thơ. Kết quả: Nhận GCNĐKKD mới trong <strong>24 giờ</strong>. Doanh nghiệp nhanh chóng triển khai hoạt động mới, tăng trưởng doanh thu 20% trong quý đầu tiên.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Khu vực hỗ trợ -->
+  <section class="bg-white py-12">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <div class="rounded-2xl border-2 border-dashed border-primary bg-blue-50 p-8 text-center">
+        <p class="text-lg font-bold text-primary">
+          📍 Hỗ trợ tận nơi tại Cần Thơ:{" "}
+          <span class="font-normal text-gray-700">
+            Ninh Kiều, Cái Răng, Bình Thủy, Ô Môn, Thốt Nốt, Phong Điền, Cờ Đỏ, Vĩnh Thạnh, Thới Lai.
+          </span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Info -->
+  <section class="bg-gray-50 py-10 md:py-14">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <div class="rounded-2xl border border-primary/20 bg-blue-50 p-8">
+        <h2 class="text-xl font-extrabold text-primary">
+          📞 Gọi Ngay Để Được Tư Vấn Miễn Phí Và Hoàn Tất Thủ Tục Thay Đổi Ngành Nghề Trong 24H!
+        </h2>
+        <div class="mt-6 space-y-2 text-sm text-gray-700">
+          <p>📌 <strong>Địa chỉ:</strong> 462 Lê Hồng Nhi, KV1, P. Ba Láng, Q. Cái Răng, Tp. Cần Thơ</p>
+          <p>📞 <strong>Hotline:</strong> 091.888.31.79</p>
+          <p>📧 <strong>Email:</strong> <a href="mailto:tructuyenhoangnam@gmail.com" class="text-primary underline">tructuyenhoangnam@gmail.com</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <CTABanner
+    title="Gọi Ngay 091.888.31.79 – Thay Đổi Ngành Nghề Kinh Doanh Trong 24H!"
+    subtitle="Hoàng Nam – Gỡ rối, kết nối, đảm bảo thông suốt mọi thủ tục pháp lý doanh nghiệp tại Cần Thơ."
+  />
+</BaseLayout>
