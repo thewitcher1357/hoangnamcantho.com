@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { siteConfig } from "@/config/site";
+import Schema from "@/components/seo/Schema.astro";
 import HeroBanner from "@/components/homepage/HeroBanner.astro";
 import ServicesGrid from "@/components/homepage/ServicesGrid.astro";
 import CTABanner from "@/components/homepage/CTABanner.astro";
@@ -20,6 +21,7 @@ const metadata = {
 ---
 
 <BaseLayout {metadata}>
+  <Schema type="LocalBusiness" data={{}} />
   <HeroBanner />
   <ServicesGrid />
   <CTABanner />
@@ -30,3 +32,4 @@ const metadata = {
   <LatestPosts />
   <ContactForm />
 </BaseLayout>
+

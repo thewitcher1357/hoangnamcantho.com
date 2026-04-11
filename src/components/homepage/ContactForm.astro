@@ -1,4 +1,5 @@
 ---
+import { siteConfig } from "@/config/site";
 ---
 
 <section class="bg-gray-100 py-20 md:py-28">
@@ -13,7 +14,7 @@
     </div>
 
     <div class="mx-auto max-w-4xl rounded-2xl bg-white p-8 shadow-lg md:p-12">
-      <form action="#" method="POST">
+      <form id="contact-form">
         <div class="space-y-5">
           <input
             type="text"
@@ -46,3 +47,17 @@
     </div>
   </div>
 </section>
+
+<script define:vars={{ zaloUrl: siteConfig.contact.zalo }}>
+  const initContactForm = () => {
+    const form = document.getElementById("contact-form");
+    if (!form) return;
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      window.open(zaloUrl, "_blank", "noopener,noreferrer");
+    });
+  };
+
+  document.addEventListener("astro:page-load", initContactForm);
+</script>

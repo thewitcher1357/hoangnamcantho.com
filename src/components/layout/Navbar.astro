@@ -39,7 +39,7 @@ import logoImg from "@/assets/images/logo.webp";
   </div>
 
   <!-- Main Navigation -->
-  <nav class="relative w-full bg-white/80 shadow-md backdrop-blur-md transition-all duration-300">
+  <nav class="relative w-full bg-white/95 shadow-md md:bg-white/80 md:backdrop-blur-md transition-all duration-300">
     <div class="mx-auto flex max-w-7xl items-center justify-between px-4">
       <!-- Logo -->
       <a href="/" class="py-3">
@@ -50,6 +50,7 @@ import logoImg from "@/assets/images/logo.webp";
           height={150}
           class="h-[50px] w-auto"
           loading="eager"
+          fetchpriority="high"
         />
       </a>
 
@@ -131,6 +132,11 @@ import logoImg from "@/assets/images/logo.webp";
             </a>
             {link.children && (
               <ul class="mobile-submenu pl-4 pt-1">
+                <li>
+                  <a href={link.href} class="block rounded-md px-4 py-2.5 font-semibold text-primary hover:bg-blue-50">
+                    → Xem tất cả {link.text}
+                  </a>
+                </li>
                 {link.children.map((child) => (
                   <li>
                     <a href={child.href} class="block rounded-md px-4 py-2.5 text-gray-600 hover:bg-gray-100">
@@ -192,5 +198,4 @@ import logoImg from "@/assets/images/logo.webp";
   };
 
   document.addEventListener("astro:page-load", initMobileMenu);
-  initMobileMenu();
 </script>

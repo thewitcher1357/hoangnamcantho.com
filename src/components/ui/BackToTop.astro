@@ -18,6 +18,7 @@
     const btn = document.getElementById("back-to-top");
     if (!btn) return;
 
+    let ticking = false;
     const toggle = () => {
       const show = window.scrollY > 300;
       btn.classList.toggle("opacity-0", !show);
@@ -29,10 +30,18 @@
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
 
-    window.addEventListener("scroll", toggle, { passive: true });
+    window.addEventListener("scroll", () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          toggle();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }, { passive: true });
+
     toggle();
   };
 
   document.addEventListener("astro:page-load", initBackToTop);
-  initBackToTop();
 </script>

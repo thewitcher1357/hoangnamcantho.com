@@ -29,11 +29,10 @@ export default defineConfig({
     },
   },
   prefetch: {
-    prefetchAll: true,
     defaultStrategy: "viewport",
   },
   build: {
-    inlineStylesheets: "always",
+    inlineStylesheets: "auto",
   },
   vite: {
     plugins: [tailwindcss()],
