@@ -6,6 +6,6 @@
         "directory": "./dist",
         "binding": "ASSETS",
         "not_found_handling": "404-page",
-        "run_worker_first": ["/feed/podcast/"]
+        "run_worker_first": ["/feed/podcast", "/feed/podcast/"]
     }
 }
