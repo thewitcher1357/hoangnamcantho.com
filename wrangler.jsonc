@@ -1,8 +1,11 @@
 {
     "name": "hoangnamcantho-com",
-    "compatibility_date": "2026-04-9", // Cập nhật ngày hiện tại
+    "compatibility_date": "2026-04-09",
+    "main": "worker.js",
     "assets": {
         "directory": "./dist",
-        "not_found_handling": "404-page"
+        "binding": "ASSETS",
+        "not_found_handling": "404-page",
+        "run_worker_first": ["/feed/podcast/"]
     }
 }
