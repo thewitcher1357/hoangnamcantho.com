@@ -2,7 +2,7 @@
   "meta": {
     "schema_version": "1.1.0",
     "awf_version": "4.0.2",
-    "last_updated": "2026-04-09T16:26:00Z"
+    "last_updated": "2026-04-11T08:56:00Z"
   },
   "project": {
     "name": "hoangnamcantho.com",
@@ -21,7 +21,22 @@
     "icons": "astro-icon",
     "language": "TypeScript",
     "build_output": "Static HTML (SSG)",
-    "deployment": "Cloudflare (wrangler.json present)"
+    "deployment": {
+      "platform": "Cloudflare Workers + Assets",
+      "config_file": "wrangler.jsonc",
+      "worker_file": "worker.js",
+      "staging_url": "https://hoangnamcantho-com.tranchung1357.workers.dev",
+      "production_url": "https://astro.hoangnamcantho.com",
+      "deploy_command": "npm run build && npx wrangler deploy"
+    },
+    "podcast": {
+      "feed_url": "/feed/podcast/",
+      "config_file": "src/data/podcast-config.json",
+      "episodes_file": "src/data/podcasts.json",
+      "endpoint": "src/pages/feed/podcast/index.ts",
+      "total_episodes": 34,
+      "audio_cdn": "Cloudflare R2 via images.hoangnamcantho.com"
+    }
   },
   "design_system": {
     "mode": "Light Only (no dark mode)",
@@ -203,6 +218,7 @@
     "schema_type": "LocalBusiness",
     "sitemap": "auto-generated",
     "rss": "/rss.xml",
+    "podcast_feed": "/feed/podcast/",
     "og_image": "auto from assets/og-image.png",
     "canonical": "https://hoangnamcantho.com"
   },
@@ -264,6 +280,16 @@
       "date": "2026-04-09",
       "decision": "Menu Dịch Vụ cố định 8 submenu, các trang mới batch 2-4 KHÔNG thêm vào menu",
       "reason": "User yêu cầu rõ ràng - các dịch vụ mới chỉ truy cập từ trang /dich-vu index"
+    },
+    {
+      "date": "2026-04-11",
+      "decision": "Dùng worker.js nhỏ thay vì @astrojs/cloudflare adapter cho Cloudflare Workers",
+      "reason": "Đơn giản hơn, không cần cài thêm package. Worker chỉ xử lý /feed/podcast/ trailing slash + CORS/HEAD"
+    },
+    {
+      "date": "2026-04-11",
+      "decision": "Tạo WAF Custom Rule trên Cloudflare Dashboard cho phép bot truy cập /feed/ path",
+      "reason": "Bot Fight Mode chặn RSS validators - gây 403. Rule skip bot protection cho feed paths"
     }
   ],
   "knowledge_items": {
@@ -286,7 +312,12 @@
       "CSS variables --color-primary etc. định nghĩa trong global.css @theme block",
       "Logo Navbar: width và height phải khớp intrinsic size của ảnh (150x150), CSS class điều chỉnh display size",
       "Khi 2 section liền nhau cùng màu trắng: py-24 + py-24 = 192px khoảng trắng - quá lớn. Dùng py-14 max",
-      "KHÔNG sửa site.ts menu khi thêm service pages mới (user decision)"
+      "KHÔNG sửa site.ts menu khi thêm service pages mới (user decision)",
+      "Astro static API endpoints (.ts GET) build ra file KHÔNG có extension (VD: dist/feed/podcast). Cloudflare Assets không tự resolve trailing slash → cần worker.js",
+      "Cloudflare Bot Fight Mode chặn RSS validators (403). Cần tạo WAF Custom Rule skip bot protection cho /feed/ paths",
+      "wrangler.jsonc: compatibility_date phải format YYYY-MM-DD (VD: 2026-04-09, KHÔNG phải 2026-04-9)",
+      "Cloudflare Workers Assets: cần 'binding: ASSETS' + 'run_worker_first' trong wrangler.jsonc để worker chạy trước static assets",
+      "worker.js phải hỗ trợ HEAD + OPTIONS cho podcast feeds (Apple Podcasts yêu cầu HEAD, validators cần CORS)"
     ],
     "conventions": [
       "Vietnamese routes: /gioi-thieu, /dich-vu, /lien-he (không dùng English routes)",
@@ -295,7 +326,9 @@
       "Reading time: 'X phút đọc', Pagination: 'Trang trước/sau'",
       "siteConfig imported from @/config/site for all contact/nav data",
       "Service images: src/assets/images/services/[name].png, downloaded from hoangnamcantho.com WP uploads",
-      "Info box contact: rounded-2xl border-primary/20 bg-gradient-to-r from-blue-50 to-indigo-50 p-8"
+      "Info box contact: rounded-2xl border-primary/20 bg-gradient-to-r from-blue-50 to-indigo-50 p-8",
+      "Deploy flow: npm run build → npx wrangler deploy (build trước, deploy sau)",
+      "Feed worker pattern: worker.js chỉ intercept /feed/* paths, mọi thứ khác pass-through env.ASSETS.fetch(request)"
     ]
   }
 }

@@ -1,91 +1,110 @@
 {
-  "updated_at": "2026-04-10T03:18:40.011748Z",
+  "updated_at": "2026-04-11T08:56:00Z",
   "working_on": {
-    "feature": "Service Pages Expansion",
-    "task": "Batch 5 completed",
+    "feature": "Cloudflare Deployment & Podcast Feed Fix",
+    "task": "Fix podcast feed 404/403 on Cloudflare Workers",
     "status": "completed",
     "files": [
-      "src/pages/dich-vu.astro",
-      "src/pages/dich-vu/quyet-toan-thue-thu-nhap-ca-nhan.astro",
-      "src/pages/dich-vu/dich-vu-lam-bao-cao-tai-chinh-can-tho.astro",
-      "src/pages/dich-vu/khai-thue-ban-dau.astro",
-      "src/pages/dich-vu/khai-bao-thue-tai-can-tho.astro",
-      "src/pages/dich-vu/ke-khai-thue-thu-nhap-ca-nhan.astro"
+      "worker.js",
+      "wrangler.jsonc"
     ],
     "blockers": [],
-    "notes": "All 4 batches complete. 18 service pages total (8 in nav, 10 index-only). Build: 80 pages, 0 errors.",
-    "current_plan_path": "plans/260410-0249-service-pages-batch5/",
-    "current_phase": "phase-05"
+    "notes": "Fix 2 issues: (1) 404 trailing slash - worker.js intercepts /feed/podcast/ and serves static file with correct headers. (2) 403 from RSS validators - user created WAF rule on Cloudflare Dashboard to skip bot protection for /feed/ paths."
   },
   "completed_batches": [
     {
       "batch": 1,
       "date": "2026-04-09",
       "pages_added": 3,
-      "note": "GPKD + Thay \u0111\u1ed5i GPKD + Gi\u1ea3i th\u1ec3 - with nav submenu"
+      "note": "GPKD + Thay đổi GPKD + Giải thể - with nav submenu"
     },
     {
       "batch": 2,
       "date": "2026-04-09",
       "pages_added": 4,
-      "note": "K\u1ebf to\u00e1n + H\u0110\u0110T + CKS + FDI - with nav submenu"
+      "note": "Kế toán + HĐĐT + CKS + FDI - with nav submenu"
     },
     {
       "batch": 3,
       "date": "2026-04-09",
       "pages_added": 5,
-      "note": "VP\u0110D + PM K\u1ebf to\u00e1n + Chi nh\u00e1nh + Gi\u1ea3i th\u1ec3 CN + Gi\u1ea3i th\u1ec3 VP\u0110D - NO nav"
+      "note": "VPĐD + PM Kế toán + Chi nhánh + Giải thể CN + Giải thể VPĐD - NO nav"
     },
     {
       "batch": 4,
       "date": "2026-04-09",
       "pages_added": 5,
-      "note": "QT thu\u1ebf TNCN + BCTC + Khai thu\u1ebf ban \u0111\u1ea7u + Khai b\u00e1o thu\u1ebf (b\u1ea3ng gi\u00e1) + KK thu\u1ebf TNCN - NO nav"
+      "note": "QT thuế TNCN + BCTC + Khai thuế ban đầu + Khai báo thuế (bảng giá) + KK thuế TNCN - NO nav"
     },
     {
       "batch": 5,
       "date": "2026-04-10",
       "pages_added": 4,
-      "note": "Chuy\u1ec3n \u0111\u1ed5i lo\u1ea1i h\u00ecnh, BHXH, \u0110\u0103ng k\u00fd HKD, KT thu\u1ebf HKD - No nav"
+      "note": "Chuyển đổi loại hình, BHXH, Đăng ký HKD, KT thuế HKD - No nav"
     }
   ],
   "pending_tasks": [],
   "recent_changes": [
     {
-      "timestamp": "2026-04-09T16:26:00Z",
-      "type": "feature",
-      "description": "Batch 4: Added 5 tax/accounting service pages + 5 cards on index",
+      "timestamp": "2026-04-11T08:35:00Z",
+      "type": "fix",
+      "description": "Fixed podcast feed 404 on Cloudflare (trailing slash) + 403 from RSS validators (Bot Fight Mode). Created worker.js with CORS/HEAD/OPTIONS support. User created WAF rule on CF Dashboard.",
       "files": [
-        "src/pages/dich-vu.astro",
-        "src/pages/dich-vu/quyet-toan-thue-thu-nhap-ca-nhan.astro",
-        "src/pages/dich-vu/dich-vu-lam-bao-cao-tai-chinh-can-tho.astro",
-        "src/pages/dich-vu/khai-thue-ban-dau.astro",
-        "src/pages/dich-vu/khai-bao-thue-tai-can-tho.astro",
-        "src/pages/dich-vu/ke-khai-thue-thu-nhap-ca-nhan.astro"
+        "worker.js",
+        "wrangler.jsonc"
       ]
     },
     {
-      "timestamp": "2026-04-09T15:00:00Z",
+      "timestamp": "2026-04-10T11:20:00Z",
       "type": "feature",
-      "description": "Batch 3: Added 5 service pages + 5 cards on index",
+      "description": "Migrated podcast RSS feed from WordPress to Astro. 34 episodes, audio on R2 CDN.",
       "files": [
-        "src/pages/dich-vu/thanh-lap-van-phong-dai-dien-tai-can-tho.astro",
-        "src/pages/dich-vu/phan-mem-ke-toan-can-tho.astro",
-        "src/pages/dich-vu/thanh-lap-chi-nhanh-cong-ty-can-tho.astro",
-        "src/pages/dich-vu/giai-the-chi-nhanh-can-tho.astro",
-        "src/pages/dich-vu/giai-the-van-phong-dai-dien-can-tho.astro"
+        "src/pages/feed/podcast/index.ts",
+        "src/data/podcast-config.json",
+        "src/data/podcasts.json"
+      ]
+    },
+    {
+      "timestamp": "2026-04-10T03:18:00Z",
+      "type": "feature",
+      "description": "Batch 5: Added 4 more service pages (Chuyển đổi, BHXH, HKD, KT thuế HKD)",
+      "files": [
+        "src/pages/dich-vu.astro"
       ]
     }
   ],
-  "errors_encountered": [],
-  "decisions_made": [
+  "errors_encountered": [
     {
-      "decision": "Menu D\u1ecbch V\u1ee5 c\u1ed1 \u0111\u1ecbnh 8 submenu, batch 3-4 KH\u00d4NG th\u00eam v\u00e0o menu",
-      "reason": "User y\u00eau c\u1ea7u r\u00f5 r\u00e0ng"
+      "error": "Podcast feed 404 on Cloudflare with trailing slash",
+      "solution": "Astro builds API endpoints as extensionless files (dist/feed/podcast). Cloudflare doesn't auto-resolve trailing slash. Created worker.js with run_worker_first in wrangler.jsonc to intercept and serve with correct headers.",
+      "resolved": true,
+      "file": "worker.js"
     },
     {
-      "decision": "Trang Khai B\u00e1o Thu\u1ebf c\u00f3 b\u1ea3ng gi\u00e1 bi\u1ec3u ph\u00ed + ch\u00ednh s\u00e1ch \u01b0u \u0111\u00e3i gi\u1ea3m gi\u00e1",
-      "reason": "N\u1ed9i dung g\u1ed1c WordPress c\u00f3 shortcode table, convert sang HTML table"
+      "error": "Podcast feed 403 from RSS validators (rssvalidator.app, podba.se, podcastai.com)",
+      "solution": "Cloudflare Bot Fight Mode blocking validator bots. Created WAF Custom Rule on Cloudflare Dashboard: URI Path contains /feed/ → Skip all remaining rules.",
+      "resolved": true,
+      "file": "Cloudflare Dashboard WAF"
+    },
+    {
+      "error": "wrangler deploy failed: Invalid compatibility date 2026-04-9",
+      "solution": "Must use ISO 8601 format with zero-padded day: 2026-04-09",
+      "resolved": true,
+      "file": "wrangler.jsonc"
+    }
+  ],
+  "decisions_made": [
+    {
+      "decision": "Menu Dịch Vụ cố định 8 submenu, batch 3-4 KHÔNG thêm vào menu",
+      "reason": "User yêu cầu rõ ràng"
+    },
+    {
+      "decision": "Dùng worker.js nhỏ thay vì @astrojs/cloudflare adapter",
+      "reason": "Đơn giản, không cài thêm package, chỉ xử lý /feed/podcast/ trailing slash + CORS/HEAD"
+    },
+    {
+      "decision": "WAF Custom Rule trên CF Dashboard cho phép bot truy cập /feed/",
+      "reason": "Bot Fight Mode chặn RSS validators gây 403"
     }
   ]
 }
