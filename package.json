@@ -4,9 +4,11 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
+    "dev:fresh": "npm run clean:dev-cache && astro dev",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
+    "clean:dev-cache": "node ./scripts/clean-dev-cache.mjs",
     "lint": "eslint . --fix",
     "lint:check": "eslint .",
     "format": "prettier --write .",

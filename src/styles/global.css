@@ -1,5 +1,7 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
+@source not "../../package.json";
+@source not "../../README.md";
 
 @theme {
   --color-background: #ffffff;
@@ -19,7 +21,10 @@
 /* Base styles */
 @layer base {
   body {
-    font-family: system-ui, -apple-system, sans-serif;
+    font-family:
+      system-ui,
+      -apple-system,
+      sans-serif;
     background-color: var(--color-background);
     color: var(--color-foreground);
     line-height: 1.6;
@@ -117,7 +122,8 @@
 }
 
 @keyframes phone-ring-pulse {
-  0%, 100% {
+  0%,
+  100% {
     box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.5);
   }
   50% {

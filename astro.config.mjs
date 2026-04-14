@@ -35,6 +35,7 @@ export default defineConfig({
     inlineStylesheets: "auto",
   },
   vite: {
+    cacheDir: ".cache/vite",
     plugins: [tailwindcss()],
   },
 });

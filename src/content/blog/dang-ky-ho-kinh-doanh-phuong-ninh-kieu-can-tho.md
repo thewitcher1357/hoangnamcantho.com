@@ -1,7 +1,7 @@
 ---
 title: "Đăng Ký Hộ Kinh Doanh Phường Ninh Kiều Cần Thơ: Thủ Tục, Thuế, Địa Chỉ, HKD/DNTN"
 date: 2026-04-01
-categories: 
+categories:
   - "tin-tuc-vung-tau"
 coverImage: "/images/dang-ky-ho-kinh-doanh-phuong-ninh-kieu-can-tho.jpeg"
 ---
@@ -22,12 +22,12 @@ Bạn chỉ cần chuẩn bị CCCD, Giấy đề nghị, nộp tại bộ phậ
 
 Để bạn không mất thời gian tìm kiếm mông lung, Hoàng Nam Cần Thơ đã đúc kết **chi phí đăng ký hộ kinh doanh tại Cần Thơ** và các thông tin cốt lõi nhất vào bảng tóm tắt dưới đây:
 
-| Tiêu chí | Chi tiết thực hiện năm 2026 |
-| --- | --- |
-| **Hồ sơ cốt lõi** | Giấy đề nghị, Bản sao CCCD chủ hộ, Hợp đồng thuê nhà/Sổ đỏ. |
-| **Nơi nộp hồ sơ** | Bộ phận Một cửa - UBND Phường Ninh Kiều (trụ sở UBND Quận Ninh Kiều cũ). |
-| **Thời gian cấp** | 03 ngày làm việc kể từ khi nhận đủ **hồ sơ đăng ký hộ kinh doanh cá thể Cần Thơ** hợp lệ. |
-| **Lệ phí nhà nước** | 100.000 VNĐ/lần cấp (chưa bao gồm phí dịch vụ ủy quyền nếu có). |
+| Tiêu chí            | Chi tiết thực hiện năm 2026                                                               |
+| ------------------- | ----------------------------------------------------------------------------------------- |
+| **Hồ sơ cốt lõi**   | Giấy đề nghị, Bản sao CCCD chủ hộ, Hợp đồng thuê nhà/Sổ đỏ.                               |
+| **Nơi nộp hồ sơ**   | Bộ phận Một cửa - UBND Phường Ninh Kiều (trụ sở UBND Quận Ninh Kiều cũ).                  |
+| **Thời gian cấp**   | 03 ngày làm việc kể từ khi nhận đủ **hồ sơ đăng ký hộ kinh doanh cá thể Cần Thơ** hợp lệ. |
+| **Lệ phí nhà nước** | 100.000 VNĐ/lần cấp (chưa bao gồm phí dịch vụ ủy quyền nếu có).                           |
 
 Nếu bạn dự định kinh doanh với quy mô lớn hơn ngay từ đầu, có tham vọng mở rộng chuỗi hoặc xuất nhập khẩu, bạn có thể tham khảo thêm về dịch vụ thành lập công ty tại Cần Thơ của chúng tôi để có sự so sánh và lựa chọn mô hình tối ưu nhất.
 
@@ -36,11 +36,11 @@ Nếu bạn dự định kinh doanh với quy mô lớn hơn ngay từ đầu, c
 Người mới bắt đầu thường thắc mắc về điều kiện độ tuổi cấp phép, giới hạn về mã ngành nghề và sự khác biệt cơ bản giữa các loại hình khi bắt đầu kinh doanh.
 
 - **Hỏi: Ai có quyền đăng ký thành lập hộ kinh doanh?**
-    - **Đáp:** Công dân Việt Nam từ đủ 18 tuổi, có năng lực hành vi dân sự đầy đủ. Lưu ý quan trọng là mỗi cá nhân chỉ được đứng tên duy nhất một **Giấy chứng nhận đăng ký hộ kinh doanh** trên toàn phạm vi lãnh thổ Việt Nam.
+  - **Đáp:** Công dân Việt Nam từ đủ 18 tuổi, có năng lực hành vi dân sự đầy đủ. Lưu ý quan trọng là mỗi cá nhân chỉ được đứng tên duy nhất một **Giấy chứng nhận đăng ký hộ kinh doanh** trên toàn phạm vi lãnh thổ Việt Nam.
 - **Hỏi: Đăng ký nhiều ngành nghề cùng lúc được không?**
-    - **Đáp:** Hoàn toàn được. Bạn có thể đăng ký nhiều **mã ngành nghề kinh doanh** cùng lúc, miễn là các ngành nghề đó không thuộc danh mục cấm đầu tư kinh doanh. Đối với các ngành nghề có điều kiện (như ăn uống, phòng khám, spa), bạn cần xin thêm **giấy phép con** sau khi có giấy phép kinh doanh.
+  - **Đáp:** Hoàn toàn được. Bạn có thể đăng ký nhiều **mã ngành nghề kinh doanh** cùng lúc, miễn là các ngành nghề đó không thuộc danh mục cấm đầu tư kinh doanh. Đối với các ngành nghề có điều kiện (như ăn uống, phòng khám, spa), bạn cần xin thêm **giấy phép con** sau khi có giấy phép kinh doanh.
 - **Hỏi: Có bắt buộc phải có sổ đỏ chính chủ mang tên mình không?**
-    - **Đáp:** Không bắt buộc. Bạn chỉ cần có hợp đồng thuê nhà, hợp đồng mượn nhà hợp lệ từ chủ sở hữu để xác định rõ **địa chỉ đăng ký kinh doanh Ninh Kiều Cần Thơ**.
+  - **Đáp:** Không bắt buộc. Bạn chỉ cần có hợp đồng thuê nhà, hợp đồng mượn nhà hợp lệ từ chủ sở hữu để xác định rõ **địa chỉ đăng ký kinh doanh Ninh Kiều Cần Thơ**.
 
 Đối với mô hình hộ kinh doanh, pháp luật hiện hành không quy định mức vốn tối thiểu bắt buộc. Tuy nhiên, nếu bạn muốn biết Vốn điều lệ tối thiểu mở công ty tại Cần Thơ là bao nhiêu để cân nhắc lên doanh nghiệp, hãy xem ngay bài viết phân tích chi tiết của chúng tôi.
 
@@ -117,7 +117,7 @@ Tin vui cực lớn cho bà con khởi nghiệp! Cập nhật mới nhất từ 
 
 - **Thuế môn bài:** Chính thức bãi bỏ. Bạn không còn phải lo đóng **lệ phí môn bài hộ kinh doanh Cần Thơ** hàng năm nữa.
 - **Thuế giá trị gia tăng** (GTGT) & **Thuế thu nhập cá nhân** (TNCN): Ngưỡng **doanh thu tính thuế** đã được nâng mạnh mẽ từ 100 triệu lên **500 triệu đồng/năm**. Tức là nếu tổng doanh thu bán hàng của bạn dưới 500 triệu/năm, bạn được miễn hoàn toàn hai loại thuế này.
-- Đặc biệt, cơ chế "thuế khoán" đã bị xóa bỏ hoàn toàn từ 2026, mọi hộ kinh doanh phải chuyển sang nộp thuế theo phương pháp kê khai thực tế. Việc này đòi hỏi bạn phải lưu trữ hóa đơn, chứng từ bài bản. Lúc này, bạn sẽ cần một dịch vụ **Kế toán Cần Thơ** uy tín (như **ACC Cần Thơ** hoặc Hoàng Nam) để hỗ trợ thiết lập sổ sách chuẩn chỉnh.
+- Đặc biệt, cơ chế "thuế khoán" đã bị xóa bỏ hoàn toàn từ 2026, mọi hộ kinh doanh phải chuyển sang nộp thuế theo phương pháp kê khai thực tế. Việc này đòi hỏi bạn phải lưu trữ hóa đơn, chứng từ bài bản. Lúc này, bạn sẽ cần một dịch vụ **Kế toán Cần Thơ** uy tín để hỗ trợ thiết lập sổ sách chuẩn chỉnh. Nếu bạn đã hoặc sắp vượt ngưỡng doanh thu tính thuế, có thể đọc thêm bài [Thuế hộ kinh doanh Cần Thơ doanh thu trên 500 triệu](/thue-ho-kinh-doanh-can-tho-doanh-thu-tren-500-trieu/) để nắm rõ cách tính GTGT, TNCN và lịch kê khai năm 2026.
 
 Ngoài ra, với bối cảnh địa giới hành chính mới sau sáp nhập, việc Quyết toán thuế sau sáp nhập tỉnh Cần Thơ cũng là một chủ đề pháp lý cực kỳ nóng mà các doanh nghiệp lớn trên địa bàn cần lưu tâm sát sao.
 

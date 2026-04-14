@@ -177,6 +177,16 @@ Your markdown or MDX content goes here...
 
 <br>
 
+## Dev Cache
+
+On Windows, a stale Vite cache can cause `EPERM` errors during `npm run dev`.
+
+- Run <code>npm run clean&#58;dev-cache</code> to remove local Astro and Vite dev caches.
+- Run <code>npm run dev&#58;fresh</code> to clean caches first, then start the dev server.
+- If the error persists, close other `astro dev` or Node terminals in your IDE and run <code>npm run dev&#58;fresh</code> again.
+
+<br>
+
 ## Support the Project
 
 If you find this starter useful, please consider giving it a ⭐ on GitHub! It helps more people discover the project.

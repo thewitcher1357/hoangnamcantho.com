@@ -1,7 +1,7 @@
 ---
 title: "Dịch Vụ Kế Toán Cần Thơ Uy Tín: Bảng Giá Trọn Gói Cho Doanh Nghiệp"
 date: 2026-04-03
-categories: 
+categories:
   - "tin-tuc-vung-tau"
 coverImage: "/images/dich-vu-ke-toan-can-tho.jpeg"
 ---
@@ -22,17 +22,17 @@ Quyết định **thuê kế toán ngoài tại Cần Thơ** thường đi kèm 
 - **Trách nhiệm sai sót:** Nếu lỗi do đại lý thuế thực hiện kê khai sai, đơn vị dịch vụ sẽ chịu hoàn toàn khoản phạt hành chính.
 - **Xử lý sai phạm cũ:** Nhiều doanh nghiệp thắc mắc về cách [Xử lý hóa đơn sai địa chỉ cũ sau sáp nhập Cần Thơ](/xu-ly-hoa-don-sai-dia-chi-cu-sau-sap-nhap-can-tho/). Tại Hoàng Nam, chúng tôi cam kết rà soát và tư vấn hướng điều chỉnh triệt để mọi chứng từ tồn đọng.
 - **Có cần thuê thêm người?** Gói trọn gói đã bao gồm chức năng của một kế toán trưởng, nên bạn không cần thuê thêm **kế toán nội bộ**.
-- **Có tư vấn thêm luật không?** Không chỉ làm số liệu, chúng tôi còn là cố vấn pháp lý. Nếu bạn là cá nhân kinh doanh, việc nắm rõ quy định Thuế hộ kinh doanh Cần Thơ doanh thu trên 500 triệu sẽ được chúng tôi phân tích cặn kẽ để bạn chủ động dòng tiền.
+- **Có tư vấn thêm luật không?** Không chỉ làm số liệu, chúng tôi còn là cố vấn pháp lý. Nếu bạn là cá nhân kinh doanh, bài [Thuế hộ kinh doanh Cần Thơ doanh thu trên 500 triệu](/thue-ho-kinh-doanh-can-tho-doanh-thu-tren-500-trieu/) sẽ giúp bạn hình dung rõ ngưỡng chịu thuế, cách kê khai và bộ hồ sơ cần chuẩn bị để chủ động dòng tiền.
 
 ### Bảng giá dịch vụ kế toán thuế Cần Thơ chi tiết cho từng loại hình doanh nghiệp (SME, Hộ kinh doanh)
 
 Mức **giá thuê dịch vụ kế toán tại Cần Thơ** hiện nay dao động linh hoạt từ 500.000 VNĐ đến hơn 3.000.000 VNĐ mỗi tháng, phụ thuộc chủ yếu vào loại hình hoạt động, quy mô doanh thu và khối lượng **chứng từ** phát sinh thực tế. Dưới đây là bảng phí tham khảo minh bạch áp dụng cho năm 2026, giúp chủ doanh nghiệp dễ dàng dự trù ngân sách.
 
-| Loại hình hoạt động | Số lượng chứng từ/tháng | Phí dịch vụ (VNĐ/tháng) |
-| --- | --- | --- |
-| **Dịch vụ kế toán cho hộ kinh doanh Cần Thơ** | Dưới 20 hóa đơn | 500.000 - 800.000 |
-| Thương mại, Dịch vụ quy mô nhỏ | 20 - 50 hóa đơn | 1.000.000 - 1.500.000 |
-| Xây dựng, Sản xuất, Thương mại lớn | Trên 50 hóa đơn | Báo giá chi tiết theo thực tế |
+| Loại hình hoạt động                           | Số lượng chứng từ/tháng | Phí dịch vụ (VNĐ/tháng)       |
+| --------------------------------------------- | ----------------------- | ----------------------------- |
+| **Dịch vụ kế toán cho hộ kinh doanh Cần Thơ** | Dưới 20 hóa đơn         | 500.000 - 800.000             |
+| Thương mại, Dịch vụ quy mô nhỏ                | 20 - 50 hóa đơn         | 1.000.000 - 1.500.000         |
+| Xây dựng, Sản xuất, Thương mại lớn            | Trên 50 hóa đơn         | Báo giá chi tiết theo thực tế |
 
 Lưu ý: **Bảng giá dịch vụ kế toán Cần Thơ** trên chưa bao gồm các loại phí Nhà nước. Đặc biệt, đối với các thủ tục liên quan đến thay đổi hành chính hiện nay, chúng tôi luôn cập nhật chi tiết. Chẳng hạn, [Lệ phí thay đổi thông tin doanh nghiệp địa giới hành chính](/le-phi-thay-doi-thong-tin-doanh-nghiep-dia-gioi-hanh-chinh/) sẽ được liệt kê tách bạch trên hóa đơn để khách hàng tiện theo dõi, cam kết không phát sinh ẩn phí.
 
@@ -50,11 +50,11 @@ Hơn thế nữa, một đơn vị **tư vấn thuế Cần Thơ** am hiểu sâ
 
 So với việc phải chi trả lương cứng, thưởng các dịp lễ tết và đóng **bảo hiểm xã hội (BHXH)** cho nhân viên nội bộ, chi phí thuê ngoài chỉ bằng khoảng một phần ba nhưng mang lại hiệu suất công việc tương đương một đội ngũ chuyên viên thâm niên.
 
-| Tiêu chí | Kế toán nội bộ | Dịch vụ kế toán ngoài |
-| --- | --- | --- |
-| **Chi phí cố định** | Cao (Lương cơ bản 7-12tr, BHYT, thưởng, chỗ ngồi) | Thấp (Khoán theo khối lượng công việc, từ 500k) |
-| **Tính ổn định** | Dễ bị gián đoạn nếu nhân viên xin nghỉ đột xuất | Đảm bảo liên tục, công ty dịch vụ tự backup nhân sự |
-| **Năng lực xử lý** | Giới hạn theo kinh nghiệm cá nhân của nhân sự | Nhận được sự tham vấn từ cả một ban chuyên môn |
+| Tiêu chí            | Kế toán nội bộ                                    | Dịch vụ kế toán ngoài                               |
+| ------------------- | ------------------------------------------------- | --------------------------------------------------- |
+| **Chi phí cố định** | Cao (Lương cơ bản 7-12tr, BHYT, thưởng, chỗ ngồi) | Thấp (Khoán theo khối lượng công việc, từ 500k)     |
+| **Tính ổn định**    | Dễ bị gián đoạn nếu nhân viên xin nghỉ đột xuất   | Đảm bảo liên tục, công ty dịch vụ tự backup nhân sự |
+| **Năng lực xử lý**  | Giới hạn theo kinh nghiệm cá nhân của nhân sự     | Nhận được sự tham vấn từ cả một ban chuyên môn      |
 
 Thêm vào đó, việc tính toán khấu trừ lương cho nhân sự nội bộ vốn rất phức tạp. Bạn sẽ cần phải nắm vững các thay đổi như Mức giảm trừ gia cảnh mới nhất áp dụng Cần Thơ để tính thuế TNCN chính xác cho nhân viên, trong khi dùng dịch vụ ngoài, bạn hoàn toàn thoát khỏi những thủ tục rườm rà này.
 
