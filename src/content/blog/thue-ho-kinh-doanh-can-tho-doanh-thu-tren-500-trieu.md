@@ -9,7 +9,7 @@ tags:
   - "kê khai thuế"
   - "hộ kinh doanh Cần Thơ"
   - "hóa đơn điện tử"
-coverImage: "/images/thue-ho-kinh-doanh-can-tho-tren-500-trieu-2026-cover.png"
+coverImage: "/images/Huong dan Thue Ho Kinh Doanh Can Tho Tren 500 Trieu 2026.jpg"
 author: "Hoàng Nam"
 ---
 
@@ -71,7 +71,7 @@ Về mặt tổ chức chứng từ, chủ hộ nên chia tài liệu theo từn
 
 Việc kê khai và nộp thuế online hiện đã dễ hơn trước nhiều. Bạn có thể nộp hồ sơ điện tử và theo dõi nghĩa vụ tài chính trên cổng thuế hoặc qua eTax Mobile. Tuy nhiên, “dễ thao tác” không đồng nghĩa với “dễ làm đúng”. Phần khó vẫn nằm ở chỗ số liệu bạn nhập có khớp với thực tế kinh doanh hay không.
 
-![Kê khai thuế hộ kinh doanh Cần Thơ năm 2026](/images/ke-khai-thue-ho-kinh-doanh-can-tho-2026-checklist.png)
+![Kê khai thuế hộ kinh doanh Cần Thơ năm 2026](/images/Checklist%20quan%20ly%20thue%202026.jpg)
 
 Trong quá trình làm việc với các hộ kinh doanh tại Ninh Kiều, Cái Răng và Bình Thủy, chúng tôi thường khuyên khách hàng lập một checklist cố định cho mỗi kỳ khai:
 
