@@ -16,7 +16,7 @@ export const siteConfig = {
     hotline: "0918883179",
     hotlineDisplay: "091.888.31.79",
     email: "tructuyenhoangnam@gmail.com",
-    address: "03 Đ. Quản Trọng Hoàng, Xuân Khánh, Ninh Kiều, Cần Thơ",
+    address: "462 Lê Hồng Nhi - KV1 - P.Ba Láng - Q.Cái Răng - TP.Cần Thơ.",
     zalo: "https://zalo.me/0918883179",
     facebook: "https://facebook.com/hoangnamcantho",
     youtube: "https://youtube.com",

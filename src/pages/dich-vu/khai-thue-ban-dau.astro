@@ -13,11 +13,13 @@ const metadata = {
 const deadlines = [
   {
     title: "Đăng ký thuế ban đầu",
-    description: "Trong thời hạn 10 ngày từ ngày được cấp giấy chứng nhận đăng ký kinh doanh.",
+    description:
+      "Trong thời hạn 10 ngày từ ngày được cấp giấy chứng nhận đăng ký kinh doanh.",
   },
   {
     title: "Thời hạn nộp tờ khai thuế môn bài",
-    description: "Trong vòng 30 ngày kể từ ngày nhận được đăng ký kinh doanh thì doanh nghiệp cần phải nộp tờ khai thuế môn bài. Trường hợp doanh nghiệp hoạt động luôn thì ngày kê khai chậm nhất là ngày cuối cùng của tháng nhận được đăng ký kinh doanh.",
+    description:
+      "Trong vòng 30 ngày kể từ ngày nhận được đăng ký kinh doanh thì doanh nghiệp cần phải nộp tờ khai thuế môn bài. Trường hợp doanh nghiệp hoạt động luôn thì ngày kê khai chậm nhất là ngày cuối cùng của tháng nhận được đăng ký kinh doanh.",
   },
 ];
 
@@ -71,9 +73,13 @@ const serviceBenefits = [
 
 <BaseLayout {metadata}>
   <!-- Hero Banner -->
-  <section class="relative bg-gradient-to-r from-primary to-primary-light py-20 text-center text-white md:py-28">
+  <section
+    class="relative bg-gradient-to-r from-primary to-primary-light py-20 text-center text-white md:py-28"
+  >
     <div class="relative z-10 mx-auto max-w-4xl px-6">
-      <h1 class="text-3xl font-extrabold uppercase leading-tight drop-shadow-md md:text-5xl">
+      <h1
+        class="text-3xl font-extrabold uppercase leading-tight drop-shadow-md md:text-5xl"
+      >
         Dịch Vụ Khai Thuế Ban Đầu Tại Cần Thơ
       </h1>
       <p class="mt-5 text-lg font-light text-white/90 md:text-xl">
@@ -87,9 +93,10 @@ const serviceBenefits = [
     <div class="mx-auto max-w-4xl px-6 lg:px-8">
       <div class="prose prose-lg mx-auto max-w-none text-gray-700">
         <p class="text-justify">
-          <strong class="text-primary">Kê khai thuế ban đầu</strong> là một công việc được xem là quan trọng và
-          luôn là ưu tiên hàng đầu đối với những doanh nghiệp mới thành lập. Nếu khai báo chậm hoặc có bất kỳ
-          sai phạm nào, doanh nghiệp có thể bị xử phạt hành chính theo quy định hiện hành của chính phủ.
+          <strong class="text-primary">Kê khai thuế ban đầu</strong> là một công việc
+          được xem là quan trọng và luôn là ưu tiên hàng đầu đối với những doanh nghiệp
+          mới thành lập. Nếu khai báo chậm hoặc có bất kỳ sai phạm nào, doanh nghiệp
+          có thể bị xử phạt hành chính theo quy định hiện hành của chính phủ.
         </p>
       </div>
 
@@ -106,17 +113,21 @@ const serviceBenefits = [
 
       <div class="prose prose-lg mx-auto max-w-none text-gray-700">
         <p class="text-justify">
-          Quá trình <strong class="text-primary">khai thuế ban đầu</strong> bắt buộc doanh nghiệp phải làm theo
-          hình thức kế toán đã kê khai cho đến khi kết thúc kỳ quyết toán thuế cuối năm. Do vậy, để tự tin hơn
-          trong quá trình này, doanh nghiệp nên tham khảo gói <strong class="text-primary">dịch vụ kê khai thuế ban đầu</strong> tại Cần Thơ của Hoàng Nam.
+          Quá trình <strong class="text-primary">khai thuế ban đầu</strong> bắt buộc
+          doanh nghiệp phải làm theo hình thức kế toán đã kê khai cho đến khi kết
+          thúc kỳ quyết toán thuế cuối năm. Do vậy, để tự tin hơn trong quá trình
+          này, doanh nghiệp nên tham khảo gói <strong class="text-primary"
+            >dịch vụ kê khai thuế ban đầu</strong
+          > tại Cần Thơ của Hoàng Nam.
         </p>
       </div>
 
       <!-- Cảnh báo -->
       <div class="mt-8 rounded-2xl border border-red-200 bg-red-50 p-6">
         <p class="text-red-700 font-semibold">
-          ⚠️ Nếu bạn thành lập doanh nghiệp và không hoàn thành thủ tục kê khai thuế ban đầu, bạn có thể bị
-          xử phạt vi phạm hành chính, cụ thể là phạt tiền rất nặng, tùy theo tình hình công ty vi phạm.
+          ⚠️ Nếu bạn thành lập doanh nghiệp và không hoàn thành thủ tục kê khai
+          thuế ban đầu, bạn có thể bị xử phạt vi phạm hành chính, cụ thể là phạt
+          tiền rất nặng, tùy theo tình hình công ty vi phạm.
         </p>
       </div>
     </div>
@@ -125,16 +136,20 @@ const serviceBenefits = [
   <!-- Thời hạn -->
   <section class="bg-gray-50 py-10 md:py-14">
     <div class="mx-auto max-w-4xl px-6 lg:px-8">
-      <h2 class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl">
+      <h2
+        class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl"
+      >
         Thời Hạn Kê Khai Thuế Ban Đầu Tại Cần Thơ
       </h2>
       <div class="mt-8 space-y-6">
-        {deadlines.map((item) => (
-          <div class="rounded-xl border border-gray-100 bg-white p-6 shadow-sm">
-            <strong class="text-lg text-primary">{item.title}</strong>
-            <p class="mt-2 text-gray-700">{item.description}</p>
-          </div>
-        ))}
+        {
+          deadlines.map((item) => (
+            <div class="rounded-xl border border-gray-100 bg-white p-6 shadow-sm">
+              <strong class="text-lg text-primary">{item.title}</strong>
+              <p class="mt-2 text-gray-700">{item.description}</p>
+            </div>
+          ))
+        }
       </div>
     </div>
   </section>
@@ -142,18 +157,33 @@ const serviceBenefits = [
   <!-- Hồ sơ khai thuế ban đầu -->
   <section class="bg-white py-10 md:py-14">
     <div class="mx-auto max-w-4xl px-6 lg:px-8">
-      <h2 class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl">
+      <h2
+        class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl"
+      >
         Hồ Sơ Khai Thuế Ban Đầu Gồm Những Gì?
       </h2>
       <div class="mt-8 space-y-3">
-        {taxFileDocs.map((doc) => (
-          <div class="flex items-start gap-3 rounded-xl border border-gray-100 bg-white p-4 shadow-sm">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mt-0.5 h-5 w-5 flex-shrink-0 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
-            </svg>
-            <span class="text-gray-700">{doc}</span>
-          </div>
-        ))}
+        {
+          taxFileDocs.map((doc) => (
+            <div class="flex items-start gap-3 rounded-xl border border-gray-100 bg-white p-4 shadow-sm">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="mt-0.5 h-5 w-5 flex-shrink-0 text-blue-500"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+                />
+              </svg>
+              <span class="text-gray-700">{doc}</span>
+            </div>
+          ))
+        }
       </div>
     </div>
   </section>
@@ -161,34 +191,44 @@ const serviceBenefits = [
   <!-- Hoàng Nam hỗ trợ -->
   <section class="bg-gray-50 py-10 md:py-14">
     <div class="mx-auto max-w-4xl px-6 lg:px-8">
-      <h2 class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl">
+      <h2
+        class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl"
+      >
         Hoàng Nam Hỗ Trợ Doanh Nghiệp Khai Thuế Ban Đầu
       </h2>
 
       <!-- Thiết lập hồ sơ thuế -->
-      <h3 class="mt-8 text-lg font-bold text-primary">📋 Thiết Lập Hồ Sơ Thuế Ban Đầu</h3>
+      <h3 class="mt-8 text-lg font-bold text-primary">
+        📋 Thiết Lập Hồ Sơ Thuế Ban Đầu
+      </h3>
       <div class="mt-4 space-y-4">
-        {setupSteps.map((step, index) => (
-          <div class="flex items-start gap-5 rounded-xl border border-gray-100 bg-white p-5 shadow-sm transition-all duration-300 hover:shadow-md">
-            <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-primary text-sm font-bold text-white">
-              {index + 1}
-            </span>
-            <p class="text-gray-700 pt-2">{step}</p>
-          </div>
-        ))}
+        {
+          setupSteps.map((step, index) => (
+            <div class="flex items-start gap-5 rounded-xl border border-gray-100 bg-white p-5 shadow-sm transition-all duration-300 hover:shadow-md">
+              <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-primary text-sm font-bold text-white">
+                {index + 1}
+              </span>
+              <p class="text-gray-700 pt-2">{step}</p>
+            </div>
+          ))
+        }
       </div>
 
       <!-- Mua hóa đơn -->
-      <h3 class="mt-10 text-lg font-bold text-primary">🧾 Mua Hóa Đơn, Đặt In Hóa Đơn</h3>
+      <h3 class="mt-10 text-lg font-bold text-primary">
+        🧾 Mua Hóa Đơn, Đặt In Hóa Đơn
+      </h3>
       <div class="mt-4 space-y-4">
-        {invoiceSteps.map((step, index) => (
-          <div class="flex items-start gap-5 rounded-xl border border-gray-100 bg-white p-5 shadow-sm transition-all duration-300 hover:shadow-md">
-            <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-green-500 text-sm font-bold text-white">
-              {index + 1}
-            </span>
-            <p class="text-gray-700 pt-2">{step}</p>
-          </div>
-        ))}
+        {
+          invoiceSteps.map((step, index) => (
+            <div class="flex items-start gap-5 rounded-xl border border-gray-100 bg-white p-5 shadow-sm transition-all duration-300 hover:shadow-md">
+              <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-green-500 text-sm font-bold text-white">
+                {index + 1}
+              </span>
+              <p class="text-gray-700 pt-2">{step}</p>
+            </div>
+          ))
+        }
       </div>
     </div>
   </section>
@@ -196,18 +236,33 @@ const serviceBenefits = [
   <!-- Giấy tờ cần cung cấp -->
   <section class="bg-white py-10 md:py-14">
     <div class="mx-auto max-w-4xl px-6 lg:px-8">
-      <h2 class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl">
+      <h2
+        class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl"
+      >
         Giấy Tờ Và Hồ Sơ Doanh Nghiệp Cần Cung Cấp
       </h2>
       <div class="mt-8 space-y-3">
-        {requiredDocs.map((doc) => (
-          <div class="flex items-start gap-3 rounded-xl border border-gray-100 bg-white p-4 shadow-sm">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mt-0.5 h-5 w-5 flex-shrink-0 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-            <span class="text-gray-700">{doc}</span>
-          </div>
-        ))}
+        {
+          requiredDocs.map((doc) => (
+            <div class="flex items-start gap-3 rounded-xl border border-gray-100 bg-white p-4 shadow-sm">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="mt-0.5 h-5 w-5 flex-shrink-0 text-primary"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                />
+              </svg>
+              <span class="text-gray-700">{doc}</span>
+            </div>
+          ))
+        }
       </div>
     </div>
   </section>
@@ -220,14 +275,27 @@ const serviceBenefits = [
           ⚠️ Lưu Ý Quan Trọng Doanh Nghiệp Cần Biết
         </h3>
         <div class="space-y-3">
-          {importantNotes.map((note) => (
-            <div class="flex items-start gap-3">
-              <svg xmlns="http://www.w3.org/2000/svg" class="mt-0.5 h-5 w-5 flex-shrink-0 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              <span class="text-gray-700">{note}</span>
-            </div>
-          ))}
+          {
+            importantNotes.map((note) => (
+              <div class="flex items-start gap-3">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="mt-0.5 h-5 w-5 flex-shrink-0 text-amber-600"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+                <span class="text-gray-700">{note}</span>
+              </div>
+            ))
+          }
         </div>
       </div>
     </div>
@@ -236,18 +304,33 @@ const serviceBenefits = [
   <!-- Lợi ích -->
   <section class="bg-white py-10 md:py-14">
     <div class="mx-auto max-w-4xl px-6 lg:px-8">
-      <h2 class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl">
+      <h2
+        class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl"
+      >
         Lợi Ích Khi Doanh Nghiệp Sử Dụng Dịch Vụ Của Hoàng Nam
       </h2>
       <div class="mt-8 space-y-3">
-        {serviceBenefits.map((item) => (
-          <div class="flex items-start gap-3 rounded-xl border border-gray-100 bg-white p-4 shadow-sm">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mt-0.5 h-6 w-6 flex-shrink-0 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-            </svg>
-            <span class="text-gray-700">{item}</span>
-          </div>
-        ))}
+        {
+          serviceBenefits.map((item) => (
+            <div class="flex items-start gap-3 rounded-xl border border-gray-100 bg-white p-4 shadow-sm">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="mt-0.5 h-6 w-6 flex-shrink-0 text-green-500"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2.5"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M5 13l4 4L19 7"
+                />
+              </svg>
+              <span class="text-gray-700">{item}</span>
+            </div>
+          ))
+        }
       </div>
     </div>
   </section>
@@ -255,13 +338,37 @@ const serviceBenefits = [
   <!-- Thông tin liên hệ -->
   <section class="bg-gray-50 py-10 md:py-14">
     <div class="mx-auto max-w-4xl px-6 lg:px-8">
-      <div class="rounded-2xl border-2 border-primary/20 bg-gradient-to-r from-blue-50 to-indigo-50 p-8 shadow-sm">
-        <h3 class="text-xl font-bold text-primary mb-4">🏢 HOÀNG NAM CHI NHÁNH CẦN THƠ</h3>
+      <div
+        class="rounded-2xl border-2 border-primary/20 bg-gradient-to-r from-blue-50 to-indigo-50 p-8 shadow-sm"
+      >
+        <h3 class="text-xl font-bold text-primary mb-4">
+          🏢 HOÀNG NAM CHI NHÁNH CẦN THƠ
+        </h3>
         <div class="space-y-2 text-gray-700">
-          <p>📍 <strong>Địa chỉ:</strong> 03 Quản Trọng Hoàng, Phường Hưng Lợi, Quận Ninh Kiều, Cần Thơ</p>
-          <p>📞 <strong>Điện thoại:</strong> <a href="tel:0918883179" class="text-primary font-semibold hover:underline">091.888.3179</a></p>
-          <p>📧 <strong>Email:</strong> <a href="mailto:cskh@hoangnamcantho.com" class="text-primary hover:underline">cskh@hoangnamcantho.com</a></p>
-          <p>🌐 <strong>Website:</strong> <a href="https://hoangnamcantho.com/" class="text-primary hover:underline">https://hoangnamcantho.com/</a></p>
+          <p>
+            📍 <strong>Địa chỉ:</strong> 462 Lê Hồng Nhi - KV1 - P.Ba Láng - Q.Cái
+            Răng - TP.Cần Thơ.
+          </p>
+          <p>
+            📞 <strong>Điện thoại:</strong>
+            <a
+              href="tel:0918883179"
+              class="text-primary font-semibold hover:underline"
+              >091.888.3179</a>
+          </p>
+          <p>
+            📧 <strong>Email:</strong>
+            <a
+              href="mailto:cskh@hoangnamcantho.com"
+              class="text-primary hover:underline">cskh@hoangnamcantho.com</a>
+          </p>
+          <p>
+            🌐 <strong>Website:</strong>
+            <a
+              href="https://hoangnamcantho.com/"
+              class="text-primary hover:underline"
+              >https://hoangnamcantho.com/</a>
+          </p>
         </div>
       </div>
     </div>

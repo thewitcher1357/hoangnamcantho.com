@@ -126,6 +126,6 @@ Từ góc độ thực hành, nếu bạn đang thấy một trong các dấu hi
 
 Tóm lại, với nhóm **thuế hộ kinh doanh Cần Thơ doanh thu trên 500 triệu**, năm 2026 là thời điểm cần chuyển từ tư duy “làm cho xong” sang tư duy “quản trị dữ liệu thuế cho chuẩn”. Làm đúng từ đầu sẽ giúp bạn giảm rủi ro chậm nộp, giữ hóa đơn sạch, sổ sách gọn và dễ nâng cấp mô hình khi cần.
 
-Nếu bạn đang lo việc kê khai bị lệch số, chưa rõ mẫu biểu phải nộp, hoặc muốn có người rà lại toàn bộ quy trình thuế trước khi cơ quan thuế kiểm tra, Hoàng Nam Cần Thơ có thể hỗ trợ theo từng tình huống thực tế. Liên hệ **091.888.31.79** hoặc đến **03 Đ. Quản Trọng Hoàng, Xuân Khánh, Ninh Kiều, Cần Thơ** để được tư vấn phù hợp với hồ sơ hiện tại của bạn.
+Nếu bạn đang lo việc kê khai bị lệch số, chưa rõ mẫu biểu phải nộp, hoặc muốn có người rà lại toàn bộ quy trình thuế trước khi cơ quan thuế kiểm tra, Hoàng Nam Cần Thơ có thể hỗ trợ theo từng tình huống thực tế. Liên hệ **091.888.31.79** hoặc đến **462 Lê Hồng Nhi - KV1 - P.Ba Láng - Q.Cái Răng - TP.Cần Thơ.** để được tư vấn phù hợp với hồ sơ hiện tại của bạn.
 
 _Lưu ý: Bài viết này chỉ mang tính chất tham khảo, được biên soạn theo thông tin pháp lý đã kiểm tra đến ngày 14/04/2026. Để áp dụng cho từng hồ sơ cụ thể, bạn nên đối chiếu thêm với cơ quan thuế quản lý trực tiếp hoặc đơn vị tư vấn chuyên môn._

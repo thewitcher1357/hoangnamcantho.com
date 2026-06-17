@@ -12,14 +12,46 @@ const metadata = {
 };
 
 const benefits = [
-  { icon: "🤝", title: "LINH HOẠT", description: "Chúng tôi có kỹ năng làm việc qua email/zalo/điện thoại." },
-  { icon: "⚖️", title: "CHÍNH XÁC", description: "Làm đúng nội dung, đúng trình tự và đúng pháp luật." },
-  { icon: "💰", title: "PHÍ TỐT NHẤT", description: "Khách hàng yên tâm với phí dịch vụ tốt nhất." },
-  { icon: "⚡", title: "NHANH CHÓNG", description: "Công việc tiến hành nhanh chóng và đúng hẹn." },
-  { icon: "🛵", title: "TẬN NƠI", description: "Chúng tôi không ngại di chuyển để hỗ trợ." },
-  { icon: "💙", title: "CHU ĐÁO", description: "Tư vấn và nhắc nhở tận tình sau thành lập." },
-  { icon: "🎁", title: "HẬU MÃI", description: "Tư vấn miễn phí 12 tháng sau thành lập." },
-  { icon: "🏆", title: "THÀNH CÔNG", description: "HOÀNG NAM CORP luôn theo đuổi mục tiêu cho đến thành công." },
+  {
+    icon: "🤝",
+    title: "LINH HOẠT",
+    description: "Chúng tôi có kỹ năng làm việc qua email/zalo/điện thoại.",
+  },
+  {
+    icon: "⚖️",
+    title: "CHÍNH XÁC",
+    description: "Làm đúng nội dung, đúng trình tự và đúng pháp luật.",
+  },
+  {
+    icon: "💰",
+    title: "PHÍ TỐT NHẤT",
+    description: "Khách hàng yên tâm với phí dịch vụ tốt nhất.",
+  },
+  {
+    icon: "⚡",
+    title: "NHANH CHÓNG",
+    description: "Công việc tiến hành nhanh chóng và đúng hẹn.",
+  },
+  {
+    icon: "🛵",
+    title: "TẬN NƠI",
+    description: "Chúng tôi không ngại di chuyển để hỗ trợ.",
+  },
+  {
+    icon: "💙",
+    title: "CHU ĐÁO",
+    description: "Tư vấn và nhắc nhở tận tình sau thành lập.",
+  },
+  {
+    icon: "🎁",
+    title: "HẬU MÃI",
+    description: "Tư vấn miễn phí 12 tháng sau thành lập.",
+  },
+  {
+    icon: "🏆",
+    title: "THÀNH CÔNG",
+    description: "HOÀNG NAM CORP luôn theo đuổi mục tiêu cho đến thành công.",
+  },
 ];
 
 const procedures = [
@@ -44,29 +76,43 @@ const taxObligations = [
 const advantages = [
   {
     title: "Con dấu & giấy chứng nhận riêng",
-    description: "Có con dấu riêng và có giấy chứng nhận hoạt động riêng để phục vụ các hoạt động nội bộ của văn phòng đại diện.",
+    description:
+      "Có con dấu riêng và có giấy chứng nhận hoạt động riêng để phục vụ các hoạt động nội bộ của văn phòng đại diện.",
   },
   {
     title: "Không chịu nghĩa vụ thuế kinh doanh",
-    description: "Văn phòng đại diện không thực hiện chức năng kinh doanh các ngành nghề có trong đăng ký kinh doanh của công ty mẹ. Vì vậy mà văn phòng đại diện cũng không phải chịu các nghĩa vụ thuế theo quy định của pháp luật.",
+    description:
+      "Văn phòng đại diện không thực hiện chức năng kinh doanh các ngành nghề có trong đăng ký kinh doanh của công ty mẹ. Vì vậy mà văn phòng đại diện cũng không phải chịu các nghĩa vụ thuế theo quy định của pháp luật.",
   },
   {
     title: "Thành lập đa tỉnh, linh hoạt",
-    description: "Khác với địa điểm kinh doanh chỉ được thành lập trong phạm vi tỉnh cùng trụ sở chính với công ty mẹ; thì văn phòng đại diện có thể thành lập trong cùng tỉnh hoặc khác tỉnh với địa chỉ chính của công ty mẹ.",
+    description:
+      "Khác với địa điểm kinh doanh chỉ được thành lập trong phạm vi tỉnh cùng trụ sở chính với công ty mẹ; thì văn phòng đại diện có thể thành lập trong cùng tỉnh hoặc khác tỉnh với địa chỉ chính của công ty mẹ.",
   },
 ];
 
 const supportAreas = [
-  "Ninh Kiều", "Cái Răng", "Bình Thủy", "Ô Môn", "Thốt Nốt",
-  "Phong Điền", "Cờ Đỏ", "Vĩnh Thạnh", "Thới Lai",
+  "Ninh Kiều",
+  "Cái Răng",
+  "Bình Thủy",
+  "Ô Môn",
+  "Thốt Nốt",
+  "Phong Điền",
+  "Cờ Đỏ",
+  "Vĩnh Thạnh",
+  "Thới Lai",
 ];
 ---
 
 <BaseLayout {metadata}>
   <!-- Hero Banner -->
-  <section class="relative bg-gradient-to-r from-primary to-primary-light py-20 text-center text-white md:py-28">
+  <section
+    class="relative bg-gradient-to-r from-primary to-primary-light py-20 text-center text-white md:py-28"
+  >
     <div class="relative z-10 mx-auto max-w-4xl px-6">
-      <h1 class="text-3xl font-extrabold uppercase leading-tight drop-shadow-md md:text-5xl">
+      <h1
+        class="text-3xl font-extrabold uppercase leading-tight drop-shadow-md md:text-5xl"
+      >
         Thành Lập Văn Phòng Đại Diện Tại Cần Thơ
       </h1>
       <p class="mt-5 text-lg font-light text-white/90 md:text-xl">
@@ -80,14 +126,18 @@ const supportAreas = [
     <div class="mx-auto max-w-4xl px-6 lg:px-8">
       <div class="prose prose-lg mx-auto max-w-none text-gray-700">
         <p class="text-justify">
-          Doanh nghiệp đang có nhu cầu mở rộng kinh doanh tại khu vực Cần Thơ và dự định
-          <strong class="text-primary">thành lập văn phòng đại diện tại Cần Thơ</strong>.
-          Bạn đang cần một công ty tư vấn uy tín và chuyên nghiệp và thời gian xử lý mọi thủ tục nhanh chóng?
+          Doanh nghiệp đang có nhu cầu mở rộng kinh doanh tại khu vực Cần Thơ và
+          dự định
+          <strong class="text-primary"
+            >thành lập văn phòng đại diện tại Cần Thơ</strong
+          >. Bạn đang cần một công ty tư vấn uy tín và chuyên nghiệp và thời
+          gian xử lý mọi thủ tục nhanh chóng?
         </p>
         <p class="text-justify">
           Thấu hiểu được nhu cầu thiết thực đó của quý doanh nghiệp,
-          <strong class="text-primary">HOÀNG NAM</strong> cung cấp dịch vụ tư vấn, hướng dẫn và nhận làm thủ tục
-          thành lập văn phòng đại diện trọn gói và uy tín tại Cần Thơ giúp doanh nghiệp xử lý mọi vấn đề một cách nhanh nhất.
+          <strong class="text-primary">HOÀNG NAM</strong> cung cấp dịch vụ tư vấn,
+          hướng dẫn và nhận làm thủ tục thành lập văn phòng đại diện trọn gói và uy
+          tín tại Cần Thơ giúp doanh nghiệp xử lý mọi vấn đề một cách nhanh nhất.
         </p>
       </div>
 
@@ -107,24 +157,34 @@ const supportAreas = [
   <!-- Lợi ích dịch vụ -->
   <section class="bg-gray-50 py-10 md:py-14">
     <div class="mx-auto max-w-6xl px-6 lg:px-8">
-      <h2 class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl">
+      <h2
+        class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl"
+      >
         Lợi Ích Khi Sử Dụng Dịch Vụ Của Hoàng Nam
       </h2>
       <p class="mt-6 text-lg text-gray-700">
-        <strong class="text-primary">HOÀNG NAM</strong> luôn cố gắng mang đến dịch vụ tốt nhất cho khách hàng:
+        <strong class="text-primary">HOÀNG NAM</strong> luôn cố gắng mang đến dịch
+        vụ tốt nhất cho khách hàng:
       </p>
       <div class="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
-        {benefits.map((benefit) => (
-          <div class="group rounded-xl border border-gray-100 bg-white p-6 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
-            <div class="mb-3 text-3xl">{benefit.icon}</div>
-            <strong class="block text-lg text-primary">{benefit.title}</strong>
-            <p class="mt-2 text-sm text-gray-600">{benefit.description}</p>
-          </div>
-        ))}
+        {
+          benefits.map((benefit) => (
+            <div class="group rounded-xl border border-gray-100 bg-white p-6 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+              <div class="mb-3 text-3xl">{benefit.icon}</div>
+              <strong class="block text-lg text-primary">
+                {benefit.title}
+              </strong>
+              <p class="mt-2 text-sm text-gray-600">{benefit.description}</p>
+            </div>
+          ))
+        }
       </div>
-      <div class="mt-8 rounded-r-xl border-l-[6px] border-primary bg-blue-50 px-8 py-6">
+      <div
+        class="mt-8 rounded-r-xl border-l-[6px] border-primary bg-blue-50 px-8 py-6"
+      >
         <p class="text-lg font-bold text-primary text-center">
-          📞 Đừng ngần ngại hãy gọi ngay cho HOÀNG NAM để được tư vấn, hướng dẫn nhanh chóng và hiệu quả!
+          📞 Đừng ngần ngại hãy gọi ngay cho HOÀNG NAM để được tư vấn, hướng dẫn
+          nhanh chóng và hiệu quả!
         </p>
       </div>
     </div>
@@ -133,13 +193,37 @@ const supportAreas = [
   <!-- Thông tin liên hệ -->
   <section class="bg-white py-10 md:py-14">
     <div class="mx-auto max-w-4xl px-6 lg:px-8">
-      <div class="rounded-2xl border-2 border-primary/20 bg-gradient-to-r from-blue-50 to-indigo-50 p-8 shadow-sm">
-        <h3 class="text-xl font-bold text-primary mb-4">🏢 HOÀNG NAM CHI NHÁNH CẦN THƠ</h3>
+      <div
+        class="rounded-2xl border-2 border-primary/20 bg-gradient-to-r from-blue-50 to-indigo-50 p-8 shadow-sm"
+      >
+        <h3 class="text-xl font-bold text-primary mb-4">
+          🏢 HOÀNG NAM CHI NHÁNH CẦN THƠ
+        </h3>
         <div class="space-y-2 text-gray-700">
-          <p>📍 <strong>Địa chỉ:</strong> 03 Quản Trọng Hoàng, Phường Hưng Lợi, Quận Ninh Kiều, Cần Thơ</p>
-          <p>📞 <strong>Điện thoại:</strong> <a href="tel:0918883179" class="text-primary font-semibold hover:underline">091.888.3179</a></p>
-          <p>📧 <strong>Email:</strong> <a href="mailto:cskh@hoangnamcantho.com" class="text-primary hover:underline">cskh@hoangnamcantho.com</a></p>
-          <p>🌐 <strong>Website:</strong> <a href="https://hoangnamcantho.com/" class="text-primary hover:underline">https://hoangnamcantho.com/</a></p>
+          <p>
+            📍 <strong>Địa chỉ:</strong> 462 Lê Hồng Nhi - KV1 - P.Ba Láng - Q.Cái
+            Răng - TP.Cần Thơ.
+          </p>
+          <p>
+            📞 <strong>Điện thoại:</strong>
+            <a
+              href="tel:0918883179"
+              class="text-primary font-semibold hover:underline"
+              >091.888.3179</a>
+          </p>
+          <p>
+            📧 <strong>Email:</strong>
+            <a
+              href="mailto:cskh@hoangnamcantho.com"
+              class="text-primary hover:underline">cskh@hoangnamcantho.com</a>
+          </p>
+          <p>
+            🌐 <strong>Website:</strong>
+            <a
+              href="https://hoangnamcantho.com/"
+              class="text-primary hover:underline"
+              >https://hoangnamcantho.com/</a>
+          </p>
         </div>
       </div>
     </div>
@@ -148,22 +232,27 @@ const supportAreas = [
   <!-- Thủ tục thành lập -->
   <section class="bg-gray-50 py-10 md:py-14">
     <div class="mx-auto max-w-4xl px-6 lg:px-8">
-      <h2 class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl">
+      <h2
+        class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl"
+      >
         Thủ Tục Thành Lập Văn Phòng Đại Diện Tại Cần Thơ
       </h2>
       <p class="mt-6 text-gray-700 text-lg">
-        Về cơ bản thủ tục mở văn phòng đại diện tại Cần Thơ cũng giống như các tỉnh thành khác trên cả nước.
-        Hoàng Nam triển khai mọi quy trình nhanh chóng và chuyên nghiệp.
+        Về cơ bản thủ tục mở văn phòng đại diện tại Cần Thơ cũng giống như các
+        tỉnh thành khác trên cả nước. Hoàng Nam triển khai mọi quy trình nhanh
+        chóng và chuyên nghiệp.
       </p>
       <div class="mt-8 space-y-4">
-        {procedures.map((step, index) => (
-          <div class="flex items-start gap-5 rounded-xl border border-gray-100 bg-white p-5 shadow-sm transition-all duration-300 hover:shadow-md">
-            <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-primary text-sm font-bold text-white">
-              {index + 1}
-            </span>
-            <p class="text-gray-700 pt-2">{step}</p>
-          </div>
-        ))}
+        {
+          procedures.map((step, index) => (
+            <div class="flex items-start gap-5 rounded-xl border border-gray-100 bg-white p-5 shadow-sm transition-all duration-300 hover:shadow-md">
+              <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-primary text-sm font-bold text-white">
+                {index + 1}
+              </span>
+              <p class="text-gray-700 pt-2">{step}</p>
+            </div>
+          ))
+        }
       </div>
     </div>
   </section>
@@ -173,18 +262,34 @@ const supportAreas = [
     <div class="mx-auto max-w-4xl px-6 lg:px-8">
       <div class="rounded-2xl border border-amber-200 bg-amber-50 p-8">
         <h3 class="text-xl font-bold text-amber-800 mb-4">
-          ⚠️ Lưu ý về Nghĩa vụ thuế sau khi thành lập văn phòng đại diện tại Cần Thơ
+          ⚠️ Lưu ý về Nghĩa vụ thuế sau khi thành lập văn phòng đại diện tại Cần
+          Thơ
         </h3>
-        <p class="text-gray-700 mb-4">Sau khi mở văn phòng đại diện tại Cần Thơ, doanh nghiệp cần:</p>
+        <p class="text-gray-700 mb-4">
+          Sau khi mở văn phòng đại diện tại Cần Thơ, doanh nghiệp cần:
+        </p>
         <div class="space-y-3">
-          {taxObligations.map((item) => (
-            <div class="flex items-start gap-3">
-              <svg xmlns="http://www.w3.org/2000/svg" class="mt-0.5 h-5 w-5 flex-shrink-0 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              <span class="text-gray-700">{item}</span>
-            </div>
-          ))}
+          {
+            taxObligations.map((item) => (
+              <div class="flex items-start gap-3">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="mt-0.5 h-5 w-5 flex-shrink-0 text-amber-600"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+                <span class="text-gray-700">{item}</span>
+              </div>
+            ))
+          }
         </div>
       </div>
     </div>
@@ -193,37 +298,57 @@ const supportAreas = [
   <!-- Ưu điểm VPĐD -->
   <section class="bg-gray-50 py-10 md:py-14">
     <div class="mx-auto max-w-4xl px-6 lg:px-8">
-      <h2 class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl">
+      <h2
+        class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl"
+      >
         Ưu Điểm Của Việc Thành Lập Văn Phòng Đại Diện
       </h2>
       <p class="mt-6 text-gray-700 text-lg">
-        Văn phòng đại diện là đơn vị phụ thuộc của doanh nghiệp; có nhiệm vụ đại diện theo uỷ quyền cho lợi ích
-        của doanh nghiệp; bảo vệ các lợi ích của công ty mẹ.
+        Văn phòng đại diện là đơn vị phụ thuộc của doanh nghiệp; có nhiệm vụ đại
+        diện theo uỷ quyền cho lợi ích của doanh nghiệp; bảo vệ các lợi ích của
+        công ty mẹ.
       </p>
-      <p class="mt-4 text-gray-700">Một số ưu điểm nổi bật của văn phòng đại diện:</p>
+      <p class="mt-4 text-gray-700">
+        Một số ưu điểm nổi bật của văn phòng đại diện:
+      </p>
       <div class="mt-8 space-y-6">
-        {advantages.map((item) => (
-          <div class="rounded-xl border border-gray-100 bg-white p-6 shadow-sm transition-all hover:shadow-md">
-            <div class="flex items-start gap-4">
-              <svg xmlns="http://www.w3.org/2000/svg" class="mt-1 h-6 w-6 flex-shrink-0 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-              </svg>
-              <div>
-                <strong class="text-lg text-primary">{item.title}</strong>
-                <p class="mt-2 text-gray-600">{item.description}</p>
+        {
+          advantages.map((item) => (
+            <div class="rounded-xl border border-gray-100 bg-white p-6 shadow-sm transition-all hover:shadow-md">
+              <div class="flex items-start gap-4">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="mt-1 h-6 w-6 flex-shrink-0 text-green-500"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+                <div>
+                  <strong class="text-lg text-primary">{item.title}</strong>
+                  <p class="mt-2 text-gray-600">{item.description}</p>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))
+        }
       </div>
       <div class="mt-8 prose prose-lg text-gray-700">
         <p class="text-justify">
-          Hồ sơ và thủ tục hướng dẫn thành lập văn phòng đại diện tại Cần Thơ thường mất nhiều thời gian và gặp
-          khó khăn đối với phần lớn các doanh nghiệp mới gặp lần đầu.
+          Hồ sơ và thủ tục hướng dẫn thành lập văn phòng đại diện tại Cần Thơ
+          thường mất nhiều thời gian và gặp khó khăn đối với phần lớn các doanh
+          nghiệp mới gặp lần đầu.
         </p>
         <p class="text-justify">
-          <strong class="text-primary">HOÀNG NAM CORP</strong> – luôn luôn sẵn sàng để tư vấn và hỗ trợ cho doanh
-          nghiệp về thủ tục cũng như quy trình làm việc tại Sở Kế Hoạch và Đầu Tư tại Cần Thơ.
+          <strong class="text-primary">HOÀNG NAM CORP</strong> – luôn luôn sẵn sàng
+          để tư vấn và hỗ trợ cho doanh nghiệp về thủ tục cũng như quy trình làm việc
+          tại Sở Kế Hoạch và Đầu Tư tại Cần Thơ.
         </p>
       </div>
     </div>
@@ -232,7 +357,9 @@ const supportAreas = [
   <!-- Khu Vực Hỗ Trợ -->
   <section class="bg-white py-12">
     <div class="mx-auto max-w-4xl px-6 lg:px-8">
-      <div class="rounded-2xl border-2 border-dashed border-primary bg-blue-50 p-8 text-center">
+      <div
+        class="rounded-2xl border-2 border-dashed border-primary bg-blue-50 p-8 text-center"
+      >
         <p class="text-lg font-bold text-primary">
           📍 Hỗ trợ tận nơi tại Cần Thơ:{" "}
           <span class="font-normal text-gray-700">

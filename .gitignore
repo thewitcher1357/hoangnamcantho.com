@@ -1,5 +1,12 @@
 # build output
 dist/
+dist.rar
+
+# local runtime/cache
+.wrangler/
+*.sqlite-shm
+*.sqlite-wal
+
 # generated types
 .astro/
 .cache/

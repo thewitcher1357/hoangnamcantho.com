@@ -1,7 +1,7 @@
 ---
 title: "Địa Chỉ Sở Tài Chính TP Cần Thơ Nộp Hồ Sơ Đăng Ký Doanh Nghiệp: Địa Điểm, SĐT, Giờ Làm Việc, Lịch Hẹn"
 date: 2026-04-01
-categories: 
+categories:
   - "tin-tuc-vung-tau"
 coverImage: "/images/dia-chi-so-tai-chinh-tp-can-tho-nop-ho-so-dang-ky-doanh-nghiep.jpeg"
 ---
@@ -20,11 +20,11 @@ Tính đến tháng 3 năm 2026, để nộp hồ sơ đăng ký kinh doanh tạ
 
 Bảng tóm tắt dưới đây cung cấp đầy đủ địa chỉ nộp hồ sơ, số điện thoại Sở Kế hoạch và Đầu tư Cần Thơ (nay là Sở Tài chính), và giờ làm việc của bộ phận tiếp nhận thủ tục đăng ký doanh nghiệp tại Cần Thơ.
 
-| Thông tin cơ quan | Chi tiết liên hệ | Ghi chú |
-| --- | --- | --- |
-| **Địa chỉ nộp hồ sơ** | 109 Nguyễn Trãi, P. Tân An, Q. Ninh Kiều | Trung tâm Phục vụ hành chính công Cần Thơ |
-| **Số điện thoại** | 0292.3817.696 | Bộ phận Một cửa - Quầy Sở Tài chính |
-| **Giờ làm việc** | Sáng: 7h30 - 11h00   Chiều: 13h30 - 17h00 | Từ Thứ 2 đến Thứ 6 (Nghỉ Lễ, Tết theo quy định) |
+| Thông tin cơ quan     | Chi tiết liên hệ                         | Ghi chú                                         |
+| --------------------- | ---------------------------------------- | ----------------------------------------------- |
+| **Địa chỉ nộp hồ sơ** | 109 Nguyễn Trãi, P. Tân An, Q. Ninh Kiều | Trung tâm Phục vụ hành chính công Cần Thơ       |
+| **Số điện thoại**     | 0292.3817.696                            | Bộ phận Một cửa - Quầy Sở Tài chính             |
+| **Giờ làm việc**      | Sáng: 7h30 - 11h00 Chiều: 13h30 - 17h00  | Từ Thứ 2 đến Thứ 6 (Nghỉ Lễ, Tết theo quy định) |
 
 ### Q&A nhanh: 5 câu hỏi thường gặp khi đi nộp hồ sơ
 
@@ -120,6 +120,6 @@ Các bước sau khi có giấy phép kinh doanh Cần Thơ vô cùng quan trọ
 
 Việc xác định đúng địa chỉ nộp hồ sơ đăng ký doanh nghiệp tại Cần Thơ (nay thuộc thẩm quyền của Sở Tài chính) là bước đầu tiên và quan trọng nhất để quá trình khởi nghiệp diễn ra suôn sẻ. Hy vọng với những thông tin chi tiết và cập nhật mới nhất trong bài viết, bạn đã có thể tự tin chuẩn bị và hoàn tất thủ tục pháp lý của mình một cách hiệu quả, tiết kiệm thời gian và công sức.
 
-Nếu bạn cảm thấy thủ tục hành chính quá rườm rà và cần một đơn vị cung cấp dịch vụ tư vấn thành lập doanh nghiệp am hiểu pháp lý, thông thạo quy trình tại địa phương, hãy liên hệ ngay với Hoàng Nam Cần Thơ qua hotline **091.888.31.79** (Địa chỉ: 03 Đ. Quản Trọng Hoàng, Xuân Khánh, Ninh Kiều, Cần Thơ). Chúng tôi tự hào mang đến dịch vụ thành lập công ty tại Cần Thơ trọn gói, nhanh chóng và chuyên nghiệp nhất!
+Nếu bạn cảm thấy thủ tục hành chính quá rườm rà và cần một đơn vị cung cấp dịch vụ tư vấn thành lập doanh nghiệp am hiểu pháp lý, thông thạo quy trình tại địa phương, hãy liên hệ ngay với Hoàng Nam Cần Thơ qua hotline **091.888.31.79** (Địa chỉ: 462 Lê Hồng Nhi - KV1 - P.Ba Láng - Q.Cái Răng - TP.Cần Thơ.). Chúng tôi tự hào mang đến dịch vụ thành lập công ty tại Cần Thơ trọn gói, nhanh chóng và chuyên nghiệp nhất!
 
 Lưu ý: Thông tin trong bài viết này chỉ mang tính chất tham khảo. Để có được lời khuyên tốt nhất, vui lòng liên hệ trực tiếp với chúng tôi để được tư vấn cụ thể dựa trên nhu cầu thực tế của bạn.

@@ -15,7 +15,9 @@ const dissolveServices = [
   { name: "Tư vấn giải thể công ty, chấm dứt HĐ" },
   { name: "Trả giấy phép kinh doanh của công ty" },
   { name: "Trả con dấu tròn" },
-  { name: "Xin xác nhận chưa khắc con dấu (đối với chi nhánh công ty, VPĐD không sử dụng con dấu tròn)" },
+  {
+    name: "Xin xác nhận chưa khắc con dấu (đối với chi nhánh công ty, VPĐD không sử dụng con dấu tròn)",
+  },
   { name: "Nhận kết quả hoàn tất giải thể công ty" },
 ];
 
@@ -77,16 +79,27 @@ const prohibitedActs = [
 ];
 
 const supportAreas = [
-  "Ninh Kiều", "Cái Răng", "Bình Thủy", "Ô Môn", "Thốt Nốt",
-  "Phong Điền", "Cờ Đỏ", "Vĩnh Thạnh", "Thới Lai",
+  "Ninh Kiều",
+  "Cái Răng",
+  "Bình Thủy",
+  "Ô Môn",
+  "Thốt Nốt",
+  "Phong Điền",
+  "Cờ Đỏ",
+  "Vĩnh Thạnh",
+  "Thới Lai",
 ];
 ---
 
 <BaseLayout {metadata}>
   <!-- Hero Banner -->
-  <section class="relative bg-gradient-to-r from-primary to-primary-light py-20 text-center text-white md:py-28">
+  <section
+    class="relative bg-gradient-to-r from-primary to-primary-light py-20 text-center text-white md:py-28"
+  >
     <div class="relative z-10 mx-auto max-w-4xl px-6">
-      <h1 class="text-3xl font-extrabold uppercase leading-tight drop-shadow-md md:text-5xl">
+      <h1
+        class="text-3xl font-extrabold uppercase leading-tight drop-shadow-md md:text-5xl"
+      >
         Dịch Vụ Giải Thể Công Ty Tại Cần Thơ
       </h1>
       <p class="mt-5 text-lg font-light text-white/90 md:text-xl">
@@ -100,9 +113,10 @@ const supportAreas = [
     <div class="mx-auto max-w-4xl px-6 lg:px-8">
       <div class="prose prose-lg mx-auto max-w-none text-gray-700">
         <p class="text-justify">
-          Đối với doanh nghiệp thông thường sẽ có các ràng buộc của các cơ quan quản lý doanh nghiệp
-          hàng tháng, quý, năm như làm sổ sách kế toán, báo cáo thuế nên doanh nghiệp cần phải làm
-          thủ tục hồ sơ giải thể doanh nghiệp khi không còn hoạt động kinh doanh tại khu vực Cần Thơ.
+          Đối với doanh nghiệp thông thường sẽ có các ràng buộc của các cơ quan
+          quản lý doanh nghiệp hàng tháng, quý, năm như làm sổ sách kế toán, báo
+          cáo thuế nên doanh nghiệp cần phải làm thủ tục hồ sơ giải thể doanh
+          nghiệp khi không còn hoạt động kinh doanh tại khu vực Cần Thơ.
         </p>
       </div>
 
@@ -119,18 +133,20 @@ const supportAreas = [
 
       <div class="prose prose-lg mx-auto max-w-none text-gray-700">
         <p class="text-justify">
-          Tuy nhiên, việc làm thủ tục khá phức tạp nên rất nhiều doanh nghiệp thường lựa chọn sử dụng
-          dịch vụ giải thể doanh nghiệp.
+          Tuy nhiên, việc làm thủ tục khá phức tạp nên rất nhiều doanh nghiệp
+          thường lựa chọn sử dụng dịch vụ giải thể doanh nghiệp.
         </p>
         <p class="text-justify">
-          Đến với <strong class="text-primary">Dịch vụ giải thể công ty tại Cần Thơ của Hoàng Nam</strong>,
-          bạn sẽ được hỗ trợ tư vấn tận tình và giải quyết hết mọi việc nhanh chóng, gọn gàng để hoàn tất
-          thủ tục giải thể doanh nghiệp.
+          Đến với <strong class="text-primary"
+            >Dịch vụ giải thể công ty tại Cần Thơ của Hoàng Nam</strong
+          >, bạn sẽ được hỗ trợ tư vấn tận tình và giải quyết hết mọi việc nhanh
+          chóng, gọn gàng để hoàn tất thủ tục giải thể doanh nghiệp.
         </p>
         <p class="text-justify">
-          Dịch vụ giải thể doanh nghiệp tại <strong>Hoàng Nam</strong> uy tín, chuyên nghiệp. Khi sử dụng
-          dịch vụ giải thể, chúng tôi tư vấn và thực hiện toàn bộ các hồ sơ, thủ tục và khách hàng không
-          cần tốn nhiều thời gian, công sức để lo lắng đến việc giải thể doanh nghiệp.
+          Dịch vụ giải thể doanh nghiệp tại <strong>Hoàng Nam</strong> uy tín, chuyên
+          nghiệp. Khi sử dụng dịch vụ giải thể, chúng tôi tư vấn và thực hiện toàn
+          bộ các hồ sơ, thủ tục và khách hàng không cần tốn nhiều thời gian, công
+          sức để lo lắng đến việc giải thể doanh nghiệp.
         </p>
       </div>
     </div>
@@ -139,10 +155,14 @@ const supportAreas = [
   <!-- Bảng dịch vụ giải thể -->
   <section class="bg-gray-50 py-10 md:py-14">
     <div class="mx-auto max-w-4xl px-6 lg:px-8">
-      <h2 class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl">
+      <h2
+        class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl"
+      >
         Giải Thể Công Ty, Chi Nhánh, VPĐD
       </h2>
-      <div class="mt-8 overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm">
+      <div
+        class="mt-8 overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm"
+      >
         <table class="w-full text-left text-sm">
           <thead>
             <tr class="bg-primary text-white">
@@ -153,18 +173,32 @@ const supportAreas = [
             </tr>
           </thead>
           <tbody>
-            {dissolveServices.map((item, index) => (
-              <tr class="border-b border-gray-100 hover:bg-blue-50/50 transition-colors">
-                <td class="px-6 py-4 text-center font-semibold text-primary">{index + 1}</td>
-                <td class="px-6 py-4 text-gray-700">{item.name}</td>
-                {index === 0 && (
-                  <>
-                    <td class="px-6 py-4 text-gray-600 align-middle" rowspan="5">Tuỳ vào tình hình thực tế công ty</td>
-                    <td class="px-6 py-4 font-semibold text-primary align-middle" rowspan="5">Liên hệ để được báo giá</td>
-                  </>
-                )}
-              </tr>
-            ))}
+            {
+              dissolveServices.map((item, index) => (
+                <tr class="border-b border-gray-100 hover:bg-blue-50/50 transition-colors">
+                  <td class="px-6 py-4 text-center font-semibold text-primary">
+                    {index + 1}
+                  </td>
+                  <td class="px-6 py-4 text-gray-700">{item.name}</td>
+                  {index === 0 && (
+                    <>
+                      <td
+                        class="px-6 py-4 text-gray-600 align-middle"
+                        rowspan="5"
+                      >
+                        Tuỳ vào tình hình thực tế công ty
+                      </td>
+                      <td
+                        class="px-6 py-4 font-semibold text-primary align-middle"
+                        rowspan="5"
+                      >
+                        Liên hệ để được báo giá
+                      </td>
+                    </>
+                  )}
+                </tr>
+              ))
+            }
           </tbody>
         </table>
       </div>
@@ -174,18 +208,33 @@ const supportAreas = [
   <!-- Lợi ích -->
   <section class="bg-white py-10 md:py-14">
     <div class="mx-auto max-w-4xl px-6 lg:px-8">
-      <h2 class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl">
+      <h2
+        class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl"
+      >
         Lợi Ích Khi Sử Dụng Dịch Vụ Giải Thể Của Hoàng Nam
       </h2>
       <div class="mt-8 space-y-4">
-        {benefits.map((benefit) => (
-          <div class="flex items-start gap-3 rounded-xl border border-gray-100 bg-white p-5 shadow-sm transition-all hover:shadow-md">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mt-0.5 h-6 w-6 flex-shrink-0 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-            <span class="text-gray-700">{benefit}</span>
-          </div>
-        ))}
+        {
+          benefits.map((benefit) => (
+            <div class="flex items-start gap-3 rounded-xl border border-gray-100 bg-white p-5 shadow-sm transition-all hover:shadow-md">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="mt-0.5 h-6 w-6 flex-shrink-0 text-primary"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                />
+              </svg>
+              <span class="text-gray-700">{benefit}</span>
+            </div>
+          ))
+        }
       </div>
     </div>
   </section>
@@ -200,11 +249,17 @@ const supportAreas = [
         <div class="space-y-3">
           <p class="flex items-start gap-2">
             <span>🏠</span>
-            <span><strong>Địa chỉ:</strong> 03 Quản Trọng Hoàng, Phường Hưng Lợi, Quận Ninh Kiều, Cần Thơ</span>
+            <span
+              ><strong>Địa chỉ:</strong> 462 Lê Hồng Nhi - KV1 - P.Ba Láng - Q.Cái
+              Răng - TP.Cần Thơ.</span
+            >
           </p>
           <p class="flex items-start gap-2">
             <span>📞</span>
-            <span><strong>Điện thoại:</strong> {siteConfig.contact.hotlineDisplay}</span>
+            <span
+              ><strong>Điện thoại:</strong>
+              {siteConfig.contact.hotlineDisplay}</span
+            >
           </p>
         </div>
         <div class="space-y-3">
@@ -224,21 +279,26 @@ const supportAreas = [
   <!-- Các trường hợp giải thể -->
   <section class="bg-white py-10 md:py-14">
     <div class="mx-auto max-w-4xl px-6 lg:px-8">
-      <h2 class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl">
+      <h2
+        class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl"
+      >
         Các Trường Hợp Doanh Nghiệp Được Giải Thể
       </h2>
       <p class="mt-6 text-gray-700">
-        Điều 201 Luật Doanh nghiệp 2014 quy định doanh nghiệp giải thể trong các trường hợp sau:
+        Điều 201 Luật Doanh nghiệp 2014 quy định doanh nghiệp giải thể trong các
+        trường hợp sau:
       </p>
       <div class="mt-6 space-y-4">
-        {dissolveCases.map((item, index) => (
-          <div class="flex items-start gap-4 rounded-xl border border-gray-100 bg-gray-50 p-5">
-            <span class="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-primary text-sm font-bold text-white">
-              {index + 1}
-            </span>
-            <p class="text-gray-700">{item}</p>
-          </div>
-        ))}
+        {
+          dissolveCases.map((item, index) => (
+            <div class="flex items-start gap-4 rounded-xl border border-gray-100 bg-gray-50 p-5">
+              <span class="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-primary text-sm font-bold text-white">
+                {index + 1}
+              </span>
+              <p class="text-gray-700">{item}</p>
+            </div>
+          ))
+        }
       </div>
     </div>
   </section>
@@ -246,26 +306,44 @@ const supportAreas = [
   <!-- Điều kiện giải thể -->
   <section class="bg-gray-50 py-10 md:py-14">
     <div class="mx-auto max-w-4xl px-6 lg:px-8">
-      <h2 class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl">
+      <h2
+        class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl"
+      >
         Điều Kiện Để Doanh Nghiệp Được Giải Thể
       </h2>
       <p class="mt-6 text-gray-700">
         Doanh nghiệp có thể giải thể khi đáp ứng được toàn bộ các điều kiện sau:
       </p>
       <div class="mt-6 space-y-4">
-        {dissolveConditions.map((item) => (
-          <div class="flex items-start gap-3 rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mt-0.5 h-6 w-6 flex-shrink-0 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-            <span class="text-gray-700">{item}</span>
-          </div>
-        ))}
+        {
+          dissolveConditions.map((item) => (
+            <div class="flex items-start gap-3 rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="mt-0.5 h-6 w-6 flex-shrink-0 text-primary"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                />
+              </svg>
+              <span class="text-gray-700">{item}</span>
+            </div>
+          ))
+        }
       </div>
-      <div class="mt-6 rounded-r-xl border-l-[6px] border-amber-500 bg-amber-50 px-8 py-6">
+      <div
+        class="mt-6 rounded-r-xl border-l-[6px] border-amber-500 bg-amber-50 px-8 py-6"
+      >
         <p class="text-amber-800">
-          <strong>⚠️ Lưu ý:</strong> Trường hợp doanh nghiệp không còn khả năng thanh toán (mất khả năng thanh toán),
-          thì doanh nghiệp phải thực hiện thủ tục phá sản theo quy định của Luật phá sản 2014.
+          <strong>⚠️ Lưu ý:</strong> Trường hợp doanh nghiệp không còn khả năng thanh
+          toán (mất khả năng thanh toán), thì doanh nghiệp phải thực hiện thủ tục
+          phá sản theo quy định của Luật phá sản 2014.
         </p>
       </div>
     </div>
@@ -274,21 +352,26 @@ const supportAreas = [
   <!-- Quy trình thực hiện -->
   <section class="bg-white py-10 md:py-14">
     <div class="mx-auto max-w-4xl px-6 lg:px-8">
-      <h2 class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl">
+      <h2
+        class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl"
+      >
         Quy Trình Thực Hiện Dịch Vụ Giải Thể Công Ty Tại Cần Thơ
       </h2>
       <p class="mt-6 text-gray-700">
-        Các công việc mà công ty <strong class="text-primary">HOÀNG NAM</strong> sẽ thực hiện:
+        Các công việc mà công ty <strong class="text-primary">HOÀNG NAM</strong> sẽ
+        thực hiện:
       </p>
       <div class="mt-8 flex flex-col gap-4">
-        {processSteps.map((step, index) => (
-          <div class="flex items-start gap-5 rounded-xl border border-gray-100 bg-white p-5 shadow-sm transition-all duration-300 hover:shadow-md">
-            <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-primary text-sm font-bold text-white">
-              {index + 1}
-            </span>
-            <p class="text-gray-700 pt-2">{step}</p>
-          </div>
-        ))}
+        {
+          processSteps.map((step, index) => (
+            <div class="flex items-start gap-5 rounded-xl border border-gray-100 bg-white p-5 shadow-sm transition-all duration-300 hover:shadow-md">
+              <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-primary text-sm font-bold text-white">
+                {index + 1}
+              </span>
+              <p class="text-gray-700 pt-2">{step}</p>
+            </div>
+          ))
+        }
       </div>
     </div>
   </section>
@@ -296,18 +379,22 @@ const supportAreas = [
   <!-- Cơ quan thuế -->
   <section class="bg-gray-50 py-10 md:py-14">
     <div class="mx-auto max-w-4xl px-6 lg:px-8">
-      <h2 class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl">
+      <h2
+        class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl"
+      >
         Cơ Quan Thuế
       </h2>
       <div class="mt-8 flex flex-col gap-4">
-        {taxSteps.map((step, index) => (
-          <div class="flex items-start gap-5 rounded-xl border border-gray-100 bg-white p-5 shadow-sm">
-            <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-blue-100 text-sm font-bold text-primary">
-              {index + 1}
-            </span>
-            <p class="text-gray-700 pt-2">{step}</p>
-          </div>
-        ))}
+        {
+          taxSteps.map((step, index) => (
+            <div class="flex items-start gap-5 rounded-xl border border-gray-100 bg-white p-5 shadow-sm">
+              <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-blue-100 text-sm font-bold text-primary">
+                {index + 1}
+              </span>
+              <p class="text-gray-700 pt-2">{step}</p>
+            </div>
+          ))
+        }
       </div>
     </div>
   </section>
@@ -315,23 +402,29 @@ const supportAreas = [
   <!-- Sở KH&ĐT -->
   <section class="bg-white py-10 md:py-14">
     <div class="mx-auto max-w-4xl px-6 lg:px-8">
-      <h2 class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl">
+      <h2
+        class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl"
+      >
         Sở Kế Hoạch Và Đầu Tư
       </h2>
       <div class="mt-8 flex flex-col gap-4">
-        {planningSteps.map((step, index) => (
-          <div class="flex items-start gap-5 rounded-xl border border-gray-100 bg-white p-5 shadow-sm">
-            <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-blue-100 text-sm font-bold text-primary">
-              {index + 1}
-            </span>
-            <p class="text-gray-700 pt-2">{step}</p>
-          </div>
-        ))}
+        {
+          planningSteps.map((step, index) => (
+            <div class="flex items-start gap-5 rounded-xl border border-gray-100 bg-white p-5 shadow-sm">
+              <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-blue-100 text-sm font-bold text-primary">
+                {index + 1}
+              </span>
+              <p class="text-gray-700 pt-2">{step}</p>
+            </div>
+          ))
+        }
       </div>
-      <div class="mt-6 rounded-r-xl border-l-[6px] border-amber-500 bg-amber-50 px-8 py-6">
+      <div
+        class="mt-6 rounded-r-xl border-l-[6px] border-amber-500 bg-amber-50 px-8 py-6"
+      >
         <p class="text-amber-800">
-          <strong>⚠️ Lưu ý:</strong> Trường hợp doanh nghiệp có chi nhánh hoặc văn phòng đại diện,
-          thì nộp kèm theo hồ sơ giải thể chi nhánh, VPĐD.
+          <strong>⚠️ Lưu ý:</strong> Trường hợp doanh nghiệp có chi nhánh hoặc văn
+          phòng đại diện, thì nộp kèm theo hồ sơ giải thể chi nhánh, VPĐD.
         </p>
       </div>
     </div>
@@ -340,33 +433,41 @@ const supportAreas = [
   <!-- Hoạt động bị cấm -->
   <section class="bg-gray-50 py-10 md:py-14">
     <div class="mx-auto max-w-4xl px-6 lg:px-8">
-      <h2 class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl">
+      <h2
+        class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl"
+      >
         Các Hoạt Động Bị Cấm Kể Từ Khi Có Quyết Định Giải Thể
       </h2>
       <p class="mt-6 text-gray-700">
-        Điều 205 Luật Doanh nghiệp năm 2014 quy định kể từ khi có quyết định giải thể doanh nghiệp.
-        Nghiêm cấm doanh nghiệp, người quản lý doanh nghiệp thực hiện các hoạt động sau đây:
+        Điều 205 Luật Doanh nghiệp năm 2014 quy định kể từ khi có quyết định
+        giải thể doanh nghiệp. Nghiêm cấm doanh nghiệp, người quản lý doanh
+        nghiệp thực hiện các hoạt động sau đây:
       </p>
       <div class="mt-6 space-y-3">
-        {prohibitedActs.map((act) => (
-          <div class="flex items-start gap-3 rounded-lg bg-red-50 p-4">
-            <span class="text-red-500 font-bold text-lg">✕</span>
-            <span class="text-gray-700">{act}</span>
-          </div>
-        ))}
+        {
+          prohibitedActs.map((act) => (
+            <div class="flex items-start gap-3 rounded-lg bg-red-50 p-4">
+              <span class="text-red-500 font-bold text-lg">✕</span>
+              <span class="text-gray-700">{act}</span>
+            </div>
+          ))
+        }
       </div>
       <div class="mt-8 prose prose-lg max-w-none text-gray-700">
         <p class="text-justify">
-          Việc quy định các hành vi bị cấm nêu trên là nhằm ngăn chặn phát sinh thêm quyền và nghĩa vụ.
-          Dẫn đến làm giảm khả năng trả nợ của doanh nghiệp. Đồng thời, hạn chế việc doanh nghiệp tẩu tán
-          tài sản. Trốn tránh các nghĩa vụ với các đối tác trong quá trình hoạt động. Gây ảnh hưởng trực tiếp
-          tới quyền và lợi ích hợp pháp của các chủ thể có liên quan.
+          Việc quy định các hành vi bị cấm nêu trên là nhằm ngăn chặn phát sinh
+          thêm quyền và nghĩa vụ. Dẫn đến làm giảm khả năng trả nợ của doanh
+          nghiệp. Đồng thời, hạn chế việc doanh nghiệp tẩu tán tài sản. Trốn
+          tránh các nghĩa vụ với các đối tác trong quá trình hoạt động. Gây ảnh
+          hưởng trực tiếp tới quyền và lợi ích hợp pháp của các chủ thể có liên
+          quan.
         </p>
         <p class="text-justify">
-          Hi vọng những thông tin trên sẽ giúp bạn hiểu rõ hơn về các vấn đề liên quan đến giải thể doanh nghiệp
-          tại Cần Thơ. Nếu bạn vẫn còn thắc mắc, thì hãy liên hệ ngay
-          <strong class="text-primary">HOÀNG NAM</strong> – dịch vụ giải thể doanh nghiệp để được tư vấn chuyên sâu
-          và chính xác hơn.
+          Hi vọng những thông tin trên sẽ giúp bạn hiểu rõ hơn về các vấn đề
+          liên quan đến giải thể doanh nghiệp tại Cần Thơ. Nếu bạn vẫn còn thắc
+          mắc, thì hãy liên hệ ngay
+          <strong class="text-primary">HOÀNG NAM</strong> – dịch vụ giải thể doanh
+          nghiệp để được tư vấn chuyên sâu và chính xác hơn.
         </p>
       </div>
     </div>
@@ -375,40 +476,56 @@ const supportAreas = [
   <!-- Bạn nhận được gì -->
   <section class="bg-white py-10 md:py-14">
     <div class="mx-auto max-w-6xl px-6 lg:px-8">
-      <h2 class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl">
+      <h2
+        class="border-b-[3px] border-primary pb-3 text-2xl font-extrabold uppercase text-primary md:text-3xl"
+      >
         Bạn Nhận Được Gì Tại Dịch Vụ Của Hoàng Nam?
       </h2>
       <div class="mt-10 grid grid-cols-1 gap-8 md:grid-cols-2">
-        <div class="rounded-2xl border border-gray-100 bg-white p-8 shadow-sm transition-all hover:shadow-lg">
+        <div
+          class="rounded-2xl border border-gray-100 bg-white p-8 shadow-sm transition-all hover:shadow-lg"
+        >
           <div class="text-3xl mb-3">👥</div>
           <h3 class="text-xl font-bold text-primary">Tập thể tận tâm</h3>
           <p class="mt-3 text-gray-600">
-            Dịch Vụ giải thể công ty tại Cần Thơ của Hoàng Nam có đội ngũ tư vấn luôn hết mình và quy trình
-            xử lý thông tin đơn giản tiết kiệm thời gian cho doanh nghiệp.
+            Dịch Vụ giải thể công ty tại Cần Thơ của Hoàng Nam có đội ngũ tư vấn
+            luôn hết mình và quy trình xử lý thông tin đơn giản tiết kiệm thời
+            gian cho doanh nghiệp.
           </p>
         </div>
-        <div class="rounded-2xl border border-gray-100 bg-white p-8 shadow-sm transition-all hover:shadow-lg">
+        <div
+          class="rounded-2xl border border-gray-100 bg-white p-8 shadow-sm transition-all hover:shadow-lg"
+        >
           <div class="text-3xl mb-3">💰</div>
           <h3 class="text-xl font-bold text-primary">Giá cả hợp lý</h3>
           <p class="mt-3 text-gray-600">
-            Các mức phí Hoàng Nam đưa ra luôn hợp lý – chúng tôi không phải là đơn vị cung ứng dịch vụ rẻ nhất
-            nhưng chúng tôi là đơn vị báo giá hợp lý và dịch vụ chất lượng nhất.
+            Các mức phí Hoàng Nam đưa ra luôn hợp lý – chúng tôi không phải là
+            đơn vị cung ứng dịch vụ rẻ nhất nhưng chúng tôi là đơn vị báo giá
+            hợp lý và dịch vụ chất lượng nhất.
           </p>
         </div>
-        <div class="rounded-2xl border border-gray-100 bg-white p-8 shadow-sm transition-all hover:shadow-lg">
+        <div
+          class="rounded-2xl border border-gray-100 bg-white p-8 shadow-sm transition-all hover:shadow-lg"
+        >
           <div class="text-3xl mb-3">📦</div>
-          <h3 class="text-xl font-bold text-primary">Các gói giải pháp tốt nhất</h3>
+          <h3 class="text-xl font-bold text-primary">
+            Các gói giải pháp tốt nhất
+          </h3>
           <p class="mt-3 text-gray-600">
-            Hoàng Nam còn cung cấp thêm cho khách hàng các gói dịch vụ mà ngành Thuế đang bắt buộc như:
-            Chữ Ký Số, Hoá Đơn Điện Tử với mức giá hỗ trợ thấp nhất thị trường và hỗ trợ kỹ thuật 24/24.
+            Hoàng Nam còn cung cấp thêm cho khách hàng các gói dịch vụ mà ngành
+            Thuế đang bắt buộc như: Chữ Ký Số, Hoá Đơn Điện Tử với mức giá hỗ
+            trợ thấp nhất thị trường và hỗ trợ kỹ thuật 24/24.
           </p>
         </div>
-        <div class="rounded-2xl border border-gray-100 bg-white p-8 shadow-sm transition-all hover:shadow-lg">
+        <div
+          class="rounded-2xl border border-gray-100 bg-white p-8 shadow-sm transition-all hover:shadow-lg"
+        >
           <div class="text-3xl mb-3">⚖️</div>
           <h3 class="text-xl font-bold text-primary">Đội ngũ hàng đầu</h3>
           <p class="mt-3 text-gray-600">
-            Đội ngũ luật của Hoàng Nam sẽ tư vấn pháp lý cho khách hàng rõ hơn về quy định của pháp luật
-            từng lĩnh vực kinh doanh cũng như theo quy định của từng quốc gia cụ thể.
+            Đội ngũ luật của Hoàng Nam sẽ tư vấn pháp lý cho khách hàng rõ hơn
+            về quy định của pháp luật từng lĩnh vực kinh doanh cũng như theo quy
+            định của từng quốc gia cụ thể.
           </p>
         </div>
       </div>
@@ -418,7 +535,9 @@ const supportAreas = [
   <!-- Khu Vực Hỗ Trợ -->
   <section class="bg-gray-50 py-12">
     <div class="mx-auto max-w-4xl px-6 lg:px-8">
-      <div class="rounded-2xl border-2 border-dashed border-primary bg-blue-50 p-8 text-center">
+      <div
+        class="rounded-2xl border-2 border-dashed border-primary bg-blue-50 p-8 text-center"
+      >
         <p class="text-lg font-bold text-primary">
           📍 Hỗ trợ tận nơi tại Cần Thơ:{" "}
           <span class="font-normal text-gray-700">

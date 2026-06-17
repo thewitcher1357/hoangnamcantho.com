@@ -187,7 +187,7 @@ Nói cách khác, khi ai đó hỏi **mã số thuế thay đổi khi sáp nhậ
 
 Vì soát xét trước giúp doanh nghiệp biết mình đang đứng ở đâu. Khi hồ sơ sạch, việc chuyển đổi cơ quan thuế, cập nhật eTax, làm quyết toán TNDN/TNCN và xử lý hoàn thuế hay nợ thuế đều nhanh hơn, ít tranh luận hơn. (thuvienphapluat.vn)
 
-Tại **Hoàng Nam Cần Thơ** – **03 Đ. Quản Trọng Hoàng, Xuân Khánh, Ninh Kiều, Cần Thơ** – chúng tôi thường khuyên khách hàng lập một bộ “pre-check” gồm:
+Tại **Hoàng Nam Cần Thơ** – **462 Lê Hồng Nhi - KV1 - P.Ba Láng - Q.Cái Răng - TP.Cần Thơ.** – chúng tôi thường khuyên khách hàng lập một bộ “pre-check” gồm:
 
 • Đối chiếu nghĩa vụ thuế 12 tháng gần nhất  
 • Kiểm tra thông tin người lao động, **cá nhân cư trú**, người phụ thuộc  

@@ -1,7 +1,7 @@
 ---
 title: "Phường Bình Thủy Sáp Nhập An Thới Bùi Hữu Nghĩa: Cập Nhật Chi Tiết"
 date: 2026-03-26
-categories: 
+categories:
   - "tin-tuc-vung-tau"
 coverImage: "/images/phuong-binh-thuy-sap-nhap-an-thoi-bui-huu-nghia.jpeg"
 ---
@@ -22,11 +22,11 @@ Tại Hoàng Nam Cần Thơ, chúng tôi luôn theo sát các diễn biến phá
 
 Dưới đây là bảng thông tin cốt lõi mà mọi cá nhân và tổ chức cần nắm vững:
 
-| Tiêu chí | Thông tin chi tiết cập nhật |
-| --- | --- |
+| Tiêu chí                | Thông tin chi tiết cập nhật                                                  |
+| ----------------------- | ---------------------------------------------------------------------------- |
 | **Các đơn vị sáp nhập** | **Phường An Thới**, Phường Bình Thủy (cũ), một phần **Phường Bùi Hữu Nghĩa** |
-| **Tên phường mới** | Phường Bình Thủy |
-| **Văn bản áp dụng** | **Nghị quyết sáp nhập phường Bình Thủy Cần Thơ** (NQ 1668/NQ-UBTVQH15) |
+| **Tên phường mới**      | Phường Bình Thủy                                                             |
+| **Văn bản áp dụng**     | **Nghị quyết sáp nhập phường Bình Thủy Cần Thơ** (NQ 1668/NQ-UBTVQH15)       |
 
 Để có cái nhìn tổng quan hơn về toàn bộ sự thay đổi trên địa bàn thành phố, bạn có thể xem thêm [Danh sách phường xã sáp nhập Cần Thơ 2025](/danh-sach-phuong-xa-sap-nhap-can-tho-2025/) được chúng tôi tổng hợp. Đồng thời, việc tra cứu [Bản đồ hành chính TP Cần Thơ mới nhất sau sáp nhập](/ban-do-hanh-chinh-tp-can-tho-moi-nhat-sau-sap-nhap/) sẽ giúp bạn hình dung rõ rệt hơn về ranh giới mới của các phường.
 
@@ -102,6 +102,6 @@ Việc sáp nhập phường Bình Thủy, An Thới và Bùi Hữu Nghĩa là m
 
 Doanh nghiệp của bạn đang gặp khó khăn trong việc cập nhật địa chỉ kinh doanh sau sáp nhập? Đừng để thủ tục pháp lý rườm rà làm gián đoạn công việc kinh doanh quý giá! Liên hệ ngay dịch vụ làm giấy phép kinh doanh tại Cần Thơ của Hoàng Nam để được tư vấn và hoàn tất mọi giấy tờ một cách nhanh chóng, chuyên nghiệp và chính xác nhất.
 
-**Hoàng Nam Cần Thơ** Điện thoại: 091.888.31.79 Địa chỉ: 03 Đ. Quản Trọng Hoàng, Xuân Khánh, Ninh Kiều, Cần Thơ, Việt Nam
+**Hoàng Nam Cần Thơ** Điện thoại: 091.888.31.79 Địa chỉ: 462 Lê Hồng Nhi - KV1 - P.Ba Láng - Q.Cái Răng - TP.Cần Thơ., Việt Nam
 
 _Lưu ý: Thông tin trong bài viết này chỉ mang tính chất tham khảo. Để có được những lời khuyên tốt nhất, vui lòng liên hệ trực tiếp với chúng tôi để được tư vấn cụ thể dựa trên nhu cầu thực tế của bạn._
