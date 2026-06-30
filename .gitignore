@@ -4,6 +4,7 @@ dist.rar
 
 # local runtime/cache
 .wrangler/
+.brain/
 *.sqlite-shm
 *.sqlite-wal
 

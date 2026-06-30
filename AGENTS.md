@@ -1,8 +1,162 @@
+# Repo Assistant Contract
+
+This repo is an Astro website for `hoangnamcantho.com`.
+It prioritizes Vietnamese content quality, SEO, fast pages, Core Web Vitals, and mobile-first usability.
+
+## Workflow Priority
+
+Use this order unless the user explicitly asks for something else:
+
+1. Superpowers skills for process and workflow discipline.
+2. GitNexus MCP tools for code discovery, impact analysis, and safe navigation.
+3. Local repo inspection for files, scripts, content, and config.
+4. Official documentation before guessing framework or platform behavior.
+
+## Worktree Rule
+
+Do not use `git worktree` for this project.
+Work directly in the current workspace.
+Only use worktree if the user explicitly asks for it.
+
+## Communication Policy
+
+Always respond in Vietnamese with proper diacritics and UTF-8-safe text.
+
+Default style: explain things for beginners in a simple, low-tech way.
+
+For substantive replies:
+
+- Use short, clear sentences.
+- Explain code in simple language.
+- Avoid complex technical terms. If a term is needed, explain it simply.
+- Break explanations into small parts.
+- Give a real-life example when it helps.
+- Focus on outcome, impact, and next action before implementation detail.
+- When mentioning files or code, briefly explain what they do in normal language.
+- Always include a section titled `Giải thích đơn giản`.
+- Always include a short summary at the end.
+- After each substantive answer, suggest any important AGENTS.md improvement if one becomes clear.
+- When finishing a plan or substantial change, add a concise English Conventional Commit message suggestion.
+- Do not commit on behalf of the user unless explicitly asked.
+
+Exceptions:
+
+- Short progress updates and one-line confirmations do not need the full section structure.
+- If the user asks for deeper technical detail, give the simple version first, then the deeper version.
+
+## Git Commit Messages
+
+Use Conventional Commits.
+
+Format:
+
+```text
+type(scope): description
+```
+
+Recommended types:
+
+- `feat`: new feature
+- `fix`: bug fix
+- `docs`: documentation only
+- `style`: formatting only, no logic change
+- `refactor`: code change without new feature or bug fix
+- `perf`: performance improvement
+- `test`: test addition or update
+- `chore`: tooling, build, or maintenance work
+
+Rules:
+
+- Keep the header short and clear.
+- Use imperative form.
+- Do not end the header with a period.
+- Use an English commit message suggestion unless the user asks otherwise.
+
+Example:
+
+```text
+docs(agents): add astro seo workflow rules
+```
+
+## Astro SEO Rules
+
+When editing pages, layouts, or content:
+
+- Keep one clear `h1` per page.
+- Use meaningful `title` and `description` metadata.
+- Prefer descriptive Vietnamese headings that match search intent.
+- Keep URLs, slugs, and internal links stable unless the user asks to change them.
+- Add or preserve canonical URLs where the layout supports them.
+- Use internal links to related service pages and blog posts when helpful.
+- Do not keyword-stuff. Write naturally for real Vietnamese readers.
+- Preserve sitemap compatibility through Astro config and page routes.
+- Check that content is useful above the fold on mobile.
+- Use structured data only when it matches visible page content.
+
+## Performance And Core Web Vitals Rules
+
+When editing UI, images, scripts, or layouts:
+
+- Prefer static Astro output and server-rendered content.
+- Avoid unnecessary client-side JavaScript.
+- Use Astro islands only when interaction is required.
+- Keep images optimized, sized, and lazy-loaded when below the fold.
+- Do not add heavy third-party scripts without explaining the impact.
+- Avoid layout shift by defining image dimensions or stable containers.
+- Keep CSS simple and scoped to existing patterns.
+- Protect Core Web Vitals: LCP, CLS, and INP.
+
+## Mobile-First Rules
+
+When editing pages or components:
+
+- Design for mobile first, then expand to desktop.
+- Keep tap targets large enough for fingers.
+- Avoid text overlap on small screens.
+- Keep headings readable without becoming too large.
+- Avoid horizontal scrolling.
+- Check important CTA buttons on mobile.
+- Make above-the-fold content clear and fast to scan.
+
+## Verification Commands
+
+Use the smallest verification that proves the change.
+
+For documentation-only changes:
+
+```bash
+git diff --check
+```
+
+For Astro/content/layout changes:
+
+```bash
+npm run check
+npm run lint:check
+npm run build
+```
+
+For TypeScript logic changes:
+
+```bash
+npm run typecheck
+npm run test
+```
+
+Before committing:
+
+```bash
+gitnexus_detect_changes()
+git status --short
+```
+
+Do not claim a build, test, or check passed unless the command was run in the current turn and the output confirms it.
+
 <!-- gitnexus:start -->
 
 # GitNexus — Code Intelligence
 
-This project is indexed by GitNexus as **hoangnamcantho.com** (196 symbols, 206 relationships, 0 execution flows). Use the GitNexus MCP tools to understand code, assess impact, and navigate safely.
+This project is indexed by GitNexus as **hoangnamcantho.com** (744 symbols, 698 relationships, 0 execution flows). Use the GitNexus MCP tools to understand code, assess impact, and navigate safely.
 
 > If any GitNexus tool warns the index is stale, run `npx gitnexus analyze` in terminal first.
 
